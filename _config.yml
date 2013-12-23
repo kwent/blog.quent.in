@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://blog.quentinrousseau.fr
+title: Quentin Rousseau
+subtitle: I would love to change the world, but they won’t give me the source code.
+author: Quentin Rousseau
 simple_search: http://google.com/search
 description:
 
@@ -19,7 +19,7 @@ date_format: "ordinal"
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email:
+email: contact@quentinrousseau.fr
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -63,13 +63,13 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # ----------------------- #
 
 # Github repositories
-github_user:
-github_repo_count: 0
+github_user: kwent
+github_repo_count: 1
 github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: quentinrousseau
 twitter_tweet_button: true
 
 # Google +1
@@ -90,11 +90,17 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
-disqus_show_comment_count: false
+disqus_short_name: kwentakill@gmail.com
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id:
 
-# Facebook Like
-facebook_like: false
+# Facebook Lik
+facebook_like: true
+
+# Gravatar
+gravatar_email: kwentakill@gmail.com
+
+# Resume link
+resume_link: "http://www.quentinrousseau.fr/resume/pdf/quentinrousseau_resume_EN.pdf"
