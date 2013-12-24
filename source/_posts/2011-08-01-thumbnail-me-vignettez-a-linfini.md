@@ -2,6 +2,7 @@
 title: 'Thumbnail me &#8211; Vignettez à l&rsquo;infini !'
 author: Quentin
 layout: post
+comments: true
 permalink: /index.php/2011/08/thumbnail-me-vignettez-a-linfini/
 dsq_thread_id:
   - 382022628

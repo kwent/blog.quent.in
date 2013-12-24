@@ -2,6 +2,7 @@
 title: 'Onefeat Startup experience | Let&rsquo;s go !'
 author: Quentin
 layout: post
+comments: true
 permalink: /index.php/2012/08/onefeat-startup-experience-lets-go/
 hl_twitter_has_auto_tweeted:
   - 'I just posted Onefeat Startup experience | Let&rsquo;s go !, read it here: http://blog.quentinrousseau.fr/?p=434'

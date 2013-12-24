@@ -90,7 +90,7 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name: kwentakill@gmail.com
+disqus_short_name: quentinrousseauleblog
 disqus_show_comment_count: true
 
 # Google Analytics
@@ -101,6 +101,9 @@ facebook_like: true
 
 # Gravatar
 gravatar_email: kwentakill@gmail.com
+
+# LinkedIn
+linked_in_user: quentinrousseau
 
 # Resume link
 resume_link: "http://www.quentinrousseau.fr/resume/pdf/quentinrousseau_resume_EN.pdf"

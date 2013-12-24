@@ -2,6 +2,7 @@
 title: 'Using TTTAttributedLabel with Regex : Welcome TTTRegexAttributedLabel'
 author: Quentin
 layout: post
+comments: true
 permalink: /index.php/2013/11/using-tttattributedlabel-with-regex-welcome-tttregexattributedlabel/
 hl_twitter_has_auto_tweeted:
   - 'I just posted Using TTTAttributedLabel with Regex : Welcome TTTRegexAttributedLabel, read it here: http://blog.quentinrousseau.fr/?p=662'
@@ -20,8 +21,6 @@ tags:
 date: Fri, 15 Nov 2013 02:03:37 -8000
 ---
 Hi there !
-
-<i class="fa-star"></i> fa-star
 
 If you are looking a easy library to use to apply Regex with **[TTTAttributedLabel][1] **from [Mattt Thompson][2], i build a lib called [**TTTRegexAttributedLabel**][3].
 

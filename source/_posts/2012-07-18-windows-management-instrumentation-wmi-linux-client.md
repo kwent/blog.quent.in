@@ -2,6 +2,7 @@
 title: Windows Management Instrumentation (WMI) Linux Client
 author: Quentin
 layout: post
+comments: true
 permalink: /index.php/2012/07/windows-management-instrumentation-wmi-linux-client/
 hl_twitter_has_auto_tweeted:
   - 'I just posted Windows Management Instrumentation (WMI) Linux Client, read it here: http://blog.quentinrousseau.fr/?p=555'

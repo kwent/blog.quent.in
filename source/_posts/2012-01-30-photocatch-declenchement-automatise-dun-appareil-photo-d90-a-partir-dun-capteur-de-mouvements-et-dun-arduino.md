@@ -2,6 +2,7 @@
 title: 'PhotoCatch | Déclenchement automatisé d&rsquo;un appareil photo D90 à partir d&rsquo;un capteur de mouvements et d&rsquo;un Arduino'
 author: Quentin
 layout: post
+comments: true
 permalink: /index.php/2012/01/photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino/
 hl_twitter_has_auto_tweeted:
   - 'I just posted PhotoCatch | Déclenchement automatisé d&#8217;un appareil photo D90 à partir d&#8217;un capteur de mouvements et d&#8217...'

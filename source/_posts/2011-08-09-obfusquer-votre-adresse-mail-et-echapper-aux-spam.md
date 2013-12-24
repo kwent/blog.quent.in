@@ -2,6 +2,7 @@
 title: Obfusquer votre adresse mail et échapper aux SPAM
 author: Quentin
 layout: post
+comments: true
 permalink: /index.php/2011/08/obfusquer-votre-adresse-mail-et-echapper-aux-spam/
 hl_twitter_has_auto_tweeted:
   - 'I just posted Obfusquer votre adresse mail et échapper aux SPAM, read it here: http://blog.quentinrousseau.fr/?p=134'

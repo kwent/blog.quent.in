@@ -2,6 +2,7 @@
 title: Parallel-SSH | Parralélisez au maximum!
 author: Quentin
 layout: post
+comments: true
 permalink: /index.php/2011/08/pssh-parralelisons-au-maximum/
 dsq_thread_id:
   - 382021833

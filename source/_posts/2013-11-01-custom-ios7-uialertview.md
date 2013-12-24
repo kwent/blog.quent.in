@@ -2,6 +2,7 @@
 title: Custom iOS7 UIAlertView
 author: Quentin
 layout: post
+comments: true
 permalink: /index.php/2013/11/custom-ios7-uialertview/
 hl_twitter_has_auto_tweeted:
   - 'I just posted Custom iOS7 UIAlertView, read it here: http://blog.quentinrousseau.fr/?p=657'

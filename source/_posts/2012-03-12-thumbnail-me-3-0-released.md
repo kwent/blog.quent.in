@@ -2,6 +2,7 @@
 title: Thumbnail me 3.0 Released
 author: Quentin
 layout: post
+comments: true
 permalink: /index.php/2012/03/thumbnail-me-3-0-released/
 hl_twitter_has_auto_tweeted:
   - 'I just posted Thumbnail me 3.0 Released, read it here: http://blog.quentinrousseau.fr/?p=369'

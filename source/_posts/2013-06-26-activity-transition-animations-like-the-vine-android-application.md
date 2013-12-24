@@ -2,6 +2,7 @@
 title: Activity transition animations like the Vine Android application.
 author: Quentin
 layout: post
+comments: true
 permalink: /index.php/2013/06/activity-transition-animations-like-the-vine-android-application/
 hl_twitter_has_auto_tweeted:
   - 'I just posted Activity transition animations like the Vine Android application., read it here: http://blog.quentinrousseau.fr/?p=622'

@@ -2,6 +2,7 @@
 title: Paris Timelapse Experiment
 author: Quentin
 layout: post
+comments: true
 permalink: /index.php/2012/04/paris-timelapse-experiment/
 hl_twitter_has_auto_tweeted:
   - 'I just posted Paris Timelapse Experiment, read it here: http://blog.quentinrousseau.fr/?p=469'
@@ -49,4 +50,4 @@ Mathieu Lacrouts for music choice. [mathieulacrouts.fr][1]
 
 {% vimeo 39858048 1920 1080 %}
 
- [1]: http://www.mathieulacrouts.fr
+[1]: http://www.mathieulacrouts.fr

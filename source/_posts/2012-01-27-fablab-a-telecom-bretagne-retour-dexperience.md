@@ -2,6 +2,7 @@
 title: 'FabLab à Télécom Bretagne | Retour d&rsquo;expérience'
 author: Quentin
 layout: post
+comments: true
 permalink: /index.php/2012/01/fablab-a-telecom-bretagne-retour-dexperience/
 hl_twitter_has_auto_tweeted:
   - 'I just posted FabLab à Télécom Bretagne | Retour d&#8217;expérience, read it here: http://blog.quentinrousseau.fr/?p=282'
