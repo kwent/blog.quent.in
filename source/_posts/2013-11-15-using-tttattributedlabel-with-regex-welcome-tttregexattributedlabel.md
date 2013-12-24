@@ -26,7 +26,7 @@ If you are looking a easy library to use to apply Regex with **[TTTAttributedLa
 
 ## Example
 
-![Screenshot](/assets/wp-content/uploads/2013/11/screenshot.jpg)[4]
+![Screenshot](/assets/wp-content/uploads/2013/11/screenshot.jpg)
 
 ## Usage
 
