@@ -15,6 +15,7 @@ tags:
   - d90
   - electronique
   - fablab
+date: Mon, 30 Jan 2012 09:21:03 -8000
 ---
 Dans mon dernier post, je parlais de notre réalisation lors du FabLab à savoir :
 

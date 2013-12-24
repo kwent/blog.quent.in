@@ -14,6 +14,7 @@ tags:
   - développement
   - qt
   - thumbnailme
+date : Mon, 12 Mar 2012 12:54:14 -8000
 ---
 <p style="text-align: center;">
   <a title="Thumbnail me 3.0" href="http://www.thumbnailme.com" target="_blank"><img class="aligncenter size-full" title="Thumbnailme_3.0" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/02/about1.png" alt="" width="513" height="152" /></a>

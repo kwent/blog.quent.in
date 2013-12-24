@@ -14,6 +14,7 @@ categories:
 tags:
   - linux
   - wmi
+date: Wed, 18 Jul 2012 11:45:26 -8000
 ---
 ### Context
 

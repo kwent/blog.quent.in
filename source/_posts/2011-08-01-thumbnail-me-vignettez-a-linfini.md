@@ -12,6 +12,7 @@ tags:
   - développement
   - qt
   - thumbnailme
+date: Mon, 01 Aug 2011 09:55:58 -8000
 ---
 Bon je commence avec mon plus gros succès: **Thumbnail me**.
 

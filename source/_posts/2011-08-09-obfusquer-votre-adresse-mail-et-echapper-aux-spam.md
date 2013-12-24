@@ -18,6 +18,7 @@ tags:
   - navigateur
   - obfuscation
   - spam
+date: Tue, 09 Aug 2011 18:32:20 -8000
 ---
 <img class="alignleft size-medium wp-image-184" style="border: none;" title="Spam in mailbox" src="http://blog.quentinrousseau.fr/wp-content/uploads/2011/08/spam-300x199.jpg" alt="" width="216" height="147" />  
 Il nous arrive bien souvent de devoir renseigner notre **@mail** au sein d&rsquo;une page web.  

@@ -17,6 +17,7 @@ tags:
   - odbc
   - redhat
   - sqlserver
+date: Thu, 12 Jul 2012 15:10:37 -8000
 ---
 Hello,
 

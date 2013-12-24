@@ -15,6 +15,7 @@ tags:
   - onefeat
   - social gaming
   - startup
+date: Wed, 18 Jul 2012 11:45:26 -8000
 ---
 ### [<img class="size-medium wp-image-572 alignleft" title="Onefeat Logo" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/08/starbig-300x300.png" alt="" width="300" height="300" />][1]
 

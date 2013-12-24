@@ -13,6 +13,7 @@ tags:
   - data
   - mobile
   - virgin
+date: Wed, 11 Jul 2012 15:00:21 -8000
 ---
 ### [<img class="size-medium wp-image-529 alignleft" title="virgin-mobile-logo" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/07/virgin-mobile-logo-300x158.jpg" alt="" width="300" height="158" />][1]
 

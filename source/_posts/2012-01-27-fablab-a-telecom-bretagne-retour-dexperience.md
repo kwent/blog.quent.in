@@ -14,6 +14,7 @@ tags:
   - bretagne
   - fablab
   - telecom
+date: Fri, 27 Jan 2012 14:17:59 -8000
 ---
 La semaine du 13 Janvier c&rsquo;est **intersemestre** à <a href="http://www.telecom-bretagne.eu/" target="_blank">Télécom Bretagne</a>  !
 

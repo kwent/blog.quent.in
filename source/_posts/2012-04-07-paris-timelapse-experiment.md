@@ -13,7 +13,8 @@ tags:
   - effeiltower
   - paris
   - photography
-  - timelaspe
+  - timelapse
+date: Sat, 07 Apr 2012 10:13:44 -8000
 ---
 <img class="alignright" title="Paris Timelapse" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/04/IMG_20120403_215453-300x179.jpg" alt="" width="300" height="179"/>
 

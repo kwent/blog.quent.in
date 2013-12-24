@@ -16,6 +16,7 @@ tags:
   - remux
   - Script
   - Synology
+date: Thu, 04 Aug 2011 11:39:30 -8000
 ---
 Heureux possesseur d&rsquo;un **NAS** <a href="http://www.synology.com/us/products/DS211j/index.php" target="_blank">Synology DS211j</a>, j&rsquo;ai parfois besoin de remuxer **des saisons complètes de séries** (pour intégrer des sous titres la plupart du temps), et tant qu&rsquo;à faire autant les remuxer **en local** sur le NAS.
 
