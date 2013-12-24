@@ -17,7 +17,8 @@ tags:
   - timelapse
 date: Sat, 07 Apr 2012 10:13:44 -8000
 ---
-<img class="alignright" title="Paris Timelapse" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/04/IMG_20120403_215453-300x179.jpg" alt="" width="300" height="179"/>
+
+![Paris Timelapse](/assets/wp-content/uploads/2012/04/IMG_20120403_215453-300x179.jpg)
 
 My first timelapse try with a amazing view from paris.
 

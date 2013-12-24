@@ -21,7 +21,8 @@ tags:
   - spam
 date: Tue, 09 Aug 2011 18:32:20 -8000
 ---
-<img class="alignleft size-medium wp-image-184" style="border: none;" title="Spam in mailbox" src="http://blog.quentinrousseau.fr/wp-content/uploads/2011/08/spam-300x199.jpg" alt="" width="216" height="147" />  
+![Spam in mailbox](/assets/wp-content/uploads/2011/08/spam-300x199.jpg)
+
 Il nous arrive bien souvent de devoir renseigner notre **@mail** au sein d&rsquo;une page web.  
 Seulement il est essentiel de prendre des précautions sur la manière de la renseigner face au **SPAM**.  
 En effet, une @mail renseignée en **simple texte** est **facilement détectable par un robot** (via une simple expression régulière par exemple) et en moins de quelques secondes, vous voilà inscrit sur une liste de SPAM **contre votre volonté**.
@@ -117,11 +118,9 @@ Rot13 = {
 > 
 > *   <span style="color: #000000;">Si le client web ne supporte pas le JavaScript, aucune @mail ne sera affichée.</span>
 
-D&rsquo;autres solutions existent comme afficher l&rsquo;@mail **dans une image** mais les robots utilisent des techniques **de reconnaissance optique de caractères** au sein d&rsquo;une image: l&rsquo;[OCR][2]
+D&rsquo;autres solutions existent comme afficher l'@mail **dans une image** mais les robots utilisent des techniques **de reconnaissance optique de caractères** au sein d'une image: l'OCR.
 
-<p style="text-align: center;">
-  <img class="aligncenter size-full wp-image-213" style="border: none; background: transparent;" title="email" src="http://blog.quentinrousseau.fr/wp-content/uploads/2011/08/mail.png" alt="Email address embedded in an image." width="191" height="35" />
-</p>
+![Email address embedded in an image](/assets/wp-content/uploads/2011/08/mail.png)
 
 ### Tests grandeur nature
 
@@ -133,19 +132,13 @@ Un collège de **<a href="http://techblog.tilllate.com/2008/07/20/ten-methods-to
   </p>
 </div>
 
-&nbsp;
+Les résultats parlent d'eux même, **<span style="color: #ff0000;">ne renseignez pas</span>** (même sous la torture) votre @mail en **simple texte **! Utilisez au minimum la méthode n°1, qui diminue fortement les chances d'être détecté par un robot.
 
-Les résultats parlent d&rsquo;eux même, **<span style="color: #ff0000;">ne renseignez pas</span>** (même sous la torture) votre @mail en **simple texte **! Utilisez au minimum la méthode n°1, qui diminue fortement les chances d&rsquo;être détecté par un robot.
+## More...
 
-## En savoir plus&#8230;
-
-*   <a href="http://fr.wikipedia.org/wiki/ROT13" title="ROT13 - Wikipédia" rel="nofollow">ROT13 - Wikipédia</a> ![][3]
-*   <a href="http://fr.wikipedia.org/wiki/Spam" title="Spam - Wikipédia" rel="nofollow">Spam - Wikipédia</a> ![][3]
-*   <a href="http://hivelogic.com/enkoder/" title="Enkoder" rel="nofollow">Enkoder</a> ![][3]
-*   <a href="http://perishablepress.com/press/2010/08/01/best-method-for-email-obfuscation/" title="Best Method for Email Obfuscation? • Perishable Press" rel="nofollow">Best Method for Email Obfuscation? • Perishable Press</a> ![][3]
-*   <a href="http://scott.yang.id.au/2003/06/obfuscate-email-address-with-javascript-rot13/" title="Obfuscate Email Address With Javascript Rot13 | SYP" rel="nofollow">Obfuscate Email Address With Javascript Rot13 | SYP</a> ![][3]
-*   <a href="http://www.mailtoencoder.com/" title="Encode your email address with javascript to prevent spam ..." rel="nofollow">Encode your email address with javascript to prevent spam ...</a> ![][3]
-
- [1]: http://fr.wikipedia.org/wiki/ROT13
- [2]: http://fr.wikipedia.org/wiki/Optical_character_recognition
- [3]: http://blog.quentinrousseau.fr/wp-content/plugins/netblog/images/external-link-ltr-icon.png
+*   <a href="http://fr.wikipedia.org/wiki/ROT13" title="ROT13 - Wikipédia" rel="nofollow">ROT13 - Wikipédia</a>
+*   <a href="http://fr.wikipedia.org/wiki/Spam" title="Spam - Wikipédia" rel="nofollow">Spam - Wikipédia</a>
+*   <a href="http://hivelogic.com/enkoder/" title="Enkoder" rel="nofollow">Enkoder</a>
+*   <a href="http://perishablepress.com/press/2010/08/01/best-method-for-email-obfuscation/" title="Best Method for Email Obfuscation? • Perishable Press" rel="nofollow">Best Method for Email Obfuscation? • Perishable Press</a>
+*   <a href="http://scott.yang.id.au/2003/06/obfuscate-email-address-with-javascript-rot13/" title="Obfuscate Email Address With Javascript Rot13 | SYP" rel="nofollow">Obfuscate Email Address With Javascript Rot13 | SYP</a>
+*   <a href="http://www.mailtoencoder.com/" title="Encode your email address with javascript to prevent spam ..." rel="nofollow">Encode your email address with javascript to prevent spam ...</a>

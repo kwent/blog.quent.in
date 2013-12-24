@@ -25,8 +25,7 @@ I forked &laquo;&nbsp;ios-custom-alertview&nbsp;&raquo; from [@wimagguc][1] and
 
 You can just [grab the open source code from Github now][2].
 
-[<img class="aligncenter size-full wp-image-658" alt="Ios Custom AlertView" src="http://blog.quentinrousseau.fr/wp-content/uploads/2013/11/screen.png" />][3] 
-&nbsp;
+![Ios Custom AlertView](/assets/wp-content/uploads/2013/11/screen.png)
 
 Implementation of this alert view is :
 
@@ -44,11 +43,9 @@ NSLog(@“Block: Button at position %d is clicked on alertView %d.”, buttonInd
 
 ## More...
 
-*   <a href="http://www.wimagguc.com/2013/10/custom-ios7-uialertview/" title="Custom iOS7 UIAlertView" rel="nofollow">Custom iOS7 UIAlertView</a> ![][4]
-*   <a href="https://github.com/kwent/ios-custom-alertview" title="kwent/ios-custom-alertview · GitHub" rel="nofollow">kwent/ios-custom-alertview · GitHub</a> ![][4]
-*   <a href="https://github.com/wimagguc" title="wimagguc (Richard Dancsi) · GitHub" rel="nofollow">wimagguc (Richard Dancsi) · GitHub</a> ![][4]
+*   <a href="http://www.wimagguc.com/2013/10/custom-ios7-uialertview/" title="Custom iOS7 UIAlertView" rel="nofollow">Custom iOS7 UIAlertView</a>
+*   <a href="https://github.com/kwent/ios-custom-alertview" title="kwent/ios-custom-alertview · GitHub" rel="nofollow">kwent/ios-custom-alertview · GitHub</a>
+*   <a href="https://github.com/wimagguc" title="wimagguc (Richard Dancsi) · GitHub" rel="nofollow">wimagguc (Richard Dancsi) · GitHub</a>
 
  [1]: https://github.com/wimagguc
  [2]: https://github.com/kwent/ios-custom-alertview
- [3]: http://blog.quentinrousseau.fr/wp-content/uploads/2013/11/screen.png
- [4]: http://blog.quentinrousseau.fr/wp-content/plugins/netblog/images/external-link-ltr-icon.png

@@ -45,9 +45,7 @@ Aujourd&rsquo;hui  **Thumbnail me V3.0** est disponible en beta à l&rsquo;adre
 
 Bien entendu, vous serez les premiers avertis de la sortie de la version finale ;).
 
-## En savoir plus&#8230;
+## More...
 
-*   <a href="http://qt.nokia.com/" title="Qt - Cross-platform application and UI framework — Qt - A ..." rel="nofollow">Qt - Cross-platform application and UI framework — Qt - A ...</a> ![][1]
-*   <a href="http://thumbnailme.sourceforge.net/" title="Thumbnail me – Thumbnail to infinity" rel="nofollow">Thumbnail me – Thumbnail to infinity</a> ![][1]
-
- [1]: http://blog.quentinrousseau.fr/wp-content/plugins/netblog/images/external-link-ltr-icon.png
+*   <a href="http://qt.nokia.com/" title="Qt - Cross-platform application and UI framework — Qt - A ..." rel="nofollow">Qt - Cross-platform application and UI framework — Qt - A ...</a>
+*   <a href="http://thumbnailme.sourceforge.net/" title="Thumbnail me – Thumbnail to infinity" rel="nofollow">Thumbnail me – Thumbnail to infinity</a>

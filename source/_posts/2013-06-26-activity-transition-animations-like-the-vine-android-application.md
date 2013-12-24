@@ -23,7 +23,9 @@ To clarify things, some screenshots of this animation.
 
 ### Screenshots
 
-<img class="size-medium wp-image-625 alignleft" alt="Screenshot_2013-06-26-14-06-54 copy" src="http://blog.quentinrousseau.fr/wp-content/uploads/2013/06/Screenshot_2013-06-26-14-06-54-copy-180x300.png" /><img class="size-medium wp-image-624 alignright" alt="Screenshot_2013-06-26-14-00-16 coy" src="http://blog.quentinrousseau.fr/wp-content/uploads/2013/06/Screenshot_2013-06-26-14-00-16-coy-180x300.png" /><img class="size-medium wp-image-623 aligncenter" alt="Screenshot_2013-06-26-14-00-16 copy" src="http://blog.quentinrousseau.fr/wp-content/uploads/2013/06/Screenshot_2013-06-26-14-00-16-copy-180x300.png" /> 
+![Screenshot1](/assets/wp-content/uploads/2013/06/Screenshot_2013-06-26-14-06-54-copy-180x300.png)
+![Screenshot2](/assets/wp-content/uploads/2013/06/Screenshot_2013-06-26-14-00-16-coy-180x300.png)
+![Screenshot3](/assets/wp-content/uploads/2013/06/Screenshot_2013-06-26-14-00-16-copy-180x300.png)
 
 ### Animations XML
 

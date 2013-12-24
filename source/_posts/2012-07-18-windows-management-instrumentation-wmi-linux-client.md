@@ -62,6 +62,4 @@ In my case to get logical disks spaces, i used:
 wmic -U [domain/]adminuser%password //host “select VolumeName,FreeSpace from Win32_LogicalDisk”
 ```
 
-<h4 style="text-align: center;">
-  <span style="color: #008000;">All is done !</span> Enjoy <img src="http://blog.quentinrousseau.fr/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" />
-</h4>
+Congrats you are done !

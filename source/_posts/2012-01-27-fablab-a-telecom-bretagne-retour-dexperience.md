@@ -75,23 +75,13 @@ Yohann Lepage (<a href="https://twitter.com/#!/2xyo" target="_blank">@2xyo</a>) 
 
 Je détaillerais notre réalisation dans un autre post très prochainement.
 
-<div id="attachment_300" style="width: 310px" class="wp-caption aligncenter">
-  <a href="http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/photoCatch.jpg"><img class="size-medium wp-image-300 " title="PhotoCatch" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/photoCatch-300x199.jpg" alt="" width="300" height="199" /></a><p class="wp-caption-text">
-    Tests de notre projet "PhotoCatch"
-  </p>
-</div>
+![Tests de notre projet "PhotoCatch"](/assets/wp-content/uploads/2012/01/photoCatch-300x199.jpg)
 
-<div id="attachment_312" style="width: 310px" class="wp-caption aligncenter">
-  <a href="http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/DSC_0376_resize.jpg"><img class="size-medium wp-image-312 " title="Explor'Camp" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/DSC_0376_resize-300x199.jpg" alt="Explor'Camp" width="300" height="199" /></a><p class="wp-caption-text">
-    Explor' Camp au centre vie de Télécom Bretagne
-  </p>
-</div>
+![Explor' Camp au centre vie de Télécom Bretagne](/assets/wp-content/uploads/2012/01/DSC_0376_resize-300x199.jpg)
 
 ## More...
 
-*   <a href="http://fr.wikipedia.org/wiki/Arduino" title="Arduino - Wikipédia" rel="nofollow">Arduino - Wikipédia</a> ![][1]
-*   <a href="http://fr.wikipedia.org/wiki/Fab_lab" title="Fab lab - Wikipédia" rel="nofollow">Fab lab - Wikipédia</a> ![][1]
-*   <a href="http://fr.wikipedia.org/wiki/ZigBee" title="ZigBee - Wikipédia" rel="nofollow">ZigBee - Wikipédia</a> ![][1]
-*   <a href="http://www.telecom-bretagne.eu" title="[Télécom Bretagne] Une Grande École d\'ingénieur et un centre de recherche international dans les sciences et technologies de l" rel="nofollow">[Télécom Bretagne] Une Grande École d\'ingénieur et un centre de recherche international dans le...</a> ![][1]
-
- [1]: http://blog.quentinrousseau.fr/wp-content/plugins/netblog/images/external-link-ltr-icon.png
+*   <a href="http://fr.wikipedia.org/wiki/Arduino" title="Arduino - Wikipédia" rel="nofollow">Arduino - Wikipédia</a>
+*   <a href="http://fr.wikipedia.org/wiki/Fab_lab" title="Fab lab - Wikipédia" rel="nofollow">Fab lab - Wikipédia</a>
+*   <a href="http://fr.wikipedia.org/wiki/ZigBee" title="ZigBee - Wikipédia" rel="nofollow">ZigBee - Wikipédia</a>
+*   <a href="http://www.telecom-bretagne.eu" title="[Télécom Bretagne] Une Grande École d\'ingénieur et un centre de recherche international dans les sciences et technologies de l" rel="nofollow">[Télécom Bretagne] Une Grande École d\'ingénieur et un centre de recherche international dans le...</a>

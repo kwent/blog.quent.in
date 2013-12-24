@@ -18,7 +18,6 @@ tags:
   - startup
 date: Wed, 18 Jul 2012 11:45:26 -8000
 ---
-### [<img class="size-medium wp-image-572 alignleft" title="Onefeat Logo" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/08/starbig-300x300.png" alt="" width="300" height="300" />][1]
 
 **Introduction**
 
@@ -39,7 +38,7 @@ date: Wed, 18 Jul 2012 11:45:26 -8000
 </p>
 
 <p>
-  I joined the team as <strong>&laquo;&nbsp;Software Development Guy&nbsp;&raquo;</strong> since this week and we&rsquo;re preparing some new features for you ! Be patient <img src="http://blog.quentinrousseau.fr/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley" />
+  I joined the team as <strong>&laquo;&nbsp;Software Development Guy&nbsp;&raquo;</strong> since this week and we&rsquo;re preparing some new features for you ! Be patient! />
 </p>
 
 <p>
@@ -50,17 +49,10 @@ date: Wed, 18 Jul 2012 11:45:26 -8000
   Check out the onefeat blog : <a href="http://blog.onefeat.com">http://blog.onefeat.com</a>
 </p>
 
-<p>
-  Play with us on Facebook : <a href="https://apps.facebook.com/onefeat/" target="_blank">https://apps.facebook.com/onefeat/ </a>
-</p>
-
 <a class="twitter-follow-button" href="https://twitter.com/onefeat" data-show-count="false">Follow @onefeat</a>  
 
 
 ## More...
 
-*   <a href="http://onefeat.com" title="Onefeat - Play life. Level up." rel="nofollow">Onefeat - Play life. Level up.</a> ![][2]
-*   <a href="http://www.presse-citron.net/la-start-up-francaise-de-la-semaine-onefeat" title="[La Start-Up française de la Semaine] : OneFeat" rel="nofollow">[La Start-Up française de la Semaine] : OneFeat</a> ![][2]
-
- [1]: http://blog.quentinrousseau.fr/wp-content/uploads/2012/08/starbig.png
- [2]: http://blog.quentinrousseau.fr/wp-content/plugins/netblog/images/external-link-ltr-icon.png
+*   <a href="http://onefeat.com" title="Onefeat - Play life. Level up." rel="nofollow">Onefeat - Play life. Level up.</a>
+*   <a href="http://www.presse-citron.net/la-start-up-francaise-de-la-semaine-onefeat" title="[La Start-Up française de la Semaine] : OneFeat" rel="nofollow">[La Start-Up française de la Semaine] : OneFeat</a>

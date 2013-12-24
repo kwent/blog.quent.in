@@ -110,8 +110,6 @@ sh monscript 1 23 “/Series/MaSerie/Saison X” “/Series/MaSerie/Saison X/02 
 
 ## More...
 
-*   <a href="http://www.bunkus.org/videotools/mkvtoolnix/" title="mkvtoolnix -- Matroska tools for Linux/Unix and Windows" rel="nofollow">mkvtoolnix -- Matroska tools for Linux/Unix and Windows</a> ![][1]
-*   <a href="http://www.bunkus.org/videotools/mkvtoolnix/doc/mkvmerge.html" title="mkvmerge" rel="nofollow">mkvmerge</a> ![][1]
-*   <a href="http://www.synology.com/us/products/DS211j/index.php" title="Synology Network Attached Storage - Products :: DiskStation ..." rel="nofollow">Synology Network Attached Storage - Products :: DiskStation ...</a> ![][1]
-
- [1]: http://blog.quentinrousseau.fr/wp-content/plugins/netblog/images/external-link-ltr-icon.png
+*   <a href="http://www.bunkus.org/videotools/mkvtoolnix/" title="mkvtoolnix -- Matroska tools for Linux/Unix and Windows" rel="nofollow">mkvtoolnix -- Matroska tools for Linux/Unix and Windows</a>
+*   <a href="http://www.bunkus.org/videotools/mkvtoolnix/doc/mkvmerge.html" title="mkvmerge" rel="nofollow">mkvmerge</a>
+*   <a href="http://www.synology.com/us/products/DS211j/index.php" title="Synology Network Attached Storage - Products :: DiskStation ..." rel="nofollow">Synology Network Attached Storage - Products :: DiskStation ...</a>

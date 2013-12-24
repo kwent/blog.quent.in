@@ -114,7 +114,5 @@ ldd `which sqlcmd`
 
 ## More...
 
-*   <a href="http://www.microsoft.com/en-us/download/details.aspx?id=28160" title="No Title" rel="nofollow">No Title</a> ![][1]
-*   <a href="http://www.unixodbc.org/" title="unixODBC" rel="nofollow">unixODBC</a> ![][1]
-
- [1]: http://blog.quentinrousseau.fr/wp-content/plugins/netblog/images/external-link-ltr-icon.png
+*   <a href="http://www.microsoft.com/en-us/download/details.aspx?id=28160" title="No Title" rel="nofollow">Microsoft Download Center</a>
+*   <a href="http://www.unixodbc.org/" title="unixODBC" rel="nofollow">unixODBC</a>

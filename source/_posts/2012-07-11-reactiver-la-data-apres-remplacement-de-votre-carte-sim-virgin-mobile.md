@@ -16,11 +16,12 @@ tags:
   - virgin
 date: Wed, 11 Jul 2012 15:00:21 -8000
 ---
-### [<img class="size-medium wp-image-529 alignleft" title="virgin-mobile-logo" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/07/virgin-mobile-logo-300x158.jpg" alt="" width="300" height="158" />][1]
+
+![Virgin Mobile Logo](/assets/wp-content/uploads/2012/07/virgin-mobile-logo-300x158.jpg)
 
 Pourquoi un changement ?
 
-Virgin Mobile à commencer à distribuer ces nouvelles SIM qui à terme permettront de passer nos données et nos communications à la fois sur le Réseau SFR et à la fois sur le réseau d&rsquo;ORANGE.
+Virgin Mobile à commencer à distribuer ces nouvelles SIM qui à terme permettront de passer nos données et nos communications à la fois sur le Réseau SFR et à la fois sur le réseau d'ORANGE.
 
 Après remplacement de votre ancienne carte SIM par la nouvelle, il se peut que votre terminal ne retrouve pas la DATA.
 
@@ -51,7 +52,4 @@ Le profil est enregistré .
 
 ## More...
 
-*   <a href="http://assistance-mobile.virginmobile.fr/questions/248652-nouvelle-sim-pas-de-data" title="Nouvelle SIM - Pas de data - Répondue" rel="nofollow">Nouvelle SIM - Pas de data - Répondue</a> ![][2]
-
- [1]: http://blog.quentinrousseau.fr/wp-content/uploads/2012/07/virgin-mobile-logo.jpg
- [2]: http://blog.quentinrousseau.fr/wp-content/plugins/netblog/images/external-link-ltr-icon.png
+*   <a href="http://assistance-mobile.virginmobile.fr/questions/248652-nouvelle-sim-pas-de-data" title="Nouvelle SIM - Pas de data - Répondue" rel="nofollow">Nouvelle SIM - Pas de data - Répondue</a>

@@ -24,9 +24,7 @@ Dans mon dernier post, je parlais de notre réalisation lors du FabLab à savoir
 
 Aujourd&rsquo;hui, je vais détailler le montage de cette réalisation.
 
-<p style="text-align: center;">
-  <a href="http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/photoCatch.png"><img class="size-medium wp-image-307 aligncenter" title="PhotoCatch" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/photoCatch-279x300.png" alt="" width="279" height="300" /></a>
-</p>
+![PhotoCatch](/assets/wp-content/uploads/2012/01/photoCatch-279x300.png)
 
 ### Le matériel
 
@@ -43,11 +41,7 @@ Une touche de talent
 
 ### PhotoCatch &#8211; Etape par étape
 
-<div id="attachment_323" style="width: 222px" class="wp-caption aligncenter">
-  <a href="http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/A2_biss.jpg"><img class="size-medium wp-image-323" title="PhotoCatch" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/A2_biss-212x300.jpg" alt="" width="212" height="300" /></a><p class="wp-caption-text">
-    Principe de PhotoCatch
-  </p>
-</div>
+![Principe de PhotoCatch](/assets/wp-content/uploads/2012/01/A2_biss-212x300.jpg)
 
 ### Achat de la télécommande
 
@@ -68,10 +62,12 @@ Réalisés sous Fritzing &#8211; <http://fritzing.org>
 *   1 servomoteur permettant au capteur ultrasons de balayer un champ plus large (180°) ;
 *   4 afficheurs 7 segments permettant de compter le nombre de photos prises.
 
-[<img class="aligncenter size-medium wp-image-327" title="PhotoCatchV1_schema" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/PhotoCatchV1_bb-300x287.png" alt="" width="300" height="287" />][2][<img class="aligncenter size-medium wp-image-326" title="PhotoCatch_wire" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/PhotoCatchV1_schem-300x168.png" alt="" width="300" height="168" />][3] 
+![PhotoCatchV1_schema](/assets/wp-content/uploads/2012/01/PhotoCatchV1_bb-300x287.png)
+![PhotoCatch_wire](/assets/wp-content/uploads/2012/01/PhotoCatchV1_schem-300x168.png)
+
 ### Code arduino
 
-Le code est disponible dans son intégralité sur **GitHub** : <a href="https://github.com/2xyo/fablab/tree/master/photocatch " target="_blank">https://github.com/2xyo/fablab/blob/master/photocatch/src/photocatch.ino</a> et sous **&laquo;&nbsp;THE BEER-WARE LICENSE&nbsp;&raquo;** <img src="http://blog.quentinrousseau.fr/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley" /> 
+Le code est disponible dans son intégralité sur **GitHub** : <a href="https://github.com/2xyo/fablab/tree/master/photocatch " target="_blank">https://github.com/2xyo/fablab/blob/master/photocatch/src/photocatch.ino</a>
 
 ```c
 /*
@@ -286,14 +282,8 @@ void shoot()
 *   <span style="font-family: 'mceinline';">Utiliser <strong>&laquo;&nbsp;Picture Transfert Protocol&nbsp;&raquo;</strong> qui permet de contrôler beaucoup plus de paramètres tels que l&rsquo;ouverture de l&rsquo;objectif, la vitesse et même la récupération des photos. Tout cela par contrôle USB.</span>
 
 
+## More...
 
-## En savoir plus&#8230;
-
-*   <a href="http://arduino.cc/en/Tutorial/Ping" title="Arduino - Ping" rel="nofollow">Arduino - Ping</a> ![][4]
-*   <a href="http://arduino.cc/en/Tutorial/Sweep" title="Arduino - Sweep" rel="nofollow">Arduino - Sweep</a> ![][4]
-*   <a href="http://libptp.sourceforge.net/" title="libptp2 Project Page" rel="nofollow">libptp2 Project Page</a> ![][4]
-
- [1]: http://cgi.ebay.fr/TELECOMMANDE-filaire-1m-pour-NIKON-D90-D3100-D5000-MC-DC2-/190620347929?pt=FR_T%C3%A9l%C3%A9commandes_d%C3%A9clencheurs&hash=item2c61dbae19
- [2]: http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/PhotoCatchV1_bb.png
- [3]: http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/PhotoCatchV1_schem.png
- [4]: http://blog.quentinrousseau.fr/wp-content/plugins/netblog/images/external-link-ltr-icon.png
+*   <a href="http://arduino.cc/en/Tutorial/Ping" title="Arduino - Ping" rel="nofollow">Arduino - Ping</a>
+*   <a href="http://arduino.cc/en/Tutorial/Sweep" title="Arduino - Sweep" rel="nofollow">Arduino - Sweep</a>
+*   <a href="http://libptp.sourceforge.net/" title="libptp2 Project Page" rel="nofollow">libptp2 Project Page</a>

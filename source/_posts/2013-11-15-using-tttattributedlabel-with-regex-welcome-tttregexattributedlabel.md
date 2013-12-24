@@ -26,7 +26,7 @@ If you are looking a easy library to use to apply Regex with **[TTTAttributedLa
 
 ## Example
 
-[<img class="aligncenter size-full wp-image-663" alt="Example" src="http://blog.quentinrousseau.fr/wp-content/uploads/2013/11/screenshot.jpg" />][4] 
+![Screenshot](/assets/wp-content/uploads/2013/11/screenshot.jpg)[4]
 
 ## Usage
 
@@ -44,11 +44,9 @@ Enjoy it !
 
 ## More...
 
-*   <a href="https://github.com/kwent/TTTRegexAttributedLabel" title="kwent/TTTRegexAttributedLabel · GitHub" rel="nofollow">kwent/TTTRegexAttributedLabel · GitHub</a> ![][5]
-*   <a href="https://github.com/mattt/TTTAttributedLabel?source=c" title="mattt/TTTAttributedLabel · GitHub" rel="nofollow">mattt/TTTAttributedLabel · GitHub</a> ![][5]
+*   <a href="https://github.com/kwent/TTTRegexAttributedLabel" title="kwent/TTTRegexAttributedLabel · GitHub" rel="nofollow">kwent/TTTRegexAttributedLabel · GitHub</a>
+*   <a href="https://github.com/mattt/TTTAttributedLabel?source=c" title="mattt/TTTAttributedLabel · GitHub" rel="nofollow">mattt/TTTAttributedLabel · GitHub</a>
 
  [1]: https://github.com/mattt/TTTAttributedLabel
  [2]: http://github.com/mattt
  [3]: https://github.com/kwent/TTTRegexAttributedLabel
- [4]: http://blog.quentinrousseau.fr/wp-content/uploads/2013/11/screenshot.jpg
- [5]: http://blog.quentinrousseau.fr/wp-content/plugins/netblog/images/external-link-ltr-icon.png

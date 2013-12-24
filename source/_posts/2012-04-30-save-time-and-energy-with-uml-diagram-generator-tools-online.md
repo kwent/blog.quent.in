@@ -54,7 +54,8 @@ View->Browser : HTML
 ```
 
 **Activity diagram image generated :**  
-[<img class="aligncenter size-medium wp-image-483" title="show Action RoR" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/04/index.png" alt="" />][4]
+
+![show Action RoR](/assets/wp-content/uploads/2012/04/index.png)
 
 **Example with Web Sequence Diagram Tool  **: ****
 
@@ -70,7 +71,8 @@ View->Browser : HTML
 ```
 
 **Use case diagram image generated :**  
-[<img class="aligncenter size-full wp-image-487" title="Use case generated with yUML" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/04/use-cases.png" alt="" width="953" height="427" />][5]
+
+![Use case generated with yUML](/assets/wp-content/uploads/2012/04/use-cases.png)
 
 #### 2. Integration with other services
 
@@ -86,7 +88,7 @@ http://yuml.me/diagram/class/[Customer]->[Billing Address]
 
 **Will generate :**
 
-![Alt yuml]("http://yuml.me/diagram/class/[Customer]->[Billing Address]") 
+![Yuml](http://yuml.me/diagram/class/[Customer]->[Billing%20Address]) 
 
 ####  3. Universal
 
@@ -140,16 +142,9 @@ getSequenceDiagram( text, pngFile, style )
 
 ## More...
 
-*   <a href="http://creately.com/Draw-UML-and-Class-Diagrams-Online" title="Draw UML diagrams Online | Online UML Tool | UML Diagram Creator | Creately" rel="nofollow">Draw UML diagrams Online | Online UML Tool | UML Diagram Creator | Creately</a> ![][6]
-*   <a href="http://kangamodeling.org/" title="Kanga Modelling - Create Sequence Diagrams Using Markup Languagimport urllib
-*   <a href="http://www.gliffy.com/uses/uml-software/" title="UML Software - Free online UML editor - no download required" rel="nofollow">UML Software - Free online UML editor - no download required</a> ![][6]
-*   <a href="http://www.lucidchart.com/" title="Online Diagram & Flowchart Software | Lucidchart" rel="nofollow">Online Diagram & Flowchart Software | Lucidchart</a> ![][6]
-*   <a href="http://www.websequencediagrams.com/" title="No Title" rel="nofollow">No Title</a> ![][6]
-*   <a href="http://yuml.me/" title="Create UML diagrams online in seconds, no special tools needed." rel="nofollow">Create UML diagrams online in seconds, no special tools needed.</a> ![][6]
-
- [1]: http://www.websequencediagrams.com
- [2]: http://yuml.me
- [3]: http://kangamodeling.org
- [4]: http://blog.quentinrousseau.fr/wp-content/uploads/2012/04/index.png
- [5]: http://blog.quentinrousseau.fr/wp-content/uploads/2012/04/use-cases.png
- [6]: http://blog.quentinrousseau.fr/wp-content/plugins/netblog/images/external-link-ltr-icon.png
+*   <a href="http://creately.com/Draw-UML-and-Class-Diagrams-Online" title="Draw UML diagrams Online | Online UML Tool | UML Diagram Creator | Creately" rel="nofollow">Draw UML diagrams Online | Online UML Tool | UML Diagram Creator | Creately</a>
+*   <a href="http://kangamodeling.org/" title="Kanga Modelling - Create Sequence Diagrams Using Markup Language">Kanga Modelling - Create Sequence Diagrams Using Markup Language</a>
+*   <a href="http://www.gliffy.com/uses/uml-software/" title="UML Software - Free online UML editor - no download required" rel="nofollow">UML Software - Free online UML editor - no download required</a>
+*   <a href="http://www.lucidchart.com/" title="Online Diagram & Flowchart Software | Lucidchart" rel="nofollow">Online Diagram & Flowchart Software | Lucidchart</a>
+*   <a href="http://www.websequencediagrams.com/" title="No Title" rel="nofollow">www.websequencediagrams.com</a>
+*   <a href="http://yuml.me/" title="Create UML diagrams online in seconds, no special tools needed." rel="nofollow">Create UML diagrams online in seconds, no special tools needed.</a>
