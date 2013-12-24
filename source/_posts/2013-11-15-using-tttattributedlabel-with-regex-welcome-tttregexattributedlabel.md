@@ -22,22 +22,11 @@ Hi there !
 
 If you are looking a easy library to use to apply Regex with **[TTTAttributedLabel][1] **from [Mattt Thompson][2], i build a lib called [**TTTRegexAttributedLabel**][3].
 
-&nbsp;
-
-<h2 style="text-align: center;">
-  Example
-</h2>
-
-&nbsp;
+## Example
 
 [<img class="aligncenter size-full wp-image-663" alt="Example" src="http://blog.quentinrousseau.fr/wp-content/uploads/2013/11/screenshot.jpg" />][4] 
-&nbsp;
 
-<h2 style="text-align: center;">
-  Usage
-</h2>
-
-&nbsp;
+## Usage
 
 **Below a quick example hot to use it ( First example in the Screenshot)**
 
@@ -51,7 +40,7 @@ NSString *s1 = @“Soft kitty,\nWarm kitty,\nLittle ball of fur.\nHappy kitty,\n
 
 Enjoy it !
 
-## En savoir plus&#8230;
+## More...
 
 *   <a href="https://github.com/kwent/TTTRegexAttributedLabel" title="kwent/TTTRegexAttributedLabel · GitHub" rel="nofollow">kwent/TTTRegexAttributedLabel · GitHub</a> ![][5]
 *   <a href="https://github.com/mattt/TTTAttributedLabel?source=c" title="mattt/TTTAttributedLabel · GitHub" rel="nofollow">mattt/TTTAttributedLabel · GitHub</a> ![][5]

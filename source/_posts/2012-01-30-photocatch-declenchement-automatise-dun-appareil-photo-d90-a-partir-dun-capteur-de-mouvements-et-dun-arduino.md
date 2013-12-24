@@ -28,14 +28,16 @@ Aujourd&rsquo;hui, je vais détailler le montage de cette réalisation.
 
 ### Le matériel
 
-*   Un boîtier NIKON D90 ;
-*   Une télécommande filaire premier prix (Disponible [ici][1]) ;
-*   Un arduino uno ;
-*   Un servomoteur ;
-*   Un capteur ultrasons ;
-*   Une breadboard ;
-*   Quatres afficheurs 7 segments ;
-*   Une touche de talent.
+```plain
+Un boîtier NIKON D90
+Une télécommande filaire premier prix (Disponible [ici][1])
+Un arduino uno
+Un servomoteur
+Un capteur ultrasons
+Une breadboard
+Quatres afficheurs 7 segments
+Une touche de talent
+```
 
 ### PhotoCatch &#8211; Etape par étape
 
@@ -67,25 +69,205 @@ Réalisés sous Fritzing &#8211; <http://fritzing.org>
 [<img class="aligncenter size-medium wp-image-327" title="PhotoCatchV1_schema" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/PhotoCatchV1_bb-300x287.png" alt="" width="300" height="287" />][2][<img class="aligncenter size-medium wp-image-326" title="PhotoCatch_wire" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/01/PhotoCatchV1_schem-300x168.png" alt="" width="300" height="168" />][3] 
 ### Code arduino
 
-Le code est disponible dans son intégralité sur **GitHub** : <a href="https://github.com/2xyo/fablab/tree/master/photocatch " target="_blank">https://github.com/2xyo/fablab/tree/master/photocatch </a>et sous **&laquo;&nbsp;THE BEER-WARE LICENSE&nbsp;&raquo;** <img src="http://blog.quentinrousseau.fr/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley" /> 
+Le code est disponible dans son intégralité sur **GitHub** : <a href="https://github.com/2xyo/fablab/tree/master/photocatch " target="_blank">https://github.com/2xyo/fablab/blob/master/photocatch/src/photocatch.ino</a> et sous **&laquo;&nbsp;THE BEER-WARE LICENSE&nbsp;&raquo;** <img src="http://blog.quentinrousseau.fr/wp-includes/images/smilies/icon_wink.gif" alt=";)" class="wp-smiley" /> 
 
-<div class="codecolorer-container c default" style="overflow:auto;white-space:nowrap;width:618px;height:300px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />34<br />35<br />36<br />37<br />38<br />39<br />40<br />41<br />42<br />43<br />44<br />45<br />46<br />47<br />48<br />49<br />50<br />51<br />52<br />53<br />54<br />55<br />56<br />57<br />58<br />59<br />60<br />61<br />62<br />63<br />64<br />65<br />66<br />67<br />68<br />69<br />70<br />71<br />72<br />73<br />74<br />75<br />76<br />77<br />78<br />79<br />80<br />81<br />82<br />83<br />84<br />85<br />86<br />87<br />88<br />89<br />90<br />91<br />92<br />93<br />94<br />95<br />96<br />97<br />98<br />99<br />100<br />101<br />102<br />103<br />104<br />105<br />106<br />107<br />108<br />109<br />110<br />111<br />112<br />113<br />114<br />115<br />116<br />117<br />118<br />119<br />120<br />121<br />122<br />123<br />124<br />125<br />126<br />127<br />128<br />129<br />130<br />131<br />132<br />133<br />134<br />135<br />136<br />137<br />138<br />139<br />140<br />141<br />142<br />143<br />144<br />145<br />146<br />147<br />148<br />149<br />150<br />151<br />152<br />153<br />154<br />155<br />156<br />157<br />158<br />159<br />160<br />161<br />162<br />163<br />164<br />165<br />166<br />167<br />168<br />169<br />170<br />171<br />172<br />173<br />174<br />175<br />176<br />177<br />178<br />179<br />180<br />181<br />182<br />183<br />184<br />185<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="c codecolorer">
-          <span class="coMULTI">/*<br /> ||<br /> || @author Yohann Lepage<br /> || @author Quentin Rousseau<br /> || @version 0.2<br /> ||<br /> || @description<br /> || PhotoCatch prend automatiquement une photo lorsque<br /> || quelqu'un passe devant l'appareil grace Ã  son capteur<br /> || Ã  ultra-son<br /> ||<br /> */</span><br /> <br /> <span class="co2">#include</span><br /> <span class="co2">#include</span><br /> <span class="co2">#define DEBUG true</span><br /> <br /> <span class="co1">// Librairies utilisÃ©es</span><br /> <span class="co1">// http://arduino.cc/en/Tutorial/Sweep</span><br /> <span class="co1">// http://arduino.cc/en/Tutorial/Ping</span><br /> <br /> <span class="co1">//7 Segments</span><br /> <span class="kw4">int</span> rxSegPin <span class="sy0">=</span> <span class="nu0"></span><span class="sy0">;</span><br /> <span class="kw4">int</span> txSegPin <span class="sy0">=</span> <span class="nu0">3</span><span class="sy0">;</span><br /> <span class="kw4">int</span> photosCounter <span class="sy0">=</span> <span class="nu0"></span><span class="sy0">;</span><br /> SoftwareSerial segSerial <span class="sy0">=</span> SoftwareSerial<span class="br0">&#40;</span>rxSegPin<span class="sy0">,</span> txSegPin<span class="br0">&#41;</span><span class="sy0">;</span><br /> <br /> <span class="co1">// Ultra Son</span><br /> <span class="co1">// Pin Ultra son</span><br /> <span class="kw4">int</span> pingPin <span class="sy0">=</span> <span class="nu0">9</span><span class="sy0">;</span><br /> <span class="kw4">int</span> val <span class="sy0">=</span> <span class="nu0"></span><span class="sy0">;</span><br /> <span class="kw4">int</span> ultrasoundValue <span class="sy0">=</span> <span class="nu0"></span><span class="sy0">;</span><br /> <span class="kw4">int</span> timecount <span class="sy0">=</span> <span class="nu0"></span><span class="sy0">;</span> <span class="co1">// Echo counter</span><br /> <br /> <span class="co1">// Appareil Photo</span><br /> <span class="co1">// Pin Focus</span><br /> <span class="kw4">int</span> focusPin <span class="sy0">=</span> <span class="nu0">5</span><span class="sy0">;</span><br /> <span class="co1">// Pin Shoot</span><br /> <span class="kw4">int</span> shootPin <span class="sy0">=</span> <span class="nu0">6</span><span class="sy0">;</span><br /> <span class="co1">// DurÃ©e du focus</span><br /> <span class="kw4">int</span> focusTime <span class="sy0">=</span> <span class="nu0"></span><span class="sy0">;</span><br /> <br /> <span class="co1">// Distance pour le shoot</span><br /> <span class="kw4">int</span> shoot_threshold <span class="sy0">=</span> <span class="nu0">100</span><span class="sy0">;</span><br /> <br /> <span class="co1">// Servo Moteur</span><br /> Servo myservo<span class="sy0">;</span><br /> <span class="co1">// Pin Servo</span><br /> <span class="kw4">int</span> servoPin <span class="sy0">=</span> <span class="nu0">10</span><span class="sy0">;</span><br /> <span class="co1">// Position du Servo Moteur 0 - 180Â°</span><br /> <span class="kw4">int</span> pos <span class="sy0">=</span> <span class="nu0"></span><span class="sy0">;</span><br /> <br /> <span class="co1">// DÃ©marrage de l'Arduino</span><br /> <span class="kw4">void</span> setup<span class="br0">&#40;</span><span class="br0">&#41;</span><br /> <span class="br0">&#123;</span><br /> <span class="co1">//Serial pour mode DEBUG</span><br /> <span class="kw1">if</span><span class="br0">&#40;</span>DEBUG<span class="br0">&#41;</span><br /> Serial.<span class="me1">begin</span><span class="br0">&#40;</span><span class="nu0">9600</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="co1">// Attachement du servo au servoPin</span><br /> myservo.<span class="me1">attach</span><span class="br0">&#40;</span>servoPin<span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="co1">// Passage en mode Output pour l'ultra son</span><br /> pinMode<span class="br0">&#40;</span>pingPin<span class="sy0">,</span> OUTPUT<span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="co1">// Passage en Output pour le focus</span><br /> pinMode<span class="br0">&#40;</span>focusPin<span class="sy0">,</span> OUTPUT<span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="co1">// Passage en Output pour le Shoot</span><br /> pinMode<span class="br0">&#40;</span>shootPin<span class="sy0">,</span> OUTPUT<span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="co1">// Passage en low des focus et shoot</span><br /> digitalWrite<span class="br0">&#40;</span>focusPin<span class="sy0">,</span> LOW<span class="br0">&#41;</span><span class="sy0">;</span><br /> digitalWrite<span class="br0">&#40;</span>shootPin<span class="sy0">,</span> LOW<span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="co1">//7 Segments</span><br /> segSerial.<span class="me1">begin</span><span class="br0">&#40;</span><span class="nu0">9600</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> pinMode<span class="br0">&#40;</span>rxSegPin<span class="sy0">,</span> INPUT<span class="br0">&#41;</span><span class="sy0">;</span><br /> pinMode<span class="br0">&#40;</span>txSegPin<span class="sy0">,</span> OUTPUT<span class="br0">&#41;</span><span class="sy0">;</span><br /> <br /> segSerial.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">"vv"</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="co1">//Turn Colon Off</span><br /> segSerial.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">'4d'</span><span class="sy0">,</span>HEX<span class="br0">&#41;</span><span class="sy0">;</span><br /> segSerial.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">'00'</span><span class="sy0">,</span>HEX<span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="br0">&#125;</span><br /> <br /> <span class="co1">// DÃ©marrage de la boucle principale</span><br /> <span class="kw4">void</span> loop<span class="br0">&#40;</span><span class="br0">&#41;</span><br /> <span class="br0">&#123;</span><br /> <span class="co1">// Appel Ã  la mÃ©thode de balayage grace au servo</span><br /> sweep<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="br0">&#125;</span><br /> <br /> <span class="co1">// DÃ©tection d'un objet</span><br /> <span class="kw4">void</span> sonar<span class="br0">&#40;</span><span class="br0">&#41;</span><br /> <span class="br0">&#123;</span><br /> <span class="co1">// establish variables for duration of the ping,</span><br /> <span class="co1">// and the distance result in inches and centimeters:</span><br /> <span class="kw4">long</span> duration<span class="sy0">,</span> inches<span class="sy0">,</span> cm<span class="sy0">;</span><br /> <br /> <span class="co1">// The PING))) is triggered by a HIGH pulse of 2 or more microseconds.</span><br /> <span class="co1">// Give a short LOW pulse beforehand to ensure a clean HIGH pulse:</span><br /> pinMode<span class="br0">&#40;</span>pingPin<span class="sy0">,</span> OUTPUT<span class="br0">&#41;</span><span class="sy0">;</span><br /> digitalWrite<span class="br0">&#40;</span>pingPin<span class="sy0">,</span> LOW<span class="br0">&#41;</span><span class="sy0">;</span><br /> delayMicroseconds<span class="br0">&#40;</span><span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> digitalWrite<span class="br0">&#40;</span>pingPin<span class="sy0">,</span> HIGH<span class="br0">&#41;</span><span class="sy0">;</span><br /> delayMicroseconds<span class="br0">&#40;</span><span class="nu0">5</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> digitalWrite<span class="br0">&#40;</span>pingPin<span class="sy0">,</span> LOW<span class="br0">&#41;</span><span class="sy0">;</span><br /> <br /> <span class="co1">// The same pin is used to read the signal from the PING))): a HIGH</span><br /> <span class="co1">// pulse whose duration is the time (in microseconds) from the sending</span><br /> <span class="co1">// of the ping to the reception of its echo off of an object.</span><br /> pinMode<span class="br0">&#40;</span>pingPin<span class="sy0">,</span> INPUT<span class="br0">&#41;</span><span class="sy0">;</span><br /> duration <span class="sy0">=</span> pulseIn<span class="br0">&#40;</span>pingPin<span class="sy0">,</span> HIGH<span class="br0">&#41;</span><span class="sy0">;</span><br /> <br /> Serial.<span class="me1">print</span><span class="br0">&#40;</span>microsecondsToCentimeters<span class="br0">&#40;</span>duration<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> Serial.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">" cmn"</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> <br /> <span class="kw1">if</span><span class="br0">&#40;</span>microsecondsToCentimeters<span class="br0">&#40;</span>duration<span class="br0">&#41;</span> <span class="br0">&#123;</span><br /> shoot<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="br0">&#125;</span><br /> <br /> delay<span class="br0">&#40;</span><span class="nu0">150</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="br0">&#125;</span><br /> <span class="co1">// Balayage avec le Servo</span><br /> <span class="kw4">void</span> sweep<span class="br0">&#40;</span><span class="br0">&#41;</span><br /> <span class="br0">&#123;</span><br /> <span class="kw1">for</span><span class="br0">&#40;</span>pos <span class="sy0">=</span> <span class="nu0"></span><span class="sy0">;</span> pos <span class="sy0">&</span>lt<span class="sy0">;</span> <span class="nu0">90</span><span class="sy0">;</span> pos <span class="sy0">+=</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="co1">// goes from 0 degrees to 180 degrees { // in steps of 1 degree myservo.write(pos); // tell servo to go to position in variable 'pos' //delay(15); // waits 15ms for the servo to reach the position sonar(); } for(pos = 90; pos >=1; pos-=1) // goes from 180 degrees to 0 degrees</span><br /> <br /> <span class="br0">&#123;</span><br /> myservo.<span class="me1">write</span><span class="br0">&#40;</span>pos<span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">// tell servo to go to position in variable 'pos'</span><br /> <span class="co1">//delay(15); // waits 15ms for the servo to reach the position</span><br /> sonar<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="br0">&#125;</span><br /> <span class="br0">&#125;</span><br /> <br /> <span class="kw4">long</span> microsecondsToCentimeters<span class="br0">&#40;</span><span class="kw4">long</span> microseconds<span class="br0">&#41;</span><br /> <span class="br0">&#123;</span><br /> <span class="co1">// The speed of sound is 340 m/s or 29 microseconds per centimeter.</span><br /> <span class="co1">// The ping travels out and back, so to find the distance of the</span><br /> <span class="co1">// object we take half of the distance travelled.</span><br /> <span class="kw1">return</span> microseconds <span class="sy0">/</span> <span class="nu0">29</span> <span class="sy0">/</span> <span class="nu0">2</span><span class="sy0">;</span><br /> <span class="br0">&#125;</span><br /> <br /> <span class="co1">//Display Photos Counter on the 7 Segments Display</span><br /> <span class="kw4">void</span> displaySeg<span class="br0">&#40;</span><span class="br0">&#41;</span><br /> <span class="br0">&#123;</span><br /> photosCounter <span class="sy0">=</span> photosCounter <span class="sy0">+</span><span class="nu0">1</span> <span class="sy0">;</span><br /> <br /> <span class="kw1">if</span><span class="br0">&#40;</span>photosCounter <span class="sy0">&</span>lt<span class="sy0">;</span> <span class="nu0">10</span><span class="br0">&#41;</span><br /> <span class="br0">&#123;</span><br /> segSerial.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">" "</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> segSerial.<span class="me1">print</span><span class="br0">&#40;</span>photosCounter<span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="br0">&#125;</span><br /> <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>photosCounter <span class="sy0">&</span>lt<span class="sy0">;</span> <span class="nu0">100</span><span class="br0">&#41;</span><br /> <span class="br0">&#123;</span><br /> segSerial.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">" "</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> segSerial.<span class="me1">print</span><span class="br0">&#40;</span>photosCounter<span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="br0">&#125;</span><br /> <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">&#40;</span>photosCounter <span class="sy0">&</span>lt<span class="sy0">;</span> <span class="nu0">1000</span><span class="br0">&#41;</span><br /> <span class="br0">&#123;</span><br /> segSerial.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">" "</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> segSerial.<span class="me1">print</span><span class="br0">&#40;</span>photosCounter<span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="br0">&#125;</span><br /> <span class="kw1">else</span><br /> <span class="br0">&#123;</span><br /> segSerial.<span class="me1">print</span><span class="br0">&#40;</span>photosCounter<span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="br0">&#125;</span><br /> <br /> Serial.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">"Compteur photos : "</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> Serial.<span class="me1">print</span><span class="br0">&#40;</span>photosCounter<span class="br0">&#41;</span><span class="sy0">;</span><br /> Serial.<span class="me1">print</span><span class="br0">&#40;</span><span class="st0">"n"</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="br0">&#125;</span><br /> <br /> <span class="co1">// Capture d'une photo</span><br /> <span class="kw4">void</span> shoot<span class="br0">&#40;</span><span class="br0">&#41;</span><br /> <span class="br0">&#123;</span><br /> <span class="co1">// Focus</span><br /> digitalWrite<span class="br0">&#40;</span>focusPin<span class="sy0">,</span> HIGH<span class="br0">&#41;</span><span class="sy0">;</span><br /> delay<span class="br0">&#40;</span>focusTime<span class="br0">&#41;</span><span class="sy0">;</span><br /> <br /> <span class="co1">// DÃ©clenchement de la photo</span><br /> digitalWrite<span class="br0">&#40;</span>shootPin<span class="sy0">,</span> HIGH<span class="br0">&#41;</span><span class="sy0">;</span><br /> delay<span class="br0">&#40;</span><span class="nu0">200</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> <br /> displaySeg<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> <br /> <span class="co1">// Remise Ã  0 des Pins</span><br /> digitalWrite<span class="br0">&#40;</span>focusPin<span class="sy0">,</span> LOW<span class="br0">&#41;</span><span class="sy0">;</span><br /> digitalWrite<span class="br0">&#40;</span>shootPin<span class="sy0">,</span> LOW<span class="br0">&#41;</span><span class="sy0">;</span><br /> <span class="br0">&#125;</span>
-        </div>
-      </td>
-    </tr>
-  </table>
-</div>
+```c
+/*
+||
+|| @author Yohann Lepage
+|| @author Quentin Rousseau
+|| @version 0.2
+||
+|| @description
+|| PhotoCatch prend automatiquement une photo lorsque
+|| quelqu'un passe devant l'appareil grace à son capteur
+|| à ultra-son
+||
+*/
+
+#include <Servo.h>
+#include <SoftwareSerial.h>
+#define DEBUG true
+
+// Librairies utilisées
+// http://arduino.cc/en/Tutorial/Sweep
+// http://arduino.cc/en/Tutorial/Ping
+
+//7 Segments
+int rxSegPin =  0;
+int txSegPin  = 3;
+int photosCounter = 0;
+SoftwareSerial segSerial = SoftwareSerial(rxSegPin, txSegPin);
+
+// Ultra Son
+// Pin Ultra son
+int pingPin = 9;
+int val = 0;
+int ultrasoundValue = 0;
+int timecount = 0; // Echo counter
+
+// Appareil Photo
+// Pin Focus
+int focusPin = 5;
+// Pin Shoot
+int shootPin = 6;
+// Durée du focus
+int focusTime = 0;
+
+// Distance pour le shoot
+int shoot_threshold = 100;
+
+// Servo Moteur
+Servo myservo;
+// Pin Servo
+int servoPin = 10;
+// Position du Servo Moteur 0 - 180° 
+int pos = 0;
+
+// Démarrage de l'Arduino
+void setup()
+{  
+    //Serial pour mode DEBUG
+    if(DEBUG)
+      Serial.begin(9600);    
+    // Attachement du servo au servoPin 
+    myservo.attach(servoPin);
+    // Passage en mode Output pour l'ultra son
+    pinMode(pingPin, OUTPUT);
+    // Passage en Output pour le focus
+    pinMode(focusPin, OUTPUT);
+    // Passage en Output pour le Shoot
+    pinMode(shootPin, OUTPUT);
+    // Passage en low des focus et shoot
+    digitalWrite(focusPin, LOW);
+    digitalWrite(shootPin, LOW);
+    //7 Segments
+    segSerial.begin(9600);
+    pinMode(rxSegPin, INPUT);
+    pinMode(txSegPin, OUTPUT);
+    
+    segSerial.print("vv");
+    //Turn Colon Off
+    segSerial.print('4d',HEX);
+    segSerial.print('00',HEX);
+}
+
+// Démarrage de la boucle principale
+void loop()
+{
+  // Appel à la méthode de balayage grace au servo
+    sweep();
+}
+
+// Détection d'un objet
+void sonar()
+{
+   // establish variables for duration of the ping, 
+   // and the distance result in inches and centimeters:
+   long duration, inches, cm;
+
+   // The PING))) is triggered by a HIGH pulse of 2 or more microseconds.
+   // Give a short LOW pulse beforehand to ensure a clean HIGH pulse:
+   pinMode(pingPin, OUTPUT);
+   digitalWrite(pingPin, LOW);
+   delayMicroseconds(2);
+   digitalWrite(pingPin, HIGH);
+   delayMicroseconds(5);
+   digitalWrite(pingPin, LOW);
+
+   // The same pin is used to read the signal from the PING))): a HIGH
+   // pulse whose duration is the time (in microseconds) from the sending
+   // of the ping to the reception of its echo off of an object.
+   pinMode(pingPin, INPUT);
+   duration = pulseIn(pingPin, HIGH);
+   
+   Serial.print(microsecondsToCentimeters(duration));
+   Serial.print(" cm\n");
+   
+   if(microsecondsToCentimeters(duration) <= shoot_threshold)
+   {
+     shoot();
+   } 
+   
+   delay(150);
+}
+// Balayage avec le Servo
+void sweep()
+{
+    for(pos = 0; pos < 90; pos += 1) // goes from 0 degrees to 180 degrees
+    
+    { // in steps of 1 degree
+        myservo.write(pos); // tell servo to go to position in variable 'pos'
+        //delay(15); // waits 15ms for the servo to reach the position
+        sonar();
+    }
+    
+    for(pos = 90; pos >=1; pos-=1) // goes from 180 degrees to 0 degrees
+    
+    {
+        myservo.write(pos); // tell servo to go to position in variable 'pos'
+        //delay(15); // waits 15ms for the servo to reach the position
+        sonar();
+    }
+}
+
+long microsecondsToCentimeters(long microseconds)
+{
+   // The speed of sound is 340 m/s or 29 microseconds per centimeter.
+   // The ping travels out and back, so to find the distance of the
+   // object we take half of the distance travelled.
+   return microseconds / 29 / 2;
+}
+
+//Display Photos Counter on the 7 Segments Display
+void displaySeg()
+{
+  photosCounter = photosCounter +1 ;
+  
+  if(photosCounter < 10) 
+  {
+    segSerial.print("   ");
+    segSerial.print(photosCounter);
+  } 
+  else if(photosCounter < 100) 
+  {
+    segSerial.print("  ");
+    segSerial.print(photosCounter);
+  } 
+  else if(photosCounter < 1000) 
+  {
+    segSerial.print(" ");
+    segSerial.print(photosCounter);
+  } 
+  else 
+  {
+    segSerial.print(photosCounter);
+  } 
+  
+  Serial.print("Compteur photos : ");
+  Serial.print(photosCounter);
+  Serial.print("\n");
+}
+
+// Capture d'une photo
+void shoot()
+{
+    // Focus
+    digitalWrite(focusPin, HIGH);
+    delay(focusTime);
+    
+    // Déclenchement de la photo 
+    digitalWrite(shootPin, HIGH);
+    delay(200);
+    
+    displaySeg();
+    
+    //  Remise à 0 des Pins
+    digitalWrite(focusPin, LOW);
+    digitalWrite(shootPin, LOW);
+}
+
+```
 
 ### Démonstration par mon collègue Yohann Lepage (<a href="https://twitter.com/#!/2xyo" target="_blank">@2xyo</a>)
 

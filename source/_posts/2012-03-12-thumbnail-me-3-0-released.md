@@ -31,25 +31,49 @@ After more than** 9 months of development** between Beta version and Release ver
 
 Major updates are :
 
-*   Migration to **Qt 4.8.0**
-*   All is batchmod
-*   **12** languages available ! ( 4 languages in Beta Version).
+```plain
+Migration to **Qt 4.8.0**
+All is batchmod
+**12** languages available ! ( 4 languages in Beta Version).
+```
 
 ### Languages available
 
-<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:618px;">
-  <div class="text codecolorer">
-    ENGLISH<br /> FRENCH<br /> DEUTSCH<br /> ESPAGNOL<br /> CZECH<br /> CROATIAN<br /> HUNGARIAN<br /> ITALIAN<br /> DUTCH<br /> PORTUGESE<br /> CHINESE<br /> RUSSIAN
-  </div>
-</div>
+```plain
+ENGLISH
+FRENCH
+DEUTSCH
+ESPAGNOL
+CZECH
+CROATIAN
+HUNGARIAN
+ITALIAN
+DUTCH
+PORTUGESE
+CHINESE
+RUSSIAN
+```
 
 ### Complete Changelog
 
-<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:618px;">
-  <div class="text codecolorer">
-    - Migration to Qt 4.8.0.<br /> - File Menu updated.<br /> - Czech Translation added.<br /> - Dutch Translation added.<br /> - Italian Translation added.<br /> - Hungarian Translation added.<br /> - Croatian Translation added.<br /> - Portugese Translation added.<br /> - Chinese Translation added.<br /> - Russian Translation added.<br /> - Restore Window State and Window Geometry at startup added.<br /> - Output Path editable.<br /> - Same output folder as source rendering added.<br /> - Copy to clipboard VerboseWindow added.<br /> - Each item has its own Timeline added.<br /> - Minor bugs fixed.
-  </div>
-</div>
+```plain
+- Migration to Qt 4.8.0.
+- File Menu updated.
+- Czech Translation added.
+- Dutch Translation added.
+- Italian Translation added.
+- Hungarian Translation added.
+- Croatian Translation added.
+- Portugese Translation added.
+- Chinese Translation added.
+- Russian Translation added.
+- Restore Window State and Window Geometry at startup added.
+- Output Path editable.
+- Same output folder as source rendering added.
+- Copy to clipboard VerboseWindow added.
+- Each item has its own Timeline added.
+- Minor bugs fixed.
+```
 
 ### Screenshots
 
@@ -97,11 +121,12 @@ Major updates are :
 
 ### Statistics
 
-<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:618px;">
-  <div class="text codecolorer">
-    10349 count Lines of Code<br /> <br /> 234 commits<br /> <br /> 23 bugs reports<br /> <br /> Too much hours of development
-  </div>
-</div>
+```plain
+10349 count Lines of Code
+234 commits
+23 bugs reports
+Too much hours of development
+```
 
 ### Where is Linux Version ?
 

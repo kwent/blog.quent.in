@@ -21,7 +21,8 @@ Pour ma part, j&rsquo;ai choisi de participer à mon premier atelier FabLab.
 
 ### FabLab c&rsquo;est quoi ?
 
-<img class="aligncenter" title="FabLab" src="http://www.semageek.com/wp-content/uploads/2011/11/recapitulatif-de-la-journee-pour-concevoir-fab-lab-en-region-paca-10.jpg" alt="FabLab" width="256" height="80" /> 
+<img class="aligncenter" title="FabLab" src="http://www.semageek.com/wp-content/uploads/2011/11/recapitulatif-de-la-journee-pour-concevoir-fab-lab-en-region-paca-10.jpg" alt="FabLab" width="256" height="80"/>
+
 FabLab c&rsquo;est tout d&rsquo;abord **FAB**rication **LAB**oratory et ce concept viens tout droit du Massachusetts dans les laboratoires du **MIT**.
 
 Le principe d&rsquo;un FabLab repose sur un regroupement de personnes cherchant à** créer, modifier, bidouiller , hacker** tout et n&rsquo;importe quoi. (Oui c&rsquo;est large)
@@ -32,6 +33,7 @@ Y&rsquo;a pas d&rsquo;organisation concrête, il suffit d&rsquo;avoir une idée,
 
 Le matériel que nous avions à notre disposition était le suivant (plus ou moins) :
 
+```plain
 Snootlab Starter Kit ×3  
 Arduino UNO ×16  
 Arduino Uno Ethernet avec USB 2 Serial ×2  
@@ -42,14 +44,9 @@ Breadboard ×20
 Capteurs/Photorésistance/LED  
 Matrice de LED ×1  
 Imprimante 3D Makerbot (Plus d&rsquo;info sur cette imprimante <a href="http://www.telecom-bretagne.eu/lexians/2012/sur-les-campus/une-imprimante-3d-premier-pas-vers-le-fablab-de-telecom-bretagne/" target="_blank">ici</a>)
+```
 
 ### Pourquoi Arduino a du succès ?
-
-<div style="width: 180px" class="wp-caption aligncenter">
-  <img title="Logo de Arduino" src="http://upload.wikimedia.org/wikipedia/fr/6/63/Arduino.png" alt="Logo de Arduino" width="170" height="116" /><p class="wp-caption-text">
-    Logo de Arduino
-  </p>
-</div>
 
 Dans la liste ci dessus revient beaucoup le nom Arduino. Pourquoi aujourd&rsquo;hui beaucoup de FabLabs utilisent cette plateforme ?
 
@@ -88,7 +85,7 @@ Je détaillerais notre réalisation dans un autre post très prochainement.
   </p>
 </div>
 
-## En savoir plus&#8230;
+## More...
 
 *   <a href="http://fr.wikipedia.org/wiki/Arduino" title="Arduino - Wikipédia" rel="nofollow">Arduino - Wikipédia</a> ![][1]
 *   <a href="http://fr.wikipedia.org/wiki/Fab_lab" title="Fab lab - Wikipédia" rel="nofollow">Fab lab - Wikipédia</a> ![][1]

@@ -28,23 +28,10 @@ Des méthodes sont déjà utilisées pour essayer de palier à ce problème:
 
 **<span style="color: #333333;">1°</span> Obfuscation textuelle**
 
-<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;width:618px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />2<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="text codecolorer">
-          # Remplacer @ et . par "[at]" et "[dot]"<br /> email[at]domain[dot]com
-        </div>
-      </td>
-    </tr>
-  </table>
-</div>
+```plain
+Remplacer @ et . par "[at]" et "[dot]"
+email[at]domain[dot]com
+```
 
 > **<span style="color: #339966;">Avantages</span>**
 > 
@@ -56,41 +43,13 @@ Des méthodes sont déjà utilisées pour essayer de palier à ce problème:
 
 **<span style="color: #333333;">2°</span> Obfuscation par CSS**
 
-<div class="codecolorer-container html4strict default" style="overflow:auto;white-space:nowrap;width:618px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="html4strict codecolorer">
-          <span class="sc2"><<a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">"obfuscate"</span>></span>moc.niamod@liame<span class="sc2"><<span class="sy0">/</span><a href="http://december.com/html/4/element/span.html"><span class="kw2">span</span></a>></span>
-        </div>
-      </td>
-    </tr>
-  </table>
-</div>
-
-<div class="codecolorer-container css default" style="overflow:auto;white-space:nowrap;width:618px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />2<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="css codecolorer">
-          <span class="coMULTI">/* Et le renverse via CSS */</span><br /> <span class="re1">.obfuscate</span> <span class="br0">&#123;</span> <span class="kw1">unicode-bidi</span><span class="sy0">:</span> <span class="kw2">bidi-override</span><span class="sy0">;</span> <span class="kw1">direction</span><span class="sy0">:</span> rtl<span class="sy0">;</span> <span class="br0">&#125;</span>
-        </div>
-      </td>
-    </tr>
-  </table>
-</div>
+```html
+<span class=“obfuscate”>moc.niamod@liame</span>
+```
+```css
+/* Et le renverse via CSS */
+.obfuscate { unicode-bidi: bidi-override; direction: rtl; }
+```
 
 > **<span style="color: #339966;">Avantages</span>**
 > 
@@ -105,41 +64,48 @@ Des méthodes sont déjà utilisées pour essayer de palier à ce problème:
 
 La plupart des robots** n&rsquo;exécutent pas** de Javascript (pour des questions de performance et pour ne pas se faire tracer, j&rsquo;imagine&#8230;). Alors on peut s&rsquo;amuser à utiliser des algorithmes tels que le [**ROT13**][1] *(rotate by 13 places)*.
 
-<div class="codecolorer-container javascript default" style="overflow:auto;white-space:nowrap;width:618px;height:300px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />2<br />3<br />4<br />5<br />6<br />7<br />8<br />9<br />10<br />11<br />12<br />13<br />14<br />15<br />16<br />17<br />18<br />19<br />20<br />21<br />22<br />23<br />24<br />25<br />26<br />27<br />28<br />29<br />30<br />31<br />32<br />33<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="javascript codecolorer">
-          Rot13 <span class="sy0">=</span> <span class="br0">&#123;</span><br /> &nbsp; &nbsp; map<span class="sy0">:</span> <span class="kw2">null</span><span class="sy0">,</span><br /> <br /> &nbsp; &nbsp; convert<span class="sy0">:</span> <span class="kw2">function</span><span class="br0">&#40;</span>a<span class="br0">&#41;</span> <span class="br0">&#123;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; Rot13.<span class="me1">init</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> <br /> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw2">var</span> s <span class="sy0">=</span> <span class="st0">""</span><span class="sy0">;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span>i<span class="sy0">=</span><span class="nu0"></span><span class="sy0">;</span> i <span class="sy0"><</span> a.<span class="me1">length</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw2">var</span> b <span class="sy0">=</span> a.<span class="me1">charAt</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="sy0">;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; s <span class="sy0">+=</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>b<span class="sy0">>=</span><span class="st0">'A'</span> <span class="sy0">&&</span> b<span class="sy0"><=</span><span class="st0">'Z'</span><span class="br0">&#41;</span> <span class="sy0">||</span> <span class="br0">&#40;</span>b<span class="sy0">>=</span><span class="st0">'a'</span> <span class="sy0">&&</span> b<span class="sy0"><=</span><span class="st0">'z'</span><span class="br0">&#41;</span> <span class="sy0">?</span> Rot13.<span class="me1">map</span><span class="br0">&#91;</span>b<span class="br0">&#93;</span> <span class="sy0">:</span> b<span class="br0">&#41;</span><span class="sy0">;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> s<span class="sy0">;</span><br /> &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">,</span><br /> <br /> &nbsp; &nbsp; init<span class="sy0">:</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>Rot13.<span class="me1">map</span> <span class="sy0">!=</span> <span class="kw2">null</span><span class="br0">&#41;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span><span class="sy0">;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br /> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw2">var</span> map <span class="sy0">=</span> <span class="kw2">new</span> Array<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw2">var</span> s &nbsp; <span class="sy0">=</span> <span class="st0">"abcdefghijklmnopqrstuvwxyz"</span><span class="sy0">;</span><br /> <br /> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span>i<span class="sy0">=</span><span class="nu0"></span><span class="sy0">;</span> i<span class="sy0"><</span>s.<span class="me1">length</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; map<span class="br0">&#91;</span>s.<span class="me1">charAt</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="br0">&#93;</span> <span class="sy0">=</span> s.<span class="me1">charAt</span><span class="br0">&#40;</span><span class="br0">&#40;</span>i<span class="sy0">+</span><span class="nu0">13</span><span class="br0">&#41;</span><span class="sy0">%</span>26<span class="br0">&#41;</span><span class="sy0">;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span>i<span class="sy0">=</span><span class="nu0"></span><span class="sy0">;</span> i<span class="sy0"><</span>s.<span class="me1">length</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; map<span class="br0">&#91;</span>s.<span class="me1">charAt</span><span class="br0">&#40;</span>i<span class="br0">&#41;</span>.<span class="me1">toUpperCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#93;</span> <span class="sy0">=</span> s.<span class="me1">charAt</span><span class="br0">&#40;</span><span class="br0">&#40;</span>i<span class="sy0">+</span><span class="nu0">13</span><span class="br0">&#41;</span><span class="sy0">%</span>26<span class="br0">&#41;</span>.<span class="me1">toUpperCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> <br /> &nbsp; &nbsp; &nbsp; &nbsp; Rot13.<span class="me1">map</span> <span class="sy0">=</span> map<span class="sy0">;</span><br /> &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">,</span><br /> <br /> &nbsp; &nbsp; <span class="kw1">write</span><span class="sy0">:</span> <span class="kw2">function</span><span class="br0">&#40;</span>a<span class="br0">&#41;</span> <span class="br0">&#123;</span><br /> &nbsp; &nbsp; &nbsp; &nbsp; document.<span class="kw1">write</span><span class="br0">&#40;</span>Rot13.<span class="me1">convert</span><span class="br0">&#40;</span>a<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;</span><br /> &nbsp; &nbsp; <span class="br0">&#125;</span><br /> <span class="br0">&#125;</span>
-        </div>
-      </td>
-    </tr>
-  </table>
-</div>
+```javascript
 
-<div class="codecolorer-container html4strict default" style="overflow:auto;white-space:nowrap;width:618px;">
-  <table cellspacing="0" cellpadding="0">
-    <tr>
-      <td class="line-numbers">
-        <div>
-          1<br />2<br />3<br />4<br />5<br />
-        </div>
-      </td>
-      
-      <td>
-        <div class="html4strict codecolorer">
-          <span class="sc2"><<a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a> <span class="kw3">type</span><span class="sy0">=</span><span class="st0">"text/javascript"</span>></span><br /> // <span class="sc-2"><![CDATA[</span><br /> <span class="sc-2"> &nbsp; &nbsp;Rot13.write('<n uers="rznvy@qbznva.pbz">rznvy@qbznva.pbz</n>);</span><br /> <span class="sc-2">// ]]></span><br /> <span class="sc2"><<span class="sy0">/</span><a href="http://december.com/html/4/element/script.html"><span class="kw2">script</span></a>></span>
-        </div>
-      </td>
-    </tr>
-  </table>
-</div>
+Rot13 = {
+    map: null,
+
+    convert: function(a) {
+        Rot13.init();
+
+        var s = ””;
+        for (i=; i < a.length; i++) {
+            var b = a.charAt(i);
+            s += ((b>=‘A’ && b<=‘Z’) || (b>=‘a’ && b<=‘z’) ? Rot13.map[b] : b);
+        }
+        return s;
+    },
+
+    init: function() {
+        if (Rot13.map != null)
+            return;
+              
+        var map = new Array();
+        var s   = “abcdefghijklmnopqrstuvwxyz”;
+
+        for (i=; i<s.length; i++)
+            map[s.charAt(i)] = s.charAt((i+13)%26);
+        for (i=; i<s.length; i++)
+            map[s.charAt(i).toUpperCase()] = s.charAt((i+13)%26).toUpperCase();
+
+        Rot13.map = map;
+    },
+
+    write: function(a) {
+        document.write(Rot13.convert(a));
+    }
+}
+
+```
+```html
+<script type=“text/javascript”>
+   Rot13.write(’rznvy@qbznva.pbz);
+</script>
+```
 
 > <span style="color: #339966;"><strong>Avantages</strong></span>
 > 

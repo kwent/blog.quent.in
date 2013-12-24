@@ -15,20 +15,26 @@ tags:
   - photography
   - timelaspe
 ---
-<img class="alignright" title="Paris Timelapse" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/04/IMG_20120403_215453-300x179.jpg" alt="" width="300" height="179" /> My first timelapse try with a amazing view from paris.
+<img class="alignright" title="Paris Timelapse" src="http://blog.quentinrousseau.fr/wp-content/uploads/2012/04/IMG_20120403_215453-300x179.jpg" alt="" width="300" height="179"/>
+
+My first timelapse try with a amazing view from paris.
 
 Next time, i will try to shoot the same view with a sunrise & a sunset.
 
 ### MATERIALS
 
+```plain
 Nikon D90  
 Nikon AF 50 MM F/1.8 D  
 Poor unstable tripod
+```
 
 ### SOFTWARES
 
+```plain
 Nikon Camera Control Pro 2  
 Adobe Premiere Pro CS5.5 (1824 Photos, No effects)
+```
 
 ### MUSIC
 
@@ -40,7 +46,6 @@ Mathieu Lacrouts for music choice. [mathieulacrouts.fr][1]
 
 ###  VIDEO
 
-<center>
-</center>
+{% vimeo 39858048 1920 1080 %}
 
  [1]: http://www.mathieulacrouts.fr
