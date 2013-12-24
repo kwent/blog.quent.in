@@ -20,6 +20,8 @@ tags:
 ---
 Hi there !
 
+<i class="fa-star"></i> fa-star
+
 If you are looking a easy library to use to apply Regex with **[TTTAttributedLabel][1] **from [Mattt Thompson][2], i build a lib called [**TTTRegexAttributedLabel**][3].
 
 ## Example

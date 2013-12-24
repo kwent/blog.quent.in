@@ -43,8 +43,6 @@ Aujourd&rsquo;hui  **Thumbnail me V3.0** est disponible en beta à l&rsquo;adre
 
 Bien entendu, vous serez les premiers avertis de la sortie de la version finale ;).
 
-&nbsp;
-
 ## En savoir plus&#8230;
 
 *   <a href="http://qt.nokia.com/" title="Qt - Cross-platform application and UI framework — Qt - A ..." rel="nofollow">Qt - Cross-platform application and UI framework — Qt - A ...</a> ![][1]

@@ -1,4 +1,4 @@
----
+	---
 title: Parallel-SSH | Parralélisez au maximum!
 author: Quentin
 layout: post
@@ -51,7 +51,7 @@ Bien entendu, **<span style="color: #ff0000;">utilisez cet outil avec grande pr�
 
 <span style="text-decoration: underline;"><strong>Note</strong></span>**:** Il faut prélablement que les hosts soient connus par SSH dans **~/.ssh/known_hosts**
 
-## More...&#8230;
+## More...;
 
 *   <a href="http://www.linux.com/archive/feature/151340" title="Linux.com :: Parallel SSH execution and a single shell to ..." rel="nofollow">Linux.com :: Parallel SSH execution and a single shell to ...</a> ![][1]
 *   <a href="http://www.theether.org/pssh/docs/0.2.3/pssh-HOWTO.html" title="pssh HOWTO" rel="nofollow">pssh HOWTO</a> ![][1]
