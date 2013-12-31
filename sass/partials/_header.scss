@@ -3,7 +3,7 @@
 .inner-left {
 	> header {
 		width: 90%;
-		margin: 100px auto 0 auto;
+		margin: 25px auto 0 auto;
 		text-align: center;
 		a {
 			font-size: 30px;
@@ -14,25 +14,30 @@
 		h1, h2 {
 			@extend .serif;
 		}
-		h1 {
+		.title {
+			margin-top:10px;
 			letter-spacing: -1px;
 			text-transform: uppercase;
-			// margin-bottom: 10px;
 		}
 		h2 {
+			margin-top:20px;
 			font-size: 0.9em;
 			color: $button-dark-color;
-			bottom: 20px;
 		}
 		@media only screen and (max-width: 850px) {
 			margin: 25px auto 0 auto;
 		}
-		> .profilepic {
-			border-radius: 300px;
-			width: 120px;
-			height: auto;
-			@media only screen and (max-width: 850px) {
-				width: 80px;
+		> a {
+			> img {
+				border-radius: 300px;
+				width: 120px;
+				height: auto;
+				@media only screen and (max-width: 850px) {
+					width: 80px;
+				}
+				@media only screen and (max-width: 410px) {
+					display: none;
+				}
 			}
 		}
 	}

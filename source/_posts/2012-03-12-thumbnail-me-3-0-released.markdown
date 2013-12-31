@@ -9,10 +9,10 @@ hl_twitter_has_auto_tweeted:
 dsq_thread_id:
   - 608128238
 categories:
-  - Développement
-  - Système
+  - development
+  - system
 tags:
-  - développement
+  - development
   - qt
   - thumbnailme
 date : Mon, 12 Mar 2012 12:54:14 -8000

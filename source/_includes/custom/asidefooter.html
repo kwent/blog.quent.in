@@ -1,14 +1,17 @@
 <p>
 	{% if site.github_user %}
-		<a href="http://github.com/{{site.github_user}}" class="btn btn-dark">GitHub</a>
+		<a href="http://github.com/{{site.github_user}}" class="btn btn-dark"><i class="fa fa-inverse fa-github fa-2x"></i></a>
 	{% endif %}
 	{% if site.twitter_user %}
-		<a href="http://twitter.com/{{site.twitter_user}}" class="btn btn-dark">Twitter</a>
+		<a href="http://twitter.com/{{site.twitter_user}}" class="btn btn-dark"><i class="fa fa-inverse fa-twitter fa-2x"></i></a>
 	{% endif %}
 	{% if site.linked_in_user %}
-        <a href="https://www.linkedin.com/in/{{site.linked_in_user}}" class="btn btn-dark">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/{{site.linked_in_user}}" class="btn btn-dark"><i class="fa fa-inverse fa-linkedin fa-2x"></i></a>
     {% endif %}
     {% if site.resume_link %}
-        <a href="{{ 'assets/resume/pdf/quentinrousseau_resume_EN.pdf' | asset_path }}" class="btn btn-dark">Resume</a>
+        <a href="{{ 'assets/resume/pdf/quentinrousseau_resume_EN.pdf' | asset_path }}" class="btn btn-dark"><i class="fa fa-inverse fa-suitcase fa-2x"></i></a>
+    {% endif %}
+	{% if site.email %}
+        {% email contact@quentinrousseau.fr %}
     {% endif %}
 </p>

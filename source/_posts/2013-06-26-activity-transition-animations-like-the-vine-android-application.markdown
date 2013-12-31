@@ -9,8 +9,8 @@ hl_twitter_has_auto_tweeted:
 dsq_thread_id:
   - 1438159289
 categories:
-  - Développement
-  - Mobile
+  - development
+  - mobile
 tags:
   - android
   - animations

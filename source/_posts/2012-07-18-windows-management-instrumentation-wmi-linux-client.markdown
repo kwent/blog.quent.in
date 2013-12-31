@@ -9,9 +9,9 @@ hl_twitter_has_auto_tweeted:
 dsq_thread_id:
   - 770344688
 categories:
-  - Développement
+  - development
   - Script
-  - Système
+  - system
 tags:
   - linux
   - wmi

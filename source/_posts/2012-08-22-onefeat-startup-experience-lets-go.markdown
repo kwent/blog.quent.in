@@ -9,7 +9,7 @@ hl_twitter_has_auto_tweeted:
 dsq_thread_id:
   - 814492469
 categories:
-  - Développement
+  - development
   - Startup
   - Web
 tags:

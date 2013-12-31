@@ -9,7 +9,7 @@ hl_twitter_has_auto_tweeted:
 dsq_thread_id:
   - 670037950
 categories:
-  - Développement
+  - development
   - Script
   - Web
 tags:

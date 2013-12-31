@@ -9,9 +9,9 @@ hl_twitter_has_auto_tweeted:
 dsq_thread_id:
   - 1927300841
 categories:
-  - Développement
-  - iOS
-  - Mobile
+  - development
+  - ios
+  - mobile
 tags:
   - alertview
   - custom

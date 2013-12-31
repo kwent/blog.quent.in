@@ -9,3 +9,9 @@
 @import "plugins/**/*";
 @import "custom/styles";
 @import "font-awesome/scss/font-awesome.scss";
+
+
+article header p.header_categories {
+  margin-top: 0.8em;
+  line-height: 1.9em;
+}

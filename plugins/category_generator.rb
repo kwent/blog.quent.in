@@ -154,7 +154,7 @@ ERR
     #
     def category_links(categories)
       categories = categories.sort!.map { |c| category_link c }
-
+   
       case categories.length
       when 0
         ""

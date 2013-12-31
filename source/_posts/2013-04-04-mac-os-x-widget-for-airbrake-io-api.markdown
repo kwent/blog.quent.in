@@ -9,7 +9,7 @@ hl_twitter_has_auto_tweeted:
 dsq_thread_id:
   - 1186679302
 categories:
-  - Développement
+  - development
   - Web
 tags:
   - airbrake

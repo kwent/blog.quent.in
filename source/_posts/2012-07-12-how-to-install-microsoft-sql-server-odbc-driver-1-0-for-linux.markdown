@@ -9,9 +9,9 @@ hl_twitter_has_auto_tweeted:
 dsq_thread_id:
   - 762175272
 categories:
-  - Développement
+  - development
   - Script
-  - Système
+  - system
 tags:
   - linux
   - microsoft

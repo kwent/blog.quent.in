@@ -7,10 +7,10 @@ permalink: /index.php/2011/08/thumbnail-me-vignettez-a-linfini/
 dsq_thread_id:
   - 382022628
 categories:
-  - Développement
+  - development
 tags:
   - c++
-  - développement
+  - development
   - qt
   - thumbnailme
 date: Mon, 01 Aug 2011 09:55:58 -8000
@@ -33,7 +33,7 @@ Une petite panoplie de paramètre est personnalisable tel que** le nombre de col
   </dl>
 </div>
 
-### 3 ans de développement
+### 3 ans de development
 
 Eh oui j&rsquo;ai pris mon temps! Et j&rsquo;ai aussi appris avec mes erreurs. J&rsquo;ai du retourner le code une bonne dizaine de fois, faute de bonne conception initiale et par manque d&rsquo;expérience! Mais j&rsquo;ai appris énormément et ai acquis beaucoup de rigueur.
 

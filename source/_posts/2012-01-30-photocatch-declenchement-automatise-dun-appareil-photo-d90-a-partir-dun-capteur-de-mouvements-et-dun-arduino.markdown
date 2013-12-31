@@ -9,7 +9,7 @@ hl_twitter_has_auto_tweeted:
 dsq_thread_id:
   - 557476527
 categories:
-  - Développement
+  - development
 tags:
   - appareil photo
   - arduino

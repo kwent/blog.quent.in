@@ -9,9 +9,9 @@ hl_twitter_has_auto_tweeted:
 dsq_thread_id:
   - 1967095620
 categories:
-  - Développement
-  - iOS
-  - Mobile
+  - development
+  - ios
+  - mobile
 tags:
   - ios
   - Regex
