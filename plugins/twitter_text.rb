@@ -1,16 +1,14 @@
-# Title: Simple Video tag for Jekyll
-# Author: Brandon Mathis http://brandonmathis.com
-# Description: Easily output MPEG4 HTML5 video with a flash backup.
+# Title: Twitter mention Plugin For Octopress
+# Author: Quentin Rousseau http://quentinrousseau.com
+# Description: Convert all twitter mention with an url.
 #
-# Syntax {% video url/to/video [width height] [url/to/poster] %}
+# Syntax {% twitter_text "You string with mention" %}
 #
 # Example:
-# {% video http://site.com/video.mp4 720 480 http://site.com/poster-frame.jpg %}
+# {% twitter_text "Hello world @quentinrousseau" %}
 #
 # Output:
-# <video width='720' height='480' preload='none' controls poster='http://site.com/poster-frame.jpg'>
-#   <source src='http://site.com/video.mp4' type='video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"'/>
-# </video>
+# <a href="https://twitter.com/quentinrousseau" alt="@quentinrousseau">@quentinrousseau</a>
 #
 
 module Jekyll
