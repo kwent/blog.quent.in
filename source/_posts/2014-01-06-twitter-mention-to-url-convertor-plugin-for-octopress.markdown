@@ -16,7 +16,7 @@ tags:
   - mention
 ---
 
-Today i needed to convert a string like ``"Hello world @quentinrousseau"`` to an **html** string like with the twitter mention decoded with a real link for Octopress.
+Today i needed to convert a string like ``"Hello world @quentinrousseau"`` to an **html** string like with the **Twitter mention** decoded with a real link for **Octopress**.
 
 There is a gem called **twitter_text** who is already doing this stuff available here : [https://github.com/twitter/twitter-text-rb][1].
 
