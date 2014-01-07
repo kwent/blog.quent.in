@@ -15,3 +15,12 @@ article header p.header_categories {
   margin-top: 0.8em;
   line-height: 1.9em;
 }
+
+.inner-left header h2 a {
+  color: #FFFFFF;
+  font-size: 1em;
+}
+
+.inner-left header h2 a:hover {
+  color: lighten($header-bg, 20);
+}
