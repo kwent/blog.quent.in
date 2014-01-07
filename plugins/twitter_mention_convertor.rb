@@ -1,11 +1,11 @@
-# Title: Twitter mention Plugin For Octopress
+# Title: Twitter mention to url convertor plugin for Octopress
 # Author: Quentin Rousseau http://quentinrousseau.com
-# Description: Convert all twitter mention with an url.
+# Description: Convert all twitter mentions with an url.
 #
-# Syntax {% twitter_text "You string with mention" %}
+# Syntax {% twitter_mention_convertor "You string with @mention1 @mention2" %}
 #
 # Example:
-# {% twitter_text "Hello world @quentinrousseau" %}
+# {% twitter_mention_convertor "Hello world @quentinrousseau" %}
 #
 # Output:
 # <a href="https://twitter.com/quentinrousseau" alt="@quentinrousseau">@quentinrousseau</a>
@@ -13,7 +13,7 @@
 
 module Jekyll
 
-  class TwitterText < Liquid::Tag
+  class TwitterMentionConvertor < Liquid::Tag
 
     @twitter_base_uri = nil
 
@@ -32,5 +32,5 @@ module Jekyll
 
 end
 
-Liquid::Template.register_tag('twitter_text', Jekyll::TwitterText)
+Liquid::Template.register_tag('twitter_mention_convertor', Jekyll::TwitterMentionConvertor)
 

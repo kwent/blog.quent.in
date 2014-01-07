@@ -3,6 +3,6 @@
   <div class="title"><a href="{{ root_url }}/">{{ site.title }}</a></div>
   {% if site.description %}
   	{% assign description = site.description %}
-    <h2 class="subtitle">{% twitter_text description %}</h2>
+    <h2 class="subtitle">{% twitter_mention_convertor description %}</h2>
    {% endif %}
 </hgroup>
