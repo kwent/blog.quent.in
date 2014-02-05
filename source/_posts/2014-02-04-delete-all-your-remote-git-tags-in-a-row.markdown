@@ -19,7 +19,7 @@ Today i will introduce a simple command line to **delete all your remote git tag
 
 ##Command line
 
-```bash
+```
 git ls-remote --tags | awk '{print $2}' | xargs -n1 git push --delete origin
 ```
 
@@ -29,7 +29,7 @@ git ls-remote --tags | awk '{print $2}' | xargs -n1 git push --delete origin
 
 `git ls-remote --tags`
 
-```bash
+```
 From git@github.com:kwent/TTTRegexAttributedLabel.git
 fb3dbbe61dc0af7428cde1a60ec2c4b6579650ab	refs/tags/1.7.1
 b38bad9153621f25a310216daa59d5535effea53	refs/tags/1.7.2
@@ -41,7 +41,7 @@ b38bad9153621f25a310216daa59d5535effea53	refs/tags/1.7.2
 
 `git ls-remote --tags | awk '{print $2}'`
 
-```bash
+```
 From git@github.com:kwent/TTTRegexAttributedLabel.git
 refs/tags/1.7.1
 refs/tags/1.7.2
@@ -51,7 +51,7 @@ refs/tags/1.8.0
 
 ###Deletion
 
-```bash
+```
 git ls-remote --tags | awk '{print $2}' | xargs -n1 git push --delete origin
 ```
 
