@@ -7,7 +7,7 @@ permalink: /index.php/2011/08/mkvmerge-remuxer-une-saison-a-la-volee/
 dsq_thread_id:
   - 382023060
 hl_twitter_has_auto_tweeted:
-  - 'I just posted Mkvmerge | Remuxer une saison à la volée, read it here: http://blog.quentinrousseau.fr/?p=73'
+  - 'I just posted Mkvmerge | Remuxer une saison à la volée, read it here: http://blog.quent.in/?p=73'
 categories:
   - Script
 tags:

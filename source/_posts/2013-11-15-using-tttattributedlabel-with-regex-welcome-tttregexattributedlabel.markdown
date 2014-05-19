@@ -5,7 +5,7 @@ layout: post
 comments: true
 permalink: /index.php/2013/11/using-tttattributedlabel-with-regex-welcome-tttregexattributedlabel/
 hl_twitter_has_auto_tweeted:
-  - 'I just posted Using TTTAttributedLabel with Regex : Welcome TTTRegexAttributedLabel, read it here: http://blog.quentinrousseau.fr/?p=662'
+  - 'I just posted Using TTTAttributedLabel with Regex : Welcome TTTRegexAttributedLabel, read it here: http://blog.quent.in/?p=662'
 dsq_thread_id:
   - 1967095620
 categories:

@@ -5,7 +5,7 @@ layout: post
 comments: true
 permalink: /index.php/2012/04/paris-timelapse-experiment/
 hl_twitter_has_auto_tweeted:
-  - 'I just posted Paris Timelapse Experiment, read it here: http://blog.quentinrousseau.fr/?p=469'
+  - 'I just posted Paris Timelapse Experiment, read it here: http://blog.quent.in/?p=469'
 dsq_thread_id:
   - 640057888
 categories:

@@ -5,7 +5,7 @@ layout: post
 comments: true
 permalink: /index.php/2012/04/save-time-and-energy-with-uml-diagram-generator-tools-online/
 hl_twitter_has_auto_tweeted:
-  - 'I just posted Save time and energy with UML diagram generator tools online !, read it here: http://blog.quentinrousseau.fr/?p=480'
+  - 'I just posted Save time and energy with UML diagram generator tools online !, read it here: http://blog.quent.in/?p=480'
 dsq_thread_id:
   - 670037950
 categories:

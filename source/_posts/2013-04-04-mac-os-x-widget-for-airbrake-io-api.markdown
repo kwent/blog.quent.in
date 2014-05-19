@@ -5,7 +5,7 @@ layout: post
 comments: true
 permalink: /index.php/2013/04/mac-os-x-widget-for-airbrake-io-api/
 hl_twitter_has_auto_tweeted:
-  - 'I just posted Mac OS X widget for airbrake.io API., read it here: http://blog.quentinrousseau.fr/?p=594'
+  - 'I just posted Mac OS X widget for airbrake.io API., read it here: http://blog.quent.in/?p=594'
 dsq_thread_id:
   - 1186679302
 categories:

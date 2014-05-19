@@ -5,7 +5,7 @@ layout: post
 comments: true
 permalink: /index.php/2012/03/thumbnail-me-3-0-released/
 hl_twitter_has_auto_tweeted:
-  - 'I just posted Thumbnail me 3.0 Released, read it here: http://blog.quentinrousseau.fr/?p=369'
+  - 'I just posted Thumbnail me 3.0 Released, read it here: http://blog.quent.in/?p=369'
 dsq_thread_id:
   - 608128238
 categories:
@@ -20,7 +20,7 @@ date : Mon, 12 Mar 2012 12:54:14 -8000
 
 ![Thumbnail me 3.0](/assets/wp-content/uploads/2012/02/about1.png)
 
-For those who do not know Thumbnail me, please follow this <strong><a href="http://blog.quentinrousseau.fr/index.php/2011/08/thumbnail-me-vignettez-a-linfini/" target="_blank">link</a></strong>.
+For those who do not know Thumbnail me, please follow this <strong><a href="http://blog.quent.in/index.php/2011/08/thumbnail-me-vignettez-a-linfini/" target="_blank">link</a></strong>.
 
 After more than** 9 months of development** between Beta version and Release version, **Thumbnail me 3.0** is now available at <a href="http://www.thumbnailme.com" target="_blank">www.thumbnailme.com</a>.
 

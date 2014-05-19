@@ -5,7 +5,7 @@ layout: post
 comments: true
 permalink: /index.php/2013/11/custom-ios7-uialertview/
 hl_twitter_has_auto_tweeted:
-  - 'I just posted Custom iOS7 UIAlertView, read it here: http://blog.quentinrousseau.fr/?p=657'
+  - 'I just posted Custom iOS7 UIAlertView, read it here: http://blog.quent.in/?p=657'
 dsq_thread_id:
   - 1927300841
 categories:

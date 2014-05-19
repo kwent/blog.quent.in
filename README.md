@@ -1,4 +1,4 @@
-quentinrousseau.fr
+quent.in
 ==================
 
-http://quentinrousseau.fr octopress website. Theme by OctoPanel.
+http://quent.in octopress website. Theme by OctoPanel.

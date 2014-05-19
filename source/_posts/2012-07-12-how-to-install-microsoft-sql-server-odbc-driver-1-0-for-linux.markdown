@@ -5,7 +5,7 @@ layout: post
 comments: true
 permalink: /index.php/2012/07/how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux/
 hl_twitter_has_auto_tweeted:
-  - 'I just posted How to install Microsoft® SQL Server® ODBC Driver 1.0 for Linux, read it here: http://blog.quentinrousseau.fr/?p=541'
+  - 'I just posted How to install Microsoft® SQL Server® ODBC Driver 1.0 for Linux, read it here: http://blog.quent.in/?p=541'
 dsq_thread_id:
   - 762175272
 categories:
