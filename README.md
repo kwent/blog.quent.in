@@ -1,4 +1,4 @@
-quent.in
+blog.quent.in
 ==================
 
-http://quent.in octopress website. Theme by OctoPanel.
+http://blog.quent.in octopress website. Theme by OctoPanel.
