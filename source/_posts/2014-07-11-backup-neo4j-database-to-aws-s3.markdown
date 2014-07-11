@@ -19,7 +19,7 @@ tags:
 
 ## Purpose
 
-I needed to daily backup a [Neo4j Database](6) on [AWS S3](5) via a cron task so i
+I needed to daily backup a [Neo4j Database][6] on [AWS S3][5] via a cron task so i
 developed a shell script doing the job.
 
 ## Script
@@ -28,19 +28,19 @@ developed a shell script doing the job.
 
 1. `neo4j-backup` is doing a backup of the database to a local target folder
 given. Be sure to have the available space in local.
-**Binary** :  [neo4j-backup](1)
+**Binary** :  [neo4j-backup][1]
 
 2. `tar` is archiving all files into one. No gzip or bzip compression here
 since it was too slow for my file (> 100 Go).
-**Binary** : [tar](7)
+**Binary** : [tar][7]
 
 3. `lzop` is a very fast compression algorithm who compressing the file in few
-minutes and is saving file size to upload on [AWS S3](5). 
-**Binary** : [lzop](3)
+minutes and is saving file size to upload on [AWS S3][5]. 
+**Binary** : [lzop][3]
 
-4. `aws s3 cp` is uploading our file to S3 using [Amazon S3 Multipart Upload](4) if
+4. `aws s3 cp` is uploading our file to S3 using [Amazon S3 Multipart Upload][4] if
 the file size is big. It's uploading a file faster.
-**Binary** : [aws](2)
+**Binary** : [aws][2]
 
 ## Cron task
 
@@ -57,7 +57,7 @@ Available [here](https://gist.github.com/kwent/82f544dd0488619fd596). Please be 
 
 ## More...
 
-- [Neo4j - The World's Leading Graph Database](6)
+- [Neo4j - The World's Leading Graph Database][6]
 - [Neo4j-backup][1]
 - [Introducing Amazon S3 Multipart Upload][4]
 - [AWS S3][5]
