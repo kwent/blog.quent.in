@@ -53,7 +53,7 @@ Add a file into `/etc/cron.d/neo4j-backup` with:
 
 ## Gist
 
-Available [here](https://gist.github.com/kwent/82f544dd0488619fd596). Please be free to improve it !
+Available [here](https://gist.github.com/kwent/82f544dd0488619fd596). Please feel free to improve it !
 
 ## More...
 
