@@ -44,6 +44,9 @@ NAME_FILE = 'mixpanel_people_export.json'
 $client = Mixpanel::Client.new(api_key: API_KEY, api_secret: API_SECRET)
 json_file = File.open(NAME_FILE, 'a')
 
+# Open json array
+json_file.write('[')
+
 def query_api(page = 0, session_id = nil)
   if(session_id)
     data = $client.request('engage', page: page, session_id: session_id)
@@ -70,8 +73,11 @@ while (this_page and this_page['results'].size > 0)
   next_page_number = this_page['page'].to_i + 1
   puts "Fetching next_page : #{next_page_number}"
   this_page = query_api(next_page_number, this_page['session_id'])
-  json_file.write(this_page.to_json)
+  json_file.write("," + this_page.to_json)
 end
+
+# Close json array
+json_file.write(']')
 
 puts "Export done"
 ```
