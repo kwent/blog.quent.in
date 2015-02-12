@@ -26,7 +26,7 @@ but no **Command Line Tool** was available.
 
 So i decided to develop my first Node.js CLI on top of this wrapper.
 
-It's now [available][2] with **1.0.1 version** and **below some examples how to use it**.
+It's now [available][2] with **1.0.2 version** and **below some examples how to use it**.
 
 ## CLI
 
