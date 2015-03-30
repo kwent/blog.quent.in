@@ -87,7 +87,7 @@ Available [here][4]. Please feel free to improve it !
 
 - [PTY][1]
 - [Net::SFTP][2]
-- [SFTP ClI][3]
+- [man SFTP][3]
 
 [1]: http://ruby-doc.org/stdlib-2.2.0/libdoc/pty/rdoc/PTY.html
 [2]: https://github.com/net-ssh/net-sftp
