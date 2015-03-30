@@ -40,7 +40,7 @@ require 'expect'
 
 PTY.spawn('sftp username@sftp.domain.com:/uploads') do |input, output|
 
-  # Say yes to ssh fingerprint
+  # Say yes to SSH fingerprint
   input.expect(/fingerprint/, 2) do |r|
 
     output.puts "yes" if !r.nil?
