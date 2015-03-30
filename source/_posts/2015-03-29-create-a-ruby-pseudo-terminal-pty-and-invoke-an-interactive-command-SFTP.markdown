@@ -18,7 +18,7 @@ tags:
 
 I needed to upload files on a **SFTP server** **programmatically** and **automatically** in
 a RoR Enviroment. SFTP ruby library wrapper are very limited (I only found
-[this one][1] actually) and is in **maintenance (not more maintained)**
+[this one][2] actually) and is in **maintenance (not more maintained)**
 and I had some troubles uploading large files.
 
 Anyway I decided to come back to use the old [SFTP Command Line Interface][3]
@@ -26,7 +26,7 @@ who is perfectly working.
 
 Unlucky this one is an **Interactive** CLI.
 
-The trick is to use a [Ruby Pseudo Terminal (PTY)][3], listen to the console
+The trick is to use a [Ruby Pseudo Terminal (PTY)][1], listen to the console
 input for some patterns and write in the console output according this pattern
 as a real user would do.
 
