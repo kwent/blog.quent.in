@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Quiptree - Browser extension to display Quip folders and files in tree format"
-date: 2015-06-10 09:46:40 -0700
+date: 2015-06-18 10:00:00 -0700
 comments: true
 categories:
   - development
@@ -12,6 +12,7 @@ tags:
   - extension
   - chrome
   - opera
+  - mozilla
   - firefox
   - safari
 ---
