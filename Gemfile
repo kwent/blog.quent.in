@@ -6,7 +6,7 @@ if RUBY_VERSION =~ /1.9/ # assuming you're running Ruby ~1.9
 end
 
 group :development do
-  gem 'rake', '~> 10.1.1'
+  gem 'rake', '~> 10.4.2'
   gem 'jekyll', '~> 0.12'
   gem 'rdiscount', '~> 2.0.7'
   gem 'pygments.rb', '~> 0.3.4'
