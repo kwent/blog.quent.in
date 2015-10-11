@@ -8,9 +8,6 @@
 	{% if site.linked_in_user %}
         <a href="https://www.linkedin.com/in/{{site.linked_in_user}}" class="btn btn-dark"><i class="fa fa-inverse fa-linkedin fa-2x"></i></a>
     {% endif %}
-    {% if site.resume_link %}
-        <a href="{{ 'assets/resume/pdf/quentinrousseau_resume_EN.pdf' | asset_path }}" class="btn btn-dark"><i class="fa fa-inverse fa-suitcase fa-2x"></i></a>
-    {% endif %}
 	{% if site.email %}
         {% email contact@quent.in %}
     {% endif %}
