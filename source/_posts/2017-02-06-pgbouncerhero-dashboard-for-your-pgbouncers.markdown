@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "PgBouncerHero - A dashboard for your PgBouncers"
+title: "PgBouncerHero - Dashboard for your PgBouncers"
 date: 2017-02-06 10:00:00 -0700
 comments: true
 categories:
@@ -21,7 +21,7 @@ We love [PgBouncer][1] at [Instacart][2] and we wanted to an easy way to
 get some information from the special [administration database](3) for all our
 bouncers in a centralized interface.
 
-## Introduction PgBouncerHero
+## Introducing PgBouncerHero
 
 [![Screenshot1](https://github.com/kwent/pgbouncerhero/blob/master/doc/screenshot-1.png?raw=true)](https://pgbouncerhero-demo.herokuapp.com/)
 [![Screenshot2](https://github.com/kwent/pgbouncerhero/blob/master/doc/screenshot-2.png?raw=true)](https://pgbouncerhero-demo.herokuapp.com/)
