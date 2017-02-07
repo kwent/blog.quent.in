@@ -39,9 +39,10 @@ A live demo is available on [heroku][5] as well.
 - [Instacart][2]
 - [PgBouncer Usage][3]
 - [PgBouncerHero][4]
+- [Heroku Demo App][5]
 
 [1]: https://pgbouncer.github.io
 [2]: https://www.instacart.com
 [3]: https://pgbouncer.github.io/usage.html
 [4]: https://github.com/kwent/pgbouncerhero
-[4]: https://pgbouncerhero-demo.herokuapp.com
+[5]: https://pgbouncerhero-demo.herokuapp.com
