@@ -18,7 +18,7 @@ tags:
 [PgBouncer][1] is a Lightweight connection pooler for PostgreSQL.
 
 We love [PgBouncer][1] at [Instacart][2] and we wanted to an easy way to
-get some information from the special [administration database](3) for all our
+get some information from the special [administration database][3] for all our
 bouncers in a centralized interface.
 
 ## Introducing PgBouncerHero
@@ -29,7 +29,9 @@ bouncers in a centralized interface.
 
 ### Installation
 
-PgBouncerHero is available as a Rails engine on [Github](4).
+PgBouncerHero is available as a Rails engine on [Github][4]
+
+A live demo is available on [heroku][5] as well.
 
 ## More...
 
@@ -42,3 +44,4 @@ PgBouncerHero is available as a Rails engine on [Github](4).
 [2]: https://www.instacart.com
 [3]: https://pgbouncer.github.io/usage.html
 [4]: https://github.com/kwent/pgbouncerhero
+[4]: https://pgbouncerhero-demo.herokuapp.com
