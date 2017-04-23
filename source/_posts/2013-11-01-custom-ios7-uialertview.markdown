@@ -19,7 +19,7 @@ tags:
   - flat
   - ios
   - ios7
-date: Fri, 01 Nov 2013 17:11:50 -8000
+date: Fri, 01 Nov 2013 17:11:50
 ---
 I forked &laquo;&nbsp;ios-custom-alertview&nbsp;&raquo; from [@wimagguc][1] and added a different design button this week.
 

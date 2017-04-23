@@ -15,7 +15,7 @@ tags:
   - android
   - animations
   - vine
-date: Wed, 26 Jun 2013 13:05:09 -8000
+date: Wed, 26 Jun 2013 13:05:09
 ---
 Today, i will introduce you a cool activity transition animation which you could find in the last Vine app available on Android.
 

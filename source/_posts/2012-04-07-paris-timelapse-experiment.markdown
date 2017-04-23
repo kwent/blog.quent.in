@@ -15,7 +15,7 @@ tags:
   - paris
   - photography
   - timelapse
-date: Sat, 07 Apr 2012 10:13:44 -8000
+date: Sat, 07 Apr 2012 10:13:44
 ---
 
 ![Paris Timelapse](/assets/wp-content/uploads/2012/04/IMG_20120403_215453-300x179.jpg)

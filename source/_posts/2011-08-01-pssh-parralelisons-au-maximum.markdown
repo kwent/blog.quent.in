@@ -13,7 +13,7 @@ tags:
   - linux
   - pssh
   - system
-date: Mon, 01 Aug 2011 14:45:04 -8000
+date: Mon, 01 Aug 2011 14:45:04
 ---
 Je me suis récemment trouvé dans une situation dans laquelle je devais exécuter des commandes redondantes sur plusieurs serveurs (environnement clusterisé par exemple) et comme tout grand informaticien, je n&rsquo;aime pas passer sur 50 serveurs pour répéter une tâche. Je me suis donc lancé à la recherche d&rsquo;un utilitaire me permettant d&rsquo;arriver à mes fins.
 

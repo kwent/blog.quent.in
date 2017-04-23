@@ -15,7 +15,7 @@ tags:
   - development
   - qt
   - thumbnailme
-date : Mon, 12 Mar 2012 12:54:14 -8000
+date : Mon, 12 Mar 2012 12:54:14
 ---
 
 ![Thumbnail me 3.0](/assets/wp-content/uploads/2012/02/about1.png)

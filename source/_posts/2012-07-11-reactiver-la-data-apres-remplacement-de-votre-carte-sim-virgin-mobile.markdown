@@ -14,7 +14,7 @@ tags:
   - data
   - mobile
   - virgin
-date: Wed, 11 Jul 2012 15:00:21 -8000
+date: Wed, 11 Jul 2012 15:00:21
 ---
 
 ![Virgin mobile Logo](/assets/wp-content/uploads/2012/07/virgin-mobile-logo-300x158.jpg)
