@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: octopress | Personal blog of Quentin Rousseau]]></title>
+  <link href="http://blog.quent.in/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://blog.quent.in/"/>
+  <updated>2017-04-23T02:58:10-07:00</updated>
+  <id>http://blog.quent.in/</id>
+  <author>
+    <name><![CDATA[Quentin Rousseau]]></name>
+    <email><![CDATA[contact@quent.in]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Twitter mention to url convertor plugin for Octopress]]></title>
+    <link href="http://blog.quent.in/blog/2014/01/06/twitter-mention-to-url-convertor-plugin-for-octopress/"/>
+    <updated>2014-01-06T23:28:42-08:00</updated>
+    <id>http://blog.quent.in/blog/2014/01/06/twitter-mention-to-url-convertor-plugin-for-octopress</id>
+    <content type="html"><![CDATA[<p>Today i needed to convert a string like <code>"Hello world @quentinrousseau"</code> to an <strong>html</strong> string like with the <strong>Twitter mention</strong> decoded with a real link for <strong>Octopress</strong>.</p>
+
+<p>There is a gem called <strong>twitter_text</strong> who is already doing this stuff available here : <a href="https://github.com/twitter/twitter-text-rb">https://github.com/twitter/twitter-text-rb</a>.</p>
+
+<p>But it was too <strong>overkilled</strong> for my decoding in my case only the mention.</p>
+
+<p>So i developped this little <strong>plugin</strong> for <strong>Octopress</strong> who is doing the stuff well and simple.</p>
+
+<p><strong>Gist</strong> available here : <a href="https://gist.github.com/kwent/8295854">https://gist.github.com/kwent/8295854</a></p>
+
+<p>```ruby</p>
+
+<h1>Title: Twitter mention to url convertor plugin for Octopress</h1>
+
+<h1>Author: Quentin Rousseau <a href="http://quentinrousseau.com">http://quentinrousseau.com</a></h1>
+
+<h1>Description: Convert all twitter mentions with an url.</h1>
+
+<p>#</p>
+
+<h1>Syntax </h1>
+
+<p>#</p>
+
+<h1>Example:</h1>
+
+<h1></h1>
+
+<p>#</p>
+
+<h1>Output:</h1>
+
+<h1><a href="https://twitter.com/quentinrousseau" alt="@quentinrousseau">@quentinrousseau</a></h1>
+
+<p>#</p>
+
+<p>module Jekyll</p>
+
+<p>  class TwitterMentionConvertor &lt; Liquid::Tag</p>
+
+<pre><code>@twitter_base_uri = nil
+
+def initialize(tag_name, markup, tokens)
+  super
+  @twitter_base_uri = "https://twitter.com/"
+end
+
+def render(context)
+  "#{context[@markup.strip]}".gsub(/@([a-z0-9_]+)/i) do |mention|
+    "&lt;a href=\"#{@twitter_base_uri}#{mention[1..-1]}\" alt=\"#{mention}\"&gt;#{mention}&lt;/a&gt;"
+  end
+end
+</code></pre>
+
+<p>  end</p>
+
+<p>end</p>
+
+<p>Liquid::Template.register_tag(&lsquo;twitter_mention_convertor&rsquo;, Jekyll::TwitterMentionConvertor)
+```</p>
+
+<p>Enjoy !</p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="https://github.com/twitter/twitter-text-rb">twitter_text Gem</a></li>
+<li><a href="https://gist.github.com/kwent/8295854">Gist Code</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Migration from WordPress to Octopress]]></title>
+    <link href="http://blog.quent.in/blog/2013/12/23/migration-from-wordpress-to-octopress/"/>
+    <updated>2013-12-23T21:26:23-08:00</updated>
+    <id>http://blog.quent.in/blog/2013/12/23/migration-from-wordpress-to-octopress</id>
+    <content type="html"><![CDATA[<h2>Yes i did it !</h2>
+
+<p>It was a long time that i was looking for another solution for hosting this blog.</p>
+
+<p>This blog is now running with <a href="http://octopress.org"><strong>Octopress</strong></a> (Based on <a href="http://jekyllrb.com"><strong>Jekyll</strong></a> Engine), and still powered by <strong>Nginx</strong>.</p>
+
+<p>The current Theme is called <a href="https://github.com/ConnorAtherton/OctoPanel"><strong>OctoPanel</strong></a>.</p>
+
+<h2>Why ?</h2>
+
+<ul>
+<li><p><strong>Wordpress</strong> was good for many years to me but <strong>too heavy/too much features</strong> i did'nt need.</p></li>
+<li><p>It was a lot of pain to integrate <strong>snippet of code</strong> in Wordpress. (Even with plugin helpers).</p></li>
+<li><p>I did'nt need an instance of database running for only few articles.</p></li>
+<li><p>I did'nt need a <strong>GUI</strong> with a <strong>WISIWYG</strong> editor, i&rsquo;m coding every days and it&rsquo;s faster for me to write in <strong>Mardown syntax</strong>.</p></li>
+</ul>
+
+
+<h2>Cool things to know about the migration</h2>
+
+<ul>
+<li><p>I migrated my old articles via a wordpress plugin called <a href="https://github.com/benbalter/wordpress-to-jekyll-exporter"><strong>wordpress-to-jekyll-exporter</strong></a>.
+(This plugin is generated all articles in <strong>Markdown syntax</strong>. (This is not perfect but it helps)).</p></li>
+<li><p>Links to my articles are still the same. (<strong>Permalinks saved</strong>). So <strong>no deferencement</strong> with Google.</p></li>
+<li><p>I transfered all the locals images imported in Wordpress since 2 years in a new local assets folder and remodify images links in articles.</p></li>
+<li><p><strong>All the comments are saved</strong> &lsquo;cause i used to save my comments with <a href="http://disqus.com"><strong>Disqus</strong></a>. Just to put the <strong>disqus_thread_id</strong> in each post and you are done !</p></li>
+<li><p><strong>Google analytics</strong> is up. Just put my google analytics account id in the Octopress config file.</p></li>
+<li><p><strong>Share buttons</strong> are up. Just activated them in the <a href="http://octopress.org">Octopress</a> config file.</p></li>
+<li><p><strong>Tags &amp; categories</strong> are saved too. But i did'nt find so far how to display them in the list layout.</p></li>
+<li><p>I tried to integrate <strong>Font Awesome</strong> but i failed. I will figure out later.</p></li>
+</ul>
+
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="http://octopress.org">OctoPress Website</a></li>
+<li><a href="http://jekyllrb.com">Jekyll Website</a></li>
+<li><a href="https://github.com/ConnorAtherton/OctoPanel">OctoPanel Theme</a></li>
+<li><a href="https://github.com/benbalter/wordpress-to-jekyll-exporter">Wordpress to Jekyll Exporter</a></li>
+<li><a href="http://disqus.com">Disqus Website</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ios | Personal blog of Quentin Rousseau]]></title>
+  <link href="http://blog.quent.in/blog/categories/ios/atom.xml" rel="self"/>
+  <link href="http://blog.quent.in/"/>
+  <updated>2017-04-23T02:58:10-07:00</updated>
+  <id>http://blog.quent.in/</id>
+  <author>
+    <name><![CDATA[Quentin Rousseau]]></name>
+    <email><![CDATA[contact@quent.in]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Level up ionicons-iOS with a category]]></title>
+    <link href="http://blog.quent.in/blog/2014/10/25/level-up-ionicons-ios-with-a-category/"/>
+    <updated>2014-10-25T00:02:54-07:00</updated>
+    <id>http://blog.quent.in/blog/2014/10/25/level-up-ionicons-ios-with-a-category</id>
+    <content type="html"><![CDATA[<h2>Purpose</h2>
+
+<p><a href="http://ionicons.com">Ionicons</a> is a cool icon font framework (100% free and open source) designed by
+<a href="http://ionicframework.com">Ionic Framework</a>.</p>
+
+<p><a href="https://github.com/sweetmandm">David Sweetman</a> released an iOS library to permit iOS developers to integrate this
+font with your projects via this
+repository <a href="https://github.com/sweetmandm/ionicons-iOS">https://github.com/sweetmandm/ionicons-iOS</a></p>
+
+<p>But you can only generate <a href="https://developer.apple.com/library/ios/documentation/uikit/Reference/UIImage_Class/index.html">UIImage</a> object or <a href="https://developer.apple.com/library/ios/documentation/uikit/Reference/UILabel_Class/index.html">UILabel</a> with this library.
+I needed more like generate <a href="https://developer.apple.com/library/ios/documentation/uikit/reference/uiimageview_class/index.html">UIImageView</a>, <a href="https://developer.apple.com/library/ios/documentation/uikit/Reference/UIButton_Class/index.html">UIButton</a>, add a corner radius around them [&hellip;].</p>
+
+<p>So i created a category who is now adding useful functions.</p>
+
+<h2>Category overview</h2>
+
+<p>```objective-c
++ (UIButton<em>) buttonWithIcon:(NSString</em>)icon_name</p>
+
+<pre><code>                      iconColor:(UIColor*)iconColor
+                       iconSize:(CGFloat)iconSize
+                      imageSize:(CGSize)imageSize;
+</code></pre>
+
+<ul>
+<li><p>(UIButton<em>) roundedButtonWithIcon:(NSString</em>)icon_name
+              iconColor:(UIColor*)iconColor
+               iconSize:(CGFloat)iconSize
+              imageSize:(CGSize)imageSize;</p></li>
+<li><p>(UIImageView<em>) imageViewWithIcon:(NSString</em>)icon_name
+                       iconColor:(UIColor*)iconColor
+                        iconSize:(CGFloat)iconSize
+                       imageSize:(CGSize)imageSize;</p></li>
+<li><p>(UIImageView<em>) roundedImageViewWithIcon:(NSString</em>)icon_name
+                              iconColor:(UIColor<em>)iconColor
+                              fillColor:(UIColor</em>)fillColor
+                               iconSize:(CGFloat)iconSize
+                              imageSize:(CGSize)imageSize;</p></li>
+<li><p>(UIImageView<em>) roundedImageViewWithIcon:(NSString</em>)icon_name
+                             iconColor:(UIColor*)iconColor
+                              iconSize:(CGFloat)iconSize
+                             imageSize:(CGSize)imageSize;
+```</p></li>
+</ul>
+
+
+<h2>Gist</h2>
+
+<p>Available <a href="https://gist.github.com/kwent/d9ba3f62e62dc4a36df8">here</a>. Please feel free to improve it !</p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="http://ionicons.com">Ionicons</a></li>
+<li><a href="http://ionicframework.com">Ionic Framework</a></li>
+<li><a href="https://github.com/sweetmandm/ionicons-iOS">ionicons-iOS</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using TTTAttributedLabel with Regex : Welcome TTTRegexAttributedLabel]]></title>
+    <link href="http://blog.quent.in/index.php/2013/11/using-tttattributedlabel-with-regex-welcome-tttregexattributedlabel/"/>
+    <updated>2013-11-15T02:03:37-08:00</updated>
+    <id>http://blog.quent.in/index.php/2013/11/using-tttattributedlabel-with-regex-welcome-tttregexattributedlabel</id>
+    <content type="html"><![CDATA[<p>Hi there !</p>
+
+<p>If you are looking a easy library to use to apply Regex with <strong><a href="https://github.com/mattt/TTTAttributedLabel">TTTAttributedLabel</a> </strong>from <a href="http://github.com/mattt">Mattt Thompson</a>, i build a lib called <a href="https://github.com/kwent/TTTRegexAttributedLabel"><strong>TTTRegexAttributedLabel</strong></a>.</p>
+
+<h2>Example</h2>
+
+<p><img src="/assets/wp-content/uploads/2013/11/screenshot.jpg" alt="Screenshot" /></p>
+
+<h2>Usage</h2>
+
+<p><strong>Below a quick example hot to use it ( First example in the Screenshot)</strong></p>
+
+<p><code>objective-c
+TTTRegexAttributedLabel *label1 = [[TTTRegexAttributedLabel alloc] initWithFrame:CGRectMake(25, 20, self.view.bounds.size.width - 50, 160)];
+label1.numberOfLines = ;
+label1.textAlignment = NSTextAlignmentCenter;
+NSString *s1 = @“Soft kitty,\nWarm kitty,\nLittle ball of fur.\nHappy kitty,\nSleepy kitty,\nPurr, purr, purr.”;
+[label1 setText:s1 withFirstMatchRegex:@“kitty” withFont:[UIFont boldSystemFontOfSize:20] withColor:[UIColor redColor]];
+</code></p>
+
+<p>Enjoy it !</p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="https://github.com/kwent/TTTRegexAttributedLabel" title="kwent/TTTRegexAttributedLabel · GitHub" rel="nofollow">kwent/TTTRegexAttributedLabel · GitHub</a></li>
+<li><a href="https://github.com/mattt/TTTAttributedLabel?source=c" title="mattt/TTTAttributedLabel · GitHub" rel="nofollow">mattt/TTTAttributedLabel · GitHub</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Custom iOS7 UIAlertView]]></title>
+    <link href="http://blog.quent.in/index.php/2013/11/custom-ios7-uialertview/"/>
+    <updated>2013-11-01T17:11:50-07:00</updated>
+    <id>http://blog.quent.in/index.php/2013/11/custom-ios7-uialertview</id>
+    <content type="html"><![CDATA[<p>I forked &laquo;&nbsp;ios-custom-alertview&nbsp;&raquo; from <a href="https://github.com/wimagguc">@wimagguc</a> and added a different design button this week.</p>
+
+<p>You can just <a href="https://github.com/kwent/ios-custom-alertview">grab the open source code from Github now</a>.</p>
+
+<p><img src="/assets/wp-content/uploads/2013/11/screen.png" alt="Ios Custom AlertView" /></p>
+
+<p>Implementation of this alert view is :</p>
+
+<p><code>objective-c
+CustomIOS7AlertView *alertView = [CustomIOS7AlertView alertWithTitle:@“Thank you for trying this demo” message:@“If you liked what you saw,\nand are interesting in seeing\nwhat we can do together,\nplease shoot us a mail by tapping the button below.”];
+[alertView setButtonTitles:[NSMutableArray arrayWithObjects:@“Shoot us a mail!”, @“Try another demo!”, @“Close”, nil]];
+[alertView setButtonColors:[NSMutableArray arrayWithObjects:[UIColor colorWithRed:255.0f/255.0f green:77.0f/255.0f blue:94.0f/255.0f alpha:1.0f],[UIColor colorWithRed:0.0f green:0.5f blue:1.0f alpha:1.0f],nil]];
+[alertView setDelegate:self];
+[alertView setOnButtonTouchUpInside:^(CustomIOS7AlertView *alertView, int buttonIndex) {
+NSLog(@“Block: Button at position %d is clicked on alertView %d.”, buttonIndex, [alertView tag]);
+[alertView close];
+}];
+[alertView show];
+</code></p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="http://www.wimagguc.com/2013/10/custom-ios7-uialertview/" title="Custom iOS7 UIAlertView" rel="nofollow">Custom iOS7 UIAlertView</a></li>
+<li><a href="https://github.com/kwent/ios-custom-alertview" title="kwent/ios-custom-alertview · GitHub" rel="nofollow">kwent/ios-custom-alertview · GitHub</a></li>
+<li><a href="https://github.com/wimagguc" title="wimagguc (Richard Dancsi) · GitHub" rel="nofollow">wimagguc (Richard Dancsi) · GitHub</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

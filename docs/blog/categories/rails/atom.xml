@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rails | Personal blog of Quentin Rousseau]]></title>
+  <link href="http://blog.quent.in/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://blog.quent.in/"/>
+  <updated>2017-04-23T02:58:10-07:00</updated>
+  <id>http://blog.quent.in/</id>
+  <author>
+    <name><![CDATA[Quentin Rousseau]]></name>
+    <email><![CDATA[contact@quent.in]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Adding scopes to ActiveRecord::Base]]></title>
+    <link href="http://blog.quent.in/blog/2014/04/23/adding-scopes-to-activerecord-base/"/>
+    <updated>2014-04-23T20:00:08-07:00</updated>
+    <id>http://blog.quent.in/blog/2014/04/23/adding-scopes-to-activerecord-base</id>
+    <content type="html"><![CDATA[<h2>Purpose</h2>
+
+<p>If you are using many times <code>created_at</code> and <code>updated_at</code> attributes and you&rsquo;re
+playing a lot with them in you queries, you should be interesting by this
+<strong>MonkeyPatch</strong> who is
+adding useful scopes in every models who inherits from <code>ActiveRecord::Base</code>.</p>
+
+<h2>MonkeyPatch</h2>
+
+<ul>
+<li>Create <code>app/initializer/active_record_scopes_extension.rb</code> file and add the
+code below.</li>
+<li>Call <code>MyModel.created(DateTime.now)</code> or <code>MyModel.updated(3.days.ago)</code> or
+<code>MyModel.created(2.day.ago, 1.day.ago)</code>.</li>
+</ul>
+
+
+<p>```ruby
+module Scopes
+  def self.included(base)</p>
+
+<pre><code>base.class_eval do
+  def self.created(date_start, date_end = nil)
+      if date_start &amp;&amp; date_end
+        scoped(:conditions =&gt; ["#{table_name}.created_at &gt;= ? AND #{table_name}.created_at &lt;= ?", date_start, date_end])
+      elsif date_start
+        scoped(:conditions =&gt; ["#{table_name}.created_at &gt;= ?", date_start])
+      end
+  end
+  def self.updated(date_start, date_end = nil)
+      if date_start &amp;&amp; date_end
+        scoped(:conditions =&gt; ["#{table_name}.updated_at &gt;= ? AND #{table_name}.updated_at &lt;= ?", date_start, date_end])
+      elsif date_start
+        scoped(:conditions =&gt; ["#{table_name}.updated_at &gt;= ?", date_start])
+      end
+  end
+end
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>ActiveRecord::Base.send(:include, Scopes)
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

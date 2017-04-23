@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to install Microsoft® SQL Server® ODBC Driver 1.0 for Linux - Personal blog of Quentin Rousseau</title>
+  <meta name="author" content="Quentin Rousseau">
+
+  
+  <meta name="description" content="IT Engineer Graduate @Telecombretagne (Brest, FR). Senior software engineer at @instacart (San Francisco, CA)." />
+
+  
+  <meta name="keywords" content="blog, quentin, rousseau, IT, engineer, developer, instacart" />
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.quent.in/index.php/2012/07/how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Personal blog of Quentin Rousseau" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans|Roboto:400,300' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-46809655-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<aside class="left">
+			<div class="inner-left">
+				<header>
+					<a href="/"><img src="http://www.gravatar.com/avatar/40792355b0aa756614c0abd37e75c0d3?s=250" alt="Quentin Rousseau " title="Quentin Rousseau"/></a>
+<hgroup>
+  <div class="title"><a href="/">Quentin Rousseau</a></div>
+  
+  	
+    <h2 class="subtitle">IT Engineer Graduate <a href="https://twitter.com/Telecombretagne" alt="@Telecombretagne">@Telecombretagne</a> (Brest, FR). Senior software engineer at <a href="https://twitter.com/instacart" alt="@instacart">@instacart</a> (San Francisco, CA).</h2>
+   
+</hgroup>
+
+
+				</header>
+				<footer>
+					<p>
+	
+		<a href="http://github.com/kwent" class="btn btn-dark"><i class="fa fa-inverse fa-github fa-2x"></i></a>
+	
+	
+		<a href="http://twitter.com/quentinrousseau" class="btn btn-dark"><i class="fa fa-inverse fa-twitter fa-2x"></i></a>
+	
+	
+        <a href="https://www.linkedin.com/in/quentinrousseau" class="btn btn-dark"><i class="fa fa-inverse fa-linkedin fa-2x"></i></a>
+    
+	
+        <script type="text/javascript"> document.write('<a style="unicode-bidi: bidi-override; direction: rtl;" class="btn btn-dark" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;contact&#64;quent&#46;in"><i class="fa fa-inverse fa-envelope fa-2x"></i></a>');</script>
+    
+</p>
+
+				</footer>
+			</div>
+		</aside>
+    	<section class="right">
+    		<div class="inner-right">
+    			<div id="posts">
+    			  	<article class="post">
+    <header>
+  
+	<h1 class="entry-title">How to Install Microsoft® SQL Server® ODBC Driver 1.0 for Linux</h1>
+
+
+<p class="meta">
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-12T15:10:37-07:00" pubdate data-updated="true">Jul 12<span>th</span>, 2012</time>
+   | <a href="#disqus_thread" data-disqus-identifier="http://blog.quent.in">Comments</a>
+  
+</p>
+<p class="header_categories">
+  
+</p>
+
+</header>
+
+<div class="entry-content"><p>Hello,</p>
+
+<p>This manipulation was tested on <strong>Linux RedHat EL 5/6 x86_64</strong></p>
+
+<h3>1 | Download sqlncli for Linux</h3>
+
+<p>Download sqlncli on the official Microsoft website : <a href="http://www.microsoft.com/en-us/download/details.aspx?id=28160">http://www.microsoft.com/en-us/download/details.aspx?id=28160</a></p>
+
+<h3>2 | Unzip and download unixODBC-2.3.0</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>tar xvzf sqlcli-11.0.1790.0.tar.gz <span class="o">&amp;&amp;</span> <span class="nb">cd </span>sqlcli-11.0.1790.0
+</span><span class='line'>
+</span><span class='line'>./build_dm.sh <span class="c">#Script to download unixODBC-2.3.0, configure and compile it.</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#Get into the tempory folder where unixODBC-2.3.0 was compiled and execute make install</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#Before you install the driver, you may run a verify step to check if your computer has the required software to support the Microsoft SQL Server ODBC Driver 1.0 for Linux:</span>
+</span><span class='line'>
+</span><span class='line'>./install.sh verify
+</span><span class='line'>
+</span><span class='line'><span class="c">#When you are ready to install the Microsoft SQL Server ODBC Driver 1.0 for Linux, run the install script:</span>
+</span><span class='line'>
+</span><span class='line'>./install.sh install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>2.bis  | Unzip and download unixODBC-2.3.1 [hack]</h3>
+
+<p><strong>UnixODBC-2.3.1</strong> is available at <a href="ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-2.3.1.tar.gz">ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-2.3.1.tar.gz</a> but actually not supported by <strong>Microsoft sqlncli install scripts.</strong></p>
+
+<p>To proceed installation of <strong>sqlncli</strong> with the <strong>latest version of UnixODBC</strong>, we have to modify these install scripts with :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd </span>sqlcli-11.0.1790.0
+</span><span class='line'>
+</span><span class='line'>wget ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-2.3.1.tar.gz
+</span><span class='line'>
+</span><span class='line'>find *.sh -exec sed -i ’s/2.3.0/2.3.1/g’ <span class="o">{}</span> <span class="se">\;</span>
+</span><span class='line'>
+</span><span class='line'>./build_dm.sh –download-url<span class="o">=</span>file://unixODBC-2.3.1.tar.gz <span class="c">#Script to unzip unixODBC-2.3.1 (local), configure and compile it.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>3 | Repair libraries paths</h3>
+
+<p>Now, normally you can find in /etc/odbcinst.ini</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[SQL Server Native Client 11.0]
+</span><span class='line'>Description=Microsoft SQL Server ODBC Driver V1.0 for Linux
+</span><span class='line'>Driver=/opt/microsoft/sqlncli/lib64/libsqlncli-11.0.so.1790.0
+</span><span class='line'>Threading=1
+</span><span class='line'>UsageCount=1</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But if you tried isql or sqlcmd commands, you should have some surprises with this kind of problem :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>isql -v DN user password <span class="c">#DN located in you /etc/odbc.ini</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">[</span>01000<span class="o">][</span>unixODBC<span class="o">][</span>Driver Manager<span class="o">]</span>Can‘t open lib ’/opt/microsoft/sqlncli/lib64/libsqlncli-11.0.so.1790.0’ : file not found
+</span><span class='line'><span class="o">[</span>ISQL<span class="o">]</span>ERROR: Could not SQLConnect
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>To fix this issue, we have to find which libraries is missing for <strong>libsqlncli-11.0.so.1790.0</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ldd /opt/microsoft/sqlncli/lib64/libsqlncli-11.0.so.1790.0
+</span><span class='line'>        linux-vdso.so.1 <span class="o">=</span>&gt;  <span class="o">(</span>0x00007fffce3ff000<span class="o">)</span>
+</span><span class='line'>        libcrypto.so.10 <span class="o">=</span>&gt; /usr/lib64/libcrypto.so.10 <span class="o">(</span>0x00007f90405a1000<span class="o">)</span>
+</span><span class='line'>        libdl.so.2 <span class="o">=</span>&gt; /lib64/libdl.so.2 <span class="o">(</span>0x00007f904039d000<span class="o">)</span>
+</span><span class='line'>        librt.so.1 <span class="o">=</span>&gt; /lib64/librt.so.1 <span class="o">(</span>0x00007f9040194000<span class="o">)</span>
+</span><span class='line'>        libssl.so.10 <span class="o">=</span>&gt; /usr/lib64/libssl.so.10 <span class="o">(</span>0x00007f903ff39000<span class="o">)</span>
+</span><span class='line'>        libuuid.so.1 <span class="o">=</span>&gt; /lib64/libuuid.so.1 <span class="o">(</span>0x00007f903fd35000<span class="o">)</span>
+</span><span class='line'>        libodbcinst.so.1 <span class="o">=</span>&gt; not found
+</span><span class='line'>        libkrb5.so.3 <span class="o">=</span>&gt; /lib64/libkrb5.so.3 <span class="o">(</span>0x00007f903fa55000<span class="o">)</span>
+</span><span class='line'>        libgssapi_krb5.so.2 <span class="o">=</span>&gt; /lib64/libgssapi_krb5.so.2 <span class="o">(</span>0x00007f903f813000<span class="o">)</span>
+</span><span class='line'>        libstdc++.so.6 <span class="o">=</span>&gt; /usr/lib64/libstdc++.so.6 <span class="o">(</span>0x00007f903f50c000<span class="o">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now we found it, we have to fix it !</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ln -s /usr/lib64/libodbcinst.so.2 /usr/lib64/libodbcinst.so.1
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Same problem with <strong>sqlcmd</strong>, you have to search missing libraries and fix correct paths with<strong> symbolic links</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ldd <span class="sb">`</span>which sqlcmd<span class="sb">`</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3><span style="color: #008000;">Now everything should be OK</span></h3>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=28160" title="No Title" rel="nofollow">Microsoft Download Center</a></li>
+<li><a href="http://www.unixodbc.org/" title="unixODBC" rel="nofollow">unixODBC</a></li>
+</ul>
+
+</div>
+
+
+</article>
+
+
+        <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.quent.in/index.php/2012/07/how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux/" data-via="quentinrousseau" data-counturl="http://blog.quent.in/index.php/2012/07/how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+
+
+
+<section id="comments">
+    <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+
+    			</div>
+    			
+
+<script type="text/javascript">
+      var disqus_shortname = 'quentinrousseauleblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.quent.in/index.php/2012/07/how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux/';
+        var disqus_url = 'http://blog.quent.in/index.php/2012/07/how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+<link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans|Roboto:400,300' rel='stylesheet' type='text/css'>
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-46809655-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+
+
+    		</div>
+    	</section>
+  	</div>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: system | Personal blog of Quentin Rousseau]]></title>
+  <link href="http://blog.quent.in/blog/categories/system/atom.xml" rel="self"/>
+  <link href="http://blog.quent.in/"/>
+  <updated>2017-04-23T02:58:10-07:00</updated>
+  <id>http://blog.quent.in/</id>
+  <author>
+    <name><![CDATA[Quentin Rousseau]]></name>
+    <email><![CDATA[contact@quent.in]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Create a ruby pseudo terminal (PTY) and invoke an interactive command (SFTP)]]></title>
+    <link href="http://blog.quent.in/blog/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-SFTP/"/>
+    <updated>2015-03-29T22:37:51-07:00</updated>
+    <id>http://blog.quent.in/blog/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-SFTP</id>
+    <content type="html"><![CDATA[<h2>Purpose</h2>
+
+<p>I needed to upload files on a <strong>SFTP server</strong> <strong>programmatically</strong> and <strong>automatically</strong> in
+a RoR Enviroment. SFTP ruby library wrapper are very limited (I only found
+<a href="https://github.com/net-ssh/net-sftp">this one</a> actually) and is in <strong>maintenance (not more maintained)</strong>
+and I had some troubles uploading large files.</p>
+
+<p>Anyway I decided to come back to use the old <a href="http://linux.die.net/man/1/sftp">SFTP Command Line Interface</a>
+who is perfectly working.</p>
+
+<p>Unlucky this one is an <strong>Interactive</strong> CLI.</p>
+
+<p>The trick is to use a <a href="http://ruby-doc.org/stdlib-2.2.0/libdoc/pty/rdoc/PTY.html">Ruby Pseudo Terminal (PTY)</a>, listen to the console
+input for some patterns and write in the console output according this pattern
+as a real user would do.</p>
+
+<p>Here is a code snippet who doing the job and working perfectly.</p>
+
+<h2>Code</h2>
+
+<p>```ruby
+require &lsquo;pty&rsquo;
+require &lsquo;expect&rsquo;</p>
+
+<p>PTY.spawn(&lsquo;sftp username@sftp.domain.com:/uploads&rsquo;) do |input, output|</p>
+
+<p>  # Say yes to SSH fingerprint
+  input.expect(/fingerprint/, 2) do |r|</p>
+
+<pre><code>output.puts "yes" if !r.nil?
+
+# Enter SFTP password
+input.expect(/password/, 2) do |r|
+
+  output.puts 'your_sftp_password' if !r.nil?
+
+  input.expect(/sftp/) do
+
+    # List folders and files in `/uploads`
+    output.puts 'ls'
+
+    # Check if folder named `foo` exist
+    input.expect(/foo/, 1) do |result|
+
+      is_folder_exist = result.nil? ? false : true
+      # Create `foo` folder if does'nt exist
+      output.puts "mkdir foo" if !is_folder_exist
+      # Change directory to `foo`
+      output.puts "cd foo"
+      # Upload `/path/to/local/foo.txt` in `foo` folder as `foo.txt`
+      output.puts "put /path/to/local/foo.txt foo.txt"
+      # Exit SFTP
+      output.puts "exit"
+
+    end
+
+  end
+
+end
+</code></pre>
+
+<p>  end</p>
+
+<p>end
+```</p>
+
+<h2>Gist</h2>
+
+<p>Available <a href="https://gist.github.com/kwent/e2c34c2dfd01a194a49a">here</a>. Please feel free to improve it !</p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="http://ruby-doc.org/stdlib-2.2.0/libdoc/pty/rdoc/PTY.html">PTY</a></li>
+<li><a href="https://github.com/net-ssh/net-sftp">Net::SFTP</a></li>
+<li><a href="http://linux.die.net/man/1/sftp">man SFTP</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Simple Node.js wrapper and CLI for Synology DSM REST API]]></title>
+    <link href="http://blog.quent.in/blog/2015/02/12/simple-node-dot-js-wrapper-and-cli-for-synology-dsm-rest-api/"/>
+    <updated>2015-02-12T07:54:19-08:00</updated>
+    <id>http://blog.quent.in/blog/2015/02/12/simple-node-dot-js-wrapper-and-cli-for-synology-dsm-rest-api</id>
+    <content type="html"><![CDATA[<h2>Purpose</h2>
+
+<p><a href="https://github.com/JimRobs">JimRobs</a> developped a cool Node.js wrapper for the <a href="https://www.synology.com/en-us/support/developer#tool">Synology DSM REST API</a>
+but no <strong>Command Line Tool</strong> was available.</p>
+
+<p>So i decided to develop my first Node.js CLI on top of this wrapper.</p>
+
+<p>It&rsquo;s now <a href="https://github.com/JimRobs/syno">available</a> with <strong>1.0.2 version</strong> and <strong>below some examples how to use it</strong>.</p>
+
+<h2>CLI</h2>
+
+<h3>Installation</h3>
+
+<p><code>bash
+$ npm install -g syno
+</code></p>
+
+<h3>Usage</h3>
+
+<p>```
+$ syno &mdash;help
+Usage: syno [options]</p>
+
+<p>  Synology Rest API Command Line</p>
+
+<p>  Options:</p>
+
+<pre><code>-h, --help           output usage information
+-V, --version        output the version number
+</code></pre>
+
+<p>  Commands:</p>
+
+<pre><code>filestation|fs [options] &lt;method&gt;  DSM File Station API
+downloadstation|dl [options] &lt;method&gt;  DSM Download Station API
+</code></pre>
+
+<p>  Examples:</p>
+
+<pre><code>$ syno filestation|fs getFileStationInfo
+$ syno downloadstation|dl getDownloadStationInfo
+</code></pre>
+
+<p>```</p>
+
+<p>```
+$ syno fs &mdash;help
+Usage: filestation|fs [options] <method></p>
+
+<p>  DSM File Station API</p>
+
+<p>  Options:</p>
+
+<pre><code>-h, --help               output usage information
+-c, --config &lt;path&gt;      DSM configuration file. Default to ~/.syno/auth.yaml
+-u, --url &lt;url&gt;          DSM URL. Default to https://admin:password@localhost:5001
+-p, --payload &lt;payload&gt;  JSON Payload
+-P, --pretty             Prettyprint JSON Output
+-d, --debug              Enabling Debugging Output
+</code></pre>
+
+<p>  Examples:</p>
+
+<pre><code>$ syno filestation|fs listSharedFolders
+$ syno filestation|fs listFiles --pretty --payload '{"folder_path":"/path/to/folder"}'
+</code></pre>
+
+<p>```</p>
+
+<p>```
+$ syno dl &mdash;help
+Usage: downloadstation|dl [options] <method></p>
+
+<p>  DSM Download Station API</p>
+
+<p>  Options:</p>
+
+<pre><code>-h, --help               output usage information
+-c, --config &lt;path&gt;      DSM configuration file. Default to ~/.syno/auth.yaml
+-u, --url &lt;url&gt;          DSM URL. Default to https://admin:password@localhost:5001
+-p, --payload &lt;payload&gt;  JSON Payload
+-P, --pretty             Prettyprint JSON Output
+-d, --debug              Enabling Debugging Output
+</code></pre>
+
+<p>  Examples:</p>
+
+<pre><code>$ syno downloadstation|dl createTask --payload '{"uri":"magnet|ed2k|ftp(s)|http(s)://link"}'
+$ syno downloadstation|dl listTasks
+$ syno downloadstation|dl listTasks --payload '{"limit":10}'
+$ syno downloadstation|dl getTasksInfo --pretty --payload '{"id":"task_id"}'
+</code></pre>
+
+<p>```</p>
+
+<h2>Examples</h2>
+
+<h3>Without a configuration file</h3>
+
+<p><code>bash
+$ syno fs getFileStationInfo --url https://admin:synology@demo.synology.com:5001 --pretty
+</code></p>
+
+<h3>With a configuration file</h3>
+
+<p>```yaml</p>
+
+<h1>Example config file, by default it should be located at:</h1>
+
+<h1>~/.syno/config.conf</h1>
+
+<p>url:
+  protocol: https
+  host: localhost
+  port: 5001
+  account: admin
+  passwd: password
+```</p>
+
+<p><code>bash
+$ syno fs getFileStationInfo --pretty
+</code></p>
+
+<h2>In real life ?</h2>
+
+<h3>List Files via File Station</h3>
+
+<p><code>bash
+$ syno fs listFiles --payload '{"folder_path":"/photo"}' --pretty
+</code></p>
+
+<h3>List Tasks via Download Station</h3>
+
+<p><code>bash
+$ syno dl listTasks --payload '{"limit":1}' --pretty
+</code></p>
+
+<h3>Add Task HTTP file via Download Station</h3>
+
+<p><code>bash
+$ syno dl createTask --payload '{"uri":"http://download.thinkbroadband.com/5MB.zip"}'
+</code></p>
+
+<h3>Add Task Torrent magnet link via Download Station</h3>
+
+<p><code>bash
+$ syno dl createTask --payload '{"uri":"magnet:?xt=urn:ed2k:31D6CFE0D16AE931B73C59D7E0C089C0&amp;xl=0&amp;dn=zero_len.fil&amp;xt=urn:bitprint:3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ.LWPNACQDBZRYXW3VHJVCJ64QBZNGHOHHHZWCLNQ&amp;xt=urn:md5:D41D8CD98F00B204E9800998ECF8427E"}'
+</code></p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="https://github.com/JimRobs/syno">github</a></li>
+<li><a href="https://www.npmjs.com/package/syno">npmjs</a></li>
+<li><a href="https://www.synology.com/en-us/support/developer#tool">Synology &ndash; Development Tool</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Export all Mixpanel People to a JSON file]]></title>
+    <link href="http://blog.quent.in/blog/2014/07/15/export-all-mixpanel-people-to-a-json-file/"/>
+    <updated>2014-07-15T13:32:01-07:00</updated>
+    <id>http://blog.quent.in/blog/2014/07/15/export-all-mixpanel-people-to-a-json-file</id>
+    <content type="html"><![CDATA[<h2>Purpose</h2>
+
+<p>I needed to backup all my people data available in <a href="http://www.mixpanel.com">Mixpanel</a> to a JSON file via the <a href="https://mixpanel.com/docs/api-documentation/data-export-api#engage-default">Mixpanel Export API</a>.</p>
+
+<h2>Script</h2>
+
+<p>```ruby</p>
+
+<h1>==========================================================================================</h1>
+
+<h1>title           :mixpanel_people_export.rb</h1>
+
+<h1>description     :This ruby script is exporting mixpanel people json data to a file</h1>
+
+<h1>author          :Quentin Rousseau <a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#99;&#111;&#110;&#x74;&#97;&#x63;&#116;&#64;&#113;&#x75;&#101;&#110;&#x74;&#46;&#105;&#110;">&#99;&#x6f;&#110;&#x74;&#x61;&#99;&#116;&#x40;&#x71;&#x75;&#x65;&#x6e;&#x74;&#46;&#105;&#x6e;</a></h1>
+
+<h1>date            :2014-07-15</h1>
+
+<h1>version         :1.0</h1>
+
+<h1>usage           :ruby mixpanel_people_export.rb</h1>
+
+<h1>dependencies    :gem install &lsquo;mixpanel_client&rsquo;</h1>
+
+<h1>moreinfo        :<a href="https://mixpanel.com/docs/api-documentation/data-export-api#engage-default">https://mixpanel.com/docs/api-documentation/data-export-api#engage-default</a></h1>
+
+<h1>===========================================================================================</h1>
+
+<p>require &lsquo;rubygems&rsquo;
+require &lsquo;mixpanel_client&rsquo;</p>
+
+<p>API_KEY = &lsquo;YOUR_API_KEY&rsquo;
+API_SECRET = &lsquo;YOUR_API_SECRET&rsquo;
+NAME_FILE = &lsquo;mixpanel_people_export.json&rsquo;</p>
+
+<p>$client = Mixpanel::Client.new(api_key: API_KEY, api_secret: API_SECRET)
+json_file = File.open(NAME_FILE, &lsquo;a&rsquo;)</p>
+
+<h1>Open json array</h1>
+
+<p>json_file.write(&lsquo;[&rsquo;)</p>
+
+<p>def query_api(page = 0, session_id = nil)
+  if(session_id)</p>
+
+<pre><code>data = $client.request('engage', page: page, session_id: session_id)
+</code></pre>
+
+<p>  else</p>
+
+<pre><code>data = $client.request('engage', page: page)
+</code></pre>
+
+<p>  end
+end</p>
+
+<h1>Get the first page of data associated with our selector expression</h1>
+
+<h1>this_page = query_api(page=NEXT_PAGE)</h1>
+
+<h1>do_something_with_response(this_page)</h1>
+
+<p>this_page = query_api(0)
+json_file.write(this_page.to_json)</p>
+
+<h1>If we get fewer records than the page_sized returned with our results,</h1>
+
+<h1>then there are no more records to get. Otherwise, keep querying for additional pages.</h1>
+
+<h1>while (length of this_page.results) >= this_page.page_size:</h1>
+
+<h1>next_page_number = this_page.page + 1</h1>
+
+<h1>this_page = query_api(page=next_page_number, session_id=this_page.session_id)</h1>
+
+<h1>do_something_with_response(this_page)</h1>
+
+<p>while (this_page and this_page[&lsquo;results&rsquo;].size > 0)
+  next_page_number = this_page[&lsquo;page&rsquo;].to_i + 1
+  puts &ldquo;Fetching next_page : #{next_page_number}&rdquo;
+  this_page = query_api(next_page_number, this_page[&lsquo;session_id&rsquo;])
+  json_file.write(&ldquo;,&rdquo; + this_page.to_json)
+end</p>
+
+<h1>Close json array</h1>
+
+<p>json_file.write(&lsquo;]&rsquo;)</p>
+
+<p>puts &ldquo;Export done&rdquo;
+```</p>
+
+<h2>Gist</h2>
+
+<p>Available <a href="https://gist.github.com/kwent/4cc0ca8cf0c682bcef4e">here</a>. Please feel free to improve it !</p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="http://www.mixpanel.com">Mixpanel</a></li>
+<li><a href="https://mixpanel.com/docs/api-documentation/data-export-api#engage-default">Mixpanel Engage API</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Backup Neo4j Database to AWS S3]]></title>
+    <link href="http://blog.quent.in/blog/2014/07/11/backup-neo4j-database-to-aws-s3/"/>
+    <updated>2014-07-11T14:05:00-07:00</updated>
+    <id>http://blog.quent.in/blog/2014/07/11/backup-neo4j-database-to-aws-s3</id>
+    <content type="html"><![CDATA[<h3>Update (2014-07-28)</h3>
+
+<p>I got some issues using <code>tar</code> with big folder size. I fixed it by using
+using <a href="http://www.7-zip.org/download.html">7zip</a> using <a href="http://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Markov_chain_algorithm">LZMA2</a> compression algorithm instead <a href="http://www.lzop.org">LZO</a>.</p>
+
+<p>New <strong>Gist</strong> available <a href="https://gist.github.com/kwent/82f544dd0488619fd596">here</a>. Please feel free to improve it !</p>
+
+<h2>Purpose</h2>
+
+<p>I needed to daily backup a <a href="http://www.neo4j.org">Neo4j Database</a> on <a href="http://aws.amazon.com/s3">AWS S3</a> via a cron task so i
+developed a shell script doing the job.</p>
+
+<h2>Script</h2>
+
+<h3>Steps</h3>
+
+<ol>
+<li><p><code>neo4j-backup</code> is doing a backup of the database to a local target folder
+given. Be sure to have the available space in local.
+<strong>Binary</strong> :  <a href="http://docs.neo4j.org/chunked/stable/re04.html">neo4j-backup</a></p></li>
+<li><p><code>tar</code> is archiving all files into one. No gzip or bzip compression here
+since it was too slow for my file (> 100 Go).
+<strong>Binary</strong> : <a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?tar">tar</a></p></li>
+<li><p><code>lzop</code> is a very fast compression algorithm who compressing the file in few
+minutes and is saving file size to upload on <a href="http://aws.amazon.com/s3">AWS S3</a>.
+<strong>Binary</strong> : <a href="http://www.lzop.org">lzop</a></p></li>
+<li><p><code>aws s3 cp</code> is uploading our file to S3 using <a href="https://aws.amazon.com/about-aws/whats-new/2010/11/10/Amazon-S3-Introducing-Multipart-Upload">Amazon S3 Multipart Upload</a> if
+the file size is big. It&rsquo;s uploading a file faster.
+<strong>Binary</strong> : <a href="http://aws.amazon.com/cli">aws</a></p></li>
+</ol>
+
+
+<h2>Cron task</h2>
+
+<p>Add a file into <code>/etc/cron.d/neo4j-backup</code> with:</p>
+
+<p>```bash</p>
+
+<h1>Run a daily backup at 4:00 AM.</h1>
+
+<p>0 4 * * * root /bin/sh /opt/neo4j-enterprise-1.9.8/backup_neo4j_to_s3.sh 127.0.0.1 6362 /mnt/datadisk/backup
+```</p>
+
+<h2>Gist</h2>
+
+<p>Available <a href="https://gist.github.com/kwent/82f544dd0488619fd596/d4a87ed4f2b18db56acc025d0506f8cf826a3dea">here</a>. Please feel free to improve it !
+<strong>Update gist (2014-07-28) available </strong> <a href="https://gist.github.com/kwent/82f544dd0488619fd596">here</a>. Please feel free to improve it !</p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="http://www.neo4j.org">Neo4j &ndash; The World&rsquo;s Leading Graph Database</a></li>
+<li><a href="http://docs.neo4j.org/chunked/stable/re04.html">Neo4j-backup</a></li>
+<li><a href="https://aws.amazon.com/about-aws/whats-new/2010/11/10/Amazon-S3-Introducing-Multipart-Upload">Introducing Amazon S3 Multipart Upload</a></li>
+<li><a href="http://aws.amazon.com/s3">AWS S3</a></li>
+<li><a href="http://aws.amazon.com/cli">AWS Command Line Interface</a></li>
+<li><a href="http://www.lzop.org">Lzop file compressor</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to patch CVE-2014-0160 in OpenSSL]]></title>
+    <link href="http://blog.quent.in/blog/2014/04/07/how-to-patch-cve-2014-0160-in-openssl/"/>
+    <updated>2014-04-07T18:22:00-07:00</updated>
+    <id>http://blog.quent.in/blog/2014/04/07/how-to-patch-cve-2014-0160-in-openssl</id>
+    <content type="html"><![CDATA[<p><strong>OpenSSL</strong> has a <strong>critical security vulnerability</strong> that needs to be patched right away.</p>
+
+<p>This bug in OpenSSL has been found affecting versions <strong>1.0.1 through 1.0.1f (inclusive) and 1.0.2-beta</strong>.</p>
+
+<p>Upgrading OpenSSL version to <strong>1.0.1g</strong> is fixing this security vulnerability.</p>
+
+<h3>Below the <strong>single command line</strong> to compiling and install the <strong>last openssl version</strong>.</h3>
+
+<p><code>
+curl https://www.openssl.org/source/openssl-1.0.1g.tar.gz | tar xz &amp;&amp; cd openssl-1.0.1g &amp;&amp; sudo ./config &amp;&amp; sudo make &amp;&amp; sudo make install
+</code></p>
+
+<h3>Replace old openssl binary file by the new one via a symlink.</h3>
+
+<p><code>sh
+sudo ln -sf /usr/local/ssl/bin/openssl `which openssl`
+</code></p>
+
+<h3>You are all good !</h3>
+
+<p>```sh</p>
+
+<h1>openssl version should return</h1>
+
+<p>openssl version
+OpenSSL 1.0.1g 7 Apr 2014
+```</p>
+
+<h2>Notes</h2>
+
+<p>This is not fixing <strong>Nginx</strong> and <strong>Apache</strong> server who have to be recompile with <strong>1.0.1g</strong> openSSL sources.</p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="https://www.openssl.org/source/">openssl binaries</a></li>
+<li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160">CVE-2014-0160</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

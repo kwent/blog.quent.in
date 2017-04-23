@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: development | Personal blog of Quentin Rousseau]]></title>
+  <link href="http://blog.quent.in/blog/categories/development/atom.xml" rel="self"/>
+  <link href="http://blog.quent.in/"/>
+  <updated>2017-04-23T02:58:10-07:00</updated>
+  <id>http://blog.quent.in/</id>
+  <author>
+    <name><![CDATA[Quentin Rousseau]]></name>
+    <email><![CDATA[contact@quent.in]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[PgBouncerHero - Dashboard for your PgBouncers]]></title>
+    <link href="http://blog.quent.in/blog/2017/02/06/pgbouncerhero-dashboard-for-your-pgbouncers/"/>
+    <updated>2017-02-06T09:00:00-08:00</updated>
+    <id>http://blog.quent.in/blog/2017/02/06/pgbouncerhero-dashboard-for-your-pgbouncers</id>
+    <content type="html"><![CDATA[<h2>Purpose</h2>
+
+<p><a href="https://pgbouncer.github.io">PgBouncer</a> is a Lightweight connection pooler for PostgreSQL.</p>
+
+<p>We love <a href="https://pgbouncer.github.io">PgBouncer</a> at <a href="https://www.instacart.com">Instacart</a> and we wanted to an easy way to
+get some information from the special <a href="https://pgbouncer.github.io/usage.html">administration database</a> for all our
+bouncers in a centralized interface.</p>
+
+<h2>Introducing PgBouncerHero</h2>
+
+<p><a href="https://pgbouncerhero-demo.herokuapp.com/"><img src="https://github.com/kwent/pgbouncerhero/blob/master/doc/screenshot-1.png?raw=true" alt="Screenshot1" /></a>
+<a href="https://pgbouncerhero-demo.herokuapp.com/"><img src="https://github.com/kwent/pgbouncerhero/blob/master/doc/screenshot-2.png?raw=true" alt="Screenshot2" /></a>
+<a href="https://pgbouncerhero-demo.herokuapp.com/"><img src="https://github.com/kwent/pgbouncerhero/blob/master/doc/screenshot-3.png?raw=true" alt="Screenshot2" /></a></p>
+
+<h3>Installation</h3>
+
+<p>PgBouncerHero is available as a Rails engine on <a href="https://github.com/kwent/pgbouncerhero">Github</a></p>
+
+<p>A live demo is available on <a href="https://pgbouncerhero-demo.herokuapp.com">heroku</a> as well.</p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="https://pgbouncer.github.io">PgBouncer</a></li>
+<li><a href="https://www.instacart.com">Instacart</a></li>
+<li><a href="https://pgbouncer.github.io/usage.html">PgBouncer Usage</a></li>
+<li><a href="https://github.com/kwent/pgbouncerhero">PgBouncerHero</a></li>
+<li><a href="https://pgbouncerhero-demo.herokuapp.com">Heroku Demo App</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Quiptree - Browser extension to display Quip folders and files in tree format]]></title>
+    <link href="http://blog.quent.in/blog/2015/06/18/quiptree-browser-extension-to-display-quip-folders-and-files-in-tree-format/"/>
+    <updated>2015-06-18T10:00:00-07:00</updated>
+    <id>http://blog.quent.in/blog/2015/06/18/quiptree-browser-extension-to-display-quip-folders-and-files-in-tree-format</id>
+    <content type="html"><![CDATA[<h2>Purpose</h2>
+
+<p><a href="https://quip.com">Quip</a> allows you to create files and collaborate with you coworkers to take notes or build some
+documentation.</p>
+
+<p>We love <a href="https://quip.com">Quip</a> at <a href="https://www.instacart.com">Instacart</a> but it&rsquo;s not so easy to browse folders and files.</p>
+
+<p>So I build my first browser extension: <a href="https://github.com/kwent/quiptree">Quiptree</a>.</p>
+
+<p>Quiptree is a browser extension to display Quip folders and files in tree format.</p>
+
+<p>It&rsquo;s largely inspired by <a href="https://github.com/buunguyen/octotree">Octotree</a>.</p>
+
+<h2>Quiptree</h2>
+
+<h3>Quiptree v1.0.0</h3>
+
+<ul>
+<li>Easy-to-navigate folders and files like IDEs</li>
+<li>Fast browsing</li>
+<li>Support private Quip domains</li>
+<li>Customizable hotkey</li>
+</ul>
+
+
+<h3>Available now on</h3>
+
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/quiptree/gcomjeafpffkkijhaigafppjkkadnpkb">Chrome Web Store</a></li>
+<li><a href="https://addons.opera.com/en/extensions/details/quiptree/">Opera Add-ons Store</a></li>
+<li>Mozilla Add-ons Store (Not available yet, see below)</li>
+<li>Safari Add-ons Store (Not available yet, see below)</li>
+</ul>
+
+
+<h3>Firefox &amp; Safari</h3>
+
+<p>I&rsquo;m having a hard time to get it works in Firefox and Safari cause <a href="https://en.wikipedia.org/wiki/XMLHttpRequest">XMLHttpRequest</a> and <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>.</p>
+
+<p><strong>You can build Quiptree for Firefox or Safari and open a pull request if you get it fix and works correctly.</strong></p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="https://quip.com">Quip</a></li>
+<li><a href="https://www.instacart.com">Instacart</a></li>
+<li><a href="https://github.com/kwent/quiptree">Quiptree</a></li>
+<li><a href="https://github.com/buunguyen/octotree">Octotree</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Create a ruby pseudo terminal (PTY) and invoke an interactive command (SFTP)]]></title>
+    <link href="http://blog.quent.in/blog/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-SFTP/"/>
+    <updated>2015-03-29T22:37:51-07:00</updated>
+    <id>http://blog.quent.in/blog/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-SFTP</id>
+    <content type="html"><![CDATA[<h2>Purpose</h2>
+
+<p>I needed to upload files on a <strong>SFTP server</strong> <strong>programmatically</strong> and <strong>automatically</strong> in
+a RoR Enviroment. SFTP ruby library wrapper are very limited (I only found
+<a href="https://github.com/net-ssh/net-sftp">this one</a> actually) and is in <strong>maintenance (not more maintained)</strong>
+and I had some troubles uploading large files.</p>
+
+<p>Anyway I decided to come back to use the old <a href="http://linux.die.net/man/1/sftp">SFTP Command Line Interface</a>
+who is perfectly working.</p>
+
+<p>Unlucky this one is an <strong>Interactive</strong> CLI.</p>
+
+<p>The trick is to use a <a href="http://ruby-doc.org/stdlib-2.2.0/libdoc/pty/rdoc/PTY.html">Ruby Pseudo Terminal (PTY)</a>, listen to the console
+input for some patterns and write in the console output according this pattern
+as a real user would do.</p>
+
+<p>Here is a code snippet who doing the job and working perfectly.</p>
+
+<h2>Code</h2>
+
+<p>```ruby
+require &lsquo;pty&rsquo;
+require &lsquo;expect&rsquo;</p>
+
+<p>PTY.spawn(&lsquo;sftp username@sftp.domain.com:/uploads&rsquo;) do |input, output|</p>
+
+<p>  # Say yes to SSH fingerprint
+  input.expect(/fingerprint/, 2) do |r|</p>
+
+<pre><code>output.puts "yes" if !r.nil?
+
+# Enter SFTP password
+input.expect(/password/, 2) do |r|
+
+  output.puts 'your_sftp_password' if !r.nil?
+
+  input.expect(/sftp/) do
+
+    # List folders and files in `/uploads`
+    output.puts 'ls'
+
+    # Check if folder named `foo` exist
+    input.expect(/foo/, 1) do |result|
+
+      is_folder_exist = result.nil? ? false : true
+      # Create `foo` folder if does'nt exist
+      output.puts "mkdir foo" if !is_folder_exist
+      # Change directory to `foo`
+      output.puts "cd foo"
+      # Upload `/path/to/local/foo.txt` in `foo` folder as `foo.txt`
+      output.puts "put /path/to/local/foo.txt foo.txt"
+      # Exit SFTP
+      output.puts "exit"
+
+    end
+
+  end
+
+end
+</code></pre>
+
+<p>  end</p>
+
+<p>end
+```</p>
+
+<h2>Gist</h2>
+
+<p>Available <a href="https://gist.github.com/kwent/e2c34c2dfd01a194a49a">here</a>. Please feel free to improve it !</p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="http://ruby-doc.org/stdlib-2.2.0/libdoc/pty/rdoc/PTY.html">PTY</a></li>
+<li><a href="https://github.com/net-ssh/net-sftp">Net::SFTP</a></li>
+<li><a href="http://linux.die.net/man/1/sftp">man SFTP</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Simple Node.js wrapper and CLI for Synology DSM REST API]]></title>
+    <link href="http://blog.quent.in/blog/2015/02/12/simple-node-dot-js-wrapper-and-cli-for-synology-dsm-rest-api/"/>
+    <updated>2015-02-12T07:54:19-08:00</updated>
+    <id>http://blog.quent.in/blog/2015/02/12/simple-node-dot-js-wrapper-and-cli-for-synology-dsm-rest-api</id>
+    <content type="html"><![CDATA[<h2>Purpose</h2>
+
+<p><a href="https://github.com/JimRobs">JimRobs</a> developped a cool Node.js wrapper for the <a href="https://www.synology.com/en-us/support/developer#tool">Synology DSM REST API</a>
+but no <strong>Command Line Tool</strong> was available.</p>
+
+<p>So i decided to develop my first Node.js CLI on top of this wrapper.</p>
+
+<p>It&rsquo;s now <a href="https://github.com/JimRobs/syno">available</a> with <strong>1.0.2 version</strong> and <strong>below some examples how to use it</strong>.</p>
+
+<h2>CLI</h2>
+
+<h3>Installation</h3>
+
+<p><code>bash
+$ npm install -g syno
+</code></p>
+
+<h3>Usage</h3>
+
+<p>```
+$ syno &mdash;help
+Usage: syno [options]</p>
+
+<p>  Synology Rest API Command Line</p>
+
+<p>  Options:</p>
+
+<pre><code>-h, --help           output usage information
+-V, --version        output the version number
+</code></pre>
+
+<p>  Commands:</p>
+
+<pre><code>filestation|fs [options] &lt;method&gt;  DSM File Station API
+downloadstation|dl [options] &lt;method&gt;  DSM Download Station API
+</code></pre>
+
+<p>  Examples:</p>
+
+<pre><code>$ syno filestation|fs getFileStationInfo
+$ syno downloadstation|dl getDownloadStationInfo
+</code></pre>
+
+<p>```</p>
+
+<p>```
+$ syno fs &mdash;help
+Usage: filestation|fs [options] <method></p>
+
+<p>  DSM File Station API</p>
+
+<p>  Options:</p>
+
+<pre><code>-h, --help               output usage information
+-c, --config &lt;path&gt;      DSM configuration file. Default to ~/.syno/auth.yaml
+-u, --url &lt;url&gt;          DSM URL. Default to https://admin:password@localhost:5001
+-p, --payload &lt;payload&gt;  JSON Payload
+-P, --pretty             Prettyprint JSON Output
+-d, --debug              Enabling Debugging Output
+</code></pre>
+
+<p>  Examples:</p>
+
+<pre><code>$ syno filestation|fs listSharedFolders
+$ syno filestation|fs listFiles --pretty --payload '{"folder_path":"/path/to/folder"}'
+</code></pre>
+
+<p>```</p>
+
+<p>```
+$ syno dl &mdash;help
+Usage: downloadstation|dl [options] <method></p>
+
+<p>  DSM Download Station API</p>
+
+<p>  Options:</p>
+
+<pre><code>-h, --help               output usage information
+-c, --config &lt;path&gt;      DSM configuration file. Default to ~/.syno/auth.yaml
+-u, --url &lt;url&gt;          DSM URL. Default to https://admin:password@localhost:5001
+-p, --payload &lt;payload&gt;  JSON Payload
+-P, --pretty             Prettyprint JSON Output
+-d, --debug              Enabling Debugging Output
+</code></pre>
+
+<p>  Examples:</p>
+
+<pre><code>$ syno downloadstation|dl createTask --payload '{"uri":"magnet|ed2k|ftp(s)|http(s)://link"}'
+$ syno downloadstation|dl listTasks
+$ syno downloadstation|dl listTasks --payload '{"limit":10}'
+$ syno downloadstation|dl getTasksInfo --pretty --payload '{"id":"task_id"}'
+</code></pre>
+
+<p>```</p>
+
+<h2>Examples</h2>
+
+<h3>Without a configuration file</h3>
+
+<p><code>bash
+$ syno fs getFileStationInfo --url https://admin:synology@demo.synology.com:5001 --pretty
+</code></p>
+
+<h3>With a configuration file</h3>
+
+<p>```yaml</p>
+
+<h1>Example config file, by default it should be located at:</h1>
+
+<h1>~/.syno/config.conf</h1>
+
+<p>url:
+  protocol: https
+  host: localhost
+  port: 5001
+  account: admin
+  passwd: password
+```</p>
+
+<p><code>bash
+$ syno fs getFileStationInfo --pretty
+</code></p>
+
+<h2>In real life ?</h2>
+
+<h3>List Files via File Station</h3>
+
+<p><code>bash
+$ syno fs listFiles --payload '{"folder_path":"/photo"}' --pretty
+</code></p>
+
+<h3>List Tasks via Download Station</h3>
+
+<p><code>bash
+$ syno dl listTasks --payload '{"limit":1}' --pretty
+</code></p>
+
+<h3>Add Task HTTP file via Download Station</h3>
+
+<p><code>bash
+$ syno dl createTask --payload '{"uri":"http://download.thinkbroadband.com/5MB.zip"}'
+</code></p>
+
+<h3>Add Task Torrent magnet link via Download Station</h3>
+
+<p><code>bash
+$ syno dl createTask --payload '{"uri":"magnet:?xt=urn:ed2k:31D6CFE0D16AE931B73C59D7E0C089C0&amp;xl=0&amp;dn=zero_len.fil&amp;xt=urn:bitprint:3I42H3S6NNFQ2MSVX7XZKYAYSCX5QBYJ.LWPNACQDBZRYXW3VHJVCJ64QBZNGHOHHHZWCLNQ&amp;xt=urn:md5:D41D8CD98F00B204E9800998ECF8427E"}'
+</code></p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="https://github.com/JimRobs/syno">github</a></li>
+<li><a href="https://www.npmjs.com/package/syno">npmjs</a></li>
+<li><a href="https://www.synology.com/en-us/support/developer#tool">Synology &ndash; Development Tool</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Level up ionicons-iOS with a category]]></title>
+    <link href="http://blog.quent.in/blog/2014/10/25/level-up-ionicons-ios-with-a-category/"/>
+    <updated>2014-10-25T00:02:54-07:00</updated>
+    <id>http://blog.quent.in/blog/2014/10/25/level-up-ionicons-ios-with-a-category</id>
+    <content type="html"><![CDATA[<h2>Purpose</h2>
+
+<p><a href="http://ionicons.com">Ionicons</a> is a cool icon font framework (100% free and open source) designed by
+<a href="http://ionicframework.com">Ionic Framework</a>.</p>
+
+<p><a href="https://github.com/sweetmandm">David Sweetman</a> released an iOS library to permit iOS developers to integrate this
+font with your projects via this
+repository <a href="https://github.com/sweetmandm/ionicons-iOS">https://github.com/sweetmandm/ionicons-iOS</a></p>
+
+<p>But you can only generate <a href="https://developer.apple.com/library/ios/documentation/uikit/Reference/UIImage_Class/index.html">UIImage</a> object or <a href="https://developer.apple.com/library/ios/documentation/uikit/Reference/UILabel_Class/index.html">UILabel</a> with this library.
+I needed more like generate <a href="https://developer.apple.com/library/ios/documentation/uikit/reference/uiimageview_class/index.html">UIImageView</a>, <a href="https://developer.apple.com/library/ios/documentation/uikit/Reference/UIButton_Class/index.html">UIButton</a>, add a corner radius around them [&hellip;].</p>
+
+<p>So i created a category who is now adding useful functions.</p>
+
+<h2>Category overview</h2>
+
+<p>```objective-c
++ (UIButton<em>) buttonWithIcon:(NSString</em>)icon_name</p>
+
+<pre><code>                      iconColor:(UIColor*)iconColor
+                       iconSize:(CGFloat)iconSize
+                      imageSize:(CGSize)imageSize;
+</code></pre>
+
+<ul>
+<li><p>(UIButton<em>) roundedButtonWithIcon:(NSString</em>)icon_name
+              iconColor:(UIColor*)iconColor
+               iconSize:(CGFloat)iconSize
+              imageSize:(CGSize)imageSize;</p></li>
+<li><p>(UIImageView<em>) imageViewWithIcon:(NSString</em>)icon_name
+                       iconColor:(UIColor*)iconColor
+                        iconSize:(CGFloat)iconSize
+                       imageSize:(CGSize)imageSize;</p></li>
+<li><p>(UIImageView<em>) roundedImageViewWithIcon:(NSString</em>)icon_name
+                              iconColor:(UIColor<em>)iconColor
+                              fillColor:(UIColor</em>)fillColor
+                               iconSize:(CGFloat)iconSize
+                              imageSize:(CGSize)imageSize;</p></li>
+<li><p>(UIImageView<em>) roundedImageViewWithIcon:(NSString</em>)icon_name
+                             iconColor:(UIColor*)iconColor
+                              iconSize:(CGFloat)iconSize
+                             imageSize:(CGSize)imageSize;
+```</p></li>
+</ul>
+
+
+<h2>Gist</h2>
+
+<p>Available <a href="https://gist.github.com/kwent/d9ba3f62e62dc4a36df8">here</a>. Please feel free to improve it !</p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="http://ionicons.com">Ionicons</a></li>
+<li><a href="http://ionicframework.com">Ionic Framework</a></li>
+<li><a href="https://github.com/sweetmandm/ionicons-iOS">ionicons-iOS</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

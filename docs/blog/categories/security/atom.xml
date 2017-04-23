@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: security | Personal blog of Quentin Rousseau]]></title>
+  <link href="http://blog.quent.in/blog/categories/security/atom.xml" rel="self"/>
+  <link href="http://blog.quent.in/"/>
+  <updated>2017-04-23T02:58:10-07:00</updated>
+  <id>http://blog.quent.in/</id>
+  <author>
+    <name><![CDATA[Quentin Rousseau]]></name>
+    <email><![CDATA[contact@quent.in]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to patch CVE-2014-0160 in OpenSSL]]></title>
+    <link href="http://blog.quent.in/blog/2014/04/07/how-to-patch-cve-2014-0160-in-openssl/"/>
+    <updated>2014-04-07T18:22:00-07:00</updated>
+    <id>http://blog.quent.in/blog/2014/04/07/how-to-patch-cve-2014-0160-in-openssl</id>
+    <content type="html"><![CDATA[<p><strong>OpenSSL</strong> has a <strong>critical security vulnerability</strong> that needs to be patched right away.</p>
+
+<p>This bug in OpenSSL has been found affecting versions <strong>1.0.1 through 1.0.1f (inclusive) and 1.0.2-beta</strong>.</p>
+
+<p>Upgrading OpenSSL version to <strong>1.0.1g</strong> is fixing this security vulnerability.</p>
+
+<h3>Below the <strong>single command line</strong> to compiling and install the <strong>last openssl version</strong>.</h3>
+
+<p><code>
+curl https://www.openssl.org/source/openssl-1.0.1g.tar.gz | tar xz &amp;&amp; cd openssl-1.0.1g &amp;&amp; sudo ./config &amp;&amp; sudo make &amp;&amp; sudo make install
+</code></p>
+
+<h3>Replace old openssl binary file by the new one via a symlink.</h3>
+
+<p><code>sh
+sudo ln -sf /usr/local/ssl/bin/openssl `which openssl`
+</code></p>
+
+<h3>You are all good !</h3>
+
+<p>```sh</p>
+
+<h1>openssl version should return</h1>
+
+<p>openssl version
+OpenSSL 1.0.1g 7 Apr 2014
+```</p>
+
+<h2>Notes</h2>
+
+<p>This is not fixing <strong>Nginx</strong> and <strong>Apache</strong> server who have to be recompile with <strong>1.0.1g</strong> openSSL sources.</p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="https://www.openssl.org/source/">openssl binaries</a></li>
+<li><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160">CVE-2014-0160</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

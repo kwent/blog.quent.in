@@ -1,0 +1,695 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>PhotoCatch | Déclenchement automatisé d&rsquo;un appareil photo D90 à partir d&rsquo;un capteur de mouvements et d&rsquo;un Arduino - Personal blog of Quentin Rousseau</title>
+  <meta name="author" content="Quentin Rousseau">
+
+  
+  <meta name="description" content="IT Engineer Graduate @Telecombretagne (Brest, FR). Senior software engineer at @instacart (San Francisco, CA)." />
+
+  
+  <meta name="keywords" content="blog, quentin, rousseau, IT, engineer, developer, instacart" />
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.quent.in/index.php/2012/01/photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Personal blog of Quentin Rousseau" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans|Roboto:400,300' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-46809655-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<aside class="left">
+			<div class="inner-left">
+				<header>
+					<a href="/"><img src="http://www.gravatar.com/avatar/40792355b0aa756614c0abd37e75c0d3?s=250" alt="Quentin Rousseau " title="Quentin Rousseau"/></a>
+<hgroup>
+  <div class="title"><a href="/">Quentin Rousseau</a></div>
+  
+  	
+    <h2 class="subtitle">IT Engineer Graduate <a href="https://twitter.com/Telecombretagne" alt="@Telecombretagne">@Telecombretagne</a> (Brest, FR). Senior software engineer at <a href="https://twitter.com/instacart" alt="@instacart">@instacart</a> (San Francisco, CA).</h2>
+   
+</hgroup>
+
+
+				</header>
+				<footer>
+					<p>
+	
+		<a href="http://github.com/kwent" class="btn btn-dark"><i class="fa fa-inverse fa-github fa-2x"></i></a>
+	
+	
+		<a href="http://twitter.com/quentinrousseau" class="btn btn-dark"><i class="fa fa-inverse fa-twitter fa-2x"></i></a>
+	
+	
+        <a href="https://www.linkedin.com/in/quentinrousseau" class="btn btn-dark"><i class="fa fa-inverse fa-linkedin fa-2x"></i></a>
+    
+	
+        <script type="text/javascript"> document.write('<a style="unicode-bidi: bidi-override; direction: rtl;" class="btn btn-dark" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;contact&#64;quent&#46;in"><i class="fa fa-inverse fa-envelope fa-2x"></i></a>');</script>
+    
+</p>
+
+				</footer>
+			</div>
+		</aside>
+    	<section class="right">
+    		<div class="inner-right">
+    			<div id="posts">
+    			  	<article class="post">
+    <header>
+  
+	<h1 class="entry-title">PhotoCatch | Déclenchement Automatisé D&rsquo;un Appareil Photo D90 à Partir D&rsquo;un Capteur De Mouvements Et D&rsquo;un Arduino</h1>
+
+
+<p class="meta">
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-01-30T09:21:03-08:00" pubdate data-updated="true">Jan 30<span>th</span>, 2012</time>
+   | <a href="#disqus_thread" data-disqus-identifier="http://blog.quent.in">Comments</a>
+  
+</p>
+<p class="header_categories">
+  
+</p>
+
+</header>
+
+<div class="entry-content"><p>Dans mon dernier post, je parlais de notre réalisation lors du FabLab à savoir :</p>
+
+<p><strong>Un appareil photo avec déclenchement automatisé via un capteur de mouvement et un arduino.</strong></p>
+
+<p>Aujourd&rsquo;hui, je vais détailler le montage de cette réalisation.</p>
+
+<p><img src="/assets/wp-content/uploads/2012/01/photoCatch-279x300.png" alt="PhotoCatch" /></p>
+
+<h3>Le matériel</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Un boîtier NIKON D90
+</span><span class='line'>Une télécommande filaire premier prix (Disponible [ici][1])
+</span><span class='line'>Un arduino uno
+</span><span class='line'>Un servomoteur
+</span><span class='line'>Un capteur ultrasons
+</span><span class='line'>Une breadboard
+</span><span class='line'>Quatres afficheurs 7 segments
+</span><span class='line'>Une touche de talent</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>PhotoCatch &#8211; Etape par étape</h3>
+
+<p><img src="/assets/wp-content/uploads/2012/01/A2_biss-212x300.jpg" alt="Principe de PhotoCatch" /></p>
+
+<h3>Achat de la télécommande</h3>
+
+<ol>
+<li>La première étape consiste à acheter une télécommande qui va piloter le déclenchement de l&rsquo;appareil photo. Celle ci suffit amplement : <a href="http://quent.in/Af9bg0" target="_blank"><a href="http://quent.in/Af9bg0">http://quent.in/Af9bg0</a></a></li>
+<li>Couper délicatement l&rsquo;extrémité de la télécommande afin de ne pas détériorer les 3 fils qui se cachent sous la gaîne en plastique.</li>
+</ol>
+
+
+<p>Parmis ces 3 fils, on trouve un fil blanc, jaune et rouge.</p>
+
+<ul>
+<li>Le contact du fil blanc (masse) et jaune permettent de faire l&rsquo;autofocus.</li>
+<li>Le contact  du fil blanc (masse) et du fil rouge permettent de déclencher la capture.</li>
+</ul>
+
+
+<h3>Schémas de montage</h3>
+
+<p>Réalisés sous Fritzing &#8211; <a href="http://fritzing.org">http://fritzing.org</a></p>
+
+<ul>
+<li>2 optocoupleurs pour contrôler le mécanisme de focus et de shoot (et d&rsquo;isoler l&rsquo;appareil photo du reste du circuit) ;</li>
+<li>1 capteur ultrasons permettant de calculer la distance d&rsquo;un obstacle (30° d&rsquo;ouverture) ;</li>
+<li>1 servomoteur permettant au capteur ultrasons de balayer un champ plus large (180°) ;</li>
+<li>4 afficheurs 7 segments permettant de compter le nombre de photos prises.</li>
+</ul>
+
+
+<p><img src="/assets/wp-content/uploads/2012/01/PhotoCatchV1_bb-300x287.png" alt="PhotoCatchV1_schema" />
+<img src="/assets/wp-content/uploads/2012/01/PhotoCatchV1_schem-300x168.png" alt="PhotoCatch_wire" /></p>
+
+<h3>Code arduino</h3>
+
+<p>Le code est disponible dans son intégralité sur <strong>GitHub</strong> : <a href="https://github.com/2xyo/fablab/tree/master/photocatch " target="_blank"><a href="https://github.com/2xyo/fablab/blob/master/photocatch/src/photocatch.ino">https://github.com/2xyo/fablab/blob/master/photocatch/src/photocatch.ino</a></a></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+<span class='line-number'>156</span>
+<span class='line-number'>157</span>
+<span class='line-number'>158</span>
+<span class='line-number'>159</span>
+<span class='line-number'>160</span>
+<span class='line-number'>161</span>
+<span class='line-number'>162</span>
+<span class='line-number'>163</span>
+<span class='line-number'>164</span>
+<span class='line-number'>165</span>
+<span class='line-number'>166</span>
+<span class='line-number'>167</span>
+<span class='line-number'>168</span>
+<span class='line-number'>169</span>
+<span class='line-number'>170</span>
+<span class='line-number'>171</span>
+<span class='line-number'>172</span>
+<span class='line-number'>173</span>
+<span class='line-number'>174</span>
+<span class='line-number'>175</span>
+<span class='line-number'>176</span>
+<span class='line-number'>177</span>
+<span class='line-number'>178</span>
+<span class='line-number'>179</span>
+<span class='line-number'>180</span>
+<span class='line-number'>181</span>
+<span class='line-number'>182</span>
+<span class='line-number'>183</span>
+<span class='line-number'>184</span>
+<span class='line-number'>185</span>
+<span class='line-number'>186</span>
+<span class='line-number'>187</span>
+<span class='line-number'>188</span>
+<span class='line-number'>189</span>
+<span class='line-number'>190</span>
+<span class='line-number'>191</span>
+<span class='line-number'>192</span>
+<span class='line-number'>193</span>
+<span class='line-number'>194</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cm">/*</span>
+</span><span class='line'><span class="cm">||</span>
+</span><span class='line'><span class="cm">|| @author Yohann Lepage</span>
+</span><span class='line'><span class="cm">|| @author Quentin Rousseau</span>
+</span><span class='line'><span class="cm">|| @version 0.2</span>
+</span><span class='line'><span class="cm">||</span>
+</span><span class='line'><span class="cm">|| @description</span>
+</span><span class='line'><span class="cm">|| PhotoCatch prend automatiquement une photo lorsque</span>
+</span><span class='line'><span class="cm">|| quelqu&#39;un passe devant l&#39;appareil grace à son capteur</span>
+</span><span class='line'><span class="cm">|| à ultra-son</span>
+</span><span class='line'><span class="cm">||</span>
+</span><span class='line'><span class="cm">*/</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#include &lt;Servo.h&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;SoftwareSerial.h&gt;</span>
+</span><span class='line'><span class="cp">#define DEBUG true</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Librairies utilisées</span>
+</span><span class='line'><span class="c1">// http://arduino.cc/en/Tutorial/Sweep</span>
+</span><span class='line'><span class="c1">// http://arduino.cc/en/Tutorial/Ping</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//7 Segments</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">rxSegPin</span> <span class="o">=</span>  <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">txSegPin</span>  <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">photosCounter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="n">SoftwareSerial</span> <span class="n">segSerial</span> <span class="o">=</span> <span class="n">SoftwareSerial</span><span class="p">(</span><span class="n">rxSegPin</span><span class="p">,</span> <span class="n">txSegPin</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Ultra Son</span>
+</span><span class='line'><span class="c1">// Pin Ultra son</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">pingPin</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">ultrasoundValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">timecount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Echo counter</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Appareil Photo</span>
+</span><span class='line'><span class="c1">// Pin Focus</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">focusPin</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span><span class='line'><span class="c1">// Pin Shoot</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">shootPin</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+</span><span class='line'><span class="c1">// Durée du focus</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">focusTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Distance pour le shoot</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">shoot_threshold</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Servo Moteur</span>
+</span><span class='line'><span class="n">Servo</span> <span class="n">myservo</span><span class="p">;</span>
+</span><span class='line'><span class="c1">// Pin Servo</span>
+</span><span class='line'><span class="kt">int</span> <span class="n">servoPin</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span><span class='line'><span class="c1">// Position du Servo Moteur 0 - 180° </span>
+</span><span class='line'><span class="kt">int</span> <span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Démarrage de l&#39;Arduino</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="c1">//Serial pour mode DEBUG</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">DEBUG</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">// Attachement du servo au servoPin </span>
+</span><span class='line'>    <span class="n">myservo</span><span class="p">.</span><span class="n">attach</span><span class="p">(</span><span class="n">servoPin</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">// Passage en mode Output pour l&#39;ultra son</span>
+</span><span class='line'>    <span class="n">pinMode</span><span class="p">(</span><span class="n">pingPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">// Passage en Output pour le focus</span>
+</span><span class='line'>    <span class="n">pinMode</span><span class="p">(</span><span class="n">focusPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">// Passage en Output pour le Shoot</span>
+</span><span class='line'>    <span class="n">pinMode</span><span class="p">(</span><span class="n">shootPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">// Passage en low des focus et shoot</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">focusPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">shootPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">//7 Segments</span>
+</span><span class='line'>    <span class="n">segSerial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">pinMode</span><span class="p">(</span><span class="n">rxSegPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">pinMode</span><span class="p">(</span><span class="n">txSegPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">segSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;vv&quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="c1">//Turn Colon Off</span>
+</span><span class='line'>    <span class="n">segSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="err">&#39;</span><span class="mi">4</span><span class="n">d</span><span class="err">&#39;</span><span class="p">,</span><span class="n">HEX</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">segSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="err">&#39;</span><span class="mo">00</span><span class="err">&#39;</span><span class="p">,</span><span class="n">HEX</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Démarrage de la boucle principale</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="c1">// Appel à la méthode de balayage grace au servo</span>
+</span><span class='line'>    <span class="n">sweep</span><span class="p">();</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Détection d&#39;un objet</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">sonar</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>   <span class="c1">// establish variables for duration of the ping, </span>
+</span><span class='line'>   <span class="c1">// and the distance result in inches and centimeters:</span>
+</span><span class='line'>   <span class="kt">long</span> <span class="n">duration</span><span class="p">,</span> <span class="n">inches</span><span class="p">,</span> <span class="n">cm</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="c1">// The PING))) is triggered by a HIGH pulse of 2 or more microseconds.</span>
+</span><span class='line'>   <span class="c1">// Give a short LOW pulse beforehand to ensure a clean HIGH pulse:</span>
+</span><span class='line'>   <span class="n">pinMode</span><span class="p">(</span><span class="n">pingPin</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>   <span class="n">digitalWrite</span><span class="p">(</span><span class="n">pingPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>   <span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span class='line'>   <span class="n">digitalWrite</span><span class="p">(</span><span class="n">pingPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>   <span class="n">delayMicroseconds</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span><span class='line'>   <span class="n">digitalWrite</span><span class="p">(</span><span class="n">pingPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="c1">// The same pin is used to read the signal from the PING))): a HIGH</span>
+</span><span class='line'>   <span class="c1">// pulse whose duration is the time (in microseconds) from the sending</span>
+</span><span class='line'>   <span class="c1">// of the ping to the reception of its echo off of an object.</span>
+</span><span class='line'>   <span class="n">pinMode</span><span class="p">(</span><span class="n">pingPin</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+</span><span class='line'>   <span class="n">duration</span> <span class="o">=</span> <span class="n">pulseIn</span><span class="p">(</span><span class="n">pingPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">microsecondsToCentimeters</span><span class="p">(</span><span class="n">duration</span><span class="p">));</span>
+</span><span class='line'>   <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; cm</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="k">if</span><span class="p">(</span><span class="n">microsecondsToCentimeters</span><span class="p">(</span><span class="n">duration</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">shoot_threshold</span><span class="p">)</span>
+</span><span class='line'>   <span class="p">{</span>
+</span><span class='line'>     <span class="n">shoot</span><span class="p">();</span>
+</span><span class='line'>   <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>   <span class="n">delay</span><span class="p">(</span><span class="mi">150</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c1">// Balayage avec le Servo</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">sweep</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">pos</span> <span class="o">&lt;</span> <span class="mi">90</span><span class="p">;</span> <span class="n">pos</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// goes from 0 degrees to 180 degrees</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="p">{</span> <span class="c1">// in steps of 1 degree</span>
+</span><span class='line'>        <span class="n">myservo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span> <span class="c1">// tell servo to go to position in variable &#39;pos&#39;</span>
+</span><span class='line'>        <span class="c1">//delay(15); // waits 15ms for the servo to reach the position</span>
+</span><span class='line'>        <span class="n">sonar</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">pos</span> <span class="o">=</span> <span class="mi">90</span><span class="p">;</span> <span class="n">pos</span> <span class="o">&gt;=</span><span class="mi">1</span><span class="p">;</span> <span class="n">pos</span><span class="o">-=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">// goes from 180 degrees to 0 degrees</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="n">myservo</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">pos</span><span class="p">);</span> <span class="c1">// tell servo to go to position in variable &#39;pos&#39;</span>
+</span><span class='line'>        <span class="c1">//delay(15); // waits 15ms for the servo to reach the position</span>
+</span><span class='line'>        <span class="n">sonar</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">long</span> <span class="nf">microsecondsToCentimeters</span><span class="p">(</span><span class="kt">long</span> <span class="n">microseconds</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>   <span class="c1">// The speed of sound is 340 m/s or 29 microseconds per centimeter.</span>
+</span><span class='line'>   <span class="c1">// The ping travels out and back, so to find the distance of the</span>
+</span><span class='line'>   <span class="c1">// object we take half of the distance travelled.</span>
+</span><span class='line'>   <span class="k">return</span> <span class="n">microseconds</span> <span class="o">/</span> <span class="mi">29</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">//Display Photos Counter on the 7 Segments Display</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">displaySeg</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>  <span class="n">photosCounter</span> <span class="o">=</span> <span class="n">photosCounter</span> <span class="o">+</span><span class="mi">1</span> <span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">photosCounter</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">segSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;   &quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">segSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">photosCounter</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">photosCounter</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">segSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;  &quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">segSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">photosCounter</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">photosCounter</span> <span class="o">&lt;</span> <span class="mi">1000</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">segSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">segSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">photosCounter</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">segSerial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">photosCounter</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Compteur photos : &quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">photosCounter</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// Capture d&#39;une photo</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">shoot</span><span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="c1">// Focus</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">focusPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">delay</span><span class="p">(</span><span class="n">focusTime</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Déclenchement de la photo </span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">shootPin</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">displaySeg</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">//  Remise à 0 des Pins</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">focusPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">shootPin</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Démonstration par mon collègue Yohann Lepage (<a href="https://twitter.com/#!/2xyo" target="_blank">@2xyo</a>)</h3>
+
+<center>
+</center>
+
+
+<h3>Bonus &#8211; Timelapse de l&rsquo;explor&rsquo;Camp par PhotoCatch :</h3>
+
+<center>
+</center>
+
+
+<h3>Evolution possible</h3>
+
+<ul>
+<li><span style="font-family: 'mceinline';">Utiliser <strong>&laquo;&nbsp;Picture Transfert Protocol&nbsp;&raquo;</strong> qui permet de contrôler beaucoup plus de paramètres tels que l&rsquo;ouverture de l&rsquo;objectif, la vitesse et même la récupération des photos. Tout cela par contrôle USB.</span></li>
+</ul>
+
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="http://arduino.cc/en/Tutorial/Ping" title="Arduino - Ping" rel="nofollow">Arduino &ndash; Ping</a></li>
+<li><a href="http://arduino.cc/en/Tutorial/Sweep" title="Arduino - Sweep" rel="nofollow">Arduino &ndash; Sweep</a></li>
+<li><a href="http://libptp.sourceforge.net/" title="libptp2 Project Page" rel="nofollow">libptp2 Project Page</a></li>
+</ul>
+
+</div>
+
+
+</article>
+
+
+        <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.quent.in/index.php/2012/01/photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino/" data-via="quentinrousseau" data-counturl="http://blog.quent.in/index.php/2012/01/photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+
+
+
+<section id="comments">
+    <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+
+    			</div>
+    			
+
+<script type="text/javascript">
+      var disqus_shortname = 'quentinrousseauleblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.quent.in/index.php/2012/01/photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino/';
+        var disqus_url = 'http://blog.quent.in/index.php/2012/01/photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+<link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans|Roboto:400,300' rel='stylesheet' type='text/css'>
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-46809655-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+
+
+    		</div>
+    	</section>
+  	</div>
+</body>
+</html>

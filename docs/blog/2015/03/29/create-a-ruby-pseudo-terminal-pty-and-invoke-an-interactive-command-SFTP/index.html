@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Create a ruby pseudo terminal (PTY) and invoke an interactive command (SFTP) - Personal blog of Quentin Rousseau</title>
+  <meta name="author" content="Quentin Rousseau">
+
+  
+  <meta name="description" content="IT Engineer Graduate @Telecombretagne (Brest, FR). Senior software engineer at @instacart (San Francisco, CA)." />
+
+  
+  <meta name="keywords" content="blog, quentin, rousseau, IT, engineer, developer, instacart" />
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.quent.in/blog/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-SFTP">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Personal blog of Quentin Rousseau" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans|Roboto:400,300' rel='stylesheet' type='text/css'>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-46809655-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<aside class="left">
+			<div class="inner-left">
+				<header>
+					<a href="/"><img src="http://www.gravatar.com/avatar/40792355b0aa756614c0abd37e75c0d3?s=250" alt="Quentin Rousseau " title="Quentin Rousseau"/></a>
+<hgroup>
+  <div class="title"><a href="/">Quentin Rousseau</a></div>
+  
+  	
+    <h2 class="subtitle">IT Engineer Graduate <a href="https://twitter.com/Telecombretagne" alt="@Telecombretagne">@Telecombretagne</a> (Brest, FR). Senior software engineer at <a href="https://twitter.com/instacart" alt="@instacart">@instacart</a> (San Francisco, CA).</h2>
+   
+</hgroup>
+
+
+				</header>
+				<footer>
+					<p>
+	
+		<a href="http://github.com/kwent" class="btn btn-dark"><i class="fa fa-inverse fa-github fa-2x"></i></a>
+	
+	
+		<a href="http://twitter.com/quentinrousseau" class="btn btn-dark"><i class="fa fa-inverse fa-twitter fa-2x"></i></a>
+	
+	
+        <a href="https://www.linkedin.com/in/quentinrousseau" class="btn btn-dark"><i class="fa fa-inverse fa-linkedin fa-2x"></i></a>
+    
+	
+        <script type="text/javascript"> document.write('<a style="unicode-bidi: bidi-override; direction: rtl;" class="btn btn-dark" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;contact&#64;quent&#46;in"><i class="fa fa-inverse fa-envelope fa-2x"></i></a>');</script>
+    
+</p>
+
+				</footer>
+			</div>
+		</aside>
+    	<section class="right">
+    		<div class="inner-right">
+    			<div id="posts">
+    			  	<article class="post">
+    <header>
+  
+	<h1 class="entry-title">Create a Ruby Pseudo Terminal (PTY) and Invoke an Interactive Command (SFTP)</h1>
+
+
+<p class="meta">
+  
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-03-29T22:37:51-07:00" pubdate data-updated="true">Mar 29<span>th</span>, 2015</time>
+   | <a href="#disqus_thread" data-disqus-identifier="http://blog.quent.in">Comments</a>
+  
+</p>
+<p class="header_categories">
+  
+</p>
+
+</header>
+
+<div class="entry-content"><h2>Purpose</h2>
+
+<p>I needed to upload files on a <strong>SFTP server</strong> <strong>programmatically</strong> and <strong>automatically</strong> in
+a RoR Enviroment. SFTP ruby library wrapper are very limited (I only found
+<a href="https://github.com/net-ssh/net-sftp">this one</a> actually) and is in <strong>maintenance (not more maintained)</strong>
+and I had some troubles uploading large files.</p>
+
+<p>Anyway I decided to come back to use the old <a href="http://linux.die.net/man/1/sftp">SFTP Command Line Interface</a>
+who is perfectly working.</p>
+
+<p>Unlucky this one is an <strong>Interactive</strong> CLI.</p>
+
+<p>The trick is to use a <a href="http://ruby-doc.org/stdlib-2.2.0/libdoc/pty/rdoc/PTY.html">Ruby Pseudo Terminal (PTY)</a>, listen to the console
+input for some patterns and write in the console output according this pattern
+as a real user would do.</p>
+
+<p>Here is a code snippet who doing the job and working perfectly.</p>
+
+<h2>Code</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;pty&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;expect&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">PTY</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="s1">&#39;sftp username@sftp.domain.com:/uploads&#39;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">input</span><span class="p">,</span> <span class="n">output</span><span class="o">|</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># Say yes to SSH fingerprint</span>
+</span><span class='line'>  <span class="n">input</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="sr">/fingerprint/</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">r</span><span class="o">|</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">output</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;yes&quot;</span> <span class="k">if</span> <span class="o">!</span><span class="n">r</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1"># Enter SFTP password</span>
+</span><span class='line'>    <span class="n">input</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="sr">/password/</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">r</span><span class="o">|</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">output</span><span class="o">.</span><span class="n">puts</span> <span class="s1">&#39;your_sftp_password&#39;</span> <span class="k">if</span> <span class="o">!</span><span class="n">r</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="n">input</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="sr">/sftp/</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1"># List folders and files in `/uploads`</span>
+</span><span class='line'>        <span class="n">output</span><span class="o">.</span><span class="n">puts</span> <span class="s1">&#39;ls&#39;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="c1"># Check if folder named `foo` exist</span>
+</span><span class='line'>        <span class="n">input</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="sr">/foo/</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">result</span><span class="o">|</span>
+</span><span class='line'>
+</span><span class='line'>          <span class="n">is_folder_exist</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">nil?</span> <span class="p">?</span> <span class="kp">false</span> <span class="p">:</span> <span class="kp">true</span>
+</span><span class='line'>          <span class="c1"># Create `foo` folder if does&#39;nt exist</span>
+</span><span class='line'>          <span class="n">output</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;mkdir foo&quot;</span> <span class="k">if</span> <span class="o">!</span><span class="n">is_folder_exist</span>
+</span><span class='line'>          <span class="c1"># Change directory to `foo`</span>
+</span><span class='line'>          <span class="n">output</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;cd foo&quot;</span>
+</span><span class='line'>          <span class="c1"># Upload `/path/to/local/foo.txt` in `foo` folder as `foo.txt`</span>
+</span><span class='line'>          <span class="n">output</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;put /path/to/local/foo.txt foo.txt&quot;</span>
+</span><span class='line'>          <span class="c1"># Exit SFTP</span>
+</span><span class='line'>          <span class="n">output</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;exit&quot;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Gist</h2>
+
+<p>Available <a href="https://gist.github.com/kwent/e2c34c2dfd01a194a49a">here</a>. Please feel free to improve it !</p>
+
+<h2>More&hellip;</h2>
+
+<ul>
+<li><a href="http://ruby-doc.org/stdlib-2.2.0/libdoc/pty/rdoc/PTY.html">PTY</a></li>
+<li><a href="https://github.com/net-ssh/net-sftp">Net::SFTP</a></li>
+<li><a href="http://linux.die.net/man/1/sftp">man SFTP</a></li>
+</ul>
+
+</div>
+
+
+</article>
+
+
+        <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.quent.in/blog/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-SFTP/" data-via="quentinrousseau" data-counturl="http://blog.quent.in/blog/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-SFTP/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+
+
+
+<section id="comments">
+    <div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+
+    			</div>
+    			
+
+<script type="text/javascript">
+      var disqus_shortname = 'quentinrousseauleblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.quent.in/blog/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-SFTP/';
+        var disqus_url = 'http://blog.quent.in/blog/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-SFTP/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+<link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans|Roboto:400,300' rel='stylesheet' type='text/css'>
+
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-46809655-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+
+
+    		</div>
+    	</section>
+  	</div>
+</body>
+</html>
