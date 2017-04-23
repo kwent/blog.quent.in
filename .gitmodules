@@ -1,0 +1,3 @@
+[submodule "OctoPanel"]
+	path = .themes/OctoPanel
+	url = https://github.com/ConnorAtherton/OctoPanel.git
