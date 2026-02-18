@@ -1,0 +1,59 @@
+main:
+  - identifier: nav.posts
+    name: Posts
+    pageRef: /posts
+    weight: 10
+    params:
+      icon: posts
+
+  - identifier: nav.categories
+    name: Categories
+    pageRef: /categories
+    weight: 20
+    params:
+      icon: categories
+
+  - identifier: nav.tags
+    name: Tags
+    pageRef: /tags
+    weight: 30
+    params:
+      icon: tags
+
+  - identifier: nav.archives
+    name: Archives
+    pageRef: /archives
+    weight: 40
+    params:
+      icon: archive
+
+# Footer menu
+footer:
+  - name: RSS Feed
+    url: /index.xml
+    weight: 10
+    params:
+      icon: rss
+
+# Footer social links
+social:
+  - name: GitHub
+    url: https://github.com/kwent
+    weight: 10
+    params:
+      icon: github
+  - name: Twitter
+    url: https://twitter.com/quentinrousseau
+    weight: 20
+    params:
+      icon: twitter
+  - name: LinkedIn
+    url: https://linkedin.com/in/quentinrousseau
+    weight: 30
+    params:
+      icon: linkedin
+  - name: Email
+    url: mailto:contact@quent.in
+    weight: 40
+    params:
+      icon: email

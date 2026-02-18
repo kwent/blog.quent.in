@@ -1,8 +1,0 @@
-<a href="{{ root_url }}/"><img src="{% gravatar_image 250 %}" alt="{{ site.author}} " title="{{ site.author }}"/></a>
-<hgroup>
-  <div class="title"><a href="{{ root_url }}/">{{ site.author }}</a></div>
-  {% if site.description %}
-  	{% assign description = site.description %}
-    <h2 class="subtitle">{% twitter_mention_convertor description %}</h2>
-   {% endif %}
-</hgroup>
