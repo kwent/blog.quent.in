@@ -1,2 +1,4 @@
 [tools]
-ruby = "2.7"
+hugo = "latest"
+python = "3.13"
+uv = "latest"

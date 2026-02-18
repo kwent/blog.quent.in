@@ -1,0 +1,121 @@
+<!doctype html>
+<html
+  lang="{{ site.LanguageCode }}"
+  data-theme="{{ site.Params.colorScheme | default "default" }}">
+  <head>
+    {{ partial "layout/head.html" . }}
+    <script>
+      // Theme initialization with system preference detection
+      (function() {
+        const theme = localStorage.getItem('theme') || 'system';
+        const colorScheme = localStorage.getItem('colorScheme') || '{{ site.Params.colorScheme | default "dracula" }}';
+
+        // Set color theme
+        document.documentElement.setAttribute('data-theme', colorScheme);
+
+        // Set dark/light mode based on preference
+        function applyTheme() {
+          if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        }
+
+        applyTheme();
+
+        // Listen for system theme changes
+        if (theme === 'system') {
+          window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+        }
+      })();
+    </script>
+  </head>
+
+<body class="bg-background text-foreground min-h-screen antialiased">
+  {{- /* Get TOC configuration */ -}}
+  {{- $tocPosition := "card" -}}
+  {{- $contentMaxWidth := site.Params.contentWidth | default "56rem" -}}
+  {{- $tocEnabled := false -}}
+
+  {{- if .IsPage -}}
+  {{- $globalTocConfig := .Site.Params.toc | default dict -}}
+  {{- $tocPosition = $globalTocConfig.position | default "card" -}}
+
+  {{- /* Check if TOC is enabled */ -}}
+  {{- $tocEnabled = true -}}
+  {{- if isset $globalTocConfig "enabled" -}}
+  {{- $tocEnabled = $globalTocConfig.enabled -}}
+  {{- end -}}
+
+  {{- /* Frontmatter overrides global config */ -}}
+  {{- if isset .Params "toc" -}}
+  {{- if reflect.IsMap .Params.toc -}}
+  {{- if isset .Params.toc "enabled" -}}
+  {{- $tocEnabled = .Params.toc.enabled -}}
+  {{- end -}}
+  {{- if isset .Params.toc "position" -}}
+  {{- $tocPosition = .Params.toc.position -}}
+  {{- end -}}
+  {{- else -}}
+  {{- $tocEnabled = .Params.toc -}}
+  {{- end -}}
+  {{- end -}}
+  {{- end -}}
+
+  {{- /* Determine if sidebar is needed */ -}}
+  {{- $needSidebar := and .IsPage $tocEnabled .TableOfContents (or (eq $tocPosition "left") (eq $tocPosition "right"))
+  -}}
+
+  <div
+    class="grid grid-cols-1 {{ if $needSidebar }}xl:grid-cols-[minmax(14rem,1fr)_auto_minmax(14rem,1fr)]{{ end }} gap-3 p-4">
+
+    {{- /* Left area */ -}}
+    {{- if $needSidebar -}}
+    {{- if eq $tocPosition "left" -}}
+    <aside class="toc-aside-left hidden xl:block" aria-label="Left TOC">
+      {{ partial "ui/toc-sidebar.html" . }}
+    </aside>
+    {{- else -}}
+    <div class="hidden xl:block" aria-hidden="true"></div>
+    {{- end -}}
+    {{- end -}}
+
+    {{- /* Main content area */ -}}
+    <main class="mx-auto w-full" style="max-width: {{ $contentMaxWidth }}">
+      <!-- Reading progress bar -->
+      {{ partial "ui/reading-progress.html" . }}
+
+      {{ partial "navigation/header.html" . }}
+
+      <div class="px-4 py-6">
+        {{ partial "navigation/breadcrumb.html" . }}
+        {{ block "main" . }}{{ end }}
+      </div>
+
+      {{ partial "layout/footer.html" . }}
+      {{ partial "ui/dock.html" . }}
+      {{ partial "ui/search-modal.html" . }}
+
+      {{- if and .IsPage $tocEnabled .TableOfContents -}}
+      {{ partial "ui/toc-card.html" . }}
+      {{- end -}}
+      {{ partial "features/katex.html" . }}
+      {{ partial "features/mermaid.html" . }}
+    </main>
+
+    {{- /* Right area */ -}}
+    {{- if $needSidebar -}}
+    {{- if eq $tocPosition "right" -}}
+    <aside class="toc-aside-right hidden xl:block" aria-label="Right TOC">
+      {{ partial "ui/toc-sidebar.html" . }}
+    </aside>
+    {{- else -}}
+    <div class="hidden xl:block" aria-hidden="true"></div>
+    {{- end -}}
+    {{- end -}}
+
+  </div>
+</body>
+
+</html>

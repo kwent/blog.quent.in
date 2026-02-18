@@ -1,0 +1,122 @@
+{{/* Disqus comments - with auto theme support */}}
+
+{{ $id := .id | default "disqus-comments" }}
+{{ $config := .Site.Params.comments.disqus }}
+{{ $page := .Page }}
+
+{{ if $config.shortname }}
+  {{/*
+    Wrapper div with explicit background colors that Disqus can parse.
+    Disqus "Auto" mode reads background-color to determine light/dark.
+    oklch() colors are not supported, so we provide hex fallbacks.
+  */}}
+  <div id="{{ $id }}" class="disqus-container disqus-theme-wrapper">
+    <div id="disqus_thread"></div>
+
+    <script>
+      (function() {
+        'use strict';
+
+        var disqus_config = function () {
+          this.page.url = '{{ $page.Permalink }}';
+
+          // Use disqus_identifier from front matter if available (for migrated posts)
+          {{ if $page.Params.disqus_identifier }}
+          this.page.identifier = '{{ $page.Params.disqus_identifier }}';
+          {{ else if $page.Params.aliases }}
+          // For WordPress-migrated posts, use the old permalink as identifier
+          this.page.identifier = '{{ index $page.Params.aliases 0 }}';
+          {{ else }}
+          this.page.identifier = '{{ $page.RelPermalink }}';
+          {{ end }}
+
+          this.page.title = '{{ $page.Title | safeJS }}';
+        };
+
+        function loadDisqus() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://{{ $config.shortname }}.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        }
+
+        function reloadDisqus() {
+          if (typeof DISQUS !== 'undefined') {
+            DISQUS.reset({
+              reload: true,
+              config: disqus_config
+            });
+          }
+        }
+
+        // Listen for theme changes (Hugo Narrow dispatches this event)
+        document.addEventListener('themeChanged', function(e) {
+          if (document.readyState === 'complete') {
+            reloadDisqus();
+          }
+        });
+
+        // Also listen on window for compatibility
+        window.addEventListener('themeChanged', function(e) {
+          if (document.readyState === 'complete') {
+            reloadDisqus();
+          }
+        });
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', loadDisqus);
+        } else {
+          loadDisqus();
+        }
+      })();
+    </script>
+
+    <noscript>
+      Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+    </noscript>
+  </div>
+
+  <style>
+    /*
+     * Disqus wrapper styled to match Hugo Narrow Dracula theme.
+     * Uses hex colors for Disqus "Auto" theme detection compatibility.
+     */
+    .disqus-theme-wrapper {
+      padding: 1.5rem;
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+      border: 1px solid;
+    }
+
+    /* Light mode: Dracula light palette */
+    .disqus-theme-wrapper {
+      background-color: #f8f8f2;
+      color: #282a36;
+      border-color: #d6d6d6;
+    }
+
+    /* Dark mode: Dracula dark palette */
+    .dark .disqus-theme-wrapper {
+      background-color: #282a36;
+      color: #f8f8f2;
+      border-color: #44475a;
+    }
+
+    /* Style the Disqus iframe container */
+    #disqus_thread {
+      min-height: 200px;
+    }
+
+    /* Add subtle shadow in dark mode */
+    .dark .disqus-theme-wrapper {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+                  0 2px 4px -2px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Light mode shadow */
+    .disqus-theme-wrapper {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                  0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+{{ end }}

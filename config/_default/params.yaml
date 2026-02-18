@@ -1,0 +1,136 @@
+# Basic site info with SEO
+description: "Personal blog of Quentin Rousseau - CTO & Co-founder at Rootly, 2x Y Combinator founder"
+keywords: ["blog", "quentin", "rousseau", "rootly", "yc", "startup", "engineering", "sre", "technology"]
+defaultAuthor: "Quentin Rousseau"
+language: "en-US"
+shortName: "QR Blog"
+
+# Author info
+author:
+  name: "Quentin Rousseau"
+  title: 'CTO & Co-founder at <a href="https://rootly.com" target="_blank" rel="noopener noreferrer">Rootly</a>'
+  description: "2x Y Combinator founder. Former Instacart SRE. Rock climber & wine enthusiast."
+  location: "San Francisco, CA"
+  avatar: "/images/avatar.jpg"
+  social:
+    - name: "GitHub"
+      url: "https://github.com/kwent"
+      icon: "github"
+    - name: "X"
+      url: "https://x.com/quentinrousseau"
+      icon: "x"
+    - name: "LinkedIn"
+      url: "https://linkedin.com/in/quentinrousseau"
+      icon: "linkedin"
+    - name: "Email"
+      url: "mailto:contact@quent.in"
+      icon: "email"
+
+# Header configuration
+header:
+  sticky: true
+  logo:
+    image: ""
+    link: "/"
+  showThemeSwitch: true
+  showDarkModeSwitch: true
+  showLanguageSwitch: false
+
+# Dock display mode: "scroll", "always", or "float"
+dock: "scroll"
+
+# Content width
+contentWidth: "56rem"
+
+# TOC (Table of Contents)
+toc:
+  enabled: true
+  position: "card"
+  maxHeight: "80vh"
+
+# Default color scheme - using dracula for dark aesthetic
+colorScheme: "dracula"
+
+# Default theme mode - dark by default
+defaultTheme: "dark"
+
+# Available themes
+themes:
+  dracula:
+    name: "Dracula"
+    order: 1
+  abyss:
+    name: "Abyss"
+    order: 2
+  nord:
+    name: "Nord"
+    order: 3
+  default:
+    name: "Default"
+    order: 4
+  claude:
+    name: "Claude"
+    order: 5
+
+# Home page configuration
+home:
+  recentPostsCount: 6
+  contentOrder:
+    - author-section
+    - recent-posts
+
+# Post configuration
+post:
+  showRelated: true
+  relatedPostsCount: 3
+  license:
+    show: false
+
+# Comments - Disqus (disabled for now, code preserved for future use)
+comments:
+  enabled: false
+  system: "disqus"
+  disqus:
+    shortname: "quentinrousseauleblog"
+
+# Analytics - configure as needed
+analytics:
+  enabled: false
+  google:
+    enabled: false
+    id: ""
+
+# KaTeX for math
+katex:
+  enabled: false
+
+# Mermaid diagrams
+mermaid:
+  enabled: true
+
+# Lightbox for images
+lightbox:
+  enabled: true
+  loop: true
+  width: 80vw
+  height: 80vh
+  touchNavigation: true
+  draggable: true
+  zoomable: true
+
+# Code block settings
+codeblock:
+  collapse:
+    enabled: true
+    defaultState: expanded
+    autoCollapseLines: 30
+    autoCollapseHeight: 400
+    collapsedHeight: 120
+
+# Reading progress bar
+readingProgress:
+  enabled: true
+  height: 3
+  showOnHomepage: false
+  smoothScroll: true
+  hideOnComplete: false

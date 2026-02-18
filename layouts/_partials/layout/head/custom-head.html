@@ -1,0 +1,5 @@
+{{/* Custom head - include CSS fixes */}}
+{{ with resources.Get "css/custom.css" }}
+  {{ $css := . | minify }}
+  <style>{{ $css.Content | safeCSS }}</style>
+{{ end }}

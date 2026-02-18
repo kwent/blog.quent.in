@@ -1,54 +1,43 @@
 # blog.quent.in
 
-Personal blog powered by [Octopress](http://octopress.org/) with the OctoPanel theme.
+Personal blog powered by [Hugo](https://gohugo.io/) with the [Hugo Narrow](https://github.com/tom2almighty/hugo-narrow) theme.
 
 **Live site:** https://blog.quent.in
 
 ## Setup
 
 ```bash
-bundle install
+mise install
+uv sync
 ```
 
 ## Development
 
 ```bash
-# Start local server on http://localhost:4000
-rake preview
-
-# Generate static site
-rake generate
-
-# Watch for changes (no server)
-rake watch
+# Start local server on http://localhost:1313
+hugo server -D
 ```
 
 ## Writing
 
 ```bash
-# Create new blog post
-rake new_post["My Post Title"]
+# Create new blog post with AI-generated cover image
+uv run scripts/new_post.py "My Post Title" --tags tag1,tag2 --categories dev,web
 
-# Create new page
-rake new_page["page-name"]
+# Create new post without cover
+uv run scripts/new_post.py "My Post Title" --no-cover
+```
 
-# Speed up regeneration by isolating a single post
-rake isolate["post-filename"]
-rake integrate  # restore all posts
+## Scripts
+
+```bash
+# Backfill cover images for posts missing them
+uv run scripts/generate_covers.py
+
+# Check for broken links
+uv run scripts/check_links.py
 ```
 
 ## Deploy
 
-```bash
-rake gen_deploy
-```
-
-## Troubleshooting
-
-If you get `YAML Exception reading` error:
-
-```bash
-export LC_ALL=en_US.UTF-8
-```
-
-See: https://github.com/jekyll/jekyll/issues/836
+Deployed automatically via GitHub Actions on push to `master`.
