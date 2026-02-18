@@ -1,4 +1,6 @@
 ---
+aliases:
+- /posts/2014/01/06/twitter-mention-to-url-convertor-plugin-for-octopress/
 categories:
 - development
 - web

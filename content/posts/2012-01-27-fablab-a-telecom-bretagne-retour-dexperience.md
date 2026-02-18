@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2012/01/fablab-a-telecom-bretagne-retour-dexperience/
+- /posts/2012/01/27/fablab-a-telecom-bretagne-retour-dexperience/
 author: Quentin
 categories:
 - web

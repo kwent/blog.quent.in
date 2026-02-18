@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2013/11/custom-ios7-uialertview/
+- /posts/2013/11/01/custom-ios7-uialertview/
 author: Quentin
 categories:
 - development

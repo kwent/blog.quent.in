@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2011/08/mkvmerge-remuxer-une-saison-a-la-volee/
+- /posts/2011/08/04/mkvmerge-remuxer-une-saison-a-la-volee/
 author: Quentin
 categories:
 - script

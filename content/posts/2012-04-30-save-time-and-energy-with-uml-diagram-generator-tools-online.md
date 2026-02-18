@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2012/04/save-time-and-energy-with-uml-diagram-generator-tools-online/
+- /posts/2012/04/30/save-time-and-energy-with-uml-diagram-generator-tools-online/
 author: Quentin
 categories:
 - development

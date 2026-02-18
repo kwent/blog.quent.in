@@ -1,4 +1,6 @@
 ---
+aliases:
+- /posts/2014/07/15/export-all-mixpanel-people-to-a-json-file/
 author: Quentin
 categories:
 - development

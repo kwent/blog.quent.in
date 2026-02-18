@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2012/07/how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux/
+- /posts/2012/07/12/how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux/
 author: Quentin
 categories:
 - development

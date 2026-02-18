@@ -126,11 +126,20 @@ def create_post(
             cover_path = f"/images/covers/{image_filename}"
             print(f"Cover image saved to {image_path}")
 
+    # Build /posts/ alias from date components
+    year = now.strftime("%Y")
+    month = now.strftime("%m")
+    day = now.strftime("%d")
+    posts_alias = f"/posts/{year}/{month}/{day}/{slug}/"
+
     front_matter_lines = [
         "---",
         f'title: "{title}"',
         f"date: {date_full}",
     ]
+
+    front_matter_lines.append("aliases:")
+    front_matter_lines.append(f"- {posts_alias}")
 
     if cover_path:
         front_matter_lines.append(f"cover: {cover_path}")

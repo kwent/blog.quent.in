@@ -1,6 +1,7 @@
 ---
 aliases:
 - /blog/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-SFTP/
+- /posts/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-sftp/
 categories:
 - development
 - ruby

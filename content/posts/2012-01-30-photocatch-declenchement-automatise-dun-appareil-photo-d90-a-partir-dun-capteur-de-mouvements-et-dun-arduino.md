@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2012/01/photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino/
+- /posts/2012/01/30/photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino/
 author: Quentin
 categories:
 - development

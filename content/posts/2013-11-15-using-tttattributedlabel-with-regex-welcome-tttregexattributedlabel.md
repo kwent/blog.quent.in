@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2013/11/using-tttattributedlabel-with-regex-welcome-tttregexattributedlabel/
+- /posts/2013/11/15/using-tttattributedlabel-with-regex-welcome-tttregexattributedlabel/
 author: Quentin
 categories:
 - development

@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2013/06/activity-transition-animations-like-the-vine-android-application/
+- /posts/2013/06/26/activity-transition-animations-like-the-vine-android-application/
 author: Quentin
 categories:
 - development

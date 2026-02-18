@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2012/04/paris-timelapse-experiment/
+- /posts/2012/04/07/paris-timelapse-experiment/
 author: Quentin
 categories:
 - photography

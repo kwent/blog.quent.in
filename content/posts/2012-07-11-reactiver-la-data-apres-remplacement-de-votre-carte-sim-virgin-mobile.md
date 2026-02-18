@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2012/07/reactiver-la-data-apres-remplacement-de-votre-carte-sim-virgin-mobile/
+- /posts/2012/07/11/reactiver-la-data-apres-remplacement-de-votre-carte-sim-virgin-mobile/
 author: Quentin
 categories:
 - mobile

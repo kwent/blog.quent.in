@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2011/08/obfusquer-votre-adresse-mail-et-echapper-aux-spam/
+- /posts/2011/08/09/obfusquer-votre-adresse-mail-et-echapper-aux-spam/
 author: Quentin
 categories:
 - development

@@ -1,4 +1,6 @@
 ---
+aliases:
+- /posts/2013/12/23/migration-from-wordpress-to-octopress/
 author: Quentin
 categories:
 - development

@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2012/07/windows-management-instrumentation-wmi-linux-client/
+- /posts/2012/07/18/windows-management-instrumentation-wmi-linux-client/
 author: Quentin
 categories:
 - development

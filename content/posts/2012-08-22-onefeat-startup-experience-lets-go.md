@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2012/08/onefeat-startup-experience-lets-go/
+- /posts/2012/08/22/onefeat-startup-experience-lets-go/
 author: Quentin
 categories:
 - development

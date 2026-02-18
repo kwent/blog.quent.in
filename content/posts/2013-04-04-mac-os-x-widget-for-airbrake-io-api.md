@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2013/04/mac-os-x-widget-for-airbrake-io-api/
+- /posts/2013/04/04/mac-os-x-widget-for-airbrake-io-api/
 author: Quentin
 categories:
 - development

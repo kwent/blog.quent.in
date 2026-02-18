@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2011/08/thumbnail-me-vignettez-a-linfini/
+- /posts/2011/08/01/thumbnail-me-vignettez-a-linfini/
 author: Quentin
 categories:
 - development

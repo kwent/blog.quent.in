@@ -1,4 +1,6 @@
 ---
+aliases:
+- /posts/2014/04/23/adding-scopes-to-activerecord-base/
 author: Quentin
 categories:
 - development

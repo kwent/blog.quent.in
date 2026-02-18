@@ -1,4 +1,6 @@
 ---
+aliases:
+- /posts/2014/02/04/delete-all-your-remote-git-tags-in-a-row/
 categories:
 - development
 - script

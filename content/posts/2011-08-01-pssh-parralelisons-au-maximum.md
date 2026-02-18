@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2011/08/pssh-parralelisons-au-maximum/
+- /posts/2011/08/01/pssh-parralelisons-au-maximum/
 author: Quentin
 categories:
 - system

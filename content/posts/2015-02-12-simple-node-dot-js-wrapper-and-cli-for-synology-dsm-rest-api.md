@@ -1,4 +1,6 @@
 ---
+aliases:
+- /posts/2015/02/12/simple-node-dot-js-wrapper-and-cli-for-synology-dsm-rest-api/
 author: Quentin
 categories:
 - development

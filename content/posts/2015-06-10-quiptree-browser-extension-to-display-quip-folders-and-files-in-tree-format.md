@@ -1,4 +1,6 @@
 ---
+aliases:
+- /posts/2015/06/10/quiptree-browser-extension-to-display-quip-folders-and-files-in-tree-format/
 categories:
 - development
 - accessibility

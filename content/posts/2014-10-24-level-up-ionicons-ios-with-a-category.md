@@ -1,4 +1,6 @@
 ---
+aliases:
+- /posts/2014/10/24/level-up-ionicons-ios-with-a-category/
 author: Quentin
 categories:
 - development

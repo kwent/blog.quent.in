@@ -8,7 +8,7 @@ shortName: "QR Blog"
 # Author info
 author:
   name: "Quentin Rousseau"
-  title: "CTO & Co-founder at Rootly"
+  title: 'CTO & Co-founder at <a href="https://rootly.com" target="_blank" rel="noopener noreferrer">Rootly</a>'
   description: "2x Y Combinator founder. Former Instacart SRE. Rock climber & wine enthusiast."
   location: "San Francisco, CA"
   avatar: "/images/avatar.jpg"

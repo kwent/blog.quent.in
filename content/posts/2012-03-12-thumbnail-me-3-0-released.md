@@ -1,6 +1,7 @@
 ---
 aliases:
 - /index.php/2012/03/thumbnail-me-3-0-released/
+- /posts/2012/03/12/thumbnail-me-3-0-released/
 author: Quentin
 categories:
 - development

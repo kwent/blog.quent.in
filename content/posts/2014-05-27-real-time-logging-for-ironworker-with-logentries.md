@@ -1,4 +1,6 @@
 ---
+aliases:
+- /posts/2014/05/27/real-time-logging-for-ironworker-with-logentries/
 author: Quentin
 categories:
 - development

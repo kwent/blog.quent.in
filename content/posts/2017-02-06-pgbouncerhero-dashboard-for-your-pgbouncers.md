@@ -1,4 +1,6 @@
 ---
+aliases:
+- /posts/2017/02/06/pgbouncerhero-dashboard-for-your-pgbouncers/
 categories:
 - development
 - web
