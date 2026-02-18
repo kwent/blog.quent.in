@@ -1,6 +1,6 @@
 # Basic site info with SEO
-description: "Personal blog of Quentin Rousseau - Senior Software Engineer"
-keywords: ["blog", "quentin", "rousseau", "software", "engineer", "developer", "technology"]
+description: "Personal blog of Quentin Rousseau - CTO & Co-founder at Rootly, 2x Y Combinator founder"
+keywords: ["blog", "quentin", "rousseau", "rootly", "yc", "startup", "engineering", "sre", "technology"]
 defaultAuthor: "Quentin Rousseau"
 language: "en-US"
 shortName: "QR Blog"
@@ -8,9 +8,9 @@ shortName: "QR Blog"
 # Author info
 author:
   name: "Quentin Rousseau"
-  title: "Senior Software Engineer"
-  description: "I would love to change the world, but they won't give me the source code."
-  avatar: "/images/avatar.png"
+  title: "CTO & Co-founder at Rootly"
+  description: "2x Y Combinator founder. Former Instacart SRE. Rock climber & wine enthusiast."
+  avatar: "/images/avatar.jpg"
   social:
     - name: "GitHub"
       url: "https://github.com/kwent"
