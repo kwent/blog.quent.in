@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """Create a new Hugo blog post with an AI-generated cover image.
 
+Uses the same 2-pass approach as generate_covers.py:
+  Pass 1: Text model generates an image brief from the title/tags
+  Pass 2: Image model generates the cover from that brief + style directive
+
 Usage:
     uv run scripts/new_post.py "My Post Title" --tags tag1,tag2 --categories dev,web
     uv run scripts/new_post.py "My Post Title" --no-cover
-    uv run scripts/new_post.py "My Post Title" --cover-prompt "A custom prompt for the image"
+    uv run scripts/new_post.py "My Post Title" --cover-prompt "A custom image concept"
 
 Requires:
     export GEMINI_API_KEY=your_key
@@ -16,6 +20,8 @@ import re
 import sys
 from datetime import datetime
 from pathlib import Path
+
+from scripts.generate_covers import STYLE_DIRECTIVE, SUMMARIZER_PROMPT
 
 BLOG_ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = BLOG_ROOT / "content" / "posts"
@@ -41,20 +47,34 @@ def generate_cover_image(title: str, tags: list[str], custom_prompt: str | None 
     client = genai.Client(api_key=api_key)
 
     if custom_prompt:
-        prompt = custom_prompt
+        # Custom prompt skips pass 1, goes straight to image generation
+        brief = custom_prompt
     else:
-        tag_context = f" Related topics: {', '.join(tags)}." if tags else ""
-        prompt = (
-            f"Create a minimal, modern blog header image for a technical article titled \"{title}\".{tag_context} "
-            f"Style: clean gradient background with subtle geometric shapes or abstract tech iconography. "
-            f"No text in the image. Aspect ratio 16:9. Soft colors that work well with both light and dark themes."
-        )
+        # Pass 1: Generate image brief from title + tags
+        tag_str = f"Tags: {', '.join(tags)}" if tags else ""
+        user_prompt = f"Title: {title}\n{tag_str}\n\nArticle content:\n(New post, no content yet.)"
 
-    print(f"Generating cover image...")
-    print(f"Prompt: {prompt[:120]}...")
+        print("Pass 1: Generating image brief...")
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=[
+                {"role": "user", "parts": [{"text": f"{SUMMARIZER_PROMPT}\n\n{user_prompt}"}]},
+            ],
+        )
+        brief = response.text.strip()
+        print(f"Brief: {brief}")
+
+    # Pass 2: Generate image from brief
+    prompt = (
+        f"I need a cover image for a technical blog post titled \"{title}\".\n\n"
+        f"Image concept: {brief}\n\n"
+        f"{STYLE_DIRECTIVE}"
+    )
+
+    print("Pass 2: Generating cover image...")
 
     response = client.models.generate_content(
-        model="gemini-2.5-flash-preview-05-20",
+        model="gemini-2.5-flash-image",
         contents=[prompt],
         config=genai.types.GenerateContentConfig(
             response_modalities=["IMAGE", "TEXT"],
@@ -137,7 +157,7 @@ def main():
     parser.add_argument("--tags", default="", help="Comma-separated tags (e.g. ruby,rails,postgresql)")
     parser.add_argument("--categories", default="", help="Comma-separated categories (e.g. development,web)")
     parser.add_argument("--no-cover", action="store_true", help="Skip AI cover image generation")
-    parser.add_argument("--cover-prompt", default=None, help="Custom prompt for cover image generation")
+    parser.add_argument("--cover-prompt", default=None, help="Custom image concept (skips pass 1 summarization)")
     args = parser.parse_args()
 
     tags = [t for t in args.tags.split(",") if t.strip()] if args.tags else []
