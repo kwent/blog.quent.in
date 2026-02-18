@@ -12,6 +12,11 @@
       (function() {
         'use strict';
 
+        // Detect if dark mode is active
+        function isDarkMode() {
+          return document.documentElement.classList.contains('dark');
+        }
+
         var disqus_config = function () {
           this.page.url = '{{ $page.Permalink }}';
 
@@ -36,6 +41,18 @@
           (d.head || d.body).appendChild(s);
         }
 
+        function reloadDisqus() {
+          if (typeof DISQUS !== 'undefined') {
+            DISQUS.reset({
+              reload: true,
+              config: disqus_config
+            });
+          }
+        }
+
+        // Listen for theme changes and reload Disqus
+        window.addEventListener('themeChanged', reloadDisqus);
+
         if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', loadDisqus);
         } else {
@@ -43,6 +60,17 @@
         }
       })();
     </script>
+
+    <style>
+      /* Force Disqus iframe to use dark background when in dark mode */
+      .dark #disqus_thread {
+        color-scheme: dark;
+      }
+      #disqus_thread {
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+    </style>
 
     <noscript>
       Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
