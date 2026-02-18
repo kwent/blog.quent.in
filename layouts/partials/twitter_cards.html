@@ -1,0 +1,11 @@
+{{- with .Params.cover }}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="{{ . | absURL }}" />
+{{- else }}
+<meta name="twitter:card" content="summary" />
+{{- with site.Params.author.avatar }}
+<meta name="twitter:image" content="{{ . | absURL }}" />
+{{- end }}
+{{- end }}
+<meta name="twitter:title" content="{{ .Title }}" />
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
