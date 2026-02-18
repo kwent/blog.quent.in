@@ -43,8 +43,8 @@ Enjoy it !
 
 ## More...
 
-*   <a href="https://github.com/kwent/TTTRegexAttributedLabel" title="kwent/TTTRegexAttributedLabel · GitHub" rel="nofollow">kwent/TTTRegexAttributedLabel · GitHub</a>
-*   <a href="https://github.com/mattt/TTTAttributedLabel?source=c" title="mattt/TTTAttributedLabel · GitHub" rel="nofollow">mattt/TTTAttributedLabel · GitHub</a>
+*   [kwent/TTTRegexAttributedLabel](https://github.com/kwent/TTTRegexAttributedLabel)
+*   [mattt/TTTAttributedLabel](https://github.com/mattt/TTTAttributedLabel?source=c)
 
  [1]: https://github.com/mattt/TTTAttributedLabel
  [2]: https://github.com/mattt

@@ -18,9 +18,9 @@ title: Thumbnail me 3.0 Released
 
 ![Thumbnail me 3.0](/images/posts/about1.png)
 
-For those who do not know Thumbnail me, please follow this <strong><a href="https://blog.quent.in/index.php/2011/08/thumbnail-me-vignettez-a-linfini/" target="_blank">link</a></strong>.
+For those who do not know Thumbnail me, please follow this **[link](https://blog.quent.in/index.php/2011/08/thumbnail-me-vignettez-a-linfini/)**.
 
-After more than** 9 months of development** between Beta version and Release version, **Thumbnail me 3.0** is now available at <a href="https://www.thumbnailme.com" target="_blank">www.thumbnailme.com</a>.
+After more than** 9 months of development** between Beta version and Release version, **Thumbnail me 3.0** is now available at [www.thumbnailme.com](https://www.thumbnailme.com).
 
 Major updates are :
 
@@ -98,18 +98,17 @@ Too much hours of development
 
 **If you like my work about Thumbnail me, please make a donation.**
 
-[<img src="https://images.sourceforge.net/images/project-support.jpg" alt="Support This Project" width="88" height="32" border="0" />][1] 
+[![Support This Project](https://images.sourceforge.net/images/project-support.jpg)][1]
 
 ### Follow us !
 
-<a class="twitter-follow-button" href="https://twitter.com/thumbnailme" data-show-count="false">Follow @thumbnailme</a>  
+[Follow @thumbnailme](https://twitter.com/thumbnailme)
 
-
-<a class="twitter-follow-button" href="https://twitter.com/quentinrousseau" data-show-count="false">Follow @quentinrousseau</a>  
+[Follow @quentinrousseau](https://twitter.com/quentinrousseau)
 
 
 ## More...
 
-*   <a href="https://www.thumbnailme.com" title="Thumbnail me - Thumbnail to infinity" rel="nofollow">Thumbnail me - Thumbnail to infinity</a>
+*   [Thumbnail me - Thumbnail to infinity](https://www.thumbnailme.com)
 
  [1]: https://www.thumbnailme.com

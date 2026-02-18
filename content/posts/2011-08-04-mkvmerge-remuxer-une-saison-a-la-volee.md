@@ -18,13 +18,13 @@ tags:
 title: Mkvmerge | Remuxer une saison à la volée
 ---
 
-Heureux possesseur d'un **NAS** <a href="https://www.synology.com/us/products/DS211j/index.php" target="_blank">Synology DS211j</a>, j'ai parfois besoin de remuxer **des saisons complètes de séries** (pour intégrer des sous titres la plupart du temps), et tant qu'à faire autant les remuxer **en local** sur le NAS.
+Heureux possesseur d'un **NAS** [Synology DS211j](https://www.synology.com/us/products/DS211j/index.php), j'ai parfois besoin de remuxer **des saisons complètes de séries** (pour intégrer des sous titres la plupart du temps), et tant qu'à faire autant les remuxer **en local** sur le NAS.
 
-Pour cela j'utilise le binaire **mkvmerge** contenu dans le package <a href="https://www.bunkus.org/videotools/mkvtoolnix/" target="_blank"><strong>mkvtoolnix</strong></a>.
+Pour cela j'utilise le binaire **mkvmerge** contenu dans le package [**mkvtoolnix**](https://www.bunkus.org/videotools/mkvtoolnix/).
 
-<span style="color: #ff6600;"><strong>1ère étape:</strong></span> Récupérer le paquet mkvtoolnix et l'installer.
+**1ère étape:** Récupérer le paquet mkvtoolnix et l'installer.
 
-**Note:** Je ne récupère pas mkvtoolnix via le dépôt <a href="https://ipkg.nslu2-linux.org/feeds/optware/cs05q3armel/cross/unstable/" target="_blank">https://ipkg.nslu2-linux.org/feeds/optware/cs05q3armel/cross/unstable/</a> car celui-ci n'a pas fonctionné pour moi (manque de dépendances). **Voir <a href="https://forum.synology.com/enu/viewtopic.php?f=40&t=36845" target="_blank">ici</a>**.
+**Note:** Je ne récupère pas mkvtoolnix via le dépôt [https://ipkg.nslu2-linux.org/feeds/optware/cs05q3armel/cross/unstable/](https://ipkg.nslu2-linux.org/feeds/optware/cs05q3armel/cross/unstable/) car celui-ci n'a pas fonctionné pour moi (manque de dépendances). **Voir [ici](https://forum.synology.com/enu/viewtopic.php?f=40&t=36845)**.
 
 ```bash
 wget mkvtoolnix https://www.rzuser.uni-heidelberg.de/~tkolb3/mkvtoolnix_4.2.0-1_arm.ipk
@@ -35,9 +35,9 @@ Vous vous retrouvez face à une jolie erreur de **MD5** (c'est normal car ce n
 
 Il faut alors modifier le MD5 dans **/opt/lib/ipkg/lists/cross** de mkvtoolnix par celui-ci **0be20bd376391c911a7eeba46c8883ac **et réitérer l'opération.****
 
-<span style="color: #ff6600;"><strong>2ème étape:</strong></span> mkvtoolnix est maintenant opérationnel sur le Synology, passons au remuxage !
+**2ème étape:** mkvtoolnix est maintenant opérationnel sur le Synology, passons au remuxage !
 
-### <span style="color: #333333;">Contexte:</span>
+### Contexte:
 
 Soit **une saison** de** 23 épisodes **auxquelles je veux ajouter des **fichiers de sous titres (.srt) Français et Anglais, la structure étant la suivante:  
 **
@@ -101,14 +101,14 @@ sh monscript 1 23 $FOLDER_TO_MEDIA $FR_SUBTITLES_FOLDER $EN_SUBTITLES_FOLDER $DE
 sh monscript 1 23 “/Series/MaSerie/Saison X” “/Series/MaSerie/Saison X/02 - FR_SRT” “/Series/MaSerie/Saison X/03 - EN_SRT” “/Series/MaSerie/Saison X/01 - REMUX”
 ```
 
-<span style="color: #ff0000;"><strong>Note</strong></span><span style="color: #ff0000;"><strong> 1</strong></span><span style="color: #ff0000;"><strong>:</strong></span> Dans l'état actuel du script, la langue française sera la langue **par défaut**. Pour changer ce comportement, jouez avec le paramètre suivante: **« -**default-track » « 2:yes »** ou **« **-default-track » « 0:no »******.
+**Note 1:** Dans l'état actuel du script, la langue française sera la langue **par défaut**. Pour changer ce comportement, jouez avec le paramètre suivante: **« -**default-track » « 2:yes »** ou **« **-default-track » « 0:no »******.
 
-**<span style="color: #ff0000;">Note 2:</span>** Dans l'état actuel du script, les fichiers de sous titres (.srt) doivent être encodés au format **UTF-8**. Pour changer ce comportement, jouez avec le paramètre: **« -chapter-charset character-set »**
+**Note 2:** Dans l'état actuel du script, les fichiers de sous titres (.srt) doivent être encodés au format **UTF-8**. Pour changer ce comportement, jouez avec le paramètre: **« -chapter-charset character-set »**
 
-<span style="color: #ff0000;"><strong>Update:</strong> <span style="color: #000000;">Gist available with script update : <a href="https://gist.github.com/kwent/5382866">https://gist.github.com/kwent/5382866</a></span></span>
+**Update:** Gist available with script update : [https://gist.github.com/kwent/5382866](https://gist.github.com/kwent/5382866)
 
 ## More...
 
-*   <a href="https://www.bunkus.org/videotools/mkvtoolnix/" title="mkvtoolnix -- Matroska tools for Linux/Unix and Windows" rel="nofollow">mkvtoolnix -- Matroska tools for Linux/Unix and Windows</a>
-*   <a href="https://www.bunkus.org/videotools/mkvtoolnix/doc/mkvmerge.html" title="mkvmerge" rel="nofollow">mkvmerge</a>
-*   <a href="https://www.synology.com/us/products/DS211j/index.php" title="Synology Network Attached Storage - Products :: DiskStation ..." rel="nofollow">Synology Network Attached Storage - Products :: DiskStation ...</a>
+*   [mkvtoolnix -- Matroska tools for Linux/Unix and Windows](https://www.bunkus.org/videotools/mkvtoolnix/)
+*   [mkvmerge](https://www.bunkus.org/videotools/mkvtoolnix/doc/mkvmerge.html)
+*   [Synology Network Attached Storage - Products :: DiskStation ...](https://www.synology.com/us/products/DS211j/index.php)

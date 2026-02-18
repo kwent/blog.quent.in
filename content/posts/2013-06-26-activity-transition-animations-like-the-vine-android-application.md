@@ -145,4 +145,4 @@ public class AnimatedActivity extends Activity
 
 <https://gist.github.com/kwent/5875749>
 
-## <span style="color: #808080;">Compile, run and enjoy.</span>
+## Compile, run and enjoy.

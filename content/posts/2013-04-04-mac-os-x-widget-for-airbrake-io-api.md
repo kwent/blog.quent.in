@@ -28,4 +28,4 @@ Through their API, i developed a Mac OS X widget. Just inform your subdomain, A
 
 ## More...
 
-*   <a href="https://www.airbrake.io" title="Airbrake: The error app." rel="nofollow">Airbrake: The error app.</a>
+*   [Airbrake: The error app.](https://www.airbrake.io)

@@ -18,7 +18,7 @@ title: Parallel-SSH | Parralélisez au maximum!
 
 Je me suis récemment trouvé dans une situation dans laquelle je devais exécuter des commandes redondantes sur plusieurs serveurs (environnement clusterisé par exemple) et comme tout grand informaticien, je n'aime pas passer sur 50 serveurs pour répéter une tâche. Je me suis donc lancé à la recherche d'un utilitaire me permettant d'arriver à mes fins.
 
-J'ai trouvé après quelques recherches **PSSH **(pour <cite><strong>p</strong>arallel-<strong>ssh</strong>)</cite> disponible à l'adresse suivante: <a href="https://www.theether.org/pssh/" target="_blank">https://www.theether.org/pssh/</a>
+J'ai trouvé après quelques recherches **PSSH **(pour ***p**arallel-**ssh***) disponible à l'adresse suivante: [https://www.theether.org/pssh/](https://www.theether.org/pssh/)
 
 Le principe est simple:
 
@@ -48,11 +48,11 @@ Et le tour est joué! Voici la sortie avec **MACOMMANDE='cat /etc/snmp/snmpd.con
 
 **3 MD5 identiques = 3 fichiers identiques**
 
-Bien entendu, **<span style="color: #ff0000;">utilisez cet outil avec grande précaution</span>** et testez votre commande sur une machine test avant! En cas d'erreur, ce sera l'ensemble de vos serveurs configurés qui seront impactés...
+Bien entendu, **utilisez cet outil avec grande précaution** et testez votre commande sur une machine test avant! En cas d'erreur, ce sera l'ensemble de vos serveurs configurés qui seront impactés...
 
-<span style="text-decoration: underline;"><strong>Note</strong></span>**:** Il faut prélablement que les hosts soient connus par SSH dans **~/.ssh/known_hosts**
+**Note:** Il faut prélablement que les hosts soient connus par SSH dans **~/.ssh/known_hosts**
 
 ## More...
 
-*   <a href="https://www.linux.com/archive/feature/151340" title="Linux.com :: Parallel SSH execution and a single shell to ..." rel="nofollow">Linux.com :: Parallel SSH execution and a single shell to ...</a>
-*   <a href="https://www.theether.org/pssh/docs/0.2.3/pssh-HOWTO.html" title="pssh HOWTO" rel="nofollow">pssh HOWTO</a>
+*   [Linux.com :: Parallel SSH execution and a single shell to ...](https://www.linux.com/archive/feature/151340)
+*   [pssh HOWTO](https://www.theether.org/pssh/docs/0.2.3/pssh-HOWTO.html)

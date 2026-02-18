@@ -42,9 +42,9 @@ NSLog(@“Block: Button at position %d is clicked on alertView %d.”, buttonInd
 
 ## More...
 
-*   <a href="https://www.wimagguc.com/2013/10/custom-ios7-uialertview/" title="Custom iOS7 UIAlertView" rel="nofollow">Custom iOS7 UIAlertView</a>
-*   <a href="https://github.com/kwent/ios-custom-alertview" title="kwent/ios-custom-alertview · GitHub" rel="nofollow">kwent/ios-custom-alertview · GitHub</a>
-*   <a href="https://github.com/wimagguc" title="wimagguc (Richard Dancsi) · GitHub" rel="nofollow">wimagguc (Richard Dancsi) · GitHub</a>
+*   [Custom iOS7 UIAlertView](https://www.wimagguc.com/2013/10/custom-ios7-uialertview/)
+*   [kwent/ios-custom-alertview](https://github.com/kwent/ios-custom-alertview)
+*   [wimagguc (Richard Dancsi)](https://github.com/wimagguc)
 
  [1]: https://github.com/wimagguc
  [2]: https://github.com/kwent/ios-custom-alertview

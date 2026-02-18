@@ -26,27 +26,21 @@ Une petite panoplie de paramètre est personnalisable tel que** le nombre de col
 
 #### Un aperçu de l'interface graphique:
 
-<div>
-  <dl id="">
-    <dt>
-      <img title="Thumbnailme - Simple Conversion" src="https://www.thumbnailme.com/wp-content/themes/wp-coda/screenshots/simpleConversion.jpg" alt="Thumbnail me" width="1024" height="542" />
-    </dt>
-  </dl>
-</div>
+![Thumbnail me](https://www.thumbnailme.com/wp-content/themes/wp-coda/screenshots/simpleConversion.jpg)
 
 ### 3 ans de development
 
 Eh oui j'ai pris mon temps! Et j'ai aussi appris avec mes erreurs. J'ai du retourner le code une bonne dizaine de fois, faute de bonne conception initiale et par manque d'expérience! Mais j'ai appris énormément et ai acquis beaucoup de rigueur.
 
-**Thumbnail me** est codé en **C++** et repose sur le <a href="https://qt.nokia.com/" target="_blank">Framework Qt</a>.
+**Thumbnail me** est codé en **C++** et repose sur le [Framework Qt](https://qt.nokia.com/).
 
 ### Aujourd’hui?
 
-Aujourd'hui  **Thumbnail me V3.0** est disponible en beta à l'adresse suivante <a href="https://www.thumbnailme.com" target="_blank">www.thumbnailme.com</a> et traduit en **4 langues** (Français, Anglais, Espagnol, Allemand). Je travaille actuellement sur la **release candidate** qui est prévue pour courant septembre. (La release candidate inclura les versions **Linux (32bits & 64bits)** ainsi que les sources du projet).
+Aujourd'hui  **Thumbnail me V3.0** est disponible en beta à l'adresse suivante [www.thumbnailme.com](https://www.thumbnailme.com) et traduit en **4 langues** (Français, Anglais, Espagnol, Allemand). Je travaille actuellement sur la **release candidate** qui est prévue pour courant septembre. (La release candidate inclura les versions **Linux (32bits & 64bits)** ainsi que les sources du projet).
 
 Bien entendu, vous serez les premiers avertis de la sortie de la version finale ;).
 
 ## More...
 
-*   <a href="https://qt.nokia.com/" title="Qt - Cross-platform application and UI framework — Qt - A ..." rel="nofollow">Qt - Cross-platform application and UI framework — Qt - A ...</a>
-*   <a href="https://thumbnailme.sourceforge.net/" title="Thumbnail me – Thumbnail to infinity" rel="nofollow">Thumbnail me – Thumbnail to infinity</a>
+*   [Qt - Cross-platform application and UI framework](https://qt.nokia.com/)
+*   [Thumbnail me -- Thumbnail to infinity](https://thumbnailme.sourceforge.net/)

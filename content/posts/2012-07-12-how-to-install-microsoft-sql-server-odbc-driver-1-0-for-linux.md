@@ -109,9 +109,9 @@ Same problem with **sqlcmd**, you have to search missing libraries and fix corre
 ```bash
 ldd `which sqlcmd`
 ```
-### <span style="color: #008000;">Now everything should be OK</span>
+### Now everything should be OK
 
 ## More...
 
-*   <a href="https://www.microsoft.com/en-us/download/details.aspx?id=28160" title="No Title" rel="nofollow">Microsoft Download Center</a>
-*   <a href="https://www.unixodbc.org/" title="unixODBC" rel="nofollow">unixODBC</a>
+*   [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=28160)
+*   [unixODBC](https://www.unixodbc.org/)

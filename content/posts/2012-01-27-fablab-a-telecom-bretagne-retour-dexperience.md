@@ -16,13 +16,13 @@ tags:
 title: FabLab à Télécom Bretagne | Retour d'expérience
 ---
 
-La semaine du 13 Janvier c'est **intersemestre** à <a href="https://www.telecom-bretagne.eu/" target="_blank">Télécom Bretagne</a>  !
+La semaine du 13 Janvier c'est **intersemestre** à [Télécom Bretagne](https://www.telecom-bretagne.eu/)  !
 
 Pour ma part, j'ai choisi de participer à mon premier atelier FabLab.
 
 ### FabLab c'est quoi ?
 
-<img class="aligncenter" title="FabLab" src="https://www.semageek.com/images/posts/recapitulatif-de-la-journee-pour-concevoir-fab-lab-en-region-paca-10.jpg" alt="FabLab" width="256" height="80"/>
+![FabLab](https://www.semageek.com/images/posts/recapitulatif-de-la-journee-pour-concevoir-fab-lab-en-region-paca-10.jpg)
 
 FabLab c'est tout d'abord **FAB**rication **LAB**oratory et ce concept viens tout droit du Massachusetts dans les laboratoires du **MIT**.
 
@@ -44,7 +44,7 @@ Module XBee 802.15.4 Série 1 XB24-ACI-001 ×12
 Breadboard ×20  
 Capteurs/Photorésistance/LED  
 Matrice de LED ×1  
-Imprimante 3D Makerbot (Plus d'info sur cette imprimante <a href="https://www.telecom-bretagne.eu/lexians/2012/sur-les-campus/une-imprimante-3d-premier-pas-vers-le-fablab-de-telecom-bretagne/" target="_blank">ici</a>)
+Imprimante 3D Makerbot (Plus d'info sur cette imprimante ici: https://www.telecom-bretagne.eu/lexians/2012/sur-les-campus/une-imprimante-3d-premier-pas-vers-le-fablab-de-telecom-bretagne/)
 ```
 
 ### Pourquoi Arduino a du succès ?
@@ -53,11 +53,9 @@ Dans la liste ci dessus revient beaucoup le nom Arduino. Pourquoi aujourd'hui be
 
 La réponse réside dans le faite que la plateforme Arduino est trés simple d'utilisation. L'ajout de module Ethernet / Wifi / ZigBee est un jeu d'enfant. Les connaissances en électronique n'ont pas besoin d'être poussées. Il suffit de ne pas inverser le + et le -,  de savoir lire une Datasheet et d'avoir quelques connaissances en programmation (beaucoup d'exemples sont fournis). Rien de plus !
 
-<div style="width: 410px" class="wp-caption aligncenter">
-  <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Arduino_Diecimila.jpg/800px-Arduino_Diecimila.jpg"><img class=" wp-image-200   " title="Arduino Diecimila" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Arduino_Diecimila.jpg/800px-Arduino_Diecimila.jpg" alt="Arduino Diecimila" width="400" height="106" /></a><p class="wp-caption-text">
-    Un Arduino Diecimila
-  </p>
-</div>
+[![Arduino Diecimila](https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Arduino_Diecimila.jpg/800px-Arduino_Diecimila.jpg)](https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Arduino_Diecimila.jpg/800px-Arduino_Diecimila.jpg)
+
+*Un Arduino Diecimila*
 
 ### Mon retour d'expérience
 
@@ -70,7 +68,7 @@ J'ai découvert :
 *   Qu'on peut prototyper tout et n'importe quoi en quelques heures ;
 *   Et surtout des personnes passionnées et motivées à 300% .
 
-Yohann Lepage (<a href="https://twitter.com/#!/2xyo" target="_blank">@2xyo</a>) et moi même avons crée **un déclencheur d'appareil photo automatique à partir d'un module de détection de mouvements** (Sonar Ultrasons).
+Yohann Lepage ([@2xyo](https://twitter.com/#!/2xyo)) et moi même avons crée **un déclencheur d'appareil photo automatique à partir d'un module de détection de mouvements** (Sonar Ultrasons).
 
 Je détaillerais notre réalisation dans un autre post très prochainement.
 
@@ -80,7 +78,7 @@ Je détaillerais notre réalisation dans un autre post très prochainement.
 
 ## More...
 
-*   <a href="https://fr.wikipedia.org/wiki/Arduino" title="Arduino - Wikipédia" rel="nofollow">Arduino - Wikipédia</a>
-*   <a href="https://fr.wikipedia.org/wiki/Fab_lab" title="Fab lab - Wikipédia" rel="nofollow">Fab lab - Wikipédia</a>
-*   <a href="https://fr.wikipedia.org/wiki/ZigBee" title="ZigBee - Wikipédia" rel="nofollow">ZigBee - Wikipédia</a>
-*   <a href="https://www.telecom-bretagne.eu" title="[Télécom Bretagne] Une Grande École d\'ingénieur et un centre de recherche international dans les sciences et technologies de l" rel="nofollow">[Télécom Bretagne] Une Grande École d\'ingénieur et un centre de recherche international dans le...</a>
+*   [Arduino - Wikipédia](https://fr.wikipedia.org/wiki/Arduino)
+*   [Fab lab - Wikipédia](https://fr.wikipedia.org/wiki/Fab_lab)
+*   [ZigBee - Wikipédia](https://fr.wikipedia.org/wiki/ZigBee)
+*   [Télécom Bretagne](https://www.telecom-bretagne.eu)

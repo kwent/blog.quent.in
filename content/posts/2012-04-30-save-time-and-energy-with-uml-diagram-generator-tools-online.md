@@ -135,15 +135,13 @@ getSequenceDiagram( text, pngFile, style )
 *   Output formats as png, jpg, pdf, json;
 *   A lot of fork projects in different languages.
 
-<h4 style="text-align: center;">
-  To resume, these tools will permit you to save time and energy. Exit graphic tools which are too much heavy, slow and onerous.
-</h4>
+#### To resume, these tools will permit you to save time and energy. Exit graphic tools which are too much heavy, slow and onerous.
 
 ## More...
 
-*   <a href="https://creately.com/Draw-UML-and-Class-Diagrams-Online" title="Draw UML diagrams Online | Online UML Tool | UML Diagram Creator | Creately" rel="nofollow">Draw UML diagrams Online | Online UML Tool | UML Diagram Creator | Creately</a>
-*   <a href="https://kangamodeling.org/" title="Kanga Modelling - Create Sequence Diagrams Using Markup Language">Kanga Modelling - Create Sequence Diagrams Using Markup Language</a>
-*   <a href="https://www.gliffy.com/uses/uml-software/" title="UML Software - Free online UML editor - no download required" rel="nofollow">UML Software - Free online UML editor - no download required</a>
-*   <a href="https://www.lucidchart.com/" title="Online Diagram & Flowchart Software | Lucidchart" rel="nofollow">Online Diagram & Flowchart Software | Lucidchart</a>
-*   <a href="https://www.websequencediagrams.com/" title="No Title" rel="nofollow">www.websequencediagrams.com</a>
-*   <a href="https://yuml.me/" title="Create UML diagrams online in seconds, no special tools needed." rel="nofollow">Create UML diagrams online in seconds, no special tools needed.</a>
+*   [Draw UML diagrams Online | Online UML Tool | UML Diagram Creator | Creately](https://creately.com/Draw-UML-and-Class-Diagrams-Online)
+*   [Kanga Modelling - Create Sequence Diagrams Using Markup Language](https://kangamodeling.org/)
+*   [UML Software - Free online UML editor - no download required](https://www.gliffy.com/uses/uml-software/)
+*   [Online Diagram & Flowchart Software | Lucidchart](https://www.lucidchart.com/)
+*   [www.websequencediagrams.com](https://www.websequencediagrams.com/)
+*   [Create UML diagrams online in seconds, no special tools needed.](https://yuml.me/)

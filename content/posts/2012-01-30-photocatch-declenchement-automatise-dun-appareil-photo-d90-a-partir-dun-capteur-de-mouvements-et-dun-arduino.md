@@ -45,7 +45,7 @@ Une touche de talent
 
 ### Achat de la télécommande
 
-1.  La première étape consiste à acheter une télécommande qui va piloter le déclenchement de l'appareil photo. Celle ci suffit amplement : <a href="https://quent.in/Af9bg0" target="_blank">https://quent.in/Af9bg0</a>
+1.  La première étape consiste à acheter une télécommande qui va piloter le déclenchement de l'appareil photo. Celle ci suffit amplement : [https://quent.in/Af9bg0](https://quent.in/Af9bg0)
 2.  Couper délicatement l'extrémité de la télécommande afin de ne pas détériorer les 3 fils qui se cachent sous la gaîne en plastique.
 
 Parmis ces 3 fils, on trouve un fil blanc, jaune et rouge.
@@ -67,7 +67,7 @@ Réalisés sous Fritzing - <https://fritzing.org>
 
 ### Code arduino
 
-Le code est disponible dans son intégralité sur **GitHub** : <a href="https://github.com/2xyo/fablab/tree/master/photocatch " target="_blank">https://github.com/2xyo/fablab/blob/master/photocatch/src/photocatch.ino</a>
+Le code est disponible dans son intégralité sur **GitHub** : [https://github.com/2xyo/fablab/blob/master/photocatch/src/photocatch.ino](https://github.com/2xyo/fablab/tree/master/photocatch)
 
 ```c
 /*
@@ -267,23 +267,19 @@ void shoot()
 
 ```
 
-### Démonstration par mon collègue Yohann Lepage (<a href="https://twitter.com/#!/2xyo" target="_blank">@2xyo</a>)
+### Démonstration par mon collègue Yohann Lepage ([@2xyo](https://twitter.com/#!/2xyo))
 
-<center>
-</center>
 
 ### Bonus - Timelapse de l'explor'Camp par PhotoCatch :
 
-<center>
-</center>
 
 ### Evolution possible
 
-*   <span style="font-family: 'mceinline';">Utiliser <strong>« Picture Transfert Protocol »</strong> qui permet de contrôler beaucoup plus de paramètres tels que l'ouverture de l'objectif, la vitesse et même la récupération des photos. Tout cela par contrôle USB.</span>
+*   Utiliser **« Picture Transfert Protocol »** qui permet de contrôler beaucoup plus de paramètres tels que l'ouverture de l'objectif, la vitesse et même la récupération des photos. Tout cela par contrôle USB.
 
 
 ## More...
 
-*   <a href="https://arduino.cc/en/Tutorial/Ping" title="Arduino - Ping" rel="nofollow">Arduino - Ping</a>
-*   <a href="https://arduino.cc/en/Tutorial/Sweep" title="Arduino - Sweep" rel="nofollow">Arduino - Sweep</a>
-*   <a href="https://libptp.sourceforge.net/" title="libptp2 Project Page" rel="nofollow">libptp2 Project Page</a>
+*   [Arduino - Ping](https://arduino.cc/en/Tutorial/Ping)
+*   [Arduino - Sweep](https://arduino.cc/en/Tutorial/Sweep)
+*   [libptp2 Project Page](https://libptp.sourceforge.net/)
