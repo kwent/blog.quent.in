@@ -1,0 +1,48 @@
+# Quentin Rousseau's Blog
+
+> Personal technical blog by Quentin Rousseau — CTO & Co-founder at Rootly (YC S21). Topics include SRE, infrastructure, AI-assisted development, incident management, and startup engineering.
+
+## About the Author
+
+Quentin Rousseau is the CTO, CISO & Co-founder of Rootly, an AI-native incident management platform used by teams at NVIDIA, Squarespace, Canva, and Figma. Previously an early SRE at Instacart and co-founder of PopSQL (YC S19). Based in San Francisco, originally from France.
+
+- Website: https://blog.quent.in
+- GitHub: https://github.com/kwent
+- X: https://x.com/quentinrousseau
+- LinkedIn: https://linkedin.com/in/quentinrousseau
+- Company: https://rootly.com
+
+## Blog Posts
+
+- [Back Online: From Octopress to Hugo, From Silence to AI](https://blog.quent.in/blog/2026/02/17/back-online-from-octopress-to-hugo-from-silence-to-ai/)
+- [PgBouncerHero - Dashboard for your PgBouncers](https://blog.quent.in/blog/2017/02/06/pgbouncerhero-dashboard-for-your-pgbouncers/)
+- [Quiptree - Browser extension to display Quip folders and files in tree format](https://blog.quent.in/blog/2015/06/10/quiptree-browser-extension-to-display-quip-folders-and-files-in-tree-format/)
+- [Create a ruby pseudo terminal (PTY) and invoke an interactive command (SFTP)](https://blog.quent.in/blog/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-sftp/)
+- [Simple Node.js wrapper and CLI for Synology DSM REST API](https://blog.quent.in/blog/2015/02/12/simple-node-dot-js-wrapper-and-cli-for-synology-dsm-rest-api/)
+- [Level up ionicons-iOS with a category](https://blog.quent.in/blog/2014/10/24/level-up-ionicons-ios-with-a-category/)
+- [Export all Mixpanel People to a JSON file](https://blog.quent.in/blog/2014/07/15/export-all-mixpanel-people-to-a-json-file/)
+- [Backup Neo4j Database to AWS S3](https://blog.quent.in/blog/2014/07/11/backup-neo4j-database-to-aws-s3/)
+- [Real-time Logging for IronWorker with Logentries](https://blog.quent.in/blog/2014/05/27/real-time-logging-for-ironworker-with-logentries/)
+- [Adding scopes to ActiveRecord::Base](https://blog.quent.in/blog/2014/04/23/adding-scopes-to-activerecord-base/)
+- [How to patch CVE-2014-0160 in OpenSSL](https://blog.quent.in/blog/2014/04/07/how-to-patch-cve-2014-0160-in-openssl/)
+- [Delete all your remote git tags in a row](https://blog.quent.in/blog/2014/02/04/delete-all-your-remote-git-tags-in-a-row/)
+- [Twitter mention to url convertor plugin for Octopress](https://blog.quent.in/blog/2014/01/06/twitter-mention-to-url-convertor-plugin-for-octopress/)
+- [Migration from WordPress to Octopress](https://blog.quent.in/blog/2013/12/23/migration-from-wordpress-to-octopress/)
+- [Using TTTAttributedLabel with Regex: Welcome TTTRegexAttributedLabel](https://blog.quent.in/blog/2013/11/15/using-tttattributedlabel-with-regex-welcome-tttregexattributedlabel/)
+- [Custom iOS7 UIAlertView](https://blog.quent.in/blog/2013/11/01/custom-ios7-uialertview/)
+- [Activity transition animations like the Vine Android application](https://blog.quent.in/blog/2013/06/26/activity-transition-animations-like-the-vine-android-application/)
+- [Mac OS X widget for airbrake.io API](https://blog.quent.in/blog/2013/04/04/mac-os-x-widget-for-airbrake-io-api/)
+- [Onefeat Startup experience: Let's go!](https://blog.quent.in/blog/2012/08/22/onefeat-startup-experience-lets-go/)
+- [Windows Management Instrumentation (WMI) Linux Client](https://blog.quent.in/blog/2012/07/18/windows-management-instrumentation-wmi-linux-client/)
+- [How to install Microsoft SQL Server ODBC Driver 1.0 for Linux](https://blog.quent.in/blog/2012/07/12/how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux/)
+- [Thumbnail me 3.0 Released](https://blog.quent.in/blog/2012/03/12/thumbnail-me-3-0-released/)
+- [Paris Timelapse Experiment](https://blog.quent.in/blog/2012/04/07/paris-timelapse-experiment/)
+- [PhotoCatch: Automated camera triggering with Arduino motion sensor](https://blog.quent.in/blog/2012/01/30/photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino/)
+- [FabLab at Telecom Bretagne: Experience report](https://blog.quent.in/blog/2012/01/27/fablab-a-telecom-bretagne-retour-dexperience/)
+- [Save time and energy with UML diagram generator tools online](https://blog.quent.in/blog/2012/04/30/save-time-and-energy-with-uml-diagram-generator-tools-online/)
+- [Parallel-SSH: Parallelize everything](https://blog.quent.in/blog/2011/08/01/pssh-parralelisons-au-maximum/)
+- [Thumbnail me: Infinite thumbnailing](https://blog.quent.in/blog/2011/08/01/thumbnail-me-vignettez-a-linfini/)
+- [Mkvmerge: Remux a season on the fly](https://blog.quent.in/blog/2011/08/04/mkvmerge-remuxer-une-saison-a-la-volee/)
+- [Obfuscate your email address and escape spam](https://blog.quent.in/blog/2011/08/09/obfusquer-votre-adresse-mail-et-echapper-aux-spam/)
+- [Exploiting CurrentWidget logs on Android](https://blog.quent.in/blog/2011/09/26/exploiter-les-logs-currentwidget-de-votre-android/)
+- [Reactivate data after SIM replacement on Virgin Mobile](https://blog.quent.in/blog/2012/07/11/reactiver-la-data-apres-remplacement-de-votre-carte-sim-virgin-mobile/)
