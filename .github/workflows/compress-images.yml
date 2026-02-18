@@ -6,11 +6,10 @@ on:
       - "**.jpeg"
       - "**.png"
       - "**.webp"
-  workflow_dispatch:
 jobs:
   build:
     # Only run on Pull Requests within the same repository, and not from forks.
-    if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+    if: github.event.pull_request.head.repo.full_name == github.repository
     name: calibreapp/image-actions
     runs-on: ubuntu-latest
     steps:
@@ -20,4 +19,4 @@ jobs:
       - name: Compress Images
         uses: calibreapp/image-actions@main
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
