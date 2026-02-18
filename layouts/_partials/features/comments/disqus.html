@@ -1,27 +1,26 @@
-{{/* Disqus comments - custom override for legacy identifier support */}}
+{{/* Disqus comments - with auto theme support */}}
 
 {{ $id := .id | default "disqus-comments" }}
 {{ $config := .Site.Params.comments.disqus }}
 {{ $page := .Page }}
 
 {{ if $config.shortname }}
-  <div id="{{ $id }}" class="disqus-container">
+  {{/*
+    Wrapper div with explicit background colors that Disqus can parse.
+    Disqus "Auto" mode reads background-color to determine light/dark.
+    oklch() colors are not supported, so we provide hex fallbacks.
+  */}}
+  <div id="{{ $id }}" class="disqus-container disqus-theme-wrapper">
     <div id="disqus_thread"></div>
 
     <script>
       (function() {
         'use strict';
 
-        // Detect if dark mode is active
-        function isDarkMode() {
-          return document.documentElement.classList.contains('dark');
-        }
-
         var disqus_config = function () {
           this.page.url = '{{ $page.Permalink }}';
 
           // Use disqus_identifier from front matter if available (for migrated posts)
-          // Otherwise fall back to RelPermalink
           {{ if $page.Params.disqus_identifier }}
           this.page.identifier = '{{ $page.Params.disqus_identifier }}';
           {{ else if $page.Params.aliases }}
@@ -50,8 +49,19 @@
           }
         }
 
-        // Listen for theme changes and reload Disqus
-        window.addEventListener('themeChanged', reloadDisqus);
+        // Listen for theme changes (Hugo Narrow dispatches this event)
+        document.addEventListener('themeChanged', function(e) {
+          if (document.readyState === 'complete') {
+            reloadDisqus();
+          }
+        });
+
+        // Also listen on window for compatibility
+        window.addEventListener('themeChanged', function(e) {
+          if (document.readyState === 'complete') {
+            reloadDisqus();
+          }
+        });
 
         if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', loadDisqus);
@@ -61,19 +71,33 @@
       })();
     </script>
 
-    <style>
-      /* Force Disqus iframe to use dark background when in dark mode */
-      .dark #disqus_thread {
-        color-scheme: dark;
-      }
-      #disqus_thread {
-        padding: 1rem;
-        border-radius: 0.5rem;
-      }
-    </style>
-
     <noscript>
       Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
     </noscript>
   </div>
+
+  <style>
+    /*
+     * Provide explicit background colors for Disqus "Auto" theme detection.
+     * Disqus cannot parse oklch() colors, so we use hex values.
+     * These must match your theme's actual colors.
+     */
+    .disqus-theme-wrapper {
+      padding: 1rem;
+      border-radius: 0.75rem;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Light mode: white background */
+    .disqus-theme-wrapper {
+      background-color: #ffffff;
+      color: #1a1a2e;
+    }
+
+    /* Dark mode: dark background for Disqus to detect */
+    .dark .disqus-theme-wrapper {
+      background-color: #1a1a2e;
+      color: #e2e8f0;
+    }
+  </style>
 {{ end }}
