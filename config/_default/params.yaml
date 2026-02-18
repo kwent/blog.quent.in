@@ -85,22 +85,12 @@ post:
   license:
     show: false
 
-# Comments - giscus
+# Comments - Disqus
 comments:
   enabled: true
-  system: "giscus"
-  giscus:
-    repo: "kwent/blog.quent.in"
-    repoId: ""
-    category: "Comments"
-    categoryId: ""
-    mapping: "pathname"
-    strict: "0"
-    reactionsEnabled: "1"
-    emitMetadata: "0"
-    inputPosition: "top"
-    theme: "preferred_color_scheme"
-    lang: "en"
+  system: "disqus"
+  disqus:
+    shortname: "quentinrousseauleblog"
 
 # Analytics - configure as needed
 analytics:
