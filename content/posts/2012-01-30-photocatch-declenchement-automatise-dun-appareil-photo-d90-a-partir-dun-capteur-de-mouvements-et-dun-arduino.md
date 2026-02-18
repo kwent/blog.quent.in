@@ -24,7 +24,7 @@ Dans mon dernier post, je parlais de notre réalisation lors du FabLab à savoir
 
 Aujourd'hui, je vais détailler le montage de cette réalisation.
 
-![PhotoCatch](/assets/wp-content/uploads/2012/01/photoCatch-279x300.png)
+![PhotoCatch](/images/posts/photoCatch-279x300.png)
 
 ### Le matériel
 
@@ -41,11 +41,11 @@ Une touche de talent
 
 ### PhotoCatch - Etape par étape
 
-![Principe de PhotoCatch](/assets/wp-content/uploads/2012/01/A2_biss-212x300.jpg)
+![Principe de PhotoCatch](/images/posts/A2_biss-212x300.jpg)
 
 ### Achat de la télécommande
 
-1.  La première étape consiste à acheter une télécommande qui va piloter le déclenchement de l'appareil photo. Celle ci suffit amplement : <a href="http://quent.in/Af9bg0" target="_blank">http://quent.in/Af9bg0</a>
+1.  La première étape consiste à acheter une télécommande qui va piloter le déclenchement de l'appareil photo. Celle ci suffit amplement : <a href="https://quent.in/Af9bg0" target="_blank">https://quent.in/Af9bg0</a>
 2.  Couper délicatement l'extrémité de la télécommande afin de ne pas détériorer les 3 fils qui se cachent sous la gaîne en plastique.
 
 Parmis ces 3 fils, on trouve un fil blanc, jaune et rouge.
@@ -55,15 +55,15 @@ Parmis ces 3 fils, on trouve un fil blanc, jaune et rouge.
 
 ### Schémas de montage
 
-Réalisés sous Fritzing - <http://fritzing.org>
+Réalisés sous Fritzing - <https://fritzing.org>
 
 *   2 optocoupleurs pour contrôler le mécanisme de focus et de shoot (et d'isoler l'appareil photo du reste du circuit) ;
 *   1 capteur ultrasons permettant de calculer la distance d'un obstacle (30° d'ouverture) ;
 *   1 servomoteur permettant au capteur ultrasons de balayer un champ plus large (180°) ;
 *   4 afficheurs 7 segments permettant de compter le nombre de photos prises.
 
-![PhotoCatchV1_schema](/assets/wp-content/uploads/2012/01/PhotoCatchV1_bb-300x287.png)
-![PhotoCatch_wire](/assets/wp-content/uploads/2012/01/PhotoCatchV1_schem-300x168.png)
+![PhotoCatchV1_schema](/images/posts/PhotoCatchV1_bb-300x287.png)
+![PhotoCatch_wire](/images/posts/PhotoCatchV1_schem-300x168.png)
 
 ### Code arduino
 
@@ -88,8 +88,8 @@ Le code est disponible dans son intégralité sur **GitHub** : <a href="https://
 #define DEBUG true
 
 // Librairies utilisées
-// http://arduino.cc/en/Tutorial/Sweep
-// http://arduino.cc/en/Tutorial/Ping
+// https://arduino.cc/en/Tutorial/Sweep
+// https://arduino.cc/en/Tutorial/Ping
 
 //7 Segments
 int rxSegPin =  0;
@@ -284,6 +284,6 @@ void shoot()
 
 ## More...
 
-*   <a href="http://arduino.cc/en/Tutorial/Ping" title="Arduino - Ping" rel="nofollow">Arduino - Ping</a>
-*   <a href="http://arduino.cc/en/Tutorial/Sweep" title="Arduino - Sweep" rel="nofollow">Arduino - Sweep</a>
-*   <a href="http://libptp.sourceforge.net/" title="libptp2 Project Page" rel="nofollow">libptp2 Project Page</a>
+*   <a href="https://arduino.cc/en/Tutorial/Ping" title="Arduino - Ping" rel="nofollow">Arduino - Ping</a>
+*   <a href="https://arduino.cc/en/Tutorial/Sweep" title="Arduino - Sweep" rel="nofollow">Arduino - Sweep</a>
+*   <a href="https://libptp.sourceforge.net/" title="libptp2 Project Page" rel="nofollow">libptp2 Project Page</a>

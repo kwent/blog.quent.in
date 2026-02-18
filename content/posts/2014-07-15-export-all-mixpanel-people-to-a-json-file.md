@@ -91,5 +91,5 @@ Available [here](https://gist.github.com/kwent/4cc0ca8cf0c682bcef4e). Please fee
 - [Mixpanel][1]
 - [Mixpanel Engage API][2]
 
-[1]: http://www.mixpanel.com
+[1]: https://www.mixpanel.com
 [2]: https://mixpanel.com/docs/api-documentation/data-export-api#engage-default

@@ -20,7 +20,7 @@ tags:
 title: Obfusquer votre adresse mail et échapper aux SPAM
 ---
 
-![Spam in mailbox](/assets/wp-content/uploads/2011/08/spam-300x199.jpg)
+![Spam in mailbox](/images/posts/spam-300x199.jpg)
 
 Il nous arrive bien souvent de devoir renseigner notre **@mail** au sein d'une page web.  
 Seulement il est essentiel de prendre des précautions sur la manière de la renseigner face au **SPAM**.  
@@ -119,14 +119,14 @@ Rot13 = {
 
 D'autres solutions existent comme afficher l'@mail **dans une image** mais les robots utilisent des techniques **de reconnaissance optique de caractères** au sein d'une image: l'OCR.
 
-![Email address embedded in an image](/assets/wp-content/uploads/2011/08/mail.png)
+![Email address embedded in an image](/images/posts/mail.png)
 
 ### Tests grandeur nature
 
-Un collège de **<a href="http://techblog.tilllate.com/2008/07/20/ten-methods-to-obfuscate-e-mail-addresses-compared/" target="_blank">techblog</a>** nous invite à regarder** le volume de SPAM reçu en fonction des différentes méthodes d'obsfuscation** après avoir laissé ses @mail dans la nature pendant **1 an et demi**.
+Un collège de **<a href="https://techblog.tilllate.com/2008/07/20/ten-methods-to-obfuscate-e-mail-addresses-compared/" target="_blank">techblog</a>** nous invite à regarder** le volume de SPAM reçu en fonction des différentes méthodes d'obsfuscation** après avoir laissé ses @mail dans la nature pendant **1 an et demi**.
 
 <div style="width: 440px" class="wp-caption aligncenter">
-  <img title="Méthodes d'obfuscation" src="http://techblog.tilllate.com/wp-content/uploads/2008/07/obfuscation_methods.png" alt="" width="430" height="317" /><p class="wp-caption-text">
+  <img title="Méthodes d'obfuscation" src="https://techblog.tilllate.com/images/posts/obfuscation_methods.png" alt="" width="430" height="317" /><p class="wp-caption-text">
     Volume de SPAM reçu en fonction des différentes méthodes d'obfuscation
   </p>
 </div>
@@ -135,9 +135,9 @@ Les résultats parlent d'eux même, **<span style="color: #ff0000;">ne renseigne
 
 ## More...
 
-*   <a href="http://fr.wikipedia.org/wiki/ROT13" title="ROT13 - Wikipédia" rel="nofollow">ROT13 - Wikipédia</a>
-*   <a href="http://fr.wikipedia.org/wiki/Spam" title="Spam - Wikipédia" rel="nofollow">Spam - Wikipédia</a>
-*   <a href="http://hivelogic.com/enkoder/" title="Enkoder" rel="nofollow">Enkoder</a>
-*   <a href="http://perishablepress.com/press/2010/08/01/best-method-for-email-obfuscation/" title="Best Method for Email Obfuscation? • Perishable Press" rel="nofollow">Best Method for Email Obfuscation? • Perishable Press</a>
-*   <a href="http://scott.yang.id.au/2003/06/obfuscate-email-address-with-javascript-rot13/" title="Obfuscate Email Address With Javascript Rot13 | SYP" rel="nofollow">Obfuscate Email Address With Javascript Rot13 | SYP</a>
-*   <a href="http://www.mailtoencoder.com/" title="Encode your email address with javascript to prevent spam ..." rel="nofollow">Encode your email address with javascript to prevent spam ...</a>
+*   <a href="https://fr.wikipedia.org/wiki/ROT13" title="ROT13 - Wikipédia" rel="nofollow">ROT13 - Wikipédia</a>
+*   <a href="https://fr.wikipedia.org/wiki/Spam" title="Spam - Wikipédia" rel="nofollow">Spam - Wikipédia</a>
+*   <a href="https://hivelogic.com/enkoder/" title="Enkoder" rel="nofollow">Enkoder</a>
+*   <a href="https://perishablepress.com/press/2010/08/01/best-method-for-email-obfuscation/" title="Best Method for Email Obfuscation? • Perishable Press" rel="nofollow">Best Method for Email Obfuscation? • Perishable Press</a>
+*   <a href="https://scott.yang.id.au/2003/06/obfuscate-email-address-with-javascript-rot13/" title="Obfuscate Email Address With Javascript Rot13 | SYP" rel="nofollow">Obfuscate Email Address With Javascript Rot13 | SYP</a>
+*   <a href="https://www.mailtoencoder.com/" title="Encode your email address with javascript to prevent spam ..." rel="nofollow">Encode your email address with javascript to prevent spam ...</a>

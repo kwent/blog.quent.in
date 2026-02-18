@@ -91,7 +91,7 @@ Available [here][4]. Please feel free to improve it !
 - [Net::SFTP][2]
 - [man SFTP][3]
 
-[1]: http://ruby-doc.org/stdlib-2.2.0/libdoc/pty/rdoc/PTY.html
+[1]: https://ruby-doc.org/stdlib-2.2.0/libdoc/pty/rdoc/PTY.html
 [2]: https://github.com/net-ssh/net-sftp
-[3]: http://linux.die.net/man/1/sftp
+[3]: https://linux.die.net/man/1/sftp
 [4]: https://gist.github.com/kwent/e2c34c2dfd01a194a49a

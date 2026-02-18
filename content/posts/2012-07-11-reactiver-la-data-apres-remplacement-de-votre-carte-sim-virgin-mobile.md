@@ -15,7 +15,7 @@ tags:
 title: Réactiver la DATA après remplacement de votre carte SIM Virgin mobile
 ---
 
-![Virgin mobile Logo](/assets/wp-content/uploads/2012/07/virgin-mobile-logo-300x158.jpg)
+![Virgin mobile Logo](/images/posts/virgin-mobile-logo-300x158.jpg)
 
 Pourquoi un changement ?
 
@@ -50,4 +50,4 @@ Le profil est enregistré .
 
 ## More...
 
-*   <a href="http://assistance-mobile.virginmobile.fr/questions/248652-nouvelle-sim-pas-de-data" title="Nouvelle SIM - Pas de data - Répondue" rel="nofollow">Nouvelle SIM - Pas de data - Répondue</a>
+*   <a href="https://assistance-mobile.virginmobile.fr/questions/248652-nouvelle-sim-pas-de-data" title="Nouvelle SIM - Pas de data - Répondue" rel="nofollow">Nouvelle SIM - Pas de data - Répondue</a>

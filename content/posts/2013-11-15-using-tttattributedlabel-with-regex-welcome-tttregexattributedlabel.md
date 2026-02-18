@@ -25,7 +25,7 @@ If you are looking a easy library to use to apply Regex with **[TTTAttributedLa
 
 ## Example
 
-![Screenshot](/assets/wp-content/uploads/2013/11/screenshot.jpg)
+![Screenshot](/images/posts/screenshot.jpg)
 
 ## Usage
 
@@ -47,5 +47,5 @@ Enjoy it !
 *   <a href="https://github.com/mattt/TTTAttributedLabel?source=c" title="mattt/TTTAttributedLabel · GitHub" rel="nofollow">mattt/TTTAttributedLabel · GitHub</a>
 
  [1]: https://github.com/mattt/TTTAttributedLabel
- [2]: http://github.com/mattt
+ [2]: https://github.com/mattt
  [3]: https://github.com/kwent/TTTRegexAttributedLabel

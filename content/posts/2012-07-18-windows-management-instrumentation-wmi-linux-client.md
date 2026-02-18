@@ -26,7 +26,7 @@ Following parts were tested on a** GNU/Linux Red Hat el6 x86_64**.
 
 ### Installation
 
-You could find RPM called **« wmic »** for (**WMI** **C**lient) at <a href="http://rpmfind.net/linux/rpm2html/search.php?query=wmic&submit=Search" target="_blank">http://rpmfind.net/linux/rpm2html/search.php?query=wmic&submit=Search</a>
+You could find RPM called **« wmic »** for (**WMI** **C**lient) at <a href="https://rpmfind.net/linux/rpm2html/search.php?query=wmic&submit=Search" target="_blank">https://rpmfind.net/linux/rpm2html/search.php?query=wmic&submit=Search</a>
 
 ```bash
 wget ftp://rpmfind.net/linux/sourceforge/p/pa/pandora/Tools%20and%20dependencies%20(All%20versions)/RPM%20SUSE/wmic-4.0.0tp4-.x86_64.rpm

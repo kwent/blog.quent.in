@@ -18,16 +18,16 @@ tags:
 title: Mkvmerge | Remuxer une saison à la volée
 ---
 
-Heureux possesseur d'un **NAS** <a href="http://www.synology.com/us/products/DS211j/index.php" target="_blank">Synology DS211j</a>, j'ai parfois besoin de remuxer **des saisons complètes de séries** (pour intégrer des sous titres la plupart du temps), et tant qu'à faire autant les remuxer **en local** sur le NAS.
+Heureux possesseur d'un **NAS** <a href="https://www.synology.com/us/products/DS211j/index.php" target="_blank">Synology DS211j</a>, j'ai parfois besoin de remuxer **des saisons complètes de séries** (pour intégrer des sous titres la plupart du temps), et tant qu'à faire autant les remuxer **en local** sur le NAS.
 
-Pour cela j'utilise le binaire **mkvmerge** contenu dans le package <a href="http://www.bunkus.org/videotools/mkvtoolnix/" target="_blank"><strong>mkvtoolnix</strong></a>.
+Pour cela j'utilise le binaire **mkvmerge** contenu dans le package <a href="https://www.bunkus.org/videotools/mkvtoolnix/" target="_blank"><strong>mkvtoolnix</strong></a>.
 
 <span style="color: #ff6600;"><strong>1ère étape:</strong></span> Récupérer le paquet mkvtoolnix et l'installer.
 
-**Note:** Je ne récupère pas mkvtoolnix via le dépôt <a href="http://ipkg.nslu2-linux.org/feeds/optware/cs05q3armel/cross/unstable/" target="_blank">http://ipkg.nslu2-linux.org/feeds/optware/cs05q3armel/cross/unstable/</a> car celui-ci n'a pas fonctionné pour moi (manque de dépendances). **Voir <a href="http://forum.synology.com/enu/viewtopic.php?f=40&t=36845" target="_blank">ici</a>**.
+**Note:** Je ne récupère pas mkvtoolnix via le dépôt <a href="https://ipkg.nslu2-linux.org/feeds/optware/cs05q3armel/cross/unstable/" target="_blank">https://ipkg.nslu2-linux.org/feeds/optware/cs05q3armel/cross/unstable/</a> car celui-ci n'a pas fonctionné pour moi (manque de dépendances). **Voir <a href="https://forum.synology.com/enu/viewtopic.php?f=40&t=36845" target="_blank">ici</a>**.
 
 ```bash
-wget mkvtoolnix http://www.rzuser.uni-heidelberg.de/~tkolb3/mkvtoolnix_4.2.0-1_arm.ipk
+wget mkvtoolnix https://www.rzuser.uni-heidelberg.de/~tkolb3/mkvtoolnix_4.2.0-1_arm.ipk
 ipkg install mkvtoolnix_4.2.0-1_arm.ipk
 ```
 
@@ -109,6 +109,6 @@ sh monscript 1 23 “/Series/MaSerie/Saison X” “/Series/MaSerie/Saison X/02 
 
 ## More...
 
-*   <a href="http://www.bunkus.org/videotools/mkvtoolnix/" title="mkvtoolnix -- Matroska tools for Linux/Unix and Windows" rel="nofollow">mkvtoolnix -- Matroska tools for Linux/Unix and Windows</a>
-*   <a href="http://www.bunkus.org/videotools/mkvtoolnix/doc/mkvmerge.html" title="mkvmerge" rel="nofollow">mkvmerge</a>
-*   <a href="http://www.synology.com/us/products/DS211j/index.php" title="Synology Network Attached Storage - Products :: DiskStation ..." rel="nofollow">Synology Network Attached Storage - Products :: DiskStation ...</a>
+*   <a href="https://www.bunkus.org/videotools/mkvtoolnix/" title="mkvtoolnix -- Matroska tools for Linux/Unix and Windows" rel="nofollow">mkvtoolnix -- Matroska tools for Linux/Unix and Windows</a>
+*   <a href="https://www.bunkus.org/videotools/mkvtoolnix/doc/mkvmerge.html" title="mkvmerge" rel="nofollow">mkvmerge</a>
+*   <a href="https://www.synology.com/us/products/DS211j/index.php" title="Synology Network Attached Storage - Products :: DiskStation ..." rel="nofollow">Synology Network Attached Storage - Products :: DiskStation ...</a>

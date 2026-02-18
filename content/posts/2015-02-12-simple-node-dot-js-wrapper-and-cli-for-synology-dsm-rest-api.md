@@ -146,7 +146,7 @@ $ syno dl listTasks --payload '{"limit":1}' --pretty
 ### Add Task HTTP file via Download Station
 
 ```bash
-$ syno dl createTask --payload '{"uri":"http://download.thinkbroadband.com/5MB.zip"}'
+$ syno dl createTask --payload '{"uri":"https://download.thinkbroadband.com/5MB.zip"}'
 ```
 
 ### Add Task Torrent magnet link via Download Station

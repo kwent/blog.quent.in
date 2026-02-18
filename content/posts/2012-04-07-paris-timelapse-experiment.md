@@ -16,7 +16,7 @@ tags:
 title: Paris Timelapse Experiment
 ---
 
-![Paris Timelapse](/assets/wp-content/uploads/2012/04/IMG_20120403_215453-300x179.jpg)
+![Paris Timelapse](/images/posts/IMG_20120403_215453-300x179.jpg)
 
 My first timelapse try with a amazing view from paris.
 
@@ -49,4 +49,4 @@ Mathieu Lacrouts for music choice. [mathieulacrouts.fr][1]
 
 {{< vimeo 39858048 >}}
 
-[1]: http://www.mathieulacrouts.fr
+[1]: https://www.mathieulacrouts.fr

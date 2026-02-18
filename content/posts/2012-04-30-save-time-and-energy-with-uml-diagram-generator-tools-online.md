@@ -54,7 +54,7 @@ View->Browser : HTML
 
 **Activity diagram image generated :**  
 
-![show Action RoR](/assets/wp-content/uploads/2012/04/index.png)
+![show Action RoR](/images/posts/index.png)
 
 **Example with Web Sequence Diagram Tool  **: ****
 
@@ -71,7 +71,7 @@ View->Browser : HTML
 
 **Use case diagram image generated :**  
 
-![Use case generated with yUML](/assets/wp-content/uploads/2012/04/use-cases.png)
+![Use case generated with yUML](/images/posts/use-cases.png)
 
 #### 2. Integration with other services
 
@@ -82,12 +82,12 @@ They allow to integrate images in your website with just a **GET** or **POST** r
 **Example with yUML :**
 
 ```plain
-http://yuml.me/diagram/class/[Customer]->[Billing Address]
+https://yuml.me/diagram/class/[Customer]->[Billing Address]
 ```
 
 **Will generate :**
 
-![Yuml](http://yuml.me/diagram/class/[Customer]->[Billing%20Address]) 
+![Yuml](https://yuml.me/diagram/class/[Customer]->[Billing%20Address]) 
 
 ####  3. Universal
 
@@ -107,7 +107,7 @@ def getSequenceDiagram( text, outputFile, style = ‘default’ ):
 
     url = urllib.urlencode(request)
 
-    f = urllib.urlopen(“http://www.websequencediagrams.com/”, url)
+    f = urllib.urlopen(“https://www.websequencediagrams.com/”, url)
     line = f.readline()
     f.close()
 
@@ -118,7 +118,7 @@ def getSequenceDiagram( text, outputFile, style = ‘default’ ):
         print “Invalid response from server.”
         return False
 
-    urllib.urlretrieve(“http://www.websequencediagrams.com/” + m.group(),
+    urllib.urlretrieve(“https://www.websequencediagrams.com/” + m.group(),
             outputFile )
     return True
 
@@ -141,9 +141,9 @@ getSequenceDiagram( text, pngFile, style )
 
 ## More...
 
-*   <a href="http://creately.com/Draw-UML-and-Class-Diagrams-Online" title="Draw UML diagrams Online | Online UML Tool | UML Diagram Creator | Creately" rel="nofollow">Draw UML diagrams Online | Online UML Tool | UML Diagram Creator | Creately</a>
-*   <a href="http://kangamodeling.org/" title="Kanga Modelling - Create Sequence Diagrams Using Markup Language">Kanga Modelling - Create Sequence Diagrams Using Markup Language</a>
-*   <a href="http://www.gliffy.com/uses/uml-software/" title="UML Software - Free online UML editor - no download required" rel="nofollow">UML Software - Free online UML editor - no download required</a>
-*   <a href="http://www.lucidchart.com/" title="Online Diagram & Flowchart Software | Lucidchart" rel="nofollow">Online Diagram & Flowchart Software | Lucidchart</a>
-*   <a href="http://www.websequencediagrams.com/" title="No Title" rel="nofollow">www.websequencediagrams.com</a>
-*   <a href="http://yuml.me/" title="Create UML diagrams online in seconds, no special tools needed." rel="nofollow">Create UML diagrams online in seconds, no special tools needed.</a>
+*   <a href="https://creately.com/Draw-UML-and-Class-Diagrams-Online" title="Draw UML diagrams Online | Online UML Tool | UML Diagram Creator | Creately" rel="nofollow">Draw UML diagrams Online | Online UML Tool | UML Diagram Creator | Creately</a>
+*   <a href="https://kangamodeling.org/" title="Kanga Modelling - Create Sequence Diagrams Using Markup Language">Kanga Modelling - Create Sequence Diagrams Using Markup Language</a>
+*   <a href="https://www.gliffy.com/uses/uml-software/" title="UML Software - Free online UML editor - no download required" rel="nofollow">UML Software - Free online UML editor - no download required</a>
+*   <a href="https://www.lucidchart.com/" title="Online Diagram & Flowchart Software | Lucidchart" rel="nofollow">Online Diagram & Flowchart Software | Lucidchart</a>
+*   <a href="https://www.websequencediagrams.com/" title="No Title" rel="nofollow">www.websequencediagrams.com</a>
+*   <a href="https://yuml.me/" title="Create UML diagrams online in seconds, no special tools needed." rel="nofollow">Create UML diagrams online in seconds, no special tools needed.</a>

@@ -20,7 +20,7 @@ title: Backup Neo4j Database to AWS S3
 ### Update (2014-07-28)
 
 I got some issues using `tar` with big folder size. I fixed it by using
-using [7zip](http://www.7-zip.org/download.html) using [LZMA2](http://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Markov_chain_algorithm) compression algorithm instead [LZO][3].
+using [7zip](https://www.7-zip.org/download.html) using [LZMA2](https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Markov_chain_algorithm) compression algorithm instead [LZO][3].
 
 New **Gist** available [here](https://gist.github.com/kwent/82f544dd0488619fd596). Please feel free to improve it !
 
@@ -72,10 +72,10 @@ Available [here](https://gist.github.com/kwent/82f544dd0488619fd596/d4a87ed4f2b1
 - [AWS Command Line Interface][2]
 - [Lzop file compressor][3]
 
-[1]: http://docs.neo4j.org/chunked/stable/re04.html
-[2]: http://aws.amazon.com/cli
-[3]: http://www.lzop.org
+[1]: https://docs.neo4j.org/chunked/stable/re04.html
+[2]: https://aws.amazon.com/cli
+[3]: https://www.lzop.org
 [4]: https://aws.amazon.com/about-aws/whats-new/2010/11/10/Amazon-S3-Introducing-Multipart-Upload
-[5]: http://aws.amazon.com/s3
-[6]: http://www.neo4j.org
-[7]: http://unixhelp.ed.ac.uk/CGI/man-cgi?tar
+[5]: https://aws.amazon.com/s3
+[6]: https://www.neo4j.org
+[7]: https://unixhelp.ed.ac.uk/CGI/man-cgi?tar

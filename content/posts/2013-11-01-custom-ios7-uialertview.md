@@ -24,7 +24,7 @@ I forked « ios-custom-alertview » from [@wimagguc][1] and added a different d
 
 You can just [grab the open source code from Github now][2].
 
-![Ios Custom AlertView](/assets/wp-content/uploads/2013/11/screen.png)
+![Ios Custom AlertView](/images/posts/screen.png)
 
 Implementation of this alert view is :
 
@@ -42,7 +42,7 @@ NSLog(@“Block: Button at position %d is clicked on alertView %d.”, buttonInd
 
 ## More...
 
-*   <a href="http://www.wimagguc.com/2013/10/custom-ios7-uialertview/" title="Custom iOS7 UIAlertView" rel="nofollow">Custom iOS7 UIAlertView</a>
+*   <a href="https://www.wimagguc.com/2013/10/custom-ios7-uialertview/" title="Custom iOS7 UIAlertView" rel="nofollow">Custom iOS7 UIAlertView</a>
 *   <a href="https://github.com/kwent/ios-custom-alertview" title="kwent/ios-custom-alertview · GitHub" rel="nofollow">kwent/ios-custom-alertview · GitHub</a>
 *   <a href="https://github.com/wimagguc" title="wimagguc (Richard Dancsi) · GitHub" rel="nofollow">wimagguc (Richard Dancsi) · GitHub</a>
 

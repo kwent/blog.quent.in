@@ -56,8 +56,8 @@ The current Theme is called [**OctoPanel**][3].
 - [Wordpress to Jekyll Exporter][4]
 - [Disqus Website][5]
 
-[1]: http://octopress.org
-[2]: http://jekyllrb.com
+[1]: https://octopress.org
+[2]: https://jekyllrb.com
 [3]: https://github.com/ConnorAtherton/OctoPanel
 [4]: https://github.com/benbalter/wordpress-to-jekyll-exporter
-[5]: http://disqus.com
+[5]: https://disqus.com

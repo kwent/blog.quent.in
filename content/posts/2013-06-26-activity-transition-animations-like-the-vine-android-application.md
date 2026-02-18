@@ -22,9 +22,9 @@ To clarify things, some screenshots of this animation.
 
 ### Screenshots
 
-![Screenshot1](/assets/wp-content/uploads/2013/06/Screenshot_2013-06-26-14-06-54-copy-180x300.png)
-![Screenshot2](/assets/wp-content/uploads/2013/06/Screenshot_2013-06-26-14-00-16-coy-180x300.png)
-![Screenshot3](/assets/wp-content/uploads/2013/06/Screenshot_2013-06-26-14-00-16-copy-180x300.png)
+![Screenshot1](/images/posts/Screenshot_2013-06-26-14-06-54-copy-180x300.png)
+![Screenshot2](/images/posts/Screenshot_2013-06-26-14-00-16-coy-180x300.png)
+![Screenshot3](/images/posts/Screenshot_2013-06-26-14-00-16-copy-180x300.png)
 
 ### Animations XML
 
@@ -37,7 +37,7 @@ To clarify things, some screenshots of this animation.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
  
-<set xmlns:android="http://schemas.android.com/apk/res/android">
+<set xmlns:android="https://schemas.android.com/apk/res/android">
  
     <translate android:fromXDelta="100%"
                android:toXDelta="0%"
@@ -53,7 +53,7 @@ To clarify things, some screenshots of this animation.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
  
-<set xmlns:android="http://schemas.android.com/apk/res/android">
+<set xmlns:android="https://schemas.android.com/apk/res/android">
  
     <scale android:fromXScale="100%p"
           android:toXScale="80%p"
@@ -79,7 +79,7 @@ To clarify things, some screenshots of this animation.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
  
-<set xmlns:android="http://schemas.android.com/apk/res/android">
+<set xmlns:android="https://schemas.android.com/apk/res/android">
  
     <scale android:fromXScale="80%p"
           android:toXScale="100%p"
@@ -103,7 +103,7 @@ To clarify things, some screenshots of this animation.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
  
-<set xmlns:android="http://schemas.android.com/apk/res/android">
+<set xmlns:android="https://schemas.android.com/apk/res/android">
  
     <translate android:fromXDelta="0%"
                android:toXDelta="100%"
@@ -139,7 +139,7 @@ public class AnimatedActivity extends Activity
 }
 ```
 
-*    Cf. <http://developer.android.com/reference/android/app/Activity.html#overridePendingTransition%28int,%20int%29>
+*    Cf. <https://developer.android.com/reference/android/app/Activity.html#overridePendingTransition%28int,%20int%29>
 
 ### GIST Available
 

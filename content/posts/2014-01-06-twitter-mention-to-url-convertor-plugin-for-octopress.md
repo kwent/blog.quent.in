@@ -28,7 +28,7 @@ So i developped this little **plugin** for **Octopress** who is doing the stuff 
 
 ```ruby
 # Title: Twitter mention to url convertor plugin for Octopress
-# Author: Quentin Rousseau http://quentinrousseau.com
+# Author: Quentin Rousseau https://quentinrousseau.com
 # Description: Convert all twitter mentions with an url.
 #
 # Syntax {% twitter_mention_convertor "You string with @mention1 @mention2" %}

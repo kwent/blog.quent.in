@@ -16,11 +16,11 @@ tags:
 title: Thumbnail me 3.0 Released
 ---
 
-![Thumbnail me 3.0](/assets/wp-content/uploads/2012/02/about1.png)
+![Thumbnail me 3.0](/images/posts/about1.png)
 
-For those who do not know Thumbnail me, please follow this <strong><a href="http://blog.quent.in/index.php/2011/08/thumbnail-me-vignettez-a-linfini/" target="_blank">link</a></strong>.
+For those who do not know Thumbnail me, please follow this <strong><a href="https://blog.quent.in/index.php/2011/08/thumbnail-me-vignettez-a-linfini/" target="_blank">link</a></strong>.
 
-After more than** 9 months of development** between Beta version and Release version, **Thumbnail me 3.0** is now available at <a href="http://www.thumbnailme.com" target="_blank">www.thumbnailme.com</a>.
+After more than** 9 months of development** between Beta version and Release version, **Thumbnail me 3.0** is now available at <a href="https://www.thumbnailme.com" target="_blank">www.thumbnailme.com</a>.
 
 Major updates are :
 
@@ -71,15 +71,15 @@ RUSSIAN
 ### Screenshots
 
 
-[![Thumbnail me 3.0](/assets/wp-content/uploads/2012/02/about1.png)](http://www.thumbnailme.com)
+[![Thumbnail me 3.0](/images/posts/about1.png)](https://www.thumbnailme.com)
 
-![Choose your custom font](/assets/wp-content/uploads/2012/02/01-FontsPicker.jpg)
-![Customize your thumbnails colors](/assets/wp-content/uploads/2012/02/02-ColorPicker.jpg)
-![A timeline can exclude a portion of the selected media](/assets/wp-content/uploads/2012/02/03-Timeline.jpg)
-![Add your own fonts easily](/assets/wp-content/uploads/2012/02/04-FontsSettings.jpg)
-![Thumbnail me is available in 12 different languages](/assets/wp-content/uploads/2012/02/05-LanguagesSettings.jpg)
-![Upload your thumbnails directly to ImageShack](/assets/wp-content/uploads/2012/02/06-Upload.jpg)
-![Help Widget](/assets/wp-content/uploads/2012/02/08-Help.jpg)
+![Choose your custom font](/images/posts/01-FontsPicker.jpg)
+![Customize your thumbnails colors](/images/posts/02-ColorPicker.jpg)
+![A timeline can exclude a portion of the selected media](/images/posts/03-Timeline.jpg)
+![Add your own fonts easily](/images/posts/04-FontsSettings.jpg)
+![Thumbnail me is available in 12 different languages](/images/posts/05-LanguagesSettings.jpg)
+![Upload your thumbnails directly to ImageShack](/images/posts/06-Upload.jpg)
+![Help Widget](/images/posts/08-Help.jpg)
 
 ### Statistics
 
@@ -98,7 +98,7 @@ Too much hours of development
 
 **If you like my work about Thumbnail me, please make a donation.**
 
-[<img src="http://images.sourceforge.net/images/project-support.jpg" alt="Support This Project" width="88" height="32" border="0" />][1] 
+[<img src="https://images.sourceforge.net/images/project-support.jpg" alt="Support This Project" width="88" height="32" border="0" />][1] 
 
 ### Follow us !
 
@@ -110,6 +110,6 @@ Too much hours of development
 
 ## More...
 
-*   <a href="http://www.thumbnailme.com" title="Thumbnail me - Thumbnail to infinity" rel="nofollow">Thumbnail me - Thumbnail to infinity</a>
+*   <a href="https://www.thumbnailme.com" title="Thumbnail me - Thumbnail to infinity" rel="nofollow">Thumbnail me - Thumbnail to infinity</a>
 
- [1]: http://www.thumbnailme.com
+ [1]: https://www.thumbnailme.com

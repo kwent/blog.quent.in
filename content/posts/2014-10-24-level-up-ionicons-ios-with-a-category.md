@@ -71,8 +71,8 @@ Available [here][9]. Please feel free to improve it !
 - [Ionic Framework][2]
 - [ionicons-iOS][4]
 
-[1]: http://ionicons.com
-[2]: http://ionicframework.com
+[1]: https://ionicons.com
+[2]: https://ionicframework.com
 [3]: https://github.com/sweetmandm
 [4]: https://github.com/sweetmandm/ionicons-iOS
 [5]: https://developer.apple.com/library/ios/documentation/uikit/Reference/UIImage_Class/index.html

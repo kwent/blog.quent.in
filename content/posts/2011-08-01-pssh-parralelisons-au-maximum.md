@@ -18,7 +18,7 @@ title: Parallel-SSH | Parralélisez au maximum!
 
 Je me suis récemment trouvé dans une situation dans laquelle je devais exécuter des commandes redondantes sur plusieurs serveurs (environnement clusterisé par exemple) et comme tout grand informaticien, je n'aime pas passer sur 50 serveurs pour répéter une tâche. Je me suis donc lancé à la recherche d'un utilitaire me permettant d'arriver à mes fins.
 
-J'ai trouvé après quelques recherches **PSSH **(pour <cite><strong>p</strong>arallel-<strong>ssh</strong>)</cite> disponible à l'adresse suivante: <a href="http://www.theether.org/pssh/" target="_blank">http://www.theether.org/pssh/</a>
+J'ai trouvé après quelques recherches **PSSH **(pour <cite><strong>p</strong>arallel-<strong>ssh</strong>)</cite> disponible à l'adresse suivante: <a href="https://www.theether.org/pssh/" target="_blank">https://www.theether.org/pssh/</a>
 
 Le principe est simple:
 
@@ -54,5 +54,5 @@ Bien entendu, **<span style="color: #ff0000;">utilisez cet outil avec grande pr�
 
 ## More...
 
-*   <a href="http://www.linux.com/archive/feature/151340" title="Linux.com :: Parallel SSH execution and a single shell to ..." rel="nofollow">Linux.com :: Parallel SSH execution and a single shell to ...</a>
-*   <a href="http://www.theether.org/pssh/docs/0.2.3/pssh-HOWTO.html" title="pssh HOWTO" rel="nofollow">pssh HOWTO</a>
+*   <a href="https://www.linux.com/archive/feature/151340" title="Linux.com :: Parallel SSH execution and a single shell to ..." rel="nofollow">Linux.com :: Parallel SSH execution and a single shell to ...</a>
+*   <a href="https://www.theether.org/pssh/docs/0.2.3/pssh-HOWTO.html" title="pssh HOWTO" rel="nofollow">pssh HOWTO</a>

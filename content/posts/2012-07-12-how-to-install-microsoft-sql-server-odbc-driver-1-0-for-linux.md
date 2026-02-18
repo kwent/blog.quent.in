@@ -25,7 +25,7 @@ This manipulation was tested on **Linux RedHat EL 5/6 x86_64**
 
 ### 1 | Download sqlncli for Linux
 
-Download sqlncli on the official Microsoft website : <http://www.microsoft.com/en-us/download/details.aspx?id=28160>
+Download sqlncli on the official Microsoft website : <https://www.microsoft.com/en-us/download/details.aspx?id=28160>
 
 ### 2 | Unzip and download unixODBC-2.3.0
 
@@ -113,5 +113,5 @@ ldd `which sqlcmd`
 
 ## More...
 
-*   <a href="http://www.microsoft.com/en-us/download/details.aspx?id=28160" title="No Title" rel="nofollow">Microsoft Download Center</a>
-*   <a href="http://www.unixodbc.org/" title="unixODBC" rel="nofollow">unixODBC</a>
+*   <a href="https://www.microsoft.com/en-us/download/details.aspx?id=28160" title="No Title" rel="nofollow">Microsoft Download Center</a>
+*   <a href="https://www.unixodbc.org/" title="unixODBC" rel="nofollow">unixODBC</a>
