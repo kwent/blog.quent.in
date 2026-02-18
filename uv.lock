@@ -31,6 +31,7 @@ dependencies = [
     { name = "google-genai" },
     { name = "pillow" },
     { name = "python-frontmatter" },
+    { name = "requests" },
 ]
 
 [package.metadata]
@@ -38,6 +39,7 @@ requires-dist = [
     { name = "google-genai" },
     { name = "pillow" },
     { name = "python-frontmatter" },
+    { name = "requests" },
 ]
 
 [[package]]

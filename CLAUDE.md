@@ -47,6 +47,18 @@ uv run scripts/generate_covers.py --post "slug-name"
 
 # Backfill with limit
 uv run scripts/generate_covers.py --limit 5
+
+# Check for broken links (internal + external)
+uv run scripts/check_links.py
+
+# Check only internal links
+uv run scripts/check_links.py --internal-only
+
+# Check only external links
+uv run scripts/check_links.py --external-only
+
+# Check a specific post
+uv run scripts/check_links.py --post "slug-name"
 ```
 
 ## Architecture
@@ -84,3 +96,4 @@ Scripts use the Gemini API to generate cover images. Requires `GEMINI_API_KEY` e
 
 - `scripts/new_post.py` - Create new post with auto-generated cover
 - `scripts/generate_covers.py` - Backfill covers for existing posts
+- `scripts/check_links.py` - Detect broken internal and external links
