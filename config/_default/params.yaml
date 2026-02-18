@@ -85,9 +85,9 @@ post:
   license:
     show: false
 
-# Comments - Disqus
+# Comments - Disqus (disabled for now, code preserved for future use)
 comments:
-  enabled: true
+  enabled: false
   system: "disqus"
   disqus:
     shortname: "quentinrousseauleblog"

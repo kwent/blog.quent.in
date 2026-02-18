@@ -78,26 +78,45 @@
 
   <style>
     /*
-     * Provide explicit background colors for Disqus "Auto" theme detection.
-     * Disqus cannot parse oklch() colors, so we use hex values.
-     * These must match your theme's actual colors.
+     * Disqus wrapper styled to match Hugo Narrow Dracula theme.
+     * Uses hex colors for Disqus "Auto" theme detection compatibility.
      */
     .disqus-theme-wrapper {
-      padding: 1rem;
-      border-radius: 0.75rem;
-      transition: background-color 0.3s ease;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+      border: 1px solid;
     }
 
-    /* Light mode: white background */
+    /* Light mode: Dracula light palette */
     .disqus-theme-wrapper {
-      background-color: #ffffff;
-      color: #1a1a2e;
+      background-color: #f8f8f2;
+      color: #282a36;
+      border-color: #d6d6d6;
     }
 
-    /* Dark mode: dark background for Disqus to detect */
+    /* Dark mode: Dracula dark palette */
     .dark .disqus-theme-wrapper {
-      background-color: #1a1a2e;
-      color: #e2e8f0;
+      background-color: #282a36;
+      color: #f8f8f2;
+      border-color: #44475a;
+    }
+
+    /* Style the Disqus iframe container */
+    #disqus_thread {
+      min-height: 200px;
+    }
+
+    /* Add subtle shadow in dark mode */
+    .dark .disqus-theme-wrapper {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3),
+                  0 2px 4px -2px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Light mode shadow */
+    .disqus-theme-wrapper {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                  0 2px 4px -2px rgba(0, 0, 0, 0.05);
     }
   </style>
 {{ end }}
