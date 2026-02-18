@@ -4,6 +4,11 @@
   <style>{{ $css.Content | safeCSS }}</style>
 {{ end }}
 
+{{/* Markdown alternate link for AI/LLM consumption */}}
+{{ with .OutputFormats.Get "Markdown" }}
+<link href="{{ .Permalink }}" rel="alternate" type="text/markdown" title="{{ $.Title }}" />
+{{ end }}
+
 {{/* JSON-LD Structured Data */}}
 {{ if .IsPage }}
 <script type="application/ld+json">
