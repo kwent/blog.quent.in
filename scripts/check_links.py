@@ -173,8 +173,14 @@ def main():
         else:
             external_links.append(link)
 
+    # Detect insecure http:// links
+    insecure = [link for link in external_links if link["url"].startswith("http://")]
+
     n_int, n_ext = len(internal_links), len(external_links)
-    print(f"Found {n_int} internal + {n_ext} external links ({skipped} skipped)\n")
+    print(f"Found {n_int} internal + {n_ext} external links ({skipped} skipped)")
+    if insecure:
+        print(f"  Warning: {len(insecure)} links use http:// instead of https://")
+    print()
 
     broken = []
 
@@ -216,14 +222,22 @@ def main():
             print(f"             {b['url']}{status_str}")
             print()
 
+    # Report insecure links
+    if insecure:
+        print(f"\nFound {len(insecure)} insecure (http://) links:\n")
+        for link in sorted(insecure, key=lambda x: x["source"]):
+            print(f"  {link['source']}")
+            print(f"    {link['url']}")
+            print()
+
     print(f"{'=' * 60}")
     total_checked = (len(internal_links) if not args.external_only else 0) + (
         len(external_links) if not args.internal_only else 0
     )
     ok = total_checked - len(broken)
-    print(f"Total checked: {total_checked} | Broken: {len(broken)} | OK: {ok}")
+    print(f"Total: {total_checked} | Broken: {len(broken)} | Insecure: {len(insecure)} | OK: {ok}")
 
-    sys.exit(1 if broken else 0)
+    sys.exit(1 if broken or insecure else 0)
 
 
 if __name__ == "__main__":
