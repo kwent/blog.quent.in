@@ -21,7 +21,8 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from scripts.generate_covers import STYLE_DIRECTIVE, SUMMARIZER_PROMPT
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from generate_covers import STYLE_DIRECTIVE, SUMMARIZER_PROMPT
 
 BLOG_ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = BLOG_ROOT / "content" / "posts"
