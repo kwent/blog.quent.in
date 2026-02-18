@@ -34,9 +34,11 @@ STATIC_IMAGES_DIR = BLOG_ROOT / "static" / "images" / "covers"
 STYLE_DIRECTIVE = (
     "Create the image as a bold, eye-catching illustration in the style of a YouTube thumbnail — "
     "vibrant, high-contrast, and impossible to scroll past. "
-    "Use rich saturated colors with strong complementary pairings: electric blues with hot oranges, "
-    "deep purples with bright cyans, vivid teals with warm magentas. "
-    "The background should be a dramatic gradient or radial glow with subtle light rays or bokeh effects "
+    "Use rich saturated colors with strong complementary pairings: "
+    "electric blues with hot oranges, deep purples with bright cyans, "
+    "vivid teals with warm magentas. "
+    "The background should be a dramatic gradient or radial glow "
+    "with subtle light rays or bokeh effects "
     "that create depth and energy. "
     "Place a large, bold central icon or visual metaphor that fills most of the frame — "
     "make it pop with a slight glow, drop shadow, or bright outline to give it punch. "
@@ -57,8 +59,8 @@ SUMMARIZER_PROMPT = (
     "its shape, and any small supporting elements around it. "
     "Do NOT suggest any text, letters, or words in the image. "
     "Do NOT describe colors or style — just the subject and composition.\n\n"
-    "Example output: \"A large magnifying glass hovering over a grid of tiny database cylinders, "
-    "with thin connection lines radiating outward like a spider web.\""
+    'Example output: "A large magnifying glass hovering over a grid of tiny database cylinders, '
+    'with thin connection lines radiating outward like a spider web."'
 )
 
 
@@ -73,15 +75,15 @@ def slugify(title: str) -> str:
 def strip_markdown(content: str) -> str:
     """Strip markdown formatting to get plain text for the summarizer."""
     text = content
-    text = re.sub(r"```[\s\S]*?```", "", text)          # code blocks
-    text = re.sub(r"`[^`]+`", "", text)                  # inline code
+    text = re.sub(r"```[\s\S]*?```", "", text)  # code blocks
+    text = re.sub(r"`[^`]+`", "", text)  # inline code
     text = re.sub(r"!\[([^\]]*)\]\([^)]+\)", "", text)  # images
     text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)  # inline links
     text = re.sub(r"\[([^\]]+)\]\[[^\]]*\]", r"\1", text)  # reference links
     text = re.sub(r"^\[\d+\]:.*$", "", text, flags=re.MULTILINE)  # link defs
     text = re.sub(r"^#{1,6}\s+", "", text, flags=re.MULTILINE)  # headings
-    text = re.sub(r"[*_]{1,3}", "", text)                # bold/italic
-    text = re.sub(r"\n{3,}", "\n\n", text)               # excess newlines
+    text = re.sub(r"[*_]{1,3}", "", text)  # bold/italic
+    text = re.sub(r"\n{3,}", "\n\n", text)  # excess newlines
     return text.strip()
 
 
@@ -94,11 +96,7 @@ def pass1_summarize(client, title: str, tags: list[str], content: str) -> str:
 
     tag_str = f"Tags: {', '.join(tags)}" if tags else ""
 
-    user_prompt = (
-        f"Title: {title}\n"
-        f"{tag_str}\n\n"
-        f"Article content:\n{plain_content}"
-    )
+    user_prompt = f"Title: {title}\n{tag_str}\n\nArticle content:\n{plain_content}"
 
     response = client.models.generate_content(
         model="gemini-2.5-flash",
@@ -115,7 +113,7 @@ def pass2_generate_image(client, title: str, image_brief: str) -> bytes | None:
     from google import genai
 
     prompt = (
-        f"I need a cover image for a technical blog post titled \"{title}\".\n\n"
+        f'I need a cover image for a technical blog post titled "{title}".\n\n'
         f"Image concept: {image_brief}\n\n"
         f"{STYLE_DIRECTIVE}"
     )
@@ -145,12 +143,14 @@ def get_posts_missing_covers() -> list[Path]:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Backfill AI cover images for existing blog posts")
-    parser.add_argument("--dry-run", action="store_true", help="Preview what would be generated without making changes")
-    parser.add_argument("--post", default=None, help="Only generate for a specific post slug")
-    parser.add_argument("--limit", type=int, default=0, help="Max number of posts to process (0 = all)")
-    parser.add_argument("--delay", type=float, default=2.0, help="Delay between API calls in seconds (default: 2)")
-    parser.add_argument("--show-prompt", action="store_true", help="Print the image brief for each post")
+    parser = argparse.ArgumentParser(
+        description="Backfill AI cover images for existing blog posts",
+    )
+    parser.add_argument("--dry-run", action="store_true", help="Preview only")
+    parser.add_argument("--post", default=None, help="Specific post slug")
+    parser.add_argument("--limit", type=int, default=0, help="Max posts (0=all)")
+    parser.add_argument("--delay", type=float, default=2.0, help="Delay in seconds")
+    parser.add_argument("--show-prompt", action="store_true", help="Print image brief")
     args = parser.parse_args()
 
     from google import genai
@@ -223,7 +223,7 @@ def main():
                 print(f"         -> {cover_path}")
                 success += 1
             else:
-                print(f"         -> SKIPPED (no image generated)")
+                print("         -> SKIPPED (no image generated)")
                 failed += 1
 
         except Exception as e:

@@ -4,11 +4,11 @@ Migration script: Octopress to Hugo
 Converts posts from source/_posts/*.markdown to content/posts/*.md
 """
 
-import os
-import re
 import html
-from pathlib import Path
+import re
 from datetime import datetime
+from pathlib import Path
+
 import yaml
 
 # Paths
@@ -54,10 +54,10 @@ def parse_date(date_str):
 
     # Try various formats
     formats = [
-        "%Y-%m-%d %H:%M:%S %z",      # 2017-02-06 10:00:00 -0700
-        "%Y-%m-%d %H:%M:%S",          # 2017-02-06 10:00:00
-        "%a, %d %b %Y %H:%M:%S",      # Sat, 07 Apr 2012 10:13:44
-        "%Y-%m-%d",                    # 2017-02-06
+        "%Y-%m-%d %H:%M:%S %z",  # 2017-02-06 10:00:00 -0700
+        "%Y-%m-%d %H:%M:%S",  # 2017-02-06 10:00:00
+        "%a, %d %b %Y %H:%M:%S",  # Sat, 07 Apr 2012 10:13:44
+        "%Y-%m-%d",  # 2017-02-06
     ]
 
     for fmt in formats:
@@ -86,14 +86,14 @@ def extract_slug_from_filename(filename):
 
 def convert_vimeo_tags(content):
     """Convert {% vimeo ID WIDTH HEIGHT %} to Hugo shortcode."""
-    pattern = r'\{%\s*vimeo\s+(\d+)(?:\s+\d+)?(?:\s+\d+)?\s*%\}'
-    return re.sub(pattern, r'{{< vimeo \1 >}}', content)
+    pattern = r"\{%\s*vimeo\s+(\d+)(?:\s+\d+)?(?:\s+\d+)?\s*%\}"
+    return re.sub(pattern, r"{{< vimeo \1 >}}", content)
 
 
 def convert_youtube_tags(content):
     """Convert {% youtube ID %} to Hugo shortcode."""
-    pattern = r'\{%\s*youtube\s+([^\s%]+)\s*%\}'
-    return re.sub(pattern, r'{{< youtube \1 >}}', content)
+    pattern = r"\{%\s*youtube\s+([^\s%]+)\s*%\}"
+    return re.sub(pattern, r"{{< youtube \1 >}}", content)
 
 
 def process_categories_tags(items):
@@ -109,7 +109,7 @@ def migrate_post(source_path):
     """Migrate a single post from Octopress to Hugo format."""
     print(f"Processing: {source_path.name}")
 
-    with open(source_path, "r", encoding="utf-8") as f:
+    with open(source_path, encoding="utf-8") as f:
         content = f.read()
 
     # Split front matter and content
@@ -119,10 +119,10 @@ def migrate_post(source_path):
             front_matter_str = parts[1]
             body = parts[2]
         else:
-            print(f"  Warning: Could not parse front matter")
+            print("  Warning: Could not parse front matter")
             return None
     else:
-        print(f"  Warning: No front matter found")
+        print("  Warning: No front matter found")
         return None
 
     # Parse YAML front matter
@@ -153,7 +153,7 @@ def migrate_post(source_path):
         new_fm["author"] = author
 
     # Draft status
-    if front_matter.get("published") == False:
+    if front_matter.get("published") is False:
         new_fm["draft"] = True
 
     # Categories and tags - merge and lowercase

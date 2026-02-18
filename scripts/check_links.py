@@ -34,9 +34,7 @@ REFERENCE_DEF = re.compile(r"^\s*\[([^\]]+)\]:\s*(.+)$", re.MULTILINE)
 SKIP_SCHEMES = {"mailto", "tel", "javascript", "data"}
 
 # User-Agent to avoid bot blocks
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) blog-link-checker/1.0"
-}
+HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) blog-link-checker/1.0"}
 
 
 def extract_links(filepath: Path) -> list[dict]:
@@ -104,14 +102,10 @@ def check_internal_link(url: str) -> tuple[str, int | None, str]:
     return url, None, "broken"
 
 
-def check_external_link(
-    url: str, timeout: float
-) -> tuple[str, int | None, str]:
+def check_external_link(url: str, timeout: float) -> tuple[str, int | None, str]:
     """Check an external URL via HEAD request, falling back to GET."""
     try:
-        resp = requests.head(
-            url, headers=HEADERS, timeout=timeout, allow_redirects=True
-        )
+        resp = requests.head(url, headers=HEADERS, timeout=timeout, allow_redirects=True)
         if resp.status_code == 405:
             # HEAD not allowed, try GET
             resp = requests.get(
@@ -136,8 +130,18 @@ def main():
     parser.add_argument("--internal-only", action="store_true", help="Only check internal links")
     parser.add_argument("--external-only", action="store_true", help="Only check external links")
     parser.add_argument("--post", default=None, help="Only check a specific post slug")
-    parser.add_argument("--timeout", type=float, default=10.0, help="HTTP timeout in seconds (default: 10)")
-    parser.add_argument("--workers", type=int, default=10, help="Number of concurrent workers for external checks (default: 10)")
+    parser.add_argument(
+        "--timeout",
+        type=float,
+        default=10.0,
+        help="HTTP timeout in seconds",
+    )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=10,
+        help="Concurrent workers for external checks",
+    )
     args = parser.parse_args()
 
     # Gather posts
@@ -169,7 +173,8 @@ def main():
         else:
             external_links.append(link)
 
-    print(f"Found {len(internal_links)} internal + {len(external_links)} external links ({skipped} skipped)\n")
+    n_int, n_ext = len(internal_links), len(external_links)
+    print(f"Found {n_int} internal + {n_ext} external links ({skipped} skipped)\n")
 
     broken = []
 
@@ -177,7 +182,7 @@ def main():
     if not args.external_only:
         print(f"Checking {len(internal_links)} internal links...")
         for link in internal_links:
-            url, status, result = check_internal_link(link["url"])
+            _url, status, result = check_internal_link(link["url"])
             if result == "broken":
                 broken.append({**link, "status": status, "result": result, "type": "internal"})
 
@@ -190,12 +195,10 @@ def main():
                 future = pool.submit(check_external_link, link["url"], args.timeout)
                 futures[future] = link
 
-            done = 0
             total = len(external_links)
-            for future in as_completed(futures):
-                done += 1
+            for done, future in enumerate(as_completed(futures), 1):
                 link = futures[future]
-                url, status, result = future.result()
+                _url, status, result = future.result()
                 if result != "ok":
                     broken.append({**link, "status": status, "result": result, "type": "external"})
                 if done % 10 == 0 or done == total:
@@ -214,11 +217,11 @@ def main():
             print()
 
     print(f"{'=' * 60}")
-    total_checked = (
-        (len(internal_links) if not args.external_only else 0)
-        + (len(external_links) if not args.internal_only else 0)
+    total_checked = (len(internal_links) if not args.external_only else 0) + (
+        len(external_links) if not args.internal_only else 0
     )
-    print(f"Total checked: {total_checked} | Broken: {len(broken)} | OK: {total_checked - len(broken)}")
+    ok = total_checked - len(broken)
+    print(f"Total checked: {total_checked} | Broken: {len(broken)} | OK: {ok}")
 
     sys.exit(1 if broken else 0)
 

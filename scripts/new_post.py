@@ -36,7 +36,11 @@ def slugify(title: str) -> str:
     return slug.strip("-")
 
 
-def generate_cover_image(title: str, tags: list[str], custom_prompt: str | None = None) -> bytes | None:
+def generate_cover_image(
+    title: str,
+    tags: list[str],
+    custom_prompt: str | None = None,
+) -> bytes | None:
     from google import genai
 
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -66,7 +70,7 @@ def generate_cover_image(title: str, tags: list[str], custom_prompt: str | None 
 
     # Pass 2: Generate image from brief
     prompt = (
-        f"I need a cover image for a technical blog post titled \"{title}\".\n\n"
+        f'I need a cover image for a technical blog post titled "{title}".\n\n'
         f"Image concept: {brief}\n\n"
         f"{STYLE_DIRECTIVE}"
     )
@@ -152,12 +156,14 @@ def create_post(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Create a new Hugo blog post with AI-generated cover image")
+    parser = argparse.ArgumentParser(
+        description="Create a new Hugo blog post with AI-generated cover image",
+    )
     parser.add_argument("title", help="The title of the blog post")
-    parser.add_argument("--tags", default="", help="Comma-separated tags (e.g. ruby,rails,postgresql)")
-    parser.add_argument("--categories", default="", help="Comma-separated categories (e.g. development,web)")
-    parser.add_argument("--no-cover", action="store_true", help="Skip AI cover image generation")
-    parser.add_argument("--cover-prompt", default=None, help="Custom image concept (skips pass 1 summarization)")
+    parser.add_argument("--tags", default="", help="Comma-separated tags")
+    parser.add_argument("--categories", default="", help="Comma-separated categories")
+    parser.add_argument("--no-cover", action="store_true", help="Skip cover generation")
+    parser.add_argument("--cover-prompt", default=None, help="Custom image concept")
     args = parser.parse_args()
 
     tags = [t for t in args.tags.split(",") if t.strip()] if args.tags else []
@@ -172,7 +178,7 @@ def main():
     )
 
     print(f"\nDone! Edit your post at: {filepath}")
-    print(f"Preview with: hugo server -D")
+    print("Preview with: hugo server -D")
 
 
 if __name__ == "__main__":
