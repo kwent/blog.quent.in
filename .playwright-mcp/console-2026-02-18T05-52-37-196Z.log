@@ -1,0 +1,8 @@
+[     408ms] Uncaught Error: parseColor received unparseable color: oklch(0.30.022277.508)
+    at <anonymous> (https://quentinrousseauleblog.disqus.com/embed.js:51:9626)
+    at j (https://quentinrousseauleblog.disqus.com/embed.js:51:11456)
+    at k (https://quentinrousseauleblog.disqus.com/embed.js:51:11615)
+    at m (https://quentinrousseauleblog.disqus.com/embed.js:51:11938)
+    at i.toJSON (https://quentinrousseauleblog.disqus.com/embed.js:51:16587)
+    at c.loadEmbed (https://quentinrousseauleblog.disqus.com/embed.js:53:17248)
+    at <anonymous> (https://quentinrousseauleblog.disqus.com/embed.js:53:23252)
