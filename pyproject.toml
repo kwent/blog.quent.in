@@ -10,11 +10,6 @@ dependencies = [
     "requests",
 ]
 
-[project.scripts]
-new-post = "scripts.new_post:main"
-generate-covers = "scripts.generate_covers:main"
-check-links = "scripts.check_links:main"
-
 [dependency-groups]
 dev = [
     "ruff",
