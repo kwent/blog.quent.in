@@ -1,19 +1,21 @@
 ---
-title: FabLab à Télécom Bretagne | Retour d'expérience
-date: '2012-01-27T14:17:59'
+aliases:
+- /index.php/2012/01/fablab-a-telecom-bretagne-retour-dexperience/
 author: Quentin
 categories:
 - web
+cover: /images/covers/fablab-a-telecom-bretagne-retour-dexperience.png
+date: '2012-01-27T14:17:59'
+disqus_identifier: '554597212'
+slug: fablab-a-telecom-bretagne-retour-dexperience
 tags:
 - arduino
 - bretagne
 - fablab
 - telecom
-aliases:
-- /index.php/2012/01/fablab-a-telecom-bretagne-retour-dexperience/
-disqus_identifier: '554597212'
-slug: fablab-a-telecom-bretagne-retour-dexperience
+title: FabLab à Télécom Bretagne | Retour d'expérience
 ---
+
 La semaine du 13 Janvier c'est **intersemestre** à <a href="http://www.telecom-bretagne.eu/" target="_blank">Télécom Bretagne</a>  !
 
 Pour ma part, j'ai choisi de participer à mon premier atelier FabLab.

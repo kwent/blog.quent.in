@@ -1,15 +1,16 @@
 ---
-title: PgBouncerHero - Dashboard for your PgBouncers
-date: 2017-02-06T10:00:00-0700
 categories:
 - development
 - web
+cover: /images/covers/pgbouncerhero-dashboard-for-your-pgbouncers.png
+date: 2017-02-06T10:00:00-0700
+slug: pgbouncerhero-dashboard-for-your-pgbouncers
 tags:
 - ruby
 - rails
 - postgresql
 - pgbouncer
-slug: pgbouncerhero-dashboard-for-your-pgbouncers
+title: PgBouncerHero - Dashboard for your PgBouncers
 ---
 
 ## Purpose

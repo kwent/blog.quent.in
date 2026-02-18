@@ -1,21 +1,23 @@
 ---
-title: PhotoCatch | Déclenchement automatisé d'un appareil photo D90 à partir d'un
-  capteur de mouvements et d'un Arduino
-date: '2012-01-30T09:21:03'
+aliases:
+- /index.php/2012/01/photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino/
 author: Quentin
 categories:
 - development
+cover: /images/covers/photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino.png
+date: '2012-01-30T09:21:03'
+disqus_identifier: '557476527'
+slug: photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino
 tags:
 - appareil photo
 - arduino
 - d90
 - electronique
 - fablab
-aliases:
-- /index.php/2012/01/photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino/
-disqus_identifier: '557476527'
-slug: photocatch-declenchement-automatise-dun-appareil-photo-d90-a-partir-dun-capteur-de-mouvements-et-dun-arduino
+title: PhotoCatch | Déclenchement automatisé d'un appareil photo D90 à partir d'un
+  capteur de mouvements et d'un Arduino
 ---
+
 Dans mon dernier post, je parlais de notre réalisation lors du FabLab à savoir :
 
 **Un appareil photo avec déclenchement automatisé via un capteur de mouvement et un arduino.**

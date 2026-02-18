@@ -1,19 +1,21 @@
 ---
-title: Thumbnail me - Vignettez à l'infini !
-date: '2011-08-01T09:55:58'
+aliases:
+- /index.php/2011/08/thumbnail-me-vignettez-a-linfini/
 author: Quentin
 categories:
 - development
+cover: /images/covers/thumbnail-me-vignettez-a-linfini.png
+date: '2011-08-01T09:55:58'
+disqus_identifier: '382022628'
+slug: thumbnail-me-vignettez-a-linfini
 tags:
 - c++
 - development
 - qt
 - thumbnailme
-aliases:
-- /index.php/2011/08/thumbnail-me-vignettez-a-linfini/
-disqus_identifier: '382022628'
-slug: thumbnail-me-vignettez-a-linfini
+title: Thumbnail me - Vignettez à l'infini !
 ---
+
 Bon je commence avec mon plus gros succès: **Thumbnail me**.
 
 ### Kesako?

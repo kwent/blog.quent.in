@@ -1,20 +1,22 @@
 ---
-title: Save time and energy with UML diagram generator tools online !
-date: '2012-04-30T10:55:05'
+aliases:
+- /index.php/2012/04/save-time-and-energy-with-uml-diagram-generator-tools-online/
 author: Quentin
 categories:
 - development
 - script
 - web
+cover: /images/covers/save-time-and-energy-with-uml-diagram-generator-tools-online.png
+date: '2012-04-30T10:55:05'
+disqus_identifier: '670037950'
+slug: save-time-and-energy-with-uml-diagram-generator-tools-online
 tags:
 - diagram
 - generator
 - uml
-aliases:
-- /index.php/2012/04/save-time-and-energy-with-uml-diagram-generator-tools-online/
-disqus_identifier: '670037950'
-slug: save-time-and-energy-with-uml-diagram-generator-tools-online
+title: Save time and energy with UML diagram generator tools online !
 ---
+
 ### Introduction
 
 During a software architecture report redaction, i was confronted to a major problem : I would generated some UML diagrams as **« Use Case »**, **« Class Diagram »** and **« Activity Diagram »** but i didn't have tools as **Microsoft Office Visio** or equivalent installed on my laptop. So i searched web tools to generate these diagrams easily.

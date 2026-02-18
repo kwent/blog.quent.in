@@ -1,17 +1,18 @@
 ---
-title: Adding scopes to ActiveRecord::Base
-date: 2014-04-23T19:00:08-0800
 author: Quentin
 categories:
 - development
 - rails
 - ruby
+cover: /images/covers/adding-scopes-to-activerecord-base.png
+date: 2014-04-23T19:00:08-0800
+slug: adding-scopes-to-activerecord-base
 tags:
 - activerecord
 - scopes
 - rails
 - ruby
-slug: adding-scopes-to-activerecord-base
+title: Adding scopes to ActiveRecord::Base
 ---
 
 ## Purpose

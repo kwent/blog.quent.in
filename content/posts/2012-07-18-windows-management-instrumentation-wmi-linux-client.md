@@ -1,19 +1,21 @@
 ---
-title: Windows Management Instrumentation (WMI) Linux Client
-date: '2012-07-18T11:45:26'
+aliases:
+- /index.php/2012/07/windows-management-instrumentation-wmi-linux-client/
 author: Quentin
 categories:
 - development
 - script
 - system
+cover: /images/covers/windows-management-instrumentation-wmi-linux-client.png
+date: '2012-07-18T11:45:26'
+disqus_identifier: '770344688'
+slug: windows-management-instrumentation-wmi-linux-client
 tags:
 - linux
 - wmi
-aliases:
-- /index.php/2012/07/windows-management-instrumentation-wmi-linux-client/
-disqus_identifier: '770344688'
-slug: windows-management-instrumentation-wmi-linux-client
+title: Windows Management Instrumentation (WMI) Linux Client
 ---
+
 ### Context
 
 I would like query WMI interface to get logical disks spaces from differents windows clients.

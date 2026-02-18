@@ -1,11 +1,12 @@
 ---
-title: Level up ionicons-iOS with a category
-date: 2014-10-25T00:02:54-0700
 author: Quentin
 categories:
 - development
 - ios
 - mobile
+cover: /images/covers/level-up-ionicons-ios-with-a-category.png
+date: 2014-10-25T00:02:54-0700
+slug: level-up-ionicons-ios-with-a-category
 tags:
 - ionicons
 - icons
@@ -13,7 +14,7 @@ tags:
 - helper
 - imageview
 - button
-slug: level-up-ionicons-ios-with-a-category
+title: Level up ionicons-iOS with a category
 ---
 
 ## Purpose

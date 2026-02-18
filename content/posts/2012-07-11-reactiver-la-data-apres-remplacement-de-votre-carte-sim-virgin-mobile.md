@@ -1,17 +1,18 @@
 ---
-title: Réactiver la DATA après remplacement de votre carte SIM Virgin mobile
-date: '2012-07-11T15:00:21'
+aliases:
+- /index.php/2012/07/reactiver-la-data-apres-remplacement-de-votre-carte-sim-virgin-mobile/
 author: Quentin
 categories:
 - mobile
+cover: /images/covers/reactiver-la-data-apres-remplacement-de-votre-carte-sim-virgin-mobile.png
+date: '2012-07-11T15:00:21'
+disqus_identifier: '760586028'
+slug: reactiver-la-data-apres-remplacement-de-votre-carte-sim-virgin-mobile
 tags:
 - data
 - mobile
 - virgin
-aliases:
-- /index.php/2012/07/reactiver-la-data-apres-remplacement-de-votre-carte-sim-virgin-mobile/
-disqus_identifier: '760586028'
-slug: reactiver-la-data-apres-remplacement-de-votre-carte-sim-virgin-mobile
+title: Réactiver la DATA après remplacement de votre carte SIM Virgin mobile
 ---
 
 ![Virgin mobile Logo](/assets/wp-content/uploads/2012/07/virgin-mobile-logo-300x158.jpg)

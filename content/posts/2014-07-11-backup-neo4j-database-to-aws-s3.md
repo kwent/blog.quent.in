@@ -1,11 +1,12 @@
 ---
-title: Backup Neo4j Database to AWS S3
-date: 2014-07-11T14:05:00-0700
 author: Quentin
 categories:
 - development
 - script
 - system
+cover: /images/covers/backup-neo4j-database-to-aws-s3.png
+date: 2014-07-11T14:05:00-0700
+slug: backup-neo4j-database-to-aws-s3
 tags:
 - neo4j
 - database
@@ -13,7 +14,7 @@ tags:
 - aws
 - amazon
 - s3
-slug: backup-neo4j-database-to-aws-s3
+title: Backup Neo4j Database to AWS S3
 ---
 
 ### Update (2014-07-28)

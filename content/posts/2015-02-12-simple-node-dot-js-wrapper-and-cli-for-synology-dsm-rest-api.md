@@ -1,11 +1,12 @@
 ---
-title: Simple Node.js wrapper and CLI for Synology DSM REST API
-date: 2015-02-12T16:54:19+0100
 author: Quentin
 categories:
 - development
 - script
 - system
+cover: /images/covers/simple-node-dot-js-wrapper-and-cli-for-synology-dsm-rest-api.png
+date: 2015-02-12T16:54:19+0100
+slug: simple-node-dot-js-wrapper-and-cli-for-synology-dsm-rest-api
 tags:
 - synology
 - dsm
@@ -15,7 +16,7 @@ tags:
 - node
 - npmjs
 - npm
-slug: simple-node-dot-js-wrapper-and-cli-for-synology-dsm-rest-api
+title: Simple Node.js wrapper and CLI for Synology DSM REST API
 ---
 
 ## Purpose

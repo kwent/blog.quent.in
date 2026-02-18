@@ -1,14 +1,15 @@
 ---
-title: Delete all your remote git tags in a row
-date: 2014-02-04T19:41:53-0800
 categories:
 - development
 - script
 - system
+cover: /images/covers/delete-all-your-remote-git-tags-in-a-row.png
+date: 2014-02-04T19:41:53-0800
+slug: delete-all-your-remote-git-tags-in-a-row
 tags:
 - git
 - github
-slug: delete-all-your-remote-git-tags-in-a-row
+title: Delete all your remote git tags in a row
 ---
 
 Today i will introduce a simple command line to **delete all your remote git tags**.

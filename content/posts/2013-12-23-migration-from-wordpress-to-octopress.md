@@ -1,13 +1,14 @@
 ---
-title: Migration from WordPress to Octopress
-date: 2013-12-23T21:26:23-0800
 author: Quentin
 categories:
 - development
 - octopress
 - migration
 - system
+cover: /images/covers/migration-from-wordpress-to-octopress.png
+date: 2013-12-23T21:26:23-0800
 slug: migration-from-wordpress-to-octopress
+title: Migration from WordPress to Octopress
 ---
 
 ## Yes i did it !

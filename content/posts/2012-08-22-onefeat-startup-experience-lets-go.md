@@ -1,19 +1,20 @@
 ---
-title: Onefeat Startup experience | Let's go !
-date: '2012-07-18T11:45:26'
+aliases:
+- /index.php/2012/08/onefeat-startup-experience-lets-go/
 author: Quentin
 categories:
 - development
 - startup
 - web
+cover: /images/covers/onefeat-startup-experience-lets-go.png
+date: '2012-07-18T11:45:26'
+disqus_identifier: '814492469'
+slug: onefeat-startup-experience-lets-go
 tags:
 - onefeat
 - social gaming
 - startup
-aliases:
-- /index.php/2012/08/onefeat-startup-experience-lets-go/
-disqus_identifier: '814492469'
-slug: onefeat-startup-experience-lets-go
+title: Onefeat Startup experience | Let's go !
 ---
 
 **Introduction**

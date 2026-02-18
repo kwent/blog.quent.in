@@ -1,11 +1,15 @@
 ---
-title: Obfusquer votre adresse mail et échapper aux SPAM
-date: '2011-08-09T18:32:20'
+aliases:
+- /index.php/2011/08/obfusquer-votre-adresse-mail-et-echapper-aux-spam/
 author: Quentin
 categories:
 - development
 - script
 - web
+cover: /images/covers/obfusquer-votre-adresse-mail-et-echapper-aux-spam.png
+date: '2011-08-09T18:32:20'
+disqus_identifier: '381555879'
+slug: obfusquer-votre-adresse-mail-et-echapper-aux-spam
 tags:
 - email
 - javascript
@@ -13,11 +17,9 @@ tags:
 - navigateur
 - obfuscation
 - spam
-aliases:
-- /index.php/2011/08/obfusquer-votre-adresse-mail-et-echapper-aux-spam/
-disqus_identifier: '381555879'
-slug: obfusquer-votre-adresse-mail-et-echapper-aux-spam
+title: Obfusquer votre adresse mail et échapper aux SPAM
 ---
+
 ![Spam in mailbox](/assets/wp-content/uploads/2011/08/spam-300x199.jpg)
 
 Il nous arrive bien souvent de devoir renseigner notre **@mail** au sein d'une page web.  

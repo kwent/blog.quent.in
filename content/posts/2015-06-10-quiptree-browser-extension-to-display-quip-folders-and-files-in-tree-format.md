@@ -1,9 +1,10 @@
 ---
-title: Quiptree - Browser extension to display Quip folders and files in tree format
-date: 2015-06-18T10:00:00-0700
 categories:
 - development
 - accessibility
+cover: /images/covers/quiptree-browser-extension-to-display-quip-folders-and-files-in-tree-format.png
+date: 2015-06-18T10:00:00-0700
+slug: quiptree-browser-extension-to-display-quip-folders-and-files-in-tree-format
 tags:
 - browser
 - javascript
@@ -13,7 +14,7 @@ tags:
 - mozilla
 - firefox
 - safari
-slug: quiptree-browser-extension-to-display-quip-folders-and-files-in-tree-format
+title: Quiptree - Browser extension to display Quip folders and files in tree format
 ---
 
 ## Purpose

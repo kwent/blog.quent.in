@@ -1,11 +1,15 @@
 ---
-title: Custom iOS7 UIAlertView
-date: '2013-11-01T17:11:50'
+aliases:
+- /index.php/2013/11/custom-ios7-uialertview/
 author: Quentin
 categories:
 - development
 - ios
 - mobile
+cover: /images/covers/custom-ios7-uialertview.png
+date: '2013-11-01T17:11:50'
+disqus_identifier: '1927300841'
+slug: custom-ios7-uialertview
 tags:
 - alertview
 - custom
@@ -13,11 +17,9 @@ tags:
 - flat
 - ios
 - ios7
-aliases:
-- /index.php/2013/11/custom-ios7-uialertview/
-disqus_identifier: '1927300841'
-slug: custom-ios7-uialertview
+title: Custom iOS7 UIAlertView
 ---
+
 I forked « ios-custom-alertview » from [@wimagguc][1] and added a different design button this week.
 
 You can just [grab the open source code from Github now][2].

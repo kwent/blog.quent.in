@@ -1,22 +1,24 @@
 ---
-title: 'Using TTTAttributedLabel with Regex : Welcome TTTRegexAttributedLabel'
-date: '2013-11-15T02:03:37'
+aliases:
+- /index.php/2013/11/using-tttattributedlabel-with-regex-welcome-tttregexattributedlabel/
 author: Quentin
 categories:
 - development
 - ios
 - mobile
+cover: /images/covers/using-tttattributedlabel-with-regex-welcome-tttregexattributedlabel.png
+date: '2013-11-15T02:03:37'
+disqus_identifier: '1967095620'
+slug: using-tttattributedlabel-with-regex-welcome-tttregexattributedlabel
 tags:
 - ios
 - regex
 - tttattributedlabel
 - tttregexattributedlabel
 - uilabel
-aliases:
-- /index.php/2013/11/using-tttattributedlabel-with-regex-welcome-tttregexattributedlabel/
-disqus_identifier: '1967095620'
-slug: using-tttattributedlabel-with-regex-welcome-tttregexattributedlabel
+title: 'Using TTTAttributedLabel with Regex : Welcome TTTRegexAttributedLabel'
 ---
+
 Hi there !
 
 If you are looking a easy library to use to apply Regex with **[TTTAttributedLabel][1] **from [Mattt Thompson][2], i build a lib called [**TTTRegexAttributedLabel**][3].

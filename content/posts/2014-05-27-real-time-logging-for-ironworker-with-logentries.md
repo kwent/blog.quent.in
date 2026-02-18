@@ -1,15 +1,16 @@
 ---
-title: Real-time Logging for IronWorker with Logentries
-date: 2014-05-27T23:15:42-0700
 author: Quentin
 categories:
 - development
 - web
+cover: /images/covers/real-time-logging-for-ironworker-with-logentries.png
+date: 2014-05-27T23:15:42-0700
+slug: real-time-logging-for-ironworker-with-logentries
 tags:
 - logentries
 - iron
 - workers
-slug: real-time-logging-for-ironworker-with-logentries
+title: Real-time Logging for IronWorker with Logentries
 ---
 
 ## Purpose

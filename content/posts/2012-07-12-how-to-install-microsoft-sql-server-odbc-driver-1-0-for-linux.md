@@ -1,22 +1,24 @@
 ---
-title: How to install Microsoft® SQL Server® ODBC Driver 1.0 for Linux
-date: '2012-07-12T15:10:37'
+aliases:
+- /index.php/2012/07/how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux/
 author: Quentin
 categories:
 - development
 - script
 - system
+cover: /images/covers/how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux.png
+date: '2012-07-12T15:10:37'
+disqus_identifier: '762175272'
+slug: how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux
 tags:
 - linux
 - microsoft
 - odbc
 - redhat
 - sqlserver
-aliases:
-- /index.php/2012/07/how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux/
-disqus_identifier: '762175272'
-slug: how-to-install-microsoft-sql-server-odbc-driver-1-0-for-linux
+title: How to install Microsoft® SQL Server® ODBC Driver 1.0 for Linux
 ---
+
 Hello,
 
 This manipulation was tested on **Linux RedHat EL 5/6 x86_64**

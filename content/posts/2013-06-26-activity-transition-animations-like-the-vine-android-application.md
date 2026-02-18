@@ -1,19 +1,21 @@
 ---
-title: Activity transition animations like the Vine Android application.
-date: '2013-06-26T13:05:09'
+aliases:
+- /index.php/2013/06/activity-transition-animations-like-the-vine-android-application/
 author: Quentin
 categories:
 - development
 - mobile
+cover: /images/covers/activity-transition-animations-like-the-vine-android-application.png
+date: '2013-06-26T13:05:09'
+disqus_identifier: '1438159289'
+slug: activity-transition-animations-like-the-vine-android-application
 tags:
 - android
 - animations
 - vine
-aliases:
-- /index.php/2013/06/activity-transition-animations-like-the-vine-android-application/
-disqus_identifier: '1438159289'
-slug: activity-transition-animations-like-the-vine-android-application
+title: Activity transition animations like the Vine Android application.
 ---
+
 Today, i will introduce you a cool activity transition animation which you could find in the last Vine app available on Android.
 
 To clarify things, some screenshots of this animation.

@@ -1,18 +1,19 @@
 ---
-title: Export all Mixpanel People to a JSON file
-date: 2014-07-15T13:32:01-0700
 author: Quentin
 categories:
 - development
 - script
 - system
+cover: /images/covers/export-all-mixpanel-people-to-a-json-file.png
+date: 2014-07-15T13:32:01-0700
+slug: export-all-mixpanel-people-to-a-json-file
 tags:
 - mixpanel
 - database
 - backup
 - export
 - api
-slug: export-all-mixpanel-people-to-a-json-file
+title: Export all Mixpanel People to a JSON file
 ---
 
 ## Purpose

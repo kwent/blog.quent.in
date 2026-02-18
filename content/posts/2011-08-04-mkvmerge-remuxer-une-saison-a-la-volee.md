@@ -1,9 +1,13 @@
 ---
-title: Mkvmerge | Remuxer une saison à la volée
-date: '2011-08-04T11:39:30'
+aliases:
+- /index.php/2011/08/mkvmerge-remuxer-une-saison-a-la-volee/
 author: Quentin
 categories:
 - script
+cover: /images/covers/mkvmerge-remuxer-une-saison-a-la-volee.png
+date: '2011-08-04T11:39:30'
+disqus_identifier: '382023060'
+slug: mkvmerge-remuxer-une-saison-a-la-volee
 tags:
 - bash
 - mkvmerge
@@ -11,11 +15,9 @@ tags:
 - remux
 - script
 - synology
-aliases:
-- /index.php/2011/08/mkvmerge-remuxer-une-saison-a-la-volee/
-disqus_identifier: '382023060'
-slug: mkvmerge-remuxer-une-saison-a-la-volee
+title: Mkvmerge | Remuxer une saison à la volée
 ---
+
 Heureux possesseur d'un **NAS** <a href="http://www.synology.com/us/products/DS211j/index.php" target="_blank">Synology DS211j</a>, j'ai parfois besoin de remuxer **des saisons complètes de séries** (pour intégrer des sous titres la plupart du temps), et tant qu'à faire autant les remuxer **en local** sur le NAS.
 
 Pour cela j'utilise le binaire **mkvmerge** contenu dans le package <a href="http://www.bunkus.org/videotools/mkvtoolnix/" target="_blank"><strong>mkvtoolnix</strong></a>.

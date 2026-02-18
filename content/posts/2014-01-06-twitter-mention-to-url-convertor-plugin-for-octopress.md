@@ -1,18 +1,19 @@
 ---
-title: Twitter mention to url convertor plugin for Octopress
-date: 2014-01-06T23:28:42-0800
 categories:
 - development
 - web
 - octopress
 - script
+cover: /images/covers/twitter-mention-to-url-convertor-plugin-for-octopress.png
+date: 2014-01-06T23:28:42-0800
+slug: twitter-mention-to-url-convertor-plugin-for-octopress
 tags:
 - octopress
 - jekyll
 - plugin
 - twitter
 - mention
-slug: twitter-mention-to-url-convertor-plugin-for-octopress
+title: Twitter mention to url convertor plugin for Octopress
 ---
 
 Today i needed to convert a string like ``"Hello world @quentinrousseau"`` to an **html** string like with the **Twitter mention** decoded with a real link for **Octopress**.

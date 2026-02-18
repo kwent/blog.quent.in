@@ -1,18 +1,19 @@
 ---
-title: Create a ruby pseudo terminal (PTY) and invoke an interactive command (SFTP)
-date: 2015-03-29T22:37:51-0700
+aliases:
+- /blog/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-SFTP/
 categories:
 - development
 - ruby
 - system
+cover: /images/covers/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-sftp.png
+date: 2015-03-29T22:37:51-0700
+slug: create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-sftp
 tags:
 - pty
 - ruby
 - sftp
 - cli
-slug: create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-sftp
-aliases:
-  - /blog/2015/03/29/create-a-ruby-pseudo-terminal-pty-and-invoke-an-interactive-command-SFTP/
+title: Create a ruby pseudo terminal (PTY) and invoke an interactive command (SFTP)
 ---
 
 ## Purpose

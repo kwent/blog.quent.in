@@ -1,18 +1,19 @@
 ---
-title: Thumbnail me 3.0 Released
-date: '2012-03-12T12:54:14'
+aliases:
+- /index.php/2012/03/thumbnail-me-3-0-released/
 author: Quentin
 categories:
 - development
 - system
+cover: /images/covers/thumbnail-me-3-0-released.png
+date: '2012-03-12T12:54:14'
+disqus_identifier: '608128238'
+slug: thumbnail-me-3-0-released
 tags:
 - development
 - qt
 - thumbnailme
-aliases:
-- /index.php/2012/03/thumbnail-me-3-0-released/
-disqus_identifier: '608128238'
-slug: thumbnail-me-3-0-released
+title: Thumbnail me 3.0 Released
 ---
 
 ![Thumbnail me 3.0](/assets/wp-content/uploads/2012/02/about1.png)

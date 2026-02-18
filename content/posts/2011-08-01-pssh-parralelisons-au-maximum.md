@@ -1,19 +1,21 @@
 ---
-title: Parallel-SSH | Parralélisez au maximum!
-date: '2011-08-01T14:45:04'
+aliases:
+- /index.php/2011/08/pssh-parralelisons-au-maximum/
 author: Quentin
 categories:
 - system
+cover: /images/covers/pssh-parralelisons-au-maximum.png
+date: '2011-08-01T14:45:04'
+disqus_identifier: '382021833'
+slug: pssh-parralelisons-au-maximum
 tags:
 - cluster
 - linux
 - pssh
 - system
-aliases:
-- /index.php/2011/08/pssh-parralelisons-au-maximum/
-disqus_identifier: '382021833'
-slug: pssh-parralelisons-au-maximum
+title: Parallel-SSH | Parralélisez au maximum!
 ---
+
 Je me suis récemment trouvé dans une situation dans laquelle je devais exécuter des commandes redondantes sur plusieurs serveurs (environnement clusterisé par exemple) et comme tout grand informaticien, je n'aime pas passer sur 50 serveurs pour répéter une tâche. Je me suis donc lancé à la recherche d'un utilitaire me permettant d'arriver à mes fins.
 
 J'ai trouvé après quelques recherches **PSSH **(pour <cite><strong>p</strong>arallel-<strong>ssh</strong>)</cite> disponible à l'adresse suivante: <a href="http://www.theether.org/pssh/" target="_blank">http://www.theether.org/pssh/</a>
