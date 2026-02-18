@@ -51,12 +51,16 @@ markup:
     tabWidth: 2
 
 outputs:
-  home: ["HTML", "RSS", "JSON", "WebAppManifest"]
+  home: ["HTML", "RSS", "JSON", "WebAppManifest", "LLMsTxt"]
 
 outputFormats:
   WebAppManifest:
     mediaType: "application/manifest+json"
     baseName: "site"
+    isPlainText: true
+  LLMsTxt:
+    mediaType: "text/plain"
+    baseName: "llms"
     isPlainText: true
 
 module:

@@ -1,0 +1,20 @@
+# {{ site.Title }}
+
+> {{ site.Params.description }}
+
+## About the Author
+
+{{ with site.Params.author -}}
+{{ .name }} — {{ .title | plainify }}. {{ .description }}
+{{- with .location }} Based in {{ . }}.{{ end }}
+{{- end }}
+
+{{ with site.Params.author -}}
+{{ range .social -}}
+- {{ .name }}: {{ .url }}
+{{ end -}}
+{{- end }}
+## Blog Posts
+{{ range where site.RegularPages "Section" "posts" -}}
+- [{{ .Title }}]({{ .Permalink }})
+{{ end -}}
