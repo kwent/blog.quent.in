@@ -42,11 +42,11 @@ social:
     weight: 10
     params:
       icon: github
-  - name: Twitter
-    url: https://twitter.com/quentinrousseau
+  - name: X
+    url: https://x.com/quentinrousseau
     weight: 20
     params:
-      icon: twitter
+      icon: x
   - name: LinkedIn
     url: https://linkedin.com/in/quentinrousseau
     weight: 30
