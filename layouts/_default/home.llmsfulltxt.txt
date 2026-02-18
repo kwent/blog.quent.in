@@ -1,0 +1,13 @@
+# {{ site.Title }}
+
+> {{ site.Params.description }}
+{{ range where site.RegularPages "Section" "posts" }}
+---
+
+## {{ .Title }}
+
+Date: {{ .Date.Format "2006-01-02" }}
+URL: {{ .Permalink }}
+
+{{ .RawContent }}
+{{ end }}

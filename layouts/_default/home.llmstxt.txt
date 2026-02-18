@@ -1,0 +1,24 @@
+# {{ site.Title }}
+
+> {{ site.Params.description }}
+
+## About the Author
+
+{{ with site.Params.author -}}
+{{ .name }} — {{ .title | plainify }}. {{ .description }}
+{{- with .location }} Based in {{ . }}.{{ end }}
+{{- end }}
+
+{{ with site.Params.author -}}
+{{ range .social -}}
+- {{ .name }}: {{ .url }}
+{{ end -}}
+{{- end }}
+## Full Content
+
+- [llms-full.txt]({{ "llms-full.txt" | absURL }}): Complete content of all blog posts
+
+## Blog Posts
+{{ range where site.RegularPages "Section" "posts" -}}
+- [{{ .Title }}]({{ .Permalink }})
+{{ end -}}
