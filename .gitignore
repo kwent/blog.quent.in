@@ -23,5 +23,12 @@ Thumbs.db
 # Node (if using npm for tooling)
 node_modules/
 
+# Python
+.venv/
+__pycache__/
+
+# Playwright
+.playwright-mcp/
+
 # Misc
 logs/
