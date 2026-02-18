@@ -1,0 +1,49 @@
+{{/* Disqus comments - custom override for legacy identifier support */}}
+
+{{ $config := .Site.Params.comments.disqus }}
+
+{{ if $config.shortname }}
+  <div id="disqus-comments" class="disqus-container">
+    <div id="disqus_thread"></div>
+
+    <script>
+      (function() {
+        'use strict';
+
+        var disqus_config = function () {
+          this.page.url = '{{ .Permalink }}';
+
+          // Use disqus_identifier from front matter if available (for migrated posts)
+          // Otherwise fall back to RelPermalink
+          {{ if .Params.disqus_identifier }}
+          this.page.identifier = '{{ .Params.disqus_identifier }}';
+          {{ else if .Params.aliases }}
+          // For WordPress-migrated posts, use the old permalink as identifier
+          this.page.identifier = '{{ index .Params.aliases 0 }}';
+          {{ else }}
+          this.page.identifier = '{{ .RelPermalink }}';
+          {{ end }}
+
+          this.page.title = '{{ .Title | safeJS }}';
+        };
+
+        function loadDisqus() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://{{ $config.shortname }}.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', loadDisqus);
+        } else {
+          loadDisqus();
+        }
+      })();
+    </script>
+
+    <noscript>
+      Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+    </noscript>
+  </div>
+{{ end }}
