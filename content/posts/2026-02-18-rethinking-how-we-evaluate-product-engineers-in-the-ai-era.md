@@ -51,14 +51,14 @@ For context, our take-home challenge asks candidates to build a simplified versi
 
 Here's a real before-and-after from our submission instructions that illustrates the shift.
 
-**Before:**
+**Before:** two deliverables — code and a Loom.
 
 > - Share a private GitHub repo with a clear README and instructions on how to run your app
 > - Record a Loom demo of what you've built:
 >   - Show the Slack bot and Web UI, and talk through your design and your decision making
 >   - Show the code paths, how it works, and talking through your design and decision making
 
-**After:**
+**After:** three deliverables — code, **AI transcripts**, and a Loom.
 
 > 1. **GitHub Repo** — Share a private repo with a clear README and instructions on how to run your app.
 > 2. **AI Transcripts** — Include your AI session transcripts in the repo. This helps us understand how you work with AI.
@@ -66,7 +66,9 @@ Here's a real before-and-after from our submission instructions that illustrates
 >    - Demo the Slack bot and Web UI end-to-end.
 >    - Show key code paths and talk through your design decisions and tradeoffs.
 
-The biggest change? **AI transcripts are now a first-class deliverable.** Not buried in a notes section. Not optional. Right there alongside the code and the demo.
+Notice what changed: **AI transcripts went from not existing to being the second deliverable** — right between the code and the demo. Not buried in a footnote. Not an optional "nice to have." It's a first-class submission artifact because, frankly, it tells us more about how someone engineers than the code itself does.
+
+We also explicitly tell candidates in the challenge notes: *"Using AI is expected and strongly encouraged."* We're not testing whether they can code without AI — we're testing whether they can build great software *with* it.
 
 ## Why AI transcripts matter
 
@@ -114,6 +116,11 @@ Here's roughly how our evaluation emphasis has shifted:
 | Problem-solving approach | Inferred from code | **Directly observed in transcript** |
 | AI fluency | N/A | **New dimension — high weight** |
 | Debugging & resilience | Inferred from code | **Directly observed in transcript** |
+| Speed / velocity | Hard to measure in take-home | **Observable in transcript timestamps** |
+| Scope management | Did they over/under-build? | **Can see exactly when they chose to stop or expand** |
+| Testing strategy | Did tests exist? | **Did they drive testing or just let AI generate them?** |
+| Error recovery | Only saw the final result | **Can see how they reacted when things broke** |
+| Product instinct | Inferred from UI/UX polish | **Visible in prompts — did they think about the user?** |
 
 The weightings haven't just shifted — we've added entirely new dimensions that didn't exist before.
 
