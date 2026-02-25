@@ -71,6 +71,18 @@ Think about it:
 
 As [Sumner Evans put it](https://sumnerevans.com/posts/software-engineering/forget-mcp-write-cli-apps/): CLIs are text-based, so there are no wasted tokens from mode transformations. The input and output are plain text streams — exactly what LLMs natively consume and produce. No serialization overhead, no protocol negotiation, no schema translation. Just text.
 
+## The market already figured this out
+
+[Peter Steinberger](https://github.com/steipete) — founder of PSPDFKit, 36k GitHub followers — came back from retirement to build AI agent tooling. He didn't build MCP servers. He built CLIs.
+
+Look at what he shipped: [gogcli](https://github.com/steipete/gogcli) (5k stars) for Google Suite, [imsg](https://github.com/steipete/imsg) for Apple Messages, [wacli](https://github.com/steipete/wacli) for WhatsApp, [Peekaboo](https://github.com/steipete/Peekaboo) (2.4k stars) for screenshots, [summarize](https://github.com/steipete/summarize) (4.4k stars) for URL/YouTube/Podcast summarization, [remindctl](https://github.com/steipete/remindctl) for Apple Reminders, [spogo](https://github.com/steipete/spogo) for Spotify. All CLIs. All designed for AI agents.
+
+These CLIs became the backbone of [OpenClaw](https://github.com/openclaw/openclaw) — the open-source personal AI assistant with 226k stars. Its [skills ecosystem](https://github.com/openclaw/skills) is literally a directory of 60+ standalone CLIs: `imsg`, `wacli`, `gogcli`, `peekaboo`, `summarize`, `oracle`, `sag`, `ordercli` — each one a CLI that OpenClaw shells out to. Not MCP servers. CLIs.
+
+And then Steinberger built [MCPorter](https://github.com/steipete/mcporter) (2k+ stars) — a tool whose `generate-cli` command takes any MCP server definition and mints a standalone CLI from it. With typed arguments, `--help`, and structured output.
+
+The person who built the most successful open-source AI assistant — one so successful that [he joined OpenAI](https://steipete.me/posts/2026/openclaw) and OpenClaw moved to a foundation — chose CLIs as the foundation for the entire skills architecture. And then built a tool to convert MCP servers back into CLIs for everyone else.
+
 ## The token tax
 
 Here's a concrete cost most people don't think about: MCP tool descriptions consume tokens in every conversation.
@@ -162,20 +174,6 @@ Here's the decision tree:
 | LLM client without shell access (web chat, mobile) | No | **Yes** |
 | Stateful operations (browser sessions, DB connections) | No | **Yes** |
 | Composable UNIX-style data pipelines | **Yes** | No |
-
-## The market is telling you something
-
-[Peter Steinberger](https://github.com/steipete) — founder of PSPDFKit, 36k GitHub followers — came back from retirement to build AI agent tooling. He didn't build MCP servers. He built CLIs.
-
-Look at what he shipped: [gogcli](https://github.com/steipete/gogcli) (5k stars) for Google Suite, [imsg](https://github.com/steipete/imsg) for Apple Messages, [wacli](https://github.com/steipete/wacli) for WhatsApp, [Peekaboo](https://github.com/steipete/Peekaboo) (2.4k stars) for screenshots, [summarize](https://github.com/steipete/summarize) (4.4k stars) for URL/YouTube/Podcast summarization, [remindctl](https://github.com/steipete/remindctl) for Apple Reminders, [spogo](https://github.com/steipete/spogo) for Spotify. All CLIs. All designed for AI agents.
-
-These CLIs became the backbone of [OpenClaw](https://github.com/openclaw/openclaw) — the open-source personal AI assistant with 226k stars. Its [skills ecosystem](https://github.com/openclaw/skills) is literally a directory of 60+ standalone CLIs: `imsg`, `wacli`, `gogcli`, `peekaboo`, `summarize`, `oracle`, `sag`, `ordercli` — each one a CLI that OpenClaw shells out to. Not MCP servers. CLIs.
-
-And then Steinberger built [MCPorter](https://github.com/steipete/mcporter) (2k+ stars) — a tool whose `generate-cli` command takes any MCP server definition and mints a standalone CLI from it. With typed arguments, `--help`, and structured output.
-
-Read that again. The person who built the most successful open-source AI assistant — one so successful that [he joined OpenAI](https://steipete.me/posts/2026/openclaw) and OpenClaw moved to a foundation — chose CLIs as the foundation for the entire skills architecture. And then built a tool to convert MCP servers back into CLIs for everyone else.
-
-If that's not market validation for "just ship a CLI," I don't know what is.
 
 ## The UNIX philosophy was right all along
 
