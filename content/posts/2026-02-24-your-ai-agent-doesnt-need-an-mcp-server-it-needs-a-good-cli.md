@@ -1,18 +1,19 @@
 ---
 aliases:
+- /posts/2026/02/24/your-ai-agent-doesnt-need-an-mcp-server-it-needs-a-good-cli/
 - /posts/2026/02/24/stop-building-mcp-servers-for-tools-that-already-have-a-cli/
 categories:
 - development
-cover: /images/covers/stop-building-mcp-servers-for-tools-that-already-have-a-cli.png
+cover: /images/covers/your-ai-agent-doesnt-need-an-mcp-server-it-needs-a-good-cli.png
 date: 2026-02-24 23:27:05
-slug: stop-building-mcp-servers-for-tools-that-already-have-a-cli
+slug: your-ai-agent-doesnt-need-an-mcp-server-it-needs-a-good-cli
 tags:
 - ai
 - mcp
 - cli
 - developer-tools
 - claude-code
-title: Stop Building MCP Servers for Tools That Already Have a CLI
+title: Your AI Agent Doesn’t Need an MCP Server — It Needs a Good CLI
 ---
 
 Every week, a new MCP server shows up on GitHub that wraps a CLI tool that already existed. MCP server for GitHub? `gh` has been doing that since 2020. MCP server for AWS? The `aws` CLI covers 200+ services with `--output json`. MCP server for Datadog? They shipped a CLI instead — and it works better.
