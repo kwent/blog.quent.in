@@ -22,7 +22,7 @@ Until recently, that "just there" state came with guilt. Every Dependabot PR I d
 
 In August 2024, I pushed a commit to [syno](https://github.com/kwent/syno) — my Synology DSM API wrapper with 320 stars — that just said "Maintainers wanted." I'd given up.
 
-That changed last week.
+That changed last weekend.
 
 ## The old maintenance tax
 
@@ -41,11 +41,11 @@ Each of these tasks is small. None of them are hard. But they're endless, and th
 
 Between February 20 and 21, I sat down with [Claude Code](https://docs.anthropic.com/en/docs/claude-code) (powered by [Claude Opus 4.6](https://docs.anthropic.com/en/docs/about-claude/models)) and modernized three repositories that had been collecting dust for years. Here's what happened.
 
-### [syno](https://github.com/kwent/syno) — dormant 3 years, revived in 20 hours
+### [syno](https://github.com/kwent/syno) — dormant 3 years, revived in an evening
 
 My Synology DSM REST API wrapper. Created in 2014. 320 stars. The last real code change was February 2023. The kind of codebase where you'd open it, look at it, and close the tab.
 
-[PR #78](https://github.com/kwent/syno/pull/78): **v3.0.0 — Full TypeScript rewrite**. First commit at 2:24am, merged at 10:49pm the same day.
+[PR #78](https://github.com/kwent/syno/pull/78): **v3.0.0 — Full TypeScript rewrite**. First commit at 6:24pm, merged the next afternoon at 2:49pm.
 
 What it covered:
 - Complete rewrite from CoffeeScript to strict TypeScript with ESM + CJS dual output
@@ -60,13 +60,13 @@ What it covered:
 - Runtime deps cut from 9 to 3
 - Fixed 4 bugs, closed 10 issues
 
-The numbers: **+51,345 lines, -92,105 lines, 5,583 files changed**. In a single day.
+The numbers: **+51,345 lines, -92,105 lines, 5,583 files changed**. The bulk of the coding happened in a single evening session — I reviewed and merged the next afternoon.
 
-### [aws-launcher](https://github.com/kwent/aws-launcher) — dormant 8.5 years, revived in 14 hours
+### [aws-launcher](https://github.com/kwent/aws-launcher) — dormant 8.5 years, revived in 1.5 hours
 
 A macOS dock launcher for AWS services. Created in 2017. 133 stars. Last commit: October 2017. It was stuck at 71 AWS services (2017 service list), used CommonJS callbacks, and `fileicon` 0.2.0 had been broken since macOS Monterey removed Python 2.
 
-[PR #6](https://github.com/kwent/aws-launcher/pull/6): **v2.0.0 — Modernize to ESM, update icons, add CI/CD**. First commit at 8:43am, merged at 10:27pm the same day.
+[PR #6](https://github.com/kwent/aws-launcher/pull/6): **v2.0.0 — Modernize to ESM, update icons, add CI/CD**. First commit at 12:43am, merged at 2:27pm the same day.
 
 What it covered:
 - Rewrote from CommonJS callbacks to ESM with async/await
@@ -82,7 +82,7 @@ The numbers: **+3,768 lines, -101 lines, 359 files changed**.
 
 A dashboard for PgBouncer. Created in 2017. 280 stars. I [wrote about it](/blog/2017/02/06/pgbouncerhero-dashboard-for-your-pgbouncers/) in my last blog post before the 9-year silence. Last meaningful code change was 2019 (v1.0.3), with a version bump in 2023.
 
-[PR #14](https://github.com/kwent/pgbouncerhero/pull/14): **v3.0.0 — Modernize frontend stack and add test infrastructure**. First commit at 6:01pm, merged at 7:38pm. Yes — **97 minutes**.
+[PR #14](https://github.com/kwent/pgbouncerhero/pull/14): **v3.0.0 — Modernize frontend stack and add test infrastructure**. First commit at 10:01am, merged at 11:38am. Yes — **97 minutes**.
 
 What it covered:
 - Replaced entire frontend: Sprockets → Propshaft, jQuery → Turbo + Stimulus (Hotwire), Semantic UI → Tailwind CSS 4
@@ -96,13 +96,13 @@ The numbers: **+1,322 lines, -478 lines, 67 files changed**.
 
 ## Let that sink in
 
-| Repository | Stars | Dormant since | Time to modernize | Lines changed | Files touched |
-|------------|-------|---------------|-------------------|---------------|---------------|
-| [syno](https://github.com/kwent/syno) | 320 | Feb 2023 (~3 years) | ~20 hours | +51k / -92k | 5,583 |
-| [aws-launcher](https://github.com/kwent/aws-launcher) | 133 | Oct 2017 (~8.5 years) | ~14 hours | +3.7k / -101 | 359 |
+| Repository | Stars | Dormant since | Active coding time | Lines changed | Files touched |
+|------------|-------|---------------|--------------------|---------------|---------------|
+| [syno](https://github.com/kwent/syno) | 320 | Feb 2023 (~3 years) | ~2 hours | +51k / -92k | 5,583 |
+| [aws-launcher](https://github.com/kwent/aws-launcher) | 133 | Oct 2017 (~8.5 years) | ~1.5 hours | +3.7k / -101 | 359 |
 | [pgbouncerhero](https://github.com/kwent/pgbouncerhero) | 280 | Feb 2023 (~3 years) | ~1.5 hours | +1.3k / -478 | 67 |
 
-Three repositories. Combined ~35 hours of work. All three went from "abandoned" to modern, tested, CI-enabled, and published to their respective registries.
+Three repositories. Combined ~5 hours of active coding. All three went from "abandoned" to modern, tested, CI-enabled, and published to their respective registries.
 
 Without AI, each of these would have been a multi-week project. The syno rewrite alone — CoffeeScript to TypeScript, extracting API definitions from encrypted SPK packages, building a new CLI — that's a month of evenings at minimum. Realistically, I'd never have done it. The "Maintainers wanted" commit was the proof.
 
