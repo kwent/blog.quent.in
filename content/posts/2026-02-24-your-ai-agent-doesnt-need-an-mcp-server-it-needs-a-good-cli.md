@@ -79,9 +79,9 @@ Look at what he shipped: [gogcli](https://github.com/steipete/gogcli) (5k stars)
 
 These CLIs became the backbone of [OpenClaw](https://github.com/openclaw/openclaw) — the open-source personal AI assistant with 226k stars. Its [skills ecosystem](https://github.com/openclaw/skills) is literally a directory of 60+ standalone CLIs: `imsg`, `wacli`, `gogcli`, `peekaboo`, `summarize`, `oracle`, `sag`, `ordercli` — each one a CLI that OpenClaw shells out to. Not MCP servers. CLIs.
 
-And then Steinberger built [MCPorter](https://github.com/steipete/mcporter) (2k+ stars) — a tool whose `generate-cli` command takes any MCP server definition and mints a standalone CLI from it. With typed arguments, `--help`, and structured output.
+And then Steinberger built [MCPorter](https://github.com/steipete/mcporter) (2k+ stars) — a tool whose `generate-cli` command takes any MCP server definition and mints a standalone CLI from it. With typed arguments, `--help`, and structured output. He's not the only one who saw this — [Kan Yilmaz](https://twitter.com/thellimist) built [CLIHub](https://github.com/thellimist/clihub), an open-source directory and converter that transforms MCP servers into CLI tools with a single command.
 
-The person who built the most successful open-source AI assistant — one so successful that [he joined OpenAI](https://steipete.me/posts/2026/openclaw) and OpenClaw moved to a foundation — chose CLIs as the foundation for the entire skills architecture. And then built a tool to convert MCP servers back into CLIs for everyone else.
+The person who built the most successful open-source AI assistant — one so successful that [he joined OpenAI](https://steipete.me/posts/2026/openclaw) and OpenClaw moved to a foundation — chose CLIs as the foundation for the entire skills architecture. And then built a tool to convert MCP servers back into CLIs for everyone else. That multiple people independently built MCP-to-CLI converters tells you something about where the market is heading.
 
 ## The token tax
 
@@ -89,9 +89,15 @@ Here's a concrete cost most people don't think about: MCP tool descriptions cons
 
 When you configure an MCP server, its tool schemas get loaded into the context window. Every tool, every parameter, every description — all of it eats tokens before you've even asked a question. Configure a few MCP servers and you're burning thousands of tokens per message just on tool definitions.
 
-CLI tools don't have this problem. They exist in the shell. The LLM knows about them from training. It calls them when it needs them, reads the output, and moves on. Zero token overhead for tool discovery.
+[Kan Yilmaz ran the numbers](https://kanyilmaz.me/2026/02/23/cli-vs-mcp.html) and the gap is staggering. A typical MCP setup — 6 servers, 14 tools each, ~185 tokens per schema — costs **~15,540 tokens at session start** before you've asked a single question. The CLI equivalent? **~300 tokens** for a lightweight skill listing. That's a **98% reduction**.
 
-[Mario Zechner's benchmarks](https://mariozechner.at/posts/2025-08-15-mcp-vs-cli/) confirmed this empirically — CLI-based approaches were significantly more token-efficient than MCP equivalents for the same tasks. His memorable framing: *"Just like a lot of meetings could have been emails, a lot of MCPs could have been CLI invocations."*
+It doesn't get better at invocation time either. A single MCP tool call costs ~15,570 tokens (because the full schema stays in context). The same operation via CLI — discovery through `--help` plus execution — costs ~910 tokens. **94% savings.** And the pattern holds at scale: 10 tools saves 94%, 100 tools saves 92%.
+
+Even Anthropic's own [Tool Search](https://www.anthropic.com/engineering/advanced-tool-use) — which defers tool loading to reduce upfront costs — still pulls the full JSON Schema when a tool is fetched. Yilmaz's analysis shows CLI outperforms Tool Search by 74-88% across various tool counts, and works across any AI model, not just Anthropic's.
+
+CLI tools don't have this overhead. They exist in the shell. The LLM knows about them from training. It calls them when it needs them, reads the output, and moves on. Zero token overhead for tool discovery.
+
+[Mario Zechner's benchmarks](https://mariozechner.at/posts/2025-08-15-mcp-vs-cli/) confirmed this from a different angle — CLI-based approaches were significantly more token-efficient than MCP equivalents for the same tasks. His memorable framing: *"Just like a lot of meetings could have been emails, a lot of MCPs could have been CLI invocations."*
 
 ## When MCP actually makes sense
 
