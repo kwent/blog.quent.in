@@ -3,7 +3,7 @@ aliases:
 - /posts/2026/03/09/one-more-prompt-the-dopamine-trap-of-agentic-coding/
 categories:
 - development
-cover: /images/covers/the-slot-machine-in-your-terminal-ai-coding-addiction.png
+cover: /images/covers/one-more-prompt-the-dopamine-trap-of-agentic-coding.png
 date: 2026-03-09 14:00:00
 slug: one-more-prompt-the-dopamine-trap-of-agentic-coding
 tags:
