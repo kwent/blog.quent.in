@@ -1,5 +1,5 @@
 # Basic site info with SEO
-description: "Personal blog of Quentin Rousseau - CTO & Co-founder at Rootly, 2x Y Combinator founder"
+description: "Personal blog of Quentin Rousseau - CTO & Co-founder at Rootly (YC S21)"
 keywords: ["blog", "quentin", "rousseau", "rootly", "yc", "startup", "engineering", "sre", "technology"]
 defaultAuthor: "Quentin Rousseau"
 language: "en-US"
@@ -8,8 +8,8 @@ shortName: "QR Blog"
 # Author info
 author:
   name: "Quentin Rousseau"
-  title: 'CTO & Co-founder at <a href="https://rootly.com" target="_blank" rel="noopener noreferrer">Rootly</a>'
-  description: "2x Y Combinator founder. Former Instacart SRE. Rock climber & wine enthusiast."
+  title: 'CTO & Co-founder at <a href="https://rootly.com" target="_blank" rel="noopener noreferrer">Rootly</a> (YC S21)'
+  description: "Former Instacart SRE. Rock climber & wine enthusiast."
   location: "San Francisco, CA"
   avatar: "/images/avatar.jpg"
   social:
