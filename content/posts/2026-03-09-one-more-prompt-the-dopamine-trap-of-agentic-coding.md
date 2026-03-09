@@ -1,18 +1,18 @@
 ---
 aliases:
-- /posts/2026/03/09/the-slot-machine-in-your-terminal-ai-coding-addiction/
+- /posts/2026/03/09/one-more-prompt-the-dopamine-trap-of-agentic-coding/
 categories:
 - development
 cover: /images/covers/the-slot-machine-in-your-terminal-ai-coding-addiction.png
 date: 2026-03-09 14:00:00
-slug: the-slot-machine-in-your-terminal-ai-coding-addiction
+slug: one-more-prompt-the-dopamine-trap-of-agentic-coding
 tags:
 - ai
 - claude-code
 - codex
 - developer-tools
 - productivity
-title: 'The Slot Machine in Your Terminal: AI Coding Addiction Is Real'
+title: 'One More Prompt: The Dopamine Trap of Agentic Coding'
 ---
 
 It's 2:47 AM on a Tuesday. I'm not debugging a production outage. There's no deadline. I'm just watching Claude Code refactor a module — and I can't stop. One more prompt. One more agent run. One more hit.
