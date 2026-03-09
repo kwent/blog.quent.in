@@ -2,6 +2,7 @@
 set -euo pipefail
 
 echo "==> Installing tools via mise..."
+mise trust
 mise install
 
 echo "==> Initializing theme submodule..."
