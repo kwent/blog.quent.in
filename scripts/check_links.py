@@ -53,6 +53,9 @@ def extract_links(filepath: Path) -> list[dict]:
     # Inline links: [text](url)
     for match in INLINE_LINK.finditer(text):
         url = match.group(2).strip()
+        # Skip Hugo shortcodes like {{< relref "..." >}}
+        if url.startswith("{{") or "{{" in url:
+            continue
         if url not in seen:
             seen.add(url)
             links.append({"url": url, "source": filepath.name})
