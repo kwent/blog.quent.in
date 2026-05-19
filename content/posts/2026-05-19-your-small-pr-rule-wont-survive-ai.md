@@ -1,18 +1,18 @@
 ---
 aliases:
-- /posts/2026/05/19/we-killed-our-small-pr-rule/
+- /posts/2026/05/19/your-small-pr-rule-wont-survive-ai/
 categories:
 - development
-cover: /images/covers/we-killed-our-small-pr-rule.png
+cover: /images/covers/your-small-pr-rule-wont-survive-ai.png
 date: 2026-05-19 08:00:00
-slug: we-killed-our-small-pr-rule
+slug: your-small-pr-rule-wont-survive-ai
 tags:
 - ai
 - code-review
 - engineering-culture
 - feature-flags
 - developer-tools
-title: We Killed Our Small PR Rule
+title: Your Small PR Rule Won't Survive AI
 ---
 
 For two years, we enforced a strict small-PR culture at [Rootly](https://rootly.com). Stacked PRs, atomic changes, never more than a couple hundred lines. The logic was sound: smaller diffs are easier to review, easier to revert, easier to reason about.
