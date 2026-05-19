@@ -39,13 +39,13 @@ So we shifted the review mindset: read the risky paths closely, then ask what co
 
 ### AI reviewing AI
 
-We built an internal AI code reviewer we call Compass. It reads every PR against our engineering standards and produces a structured review: a risk assessment, a standardization score, a confidence score, and specific findings grouped by severity.
+We built an internal AI code reviewer. It reads every PR against our engineering standards and produces a structured review: a risk assessment, a standardization score, a confidence score, and specific findings grouped by severity.
 
-The key design choice: Compass doesn't try to be a human reviewer. It doesn't bikeshed variable names or suggest refactors. It answers one question per PR: "If this change has a bug, what user-facing behavior breaks?" That answer drives the risk classification, which tells the human reviewer how much time to spend.
+The key design choice: it doesn't try to be a human reviewer. It doesn't bikeshed variable names or suggest refactors. It answers one question per PR: "If this change has a bug, what user-facing behavior breaks?" That answer drives the risk classification, which tells the human reviewer how much time to spend.
 
-Compass flags database migrations, security-sensitive changes, and modifications to core workflows like paging and incident creation. It distinguishes between changes that alter what the system does versus changes that affect how fast or how something looks. A N+1 query fix on an index page and a change to escalation policy execution logic both touch core code, but they carry very different risk profiles.
+It flags database migrations, security-sensitive changes, and modifications to core workflows like paging and incident creation. It distinguishes between changes that alter what the system does versus changes that affect how fast or how something looks. A N+1 query fix on an index page and a change to escalation policy execution logic both touch core code, but they carry very different risk profiles.
 
-The human reviewer gets a structured starting point instead of a raw diff. For a `risk:low` PR that scores 5/5 on standards compliance, the review is a quick sanity check. For a `risk:high` PR with a 3/5 confidence score, the reviewer knows exactly which findings to dig into and where Compass wasn't sure.
+The human reviewer gets a structured starting point instead of a raw diff. For a `risk:low` PR that scores 5/5 on standards compliance, the review is a quick sanity check. For a `risk:high` PR with a 3/5 confidence score, the reviewer knows exactly which findings to dig into and where the AI reviewer wasn't sure.
 
 ### Feature flags as the real review gate
 
