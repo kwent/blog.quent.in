@@ -69,7 +69,7 @@ The label forces the author to think about blast radius at PR creation time, not
 
 ## The PR template that replaced line counts
 
-Our [PR template](https://github.com/rootlyhq/rootly/blob/master/.github/pull_request_template.md) encodes this whole philosophy. It doesn't ask "is this PR small enough?" It asks the questions that actually predict production incidents:
+Our PR template encodes this whole philosophy. It doesn't ask "is this PR small enough?" It asks the questions that actually predict production incidents:
 
 **Why** and **What** sections force the author to explain motivation and scope of impact. For AI-authored PRs, the human who prompted the agent fills these in. We explicitly instruct AI assistants not to generate these sections, because the whole point is capturing context the AI doesn't have: why this change, why now, what's the business reason.
 
