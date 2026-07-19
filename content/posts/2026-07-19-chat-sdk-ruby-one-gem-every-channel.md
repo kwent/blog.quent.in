@@ -23,9 +23,9 @@ So I built [ChatSDK Ruby](https://github.com/rootlyhq/chat-sdk) — a unified SD
 
 ## The thing that finally pushed me
 
-Last month, a customer asked for Mattermost support. I opened our Slack bot codebase, looked at the incident acknowledgment handler, the escalation flow, the status card — and realized I was about to copy-paste 400 lines of Ruby into a new file, swap out the API calls, and maintain two parallel implementations forever.
+Last month, a customer asked for Google Chat support. I opened our Slack bot codebase, looked at the incident acknowledgment handler, the escalation flow, the status card — and realized I was about to copy-paste 400 lines of Ruby into a new file, swap out the API calls, and maintain two parallel implementations forever.
 
-I'd done this before. Slack to Teams was painful. Teams to Google Chat was worse. Each platform has its own webhook format, its own card schema, its own way of handling buttons. The bot logic — "when someone mentions me, acknowledge the incident and subscribe to the thread" — was the same every time. The plumbing was different.
+I'd done this before. Slack to Teams was painful enough. Each platform has its own webhook format, its own card schema, its own way of handling buttons. The bot logic — "when someone mentions me, acknowledge the incident and subscribe to the thread" — was the same every time. The plumbing was different.
 
 I knew about [Vercel's Chat SDK](https://chat-sdk.dev) for TypeScript. I liked the API design. But we're a Ruby shop, and there was nothing equivalent in the Ruby ecosystem.
 
