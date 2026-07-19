@@ -159,7 +159,7 @@ If you're building a Slack-only bot, use `slack-ruby-client` directly — it's e
 
 The value is the abstraction layer. When you need to support multiple platforms — or you suspect you will — ChatSDK saves you from maintaining parallel implementations of the same bot logic.
 
-[Lita](https://www.lita.io/) tried to solve this years ago, but it hasn't seen a release since 2018 and doesn't cover modern platforms like Teams, Discord, or WhatsApp. ChatSDK is a fresh take with current APIs.
+[Lita](https://github.com/litaio/lita) tried to solve this years ago, but it hasn't seen a release since 2018 and its website is gone. It also doesn't cover modern platforms like Teams, Discord, or WhatsApp. ChatSDK is a fresh take with current APIs.
 
 ## What ships today
 
