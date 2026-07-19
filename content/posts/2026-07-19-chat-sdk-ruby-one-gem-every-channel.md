@@ -66,7 +66,7 @@ I'll be honest — this project exists because of [Claude Code](https://docs.ant
 
 The architecture was designed collaboratively. Adapters were generated in parallel by subagents — one agent building the Discord adapter while another was writing the Telegram one. Specs were written alongside the implementation. `/simplify` passes cleaned up the code after each feature landed.
 
-I don't say this to diminish the work. Every line was reviewed, every adapter was tested, every API quirk was debugged by hand. But the sheer volume — nine platforms, each with their own webhook format, card schema, event structure, and auth mechanism — would have been months of solo work without AI. I know because I've done this work manually before at Rootly, one platform at a time.
+It's still experimental — there are edge cases I haven't hit yet and platform quirks waiting to be discovered. That's why it's marked beta. But the sheer volume — nine platforms, each with their own webhook format, card schema, event structure, and auth mechanism — would have been months of solo work without AI. I know because I've done this work manually before at Rootly, one platform at a time.
 
 ## The cards DSL is the thing I'm most proud of
 
