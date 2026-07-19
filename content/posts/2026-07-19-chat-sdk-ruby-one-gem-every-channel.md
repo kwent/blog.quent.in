@@ -112,17 +112,13 @@ bot.on_new_mention do |thread, message|
   next unless message.text.include?("summarize")
 
   history = thread.fetch_messages(limit: 50)
+  timeline = history.map { |m| "#{m.author.name}: #{m.text}" }.join("\n")
 
   thread.post_stream(placeholder: "Analyzing incident timeline...") do |stream|
-    # Works with any OpenAI-compatible client
-    ai_client.chat(
-      messages: [
-        {role: "system", content: "Summarize this incident timeline concisely."},
-        {role: "user", content: history.map(&:text).join("\n")}
-      ]
-    ) do |chunk|
-      stream << chunk.dig("choices", 0, "delta", "content")
-    end
+    RubyLLM.chat(model: "claude-sonnet-5")
+      .ask("Summarize this incident timeline concisely:\n\n#{timeline}") do |chunk|
+        stream << chunk.content
+      end
   end
 end
 ```
