@@ -15,29 +15,25 @@ tags:
 title: 'ChatSDK Ruby: One Gem, Every Channel'
 ---
 
-I just open-sourced [ChatSDK Ruby](https://github.com/rootlyhq/chat-sdk) — a unified SDK for building chat bots across Slack, Teams, Google Chat, Discord, Telegram, Mattermost, Twilio, Messenger, and WhatsApp. Write your bot logic once, deploy it everywhere.
+At [Rootly](https://rootly.com), we've been building incident management bots for years. Slack first, then Teams, then Google Chat. Every time a customer asked for a new platform, we'd look at the handler code we'd already written and think: this logic is identical. The only thing that changes is how the platform wants it formatted.
 
-It's inspired by [Vercel's Chat SDK](https://chat-sdk.dev) for TypeScript, but redesigned from scratch with idiomatic Ruby patterns. Not a fork — a ground-up reimplementation with a block-based cards DSL, pluggable adapters, and a streaming system that feels natural in Ruby.
+That got old fast.
 
-## The problem
+So I built [ChatSDK Ruby](https://github.com/rootlyhq/chat-sdk) — a unified SDK that lets you write one bot and deploy it across nine platforms. It's open-source as of today.
 
-At [Rootly](https://rootly.com), we build incident management software. Our customers use Slack, Teams, Google Chat — sometimes all three. Every time we add a platform, we face the same question: how much of our bot logic do we rewrite?
+## The thing that finally pushed me
 
-The answer should be zero.
+Last month, a customer asked for Mattermost support. I opened our Slack bot codebase, looked at the incident acknowledgment handler, the escalation flow, the status card — and realized I was about to copy-paste 400 lines of Ruby into a new file, swap out the API calls, and maintain two parallel implementations forever.
 
-But existing Ruby chat libraries are platform-specific. `slack-ruby-client` is excellent for Slack. There's nothing equivalent for Teams or Google Chat. And there's definitely no abstraction layer that lets you write a handler once and have it work across all of them.
+I'd done this before. Slack to Teams was painful. Teams to Google Chat was worse. Each platform has its own webhook format, its own card schema, its own way of handling buttons. The bot logic — "when someone mentions me, acknowledge the incident and subscribe to the thread" — was the same every time. The plumbing was different.
 
-So we built one.
+I knew about [Vercel's Chat SDK](https://chat-sdk.dev) for TypeScript. I liked the API design. But we're a Ruby shop, and there was nothing equivalent in the Ruby ecosystem.
 
-## What it looks like
+## What it actually looks like
 
-Here's an incident bot that works on both Slack and Teams — the kind of thing we'd build at Rootly:
+Here's the incident bot I described above, working on both Slack and Teams simultaneously:
 
 ```ruby
-require "chat_sdk"
-require "chat_sdk/slack"
-require "chat_sdk/teams"
-
 bot = ChatSDK::Chat.new(
   user_name: "incident-bot",
   adapters: {
@@ -60,29 +56,21 @@ bot.on_subscribed_message do |thread, message|
 end
 ```
 
-That handler fires on Slack mentions and Teams @-mentions. Same code, same data structures, same `thread.post` call. The `subscribe` call means every follow-up message in that thread gets routed to `on_subscribed_message` — a natural fit for incident timelines where context accumulates over time.
+Same handler, both platforms. The `subscribe` call means every follow-up message in that thread gets routed to `on_subscribed_message` — which is exactly how incident timelines work. Context accumulates in the thread, and the bot follows along.
 
-## Built with AI, in days not months
+## How this was built
 
-Before I go deeper into features — some context on how this exists at all.
+I'll be honest — this project exists because of [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview).
 
-This entire SDK — 13 gems, 708 specs, a [documentation site](https://chat-sdk.ai), CI pipeline, OIDC gem publishing, Rails demo app — was built in a single extended session with [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview).
+13 gems. 708 specs. A [documentation site](https://chat-sdk.ai). CI pipeline. OIDC publishing for all gems. A Rails demo app. Nine adapters with proper webhook verification, card rendering, and comprehensive tests. I built this in days, not months.
 
-Not "AI-assisted" in the marketing sense. The architecture was designed collaboratively, adapters were generated in parallel by subagents, specs were written alongside the implementation, and `/simplify` passes cleaned up the code after each major feature landed.
+The architecture was designed collaboratively. Adapters were generated in parallel by subagents — one agent building the Discord adapter while another was writing the Telegram one. Specs were written alongside the implementation. `/simplify` passes cleaned up the code after each feature landed.
 
-Building nine platform adapters with proper webhook verification, card rendering, and comprehensive specs would have taken months of solo work. With Claude Code orchestrating parallel agents, it took days. The SDK exists because AI made it feasible for one person to build what would normally require a team.
+I don't say this to diminish the work. Every line was reviewed, every adapter was tested, every API quirk was debugged by hand. But the sheer volume — nine platforms, each with their own webhook format, card schema, event structure, and auth mechanism — would have been months of solo work without AI. I know because I've done this work manually before at Rootly, one platform at a time.
 
-## Why not just use slack-ruby-client?
+## The cards DSL is the thing I'm most proud of
 
-Fair question. `slack-ruby-client` is great — ChatSDK actually uses it under the hood for the Slack adapter. Same for `google-apps-chat-v1` powering the Google Chat adapter.
-
-The difference is the abstraction layer on top. If you're building a Slack-only bot, use `slack-ruby-client` directly. But if you need to support multiple platforms — or you think you might in the future — ChatSDK saves you from maintaining parallel implementations of the same bot logic.
-
-[Lita](https://www.lita.io/) tried to solve this years ago, but it hasn't been actively maintained and doesn't cover modern platforms like Teams, Discord, or WhatsApp. ChatSDK is a fresh take with current platform APIs.
-
-## Cards that render everywhere
-
-Rich messages are the hardest part of cross-platform bots. Slack uses Block Kit JSON. Teams uses Adaptive Cards. Google Chat uses Card V2. Discord uses embeds. Telegram uses inline keyboards. They're all different formats expressing the same concepts.
+This is where the abstraction really earns its keep. Slack uses Block Kit. Teams uses Adaptive Cards. Google Chat uses Card V2. Discord uses embeds. Telegram uses inline keyboards. Five completely different JSON formats expressing the same concepts: title, fields, buttons.
 
 ChatSDK has a block-based DSL that compiles to all of them:
 
@@ -105,33 +93,19 @@ end
 thread.post(card)
 ```
 
-On Slack, that's Block Kit. On Teams, Adaptive Cards. On Discord, an embed with action rows. On Telegram, a message with inline keyboard buttons. Same Ruby object, different renderers, zero platform-specific code.
-
-## Interactive buttons — same handler, every platform
-
-When someone clicks "Acknowledge" or "Escalate" on that card, the handler is platform-agnostic:
+One Ruby object. Nine renderers. Each produces the platform's native card format. No one sees generic markup — Slack users get Block Kit, Teams users get Adaptive Cards, Discord users get embeds. And when someone clicks "Acknowledge":
 
 ```ruby
 bot.on_action("ack") do |event|
   event.thread.post("Acknowledged by #{event.user.name}")
 end
-
-bot.on_action("escalate") do |event|
-  event.thread.post(ChatSDK.card(title: "Escalation") do
-    text "Paging on-call SRE team..."
-    fields do
-      field "Escalated by", event.user.name
-      field "Time", Time.now.utc.strftime("%H:%M UTC")
-    end
-  end)
-end
 ```
 
-Block Kit interactive payloads, Adaptive Card action submits, Discord button clicks, Telegram callback queries — they all arrive as the same `Action` event with the same `action_id`.
+Block Kit interactive payloads, Adaptive Card action submits, Discord button clicks, Telegram callback queries — they all arrive as the same `Action` event with the same `action_id`. I don't have to care where the click came from.
 
-## Streaming AI responses
+## Streaming AI summaries
 
-Token-by-token streaming is table stakes for AI-powered bots. Imagine an incident bot that summarizes a thread on demand:
+We're increasingly using LLMs in incident workflows — summarizing threads, suggesting runbooks, drafting postmortems. Streaming those responses token-by-token is a much better experience than waiting 10 seconds for a wall of text:
 
 ```ruby
 bot.on_new_mention do |thread, message|
@@ -140,7 +114,7 @@ bot.on_new_mention do |thread, message|
   history = thread.fetch_messages(limit: 50)
 
   thread.post_stream(placeholder: "Analyzing incident timeline...") do |stream|
-    # Works with any OpenAI-compatible client (RubyLLM, ruby-openai, etc.)
+    # Works with any OpenAI-compatible client
     ai_client.chat(
       messages: [
         {role: "system", content: "Summarize this incident timeline concisely."},
@@ -153,11 +127,11 @@ bot.on_new_mention do |thread, message|
 end
 ```
 
-The SDK posts a placeholder message, then edits it with accumulated tokens at a throttled interval. Works on any platform that supports message editing — Slack, Teams, Google Chat, Mattermost, Discord, Telegram.
+The SDK posts a placeholder, then edits it with accumulated tokens at a throttled interval. Works on any platform that supports message editing.
 
-## Notifications across channels
+## Broadcasting across platforms
 
-Incidents don't live in one platform. Sometimes you need to fan out alerts to wherever your teams are:
+Incidents don't live in one chat tool. Some teams are on Slack. The ops team might be on Teams. On-call engineers might only have Telegram set up on their phones. ChatSDK lets you fan out the same card to all of them:
 
 ```ruby
 def broadcast_incident(bot, incident)
@@ -173,29 +147,36 @@ def broadcast_incident(bot, incident)
     end
   end
 
-  # Same card, rendered natively on each platform
   bot.channel(slack_channel_id, adapter_name: :slack).post(card)
   bot.channel(teams_channel_id, adapter_name: :teams).post(card)
   bot.channel(gchat_space_id, adapter_name: :gchat).post(card)
 end
 ```
 
-One card object, three platforms, three native renderings. No if/else chains, no format conversion code.
+One card object, three platforms, three native renderings. No if/else chains.
 
-## Nine adapters, four state backends
+## Why not slack-ruby-client or Lita?
 
-The SDK ships 13 gems total:
+If you're building a Slack-only bot, use `slack-ruby-client` directly — it's excellent. ChatSDK actually uses it under the hood for the Slack adapter.
 
-**Platform adapters** — Slack, Teams, Google Chat, Mattermost, Discord, Telegram, Twilio SMS, Facebook Messenger, WhatsApp. Each handles webhook verification, event parsing, and message formatting for its platform.
+The value is the abstraction layer. When you need to support multiple platforms — or you suspect you will — ChatSDK saves you from maintaining parallel implementations of the same bot logic.
 
-**State backends** — Memory (built-in), Redis, PostgreSQL, MySQL. State handles thread subscriptions, distributed locks, event deduplication, and key-value storage. Swap backends without changing bot logic.
+[Lita](https://www.lita.io/) tried to solve this years ago, but it hasn't seen a release since 2018 and doesn't cover modern platforms like Teams, Discord, or WhatsApp. ChatSDK is a fresh take with current APIs.
 
-Every adapter implements the same contract. Every state backend passes the same shared spec. `bundle exec rspec` runs 708 specs across all of them.
+## What ships today
 
-## Get started
+13 gems, all on RubyGems:
+
+- **9 platform adapters**: Slack, Teams, Google Chat, Mattermost, Discord, Telegram, Twilio SMS, Messenger, WhatsApp
+- **4 state backends**: Memory, Redis, PostgreSQL, MySQL
+- 708 specs across all gems, multi-Ruby CI (3.3, 3.4, 4.0)
+- Full docs at [chat-sdk.ai](https://chat-sdk.ai)
+
+Every adapter implements the same contract. Every state backend passes the same shared spec. Every card renders natively on every platform.
+
+## Try it
 
 ```ruby
-# Gemfile
 gem "chat_sdk"
 gem "chat_sdk-slack"  # pick your platform(s)
 ```
@@ -204,4 +185,4 @@ gem "chat_sdk-slack"  # pick your platform(s)
 - **Source**: [github.com/rootlyhq/chat-sdk](https://github.com/rootlyhq/chat-sdk)
 - **RubyGems**: [rubygems.org/gems/chat_sdk](https://rubygems.org/gems/chat_sdk)
 
-It's MIT-licensed, experimental, and looking for early adopters. If you're building chat bots in Ruby and tired of maintaining platform-specific code — try it, break it, [open an issue](https://github.com/rootlyhq/chat-sdk/issues).
+It's MIT-licensed and experimental. I'm looking for people who are building multi-platform bots in Ruby and are tired of the copy-paste-adapt cycle. Try it, break it, [open an issue](https://github.com/rootlyhq/chat-sdk/issues). I'll be reading every one.
