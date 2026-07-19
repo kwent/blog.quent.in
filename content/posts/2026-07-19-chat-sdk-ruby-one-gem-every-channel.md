@@ -127,10 +127,12 @@ The SDK posts a placeholder, then edits it with accumulated tokens at a throttle
 
 ## Broadcasting across platforms
 
-Incidents don't live in one chat tool. Some teams are on Slack. The ops team might be on Teams. On-call engineers might only have Telegram set up on their phones. ChatSDK lets you fan out the same card to all of them:
+Most of our customers use one primary chat tool — Slack or Teams or Google Chat. But incidents often need to reach people outside of chat. The on-call engineer who's away from their laptop. The VP who needs a heads-up via SMS.
+
+ChatSDK makes this natural because Twilio is just another adapter:
 
 ```ruby
-def broadcast_incident(bot, incident)
+def notify_incident(bot, incident, on_call_phone:)
   card = ChatSDK.card(title: "New Incident: #{incident.title}") do
     text incident.summary
     fields do
@@ -143,13 +145,13 @@ def broadcast_incident(bot, incident)
     end
   end
 
+  # Rich card in Slack, plain text fallback via SMS
   bot.channel(slack_channel_id, adapter_name: :slack).post(card)
-  bot.channel(teams_channel_id, adapter_name: :teams).post(card)
-  bot.channel(gchat_space_id, adapter_name: :gchat).post(card)
+  bot.channel(on_call_phone, adapter_name: :twilio).post(card)
 end
 ```
 
-One card object, three platforms, three native renderings. No if/else chains.
+The card renders as Block Kit in Slack. The same card object hits Twilio and falls back to a clean text summary — severity, service, a link to the status page. One card, two channels, zero format conversion code.
 
 ## Why not slack-ruby-client or Lita?
 
