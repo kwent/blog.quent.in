@@ -50,7 +50,7 @@ On the [linear view of Max Roser's technology timeline](https://ourworldindata.o
 
 [![Linear timeline of technology showing recent inventions crowded at the far right of three million years of history](/images/figures/technology-long-run-linear.png)](/images/figures/technology-long-run-linear.png)
 
-*Chart by [Max Roser, Our World in Data](https://ourworldindata.org/technology-long-run), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Unmodified. See the [full timeline](/images/figures/technology-long-run-spiral.png).*
+*Chart by [Max Roser, Our World in Data](https://ourworldindata.org/technology-long-run), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Compressed for web display. See the [full timeline](/images/figures/technology-long-run-spiral.png).*
 
 My parents grew up with typewriters. PCs spread through homes and offices in the 1980s, the web in the 1990s, and smartphones became common in the 2010s. They had decades to adjust, and some changes are still hard for them. At Rootly, years of coding habits have changed in a much shorter span. I understand why an engineer might need time to find their footing.
 
