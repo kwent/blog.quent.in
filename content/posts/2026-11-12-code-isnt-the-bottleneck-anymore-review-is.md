@@ -3,7 +3,7 @@ categories:
 - development
 cover: /images/covers/code-isnt-the-bottleneck-anymore-review-is.png
 date: 2026-11-12T09:00:00-0800
-draft: true
+draft: false
 slug: code-isnt-the-bottleneck-anymore-review-is
 tags:
 - ai
